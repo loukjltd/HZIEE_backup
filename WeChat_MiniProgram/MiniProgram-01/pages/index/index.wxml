@@ -1,0 +1,19 @@
+<view class="indexPage">
+    <view class="searchBoxView">
+        <input placeholder="搜索……" placeholder-style="color: gray"></input>
+    </view>
+    <view class="selectButtonView">
+        <view class="characterMaterialView">
+            <text bindtap="characterMaterial">每日角色素材</text>
+        </view>
+        <view class="weaponMaterialView">
+            <text bindtap="weaponMaterial">每日武器素材</text>
+        </view>
+    </view>
+    <view class="selectButtonAndButton">
+        <button class="characterMaterial2" size="mini" type="default">每日角色素材</button>
+        <button class="weaponMaterial2" size="mini" type="primary">每日武器素材</button>
+    </view>
+    
+    
+</view>
