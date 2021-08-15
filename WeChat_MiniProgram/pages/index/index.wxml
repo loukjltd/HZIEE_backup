@@ -1,0 +1,8 @@
+<view class="indexPage">
+    <view class="characterMaterialView">
+        <text bindtap="characterMaterial">角色每日素材</text>
+    </view>
+    <view class="weaponMaterialView">
+        <text bindtap="weaponMaterial">武器每日素材</text>
+    </view>
+</view>
