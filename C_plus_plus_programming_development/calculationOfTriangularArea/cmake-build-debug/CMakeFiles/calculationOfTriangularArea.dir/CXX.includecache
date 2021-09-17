@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/calculationOfTriangularArea/main.cpp
+iostream
+-
+cmath
+-
+iomanip
+-
+

@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="JspUnit02:war">
+    <output-path>$PROJECT_DIR$/JspUnit02/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>false</exploded>
+        <module>JspUnit02</module>
+        <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
+      </options>
+    </properties>
+    <root id="archive" name="JspUnit02-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="JspUnit02:war exploded" />
+    </root>
+  </artifact>
+</component>
