@@ -1,21 +1,23 @@
 #include<iostream>
+#include<cmath>
+#include<iomanip>
 using namespace std;
 int main() {
-    int a,b;
-    __int64_t s,t,m;
+    int a;
+    double b,f,s,t,m;
     s = 0,t = 0,m = 0;
     cin >> a;
-    for (int i = a; 1000 > i > 0; i--) {
-        if (i % 2 == 1)
-            b = 1/a;
-        s = s + b;
+    for (int i = 1;i<=a; i++) {
+        if (i % 2 == 1){
+            b = 1.00/i;
+            s = s + b;
+        }
+        else {
+            f = 1.00/i;
+            t = t + f;
+        }
     }
-    for (int i = a; 1000 > i > 0; i--) {
-        if (i % 2 == 0)
-            b = 1/a;
-        t = t + b;
-    }
-    m = t - s;
-    cout << m;
+    m = s - t;
+    cout << setprecision(2)<<setiosflags(ios::fixed)<<m<<endl;
     return 0;
 }
