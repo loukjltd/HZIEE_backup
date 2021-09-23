@@ -1,3 +1,0 @@
-/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/test/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/test/cmake-build-debug/CMakeFiles/test.dir
