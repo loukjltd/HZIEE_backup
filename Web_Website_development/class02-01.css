@@ -1,0 +1,43 @@
+#myIDCard {
+    width: 500px;
+    height: 328px;
+    border: 1px solid black;
+}
+
+#myPart1 {
+    float: left;
+    margin-top: 24px;
+    margin-right: 120px;
+    padding-left: 12px;
+}
+#mySchoolName, #myMajor {
+    font-size: 16px;
+    line-height: 8px;
+}
+
+#myAvatar {
+    margin-top: 20px;
+    width: 114px;
+    height: 114px;
+}
+
+#myPart2 {
+    margin-top: 48px;
+    padding-left: 12px;
+}
+
+#noNumber, #phoneNumber, #emailAddress, #locationAddress {
+    font-size: 16px;
+    line-height: 8px;
+    color: darkgray;
+}
+
+#myPart3 {
+    margin-top: 30px;
+}
+
+#blankSpace {
+    width: 500px;
+    height: 32px;
+    background-color: black;
+}
