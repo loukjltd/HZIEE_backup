@@ -17,16 +17,6 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug"/>
 				<Option type="4"/>
@@ -37,8 +27,8 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="Class02_0923_2">
-				<Option output="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Class02_0923_2" prefix_auto="0" extension_auto="0"/>
+			<Target title="ex03">
+				<Option output="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/ex03" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -52,14 +42,14 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 Class02_0923_2"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex03"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="Class02_0923_2/fast">
-				<Option output="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Class02_0923_2" prefix_auto="0" extension_auto="0"/>
+			<Target title="ex03/fast">
+				<Option output="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/ex03" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -73,7 +63,143 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 Class02_0923_2/fast"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex03/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ex02">
+				<Option output="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/ex02" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex02"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ex02/fast">
+				<Option output="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/ex02" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex02/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ex01_ex">
+				<Option output="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/ex01_ex" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex01_ex"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ex01_ex/fast">
+				<Option output="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/ex01_ex" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex01_ex/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ex01">
+				<Option output="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/ex01" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex01"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ex01/fast">
+				<Option output="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/ex01" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 ex01/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -123,7 +249,16 @@
 			</Target>
 		</Build>
 		<Unit filename="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/class02ex01.cpp">
-			<Option target="Class02_0923_2"/>
+			<Option target="ex01"/>
+		</Unit>
+		<Unit filename="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/class02ex01Example.cpp">
+			<Option target="ex01_ex"/>
+		</Unit>
+		<Unit filename="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/class02ex02.cpp">
+			<Option target="ex02"/>
+		</Unit>
+		<Unit filename="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/class02ex03.cpp">
+			<Option target="ex03"/>
 		</Unit>
 		<Unit filename="/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class02_0923/main.cpp">
 			<Option target="Class02_0923"/>
