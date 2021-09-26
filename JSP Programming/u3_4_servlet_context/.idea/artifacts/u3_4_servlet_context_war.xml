@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="u3_4_servlet_context:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>false</exploded>
+        <module>u3_4_servlet_context</module>
+        <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
+      </options>
+    </properties>
+    <root id="archive" name="u3_4_servlet_context-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="u3_4_servlet_context:war exploded" />
+    </root>
+  </artifact>
+</component>
