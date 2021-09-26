@@ -9,7 +9,7 @@ public class ExerciseTripleSum {
         a = inputNum % 10;
         b = (inputNum / 10) % 10;
         c = (inputNum / 100) % 10;
-        System.out.println(a + b + c);
+        System.out.println(a * a * a + b * b * b + c * c * c);
 
     }
 }
