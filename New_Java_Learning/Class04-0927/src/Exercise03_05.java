@@ -18,6 +18,6 @@ public class Exercise03_05 {
                 plusNum += 1;
             }
         }
-        System.out.println(minusNum + " " + zeroNum + " " + plusNum);
+        System.out.println("负数：" + minusNum + " " + "零：" + zeroNum + " " + "正数：" + plusNum);
     }
 }
