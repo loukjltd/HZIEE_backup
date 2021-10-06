@@ -1,0 +1,21 @@
+#bannerImg {
+    text-align: center;
+}
+
+#registerTitle {
+    text-align: center;
+}
+
+#formPart {
+    text-align: center;
+}
+
+.customLabelMargin {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.customLabelStyle {
+    width: 300px;
+    height: 30px;
+}

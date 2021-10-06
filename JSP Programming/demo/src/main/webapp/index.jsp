@@ -5,10 +5,10 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<h1><%= "这是我的主页 By 可嘉!" %>
+<h1><%= "Hello World!" %>
 </h1>
 <br/>
-    <a href="hello-servlet">Hello Servlet</a>
-    <br>
+<a href="hello-servlet">Hello Servlet</a>
+<a href="loginPage">Login Page</a>
 </body>
 </html>
