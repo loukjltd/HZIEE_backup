@@ -10,16 +10,6 @@
     text-align: center;
 }
 
-#formPart {
+#messageBox {
     text-align: center;
-}
-
-.customLabelMargin {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.customLabelStyle {
-    width: 300px;
-    height: 30px;
 }

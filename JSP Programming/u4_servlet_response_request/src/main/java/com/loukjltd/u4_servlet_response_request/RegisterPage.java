@@ -17,6 +17,7 @@ public class RegisterPage extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");  // 更改编码格式为UTF-8，以便显示中文
         // 这段内容将输出在服务器后台
         Enumeration<String> getEnum = request.getParameterNames();
         while (getEnum.hasMoreElements()) {

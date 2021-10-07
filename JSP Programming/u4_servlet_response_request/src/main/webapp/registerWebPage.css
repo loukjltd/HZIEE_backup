@@ -1,5 +1,9 @@
 #bannerImg {
+    padding-top: 0;
     text-align: center;
+    width: 100%;
+    height: 86px;
+    background-color: #00a0d8;
 }
 
 #registerTitle {
