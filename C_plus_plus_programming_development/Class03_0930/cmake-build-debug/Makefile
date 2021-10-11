@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -84,6 +74,16 @@ edit_cache:
 # Special rule for the target edit_cache
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	"/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -115,6 +115,45 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named ex03
+
+# Build rule for target.
+ex03: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ex03
+.PHONY : ex03
+
+# fast build rule for target.
+ex03/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex03.dir/build.make CMakeFiles/ex03.dir/build
+.PHONY : ex03/fast
+
+#=============================================================================
+# Target rules for targets named ex02
+
+# Build rule for target.
+ex02: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ex02
+.PHONY : ex02
+
+# fast build rule for target.
+ex02/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/build
+.PHONY : ex02/fast
+
+#=============================================================================
+# Target rules for targets named ex04
+
+# Build rule for target.
+ex04: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ex04
+.PHONY : ex04
+
+# fast build rule for target.
+ex04/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex04.dir/build.make CMakeFiles/ex04.dir/build
+.PHONY : ex04/fast
 
 #=============================================================================
 # Target rules for targets named ex01
@@ -166,6 +205,78 @@ class03ex01.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex01.dir/build.make CMakeFiles/ex01.dir/class03ex01.cpp.s
 .PHONY : class03ex01.cpp.s
 
+class03ex02.o: class03ex02.cpp.o
+.PHONY : class03ex02.o
+
+# target to build an object file
+class03ex02.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/class03ex02.cpp.o
+.PHONY : class03ex02.cpp.o
+
+class03ex02.i: class03ex02.cpp.i
+.PHONY : class03ex02.i
+
+# target to preprocess a source file
+class03ex02.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/class03ex02.cpp.i
+.PHONY : class03ex02.cpp.i
+
+class03ex02.s: class03ex02.cpp.s
+.PHONY : class03ex02.s
+
+# target to generate assembly for a file
+class03ex02.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/class03ex02.cpp.s
+.PHONY : class03ex02.cpp.s
+
+class03ex03.o: class03ex03.cpp.o
+.PHONY : class03ex03.o
+
+# target to build an object file
+class03ex03.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex03.dir/build.make CMakeFiles/ex03.dir/class03ex03.cpp.o
+.PHONY : class03ex03.cpp.o
+
+class03ex03.i: class03ex03.cpp.i
+.PHONY : class03ex03.i
+
+# target to preprocess a source file
+class03ex03.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex03.dir/build.make CMakeFiles/ex03.dir/class03ex03.cpp.i
+.PHONY : class03ex03.cpp.i
+
+class03ex03.s: class03ex03.cpp.s
+.PHONY : class03ex03.s
+
+# target to generate assembly for a file
+class03ex03.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex03.dir/build.make CMakeFiles/ex03.dir/class03ex03.cpp.s
+.PHONY : class03ex03.cpp.s
+
+class03ex04.o: class03ex04.cpp.o
+.PHONY : class03ex04.o
+
+# target to build an object file
+class03ex04.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex04.dir/build.make CMakeFiles/ex04.dir/class03ex04.cpp.o
+.PHONY : class03ex04.cpp.o
+
+class03ex04.i: class03ex04.cpp.i
+.PHONY : class03ex04.i
+
+# target to preprocess a source file
+class03ex04.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex04.dir/build.make CMakeFiles/ex04.dir/class03ex04.cpp.i
+.PHONY : class03ex04.cpp.i
+
+class03ex04.s: class03ex04.cpp.s
+.PHONY : class03ex04.s
+
+# target to generate assembly for a file
+class03ex04.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex04.dir/build.make CMakeFiles/ex04.dir/class03ex04.cpp.s
+.PHONY : class03ex04.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -200,9 +311,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Class03_0930"
 	@echo "... ex01"
+	@echo "... ex02"
+	@echo "... ex03"
+	@echo "... ex04"
 	@echo "... class03ex01.o"
 	@echo "... class03ex01.i"
 	@echo "... class03ex01.s"
+	@echo "... class03ex02.o"
+	@echo "... class03ex02.i"
+	@echo "... class03ex02.s"
+	@echo "... class03ex03.o"
+	@echo "... class03ex03.i"
+	@echo "... class03ex03.s"
+	@echo "... class03ex04.o"
+	@echo "... class03ex04.i"
+	@echo "... class03ex04.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
