@@ -14,7 +14,8 @@ public class stuData extends HttpServlet {
         String secretPassword = request.getParameter("secretPassword");
         request.setAttribute("secretPassword", secretPassword);
 
-        response.sendRedirect("ok.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/ok.jsp");
+        rd.forward(request, response);
 
 //        String[] hobby = {"篮球", "足球"};
 //        request.setAttribute("hobby", hobby);
