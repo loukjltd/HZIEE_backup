@@ -50,8 +50,10 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/ex01.dir/DependInfo.cmake"
   "CMakeFiles/doWhileSentence.dir/DependInfo.cmake"
   "CMakeFiles/switchSentence.dir/DependInfo.cmake"
   "CMakeFiles/ifSentence.dir/DependInfo.cmake"
+  "CMakeFiles/ex02.dir/DependInfo.cmake"
   "CMakeFiles/Class04_1014.dir/DependInfo.cmake"
   )
