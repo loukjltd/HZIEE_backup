@@ -9,19 +9,24 @@ import java.io.IOException;
 public class stuData extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("name", "SeanCoLtd");
-        request.setAttribute("age", "20");
-        String[] hobby = {"篮球", "足球"};
-        request.setAttribute("hobby", hobby);
+        String nickName = request.getParameter("nickName");
+        request.setAttribute("nickName", nickName);
+        String secretPassword = request.getParameter("secretPassword");
+        request.setAttribute("secretPassword", secretPassword);
 
-        String name = (String) request.getAttribute("name");
-        int age = Integer.parseInt((String) request.getAttribute("age"));
-        String[] hobbies = (String[]) request.setAttribute("hobby");
-        System.out.println(name);
-        System.out.println(age);
-        for (String s : hobbies) {
-            System.out.println(s);
-        }
+        response.sendRedirect("ok.jsp");
+
+//        String[] hobby = {"篮球", "足球"};
+//        request.setAttribute("hobby", hobby);
+
+//        String name = (String) request.getAttribute("name");
+//        int age = Integer.parseInt((String) request.getAttribute("age"));
+//        String[] hobbies = (String[]) request.getAttribute("hobby");
+//        System.out.println(name);
+//        System.out.println(age);
+//        for (String s : hobbies) {
+//            System.out.println(s);
+//        }
     }
 
     @Override
