@@ -1,0 +1,35 @@
+<!--程序6-14-->
+<html>
+<head>
+<title>设定跨行的表格</title>
+</head>
+<body>
+<table width="600" border="1" cellpadding="0" cellspacing="0" align="center">
+    <caption>课程表</caption>
+    <tr>
+        <th>节次\日期</th>         
+        <th>星期一</th>         
+        <th>星期二</th>         
+        <th>星期三</th>         
+        <th>星期四</th>         
+        <th>星期五</th>         
+    <tr>
+    <tr>
+        <td>第12节</td>         
+        <td>体育</td>         
+        <td>大学英语</td>         
+        <td>高等数学</td>         
+        <td rowspan="2" valign="middle">数据结构</td> <!--此处定义了一个单元格占了两行-->        
+        <td>Web开发</td>         
+    </tr>
+    <tr>               <!--表格第二行-->
+        <td>第34节</td>         
+        <td>大学英语</td>         
+        <td>高等数学</td>         
+        <td>数据结构</td>  <!--此处开始少了一个单元格，因为上一行已经定义-->
+        <td>Web开发实验</td>         
+    </tr>
+    <tr><td colspan="6">适用时间：2008~2009第一学期083007班</td></tr>
+</table>
+</body>
+</html>

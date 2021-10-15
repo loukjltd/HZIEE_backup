@@ -1,0 +1,49 @@
+<!--程序10-14-->
+<html>
+<head>
+  <script type="text/javascript">
+     function searchFirst(){
+         var str=document.getElementById('str').value;
+         var ch=document.getElementById('ch').value.charAt(0);
+         var pos=-1;//记录首次出现的位置
+         for(var i=0;i<str.length;i++){
+         	if(str.charAt(i)==ch){
+         		 pos=i;
+         		 break;   //假如发现了该字符，立即退出循环，执行循环后语句
+         	}
+        }
+        if(pos>=0){
+        	document.getElementById('fp').value=pos;
+        }else{
+        	document.getElementById('fp').value="没有发现！";
+        }
+     }
+     function total(){
+         var str=document.getElementById('str').value;
+         var ch=document.getElementById('ch').value.charAt(0);
+         var amount=0;//记录出现的次数
+         for(var i=0;i<str.length;i++){
+       	if(str.charAt(i)!=ch){
+         	  continue; //当不等于查找字符时，本次循环剩余语句不再执行，开始下一次
+         	}
+            amount++;
+         }
+        	document.getElementById('tp').value=amount;
+     }
+   </script>
+<title>break和continue实例</title>
+</head>
+<body>
+<form>
+请输入字符串：<input type="text" name="str" id="str"/>
+<br>
+输入查找字符：<input type="text" name="ch" id="ch"/>
+<br>
+第一次出现在：<input type="text" name="fp" id="fp" readonly/>
+<input type="button" value="开始查找!" onclick="searchFirst()" />
+<br>
+字符总共出现：<input type="text" name="tp" id="tp" readonly/>
+<input type="button" value="开始统计!" onclick="total()" />
+</form>
+</body>
+</html>

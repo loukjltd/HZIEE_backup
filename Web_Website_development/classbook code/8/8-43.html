@@ -1,0 +1,60 @@
+<!--程序8-43-->
+<html>
+<head>
+<title>教材选购单</title>
+<style type="text/css">
+<!--
+body/*基本信息*/ {
+margin:0px;
+text-align:center;
+background:#FFFFFF;
+}
+#container/*页面层容器*/ {
+width:100%;
+}
+#Header/*页面头部*/ {
+width:800px;
+padding-top:40px;
+margin:0 auto;
+height:60px;
+}
+#PageBody/*页面主体*/ {
+width:800px;
+height:300px;
+}
+.p1{color:#aa0000;}
+.z1{background-color:f7f7f7; border:1px dotted #808080; width=400px; height=65px;}
+.b1{border:2px solid #e7e7e7;}
+-->
+</style>
+</head>
+<body>
+<div id="Container"><!--页面层容器-->
+<div id="Header"><!--页面头部-->
+<h2 align="center">教材选购单</h2>
+</div>
+<div id="PageBody"><!--页面主体-->
+<table align="center" cellpadding=15>
+<tr><td class=b1>	
+    <p class="p1">你想订那几本教材？</p>   
+    <form>
+        <table border=0 class=z1>
+           <tr>
+<td><input type="checkbox" name="textbook">JSP实用教程（第二版）</td>
+</tr>    
+           <tr>
+<td><input type="checkbox" name="textbook">SQL Server2000数据库管理与开发实用教程</td>
+</tr>    
+        </table>
+        <br/>
+        <input type="button" value="发送教材选购单">
+        <br/><br/>
+        <input type="text" id="order" size="50" disabled="true">
+    </form>
+</td>
+</tr>
+</table> 
+</div>
+</div>
+</body>
+</html>

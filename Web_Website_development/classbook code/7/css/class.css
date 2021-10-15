@@ -1,0 +1,200 @@
+body {
+	margin-top: 3px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	font-size:12px;
+}
+/*³¬Á´½ÓÑùÊ½*/
+a.head:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a.head:link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+a.head:hover {
+    color: #FF0000;
+    text-decoration: none;
+    position: relative;
+    top: 1px;
+    right: 1px;
+}
+
+a:visited {
+	color:#333333;
+    text-decoration: none;
+}
+
+a:link {
+	color: #000000;
+	text-decoration: none;
+	font-size: 12px;
+
+}
+
+a:hover {
+	color: #FF0000;
+	text-decoration: none;
+
+}
+
+td {
+	font-size:12px;
+	line-height: 26px;
+}
+.top {
+	background-image: url(../IMG/top.jpg);
+	background-repeat: no-repeat;
+	background-position: left;
+	height: 70px;
+}
+.index_side {
+	width: 204px;
+}
+
+
+.dav {
+	background-color: #3d64c1;
+	background-image: url(../images/dav01.jpg);
+	background-repeat: no-repeat;
+	background-position: left;
+	height: 25px;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #FFFFFF;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFFFFF;
+	color: #FFFFFF;
+}
+.pic {
+	margin: 10px;
+}
+
+.table-index {
+	background-color: #ffffff;
+	houbo-border: expression( this . border = 0 );
+	houbo-cellspacing: expression( this . cellSpacing = 1 );
+	houbo-cellpadding: expression( this . cellPadding = 2 );
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-right-color: #aaccee;
+	border-bottom-color: #aaccee;
+}
+.img_x {
+	height: 80px;
+	width: 120px;
+	border: 1px solid #8397A0;
+	margin-top: 15px;
+	margin-right: 15px;
+	margin-bottom: 3px;
+	margin-left: 15px;
+}
+
+.table-index_right {
+	background-color: #ffffff;
+	houbo-border: expression( this . border = 0 );
+    	houbo-cellspacing: expression( this . cellSpacing = 1 );
+    	houbo-cellpadding: expression( this . cellPadding = 2 );
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #aaccee;
+}
+.table_left {
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #aaccee;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #aaccee;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #aaccee;
+}
+
+
+.table-index td.table-title {
+	font-size: 12px;
+	color: #000000;
+	text-align: left;
+	text-indent: 30px;
+	height: 26px;
+	font-weight: bold;
+	background-image: url(../images/ico01.jpg);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	letter-spacing: 4px;
+}
+.table-index_right td.table-title {
+	font-size: 12px;
+	color: #000000;
+	text-align: left;
+	text-indent: 30px;
+	height: 26px;
+	font-weight: bold;
+	background-image: url(../images/ico01.jpg);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	letter-spacing: 4px;
+}
+.table-message {
+	background-color: #ffffff;
+	houbo-border: expression( this . border = 0 );
+    	houbo-cellspacing: expression( this . cellSpacing = 1 );
+    	houbo-cellpadding: expression( this . cellPadding = 2 );
+	margin-top: 5px;
+	border: 1px solid #aaccee;
+}
+.message-title {
+	font-size: 12px;
+	color: #000000;
+	text-align: left;
+	text-indent: 30px;
+	height: 26px;
+	font-weight: bold;
+	background-image: url(../images/ico01.jpg);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	letter-spacing: 4px;
+}
+
+
+.input {
+	font-size: 12px;
+	width: 90%;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #A3C1E0;
+	border-right-color: #DFE8F3;
+	border-bottom-color: #DFE8F3;
+	border-left-color: #A3C1E0;
+	background-color: #F3F5FC;
+}
+.reg_title {
+	font-size: 20px;
+	line-height: 55px;
+	font-weight: bold;
+	color: #FF3300;
+}
+.news_title {
+	font-size: 20px;
+	line-height: 55px;
+	font-weight: bold;
+	color: #000000;
+}
+.red {
+	color: #FF0000;
+}

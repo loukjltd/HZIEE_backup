@@ -1,0 +1,34 @@
+<!--程序13-15-->
+<!DOCTYPE HTML>
+<html>
+<body>
+<script type="text/javascript">
+	window.onload=function()
+	{
+		if (sessionStorage.visiterCount)
+		{			
+			sessionStorage.visiterCount=Number(sessionStorage.visiterCount) +1;
+		}
+		else
+		{
+			sessionStorage.visiterCount=1;
+		}
+		document.getElementById("visiterCount").innerHTML=	"当前网站访问量: "
+		 + sessionStorage.visiterCount + " 次。";
+	}
+	function clearVisiterCount()
+	{
+		sessionStorage.visiterCount=0;
+		document.getElementById("visiterCount").innerHTML="当前网站访问量"+
+		"<span style='font-size:20px;color:#ff0000'	>已清空</span>。";
+	}	
+</script> 
+<body>
+<div id="visiterCount" style="float:left;width:200px ;height:30px;
+	padding:20px 10px 5px 30px;margin:10px 50px;border:1px solid #ff0000;">
+</div>
+<button style="margin:10px;width:150px;height:55px;font-size:20px;" 
+	onclick="clearVisiterCount()">清除访客量</button>
+</body>
+</html>
+

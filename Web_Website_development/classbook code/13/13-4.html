@@ -1,0 +1,25 @@
+<!--≥Ã–Ú13-4-->
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>ªÊ÷∆‘≤ª°</title>
+</head>
+<body>
+<canvas id="myCanvas" width="350" height="150" 
+         style="border:1px solid #c3c3c3;">
+</canvas>
+<script type="text/javascript">
+	var myCanvas=document.getElementById("myCanvas");
+	var context2D=myCanvas.getContext("2d");
+	context2D.beginPath();
+    context2D.arc(175,75,50,0,Math.PI*2,true); // Õ‚»¶
+    context2D.moveTo(210,75);
+    context2D.arc(175,75,35,0,Math.PI,false);   // ◊Ï£¨∞Î»¶
+    context2D.moveTo(165,65);
+    context2D.arc(160,65,5,0,Math.PI*2,true);  // ◊Û—€
+    context2D.moveTo(195,65);
+    context2D.arc(190,65,5,0,Math.PI*2,true);  // ”“—€
+	context2D.stroke();°°°°°°°°                  
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0px;}
+table td{font-size:12px;}
+a{color:#333333;
+text-decoration:none;}
+a:hover{ color:#006600;}
+body{background:#f5fff7;}
+.tt{margin-top:5px;}
+a.tit{font-size:14px;
+color:#336600;
+font-weight:bold;}
+a.tit:hover{font-size:14px;
+color:#33CC00;}
+
+a.gg{font-size:14px;
+color:#FFFFFF;
+font-weight:bold;}
