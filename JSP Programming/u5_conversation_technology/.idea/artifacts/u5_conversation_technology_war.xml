@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="u5_conversation_technology:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>false</exploded>
+        <module>u5_conversation_technology</module>
+        <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
+      </options>
+    </properties>
+    <root id="archive" name="u5_conversation_technology-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="u5_conversation_technology:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>示例问卷</title>
+    <link rel="stylesheet" type="text/css" href="class05-02.css">
+</head>
+<body>
+    <div id="bannerImg">
+        <img src="class05-img/registerBanner.png" alt="文件已丢失..."/>
+    </div>
+    <div id="registerTitle">
+        <h1>示例问卷</h1>
+    </div>
+    <div id="formPart">
+        <form>
+            <div class="customLabelMargin">
+                <p><h5>欢迎使用问卷网！这是一份示例问卷。</h5></p>
+                <p>1.问卷网支持创建哪些项目？*</p>
+                <label>
+                    <input type="checkbox">市场调研问卷<br>
+                    <input type="checkbox">满意度调研问卷<br>
+                    <input type="checkbox">报名表<br>
+                    <input type="checkbox">反馈表<br>
+                    <input type="checkbox">培训测评<br>
+                </label>
+            </div>
+
+            <br>
+
+            <div class="customLabelMargin">
+                <p>2.您是从哪里知道问卷网的？*</p>
+                <label>
+                    <input type="radio" name="q2op">百度、360等搜索引擎<br>
+                    <input type="radio" name="q2op" checked>填答别人的问卷时<br>
+                    <input type="radio" name="q2op">朋友推荐<br>
+                    <input type="radio" name="q2op">其他<input type="text" placeholder="请填写"><br>
+                </label>
+            </div>
+
+            <br>
+
+            <div class="customLabelMargin">
+                <p>3.您帅吗？*</p>
+                <label>
+                    <input type="radio" name="q3op">是<br>
+                    <input type="radio" name="q3op" checked>否<br>
+                </label>
+            </div>
+
+            <br>
+
+            <div class="customLabelMargin">
+                <p>4.问卷网支持以下应用，您可能会常用的是？*</p>
+                <label>
+                    <input type="checkbox">抽奖<br>
+                    <input type="checkbox">微信红包<br>
+                    <input type="checkbox">隐藏问卷网标志<br>
+                    <input type="checkbox">微信签到<br>
+                    <input type="checkbox">配额<br>
+                    <input type="checkbox">投票墙<br>
+                    <input type="checkbox">限定手机号答题<br>
+                    <input type="checkbox">企业协作<br>
+                </label>
+            </div>
+
+            <br>
+
+            <div class="customLabelMargin">
+                <p>5.请问您觉得填写问卷的感受如何？*</p>
+                <label>
+                    <input type="checkbox" checked>非常简单<br>
+                    <input type="checkbox">比较简单<br>
+                    <input type="checkbox" checked>一般<br>
+                    <input type="checkbox">比较困难<br>
+                    <input type="checkbox">十分困难<br>
+                </label>
+            </div>
+
+            <br>
+
+            <div class="customLabelMargin">
+                <p>6.请问您来自哪个省份？</p>
+                <label>
+                    我来自：
+                    <select name="address">
+                        <option value="zhejiang">浙江省
+                        <option value="jiangsu">江苏省
+                        <option value="shanxi">山西省
+                        <option value="shanghai">上海市
+                        <option value="beijing">北京市
+                        <option value="guangdong">广东省
+                        <option value="other">其他身份已省略…
+                    </select>
+                </label>
+            </div>
+
+            <br>
+
+            <div class="customLabelMargin">
+                <p>7.请为问卷网的使用体验打分</p>
+                <label>
+                    <input type="text" placeholder="请输入0-10分">
+                </label>
+            </div>
+
+                <br>
+
+            <div class="customLabelMargin">
+                <p>8.请上传您的资料 *</p>
+                <input type="file">
+            </div>
+
+            <br>
+
+            <div class="customLabelMargin">
+                <p>9.若您对问卷网有意见与建议，欢迎填写在以下输入框中 *</p>
+                <label>
+                    <textarea cols="50" rows="5">有任何想法都请告诉我们哦~</textarea>
+                </label>
+            </div>
+
+            <br>
+
+            <div class="customLabelMargin">
+                <p>10.那么，我们下次再见！*</p>
+                <label>
+                    <input type="checkbox">好！
+                </label>
+            </div>
+
+            <br>
+
+            <div class="customLabelMargin">
+                <label>
+                    <input type="submit" value="提交">
+                </label>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
