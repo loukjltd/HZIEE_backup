@@ -35,7 +35,7 @@ public class Question01_02 {
 
         XYPlot functionPlot = (XYPlot)functionChart.getPlot();
         XYLineAndShapeRenderer functionRenderer = new XYLineAndShapeRenderer();
-        functionRenderer.setSeriesLinesVisible(0, true);
+        functionRenderer.setSeriesLinesVisible(0, false);
         functionPlot.setRenderer(functionRenderer);
 
         ChartFrame frame = new ChartFrame("x(t)=-2tsin(t*t)的离散曲线图", functionChart);
