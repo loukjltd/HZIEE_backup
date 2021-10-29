@@ -11,9 +11,9 @@
     <title>Title</title>
 </head>
 <body>
-<%
-    String userName = (String) session.getAttribute("userName");
-    System.out.print("欢迎管理员" + userName);
-%>
+    <%
+        String userName = (String) session.getAttribute("userName");
+        System.out.print("欢迎管理员" + userName);
+    %>
 </body>
 </html>

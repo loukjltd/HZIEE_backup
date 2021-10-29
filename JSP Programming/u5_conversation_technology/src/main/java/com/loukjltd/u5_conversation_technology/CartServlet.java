@@ -19,6 +19,5 @@ public class CartServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("goods", goods);
         response.sendRedirect("cart.jsp");
-
     }
 }
