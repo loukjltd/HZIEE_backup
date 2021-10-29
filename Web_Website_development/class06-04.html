@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>login</title>
+	<script>
+		function verifyInfo() {
+            let userNameFlag = true;
+            const userName = document.getElementById('userName').value;
+            const userNameFirst = document.getElementById('userName').value.charAt(0);
+
+            const passWord = document.getElementById('passWord').value;
+            const secondPassWord = document.getElementById('secondPassWord').value;
+            let passWordFlag = true;
+
+            const emailAddress = document.getElementById('emailAddress').value;
+            const emailString = /^\w{3,}(\.\w+)*@[A-z0-9]+(\.[A-z]{2,5}){1,2}$/;
+            let emailFlag = true;
+
+            if (userName.length >= 2 && userName.length <= 8) {
+                for (let i = 0; i <= 9; i ++) {
+                    if (userNameFirst === i) {
+                        userNameFlag = false;
+                        break;
+                    }
+                }
+            } else {
+                userNameFlag = false;
+            }
+
+            if (passWord === secondPassWord) {
+                if (passWord === userName || secondPassWord === userName) {
+                    passWordFlag = false;
+                }
+            } else {
+                passWordFlag = false;
+            }
+
+            emailFlag = emailString.test(emailAddress.value) === false;
+
+
+            if (userNameFlag === true && passWordFlag === true && emailFlag === false) {
+                alert("注册成功！")
+            } else {
+                alert("您填写的信息有误！")
+            }
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<label>
+			用户名：<input type="text" name="userName" id="userName">
+			<br>
+			密码：<input type="password" name="passWord" id="passWord">
+			<br>
+			重复密码：<input type="password" name="secondPassWord" id="secondPassWord">
+			<br>
+			邮箱地址：<input type="text" name="emailAddress" id="emailAddress">
+			<input type="button" value="注册!" onclick="verifyInfo()">
+
+		</label>
+	</form>
+</body>
+</html>
