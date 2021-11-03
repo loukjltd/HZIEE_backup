@@ -10,37 +10,45 @@ public class Question02_01 {
         Scanner getValueR = new Scanner(System.in);
 
         double targetValueR = getValueR.nextDouble();
-        AlterRgbValue.alterMyImage(targetValueR);
+        handleRgbValue.alterMyImage(targetValueR);
     }
 }
 
-class AlterRgbValue {
+class handleRgbValue {
     public static void alterMyImage (double targetValueR){
         BufferedImage getImage;
         File getNewFile;
 
         try {
-            getNewFile = new File("/Users/loukj/Documents/GitHub/Hziee_class_code_backup/Advanced_Math/Mission_02/src/image/inImage.png");
-            getImage = ImageIO.read(getNewFile);
+            System.out.print("请输入需要批量处理的照片数量：");
+            Scanner howManyPic = new Scanner(System.in);
+            int n = howManyPic.nextInt();
+            for (int i = 1; i <= n; i ++) {
+                getNewFile = new File(
+                        "/Users/loukj/Documents/GitHub/Hziee_class_code_backup/" +
+                                "Advanced_Math/Mission_02/src/batch-image/" + i + ".png");
+                getImage = ImageIO.read(getNewFile);
 
-            for (int height = 0; height < getImage.getHeight(); height ++) {
-                for (int width = 0; width < getImage.getWidth(); width ++) {
-                    int rgbValue = getImage.getRGB(width, height);
-                    int alpha = (rgbValue >> 24) & 0xff; //透明通道
-                    int red = (rgbValue >> 16) & 0xff;
-                    int green = (rgbValue >> 8) & 0xff;
-                    int blue = rgbValue & 0xff;
-                    int alterRed = execFunction(red, targetValueR);
-                    int alterGreen = execFunction(green, targetValueR);
-                    int alterBlue = execFunction(blue, targetValueR);
-                    rgbValue = (alpha << 24) | (alterRed << 16) | (alterGreen << 8) | alterBlue;
-                    getImage.setRGB(width, height, rgbValue);
+                for (int height = 0; height < getImage.getHeight(); height ++) {
+                    for (int width = 0; width < getImage.getWidth(); width ++) {
+                        int rgbValue = getImage.getRGB(width, height);
+                        int alpha = (rgbValue >> 24) & 0xff; //透明通道
+                        int red = (rgbValue >> 16) & 0xff;
+                        int green = (rgbValue >> 8) & 0xff;
+                        int blue = rgbValue & 0xff;
+                        int alterRed = execFunction(red, targetValueR);
+                        int alterGreen = execFunction(green, targetValueR);
+                        int alterBlue = execFunction(blue, targetValueR);
+                        rgbValue = (alpha << 24) | (alterRed << 16) | (alterGreen << 8) | alterBlue;
+                        getImage.setRGB(width, height, rgbValue);
+                    }
                 }
+
+                getNewFile = new File(
+                        "/Users/loukj/Documents/GitHub/Hziee_class_code_backup/" +
+                                "Advanced_Math/Mission_02/src/batch-image/new/" + i + "_new.png");
+                ImageIO.write(getImage, "png", getNewFile);
             }
-
-            getNewFile = new File("/Users/loukj/Documents/GitHub/Hziee_class_code_backup/Advanced_Math/Mission_02/src/image/outImage.png");
-            ImageIO.write(getImage, "png", getNewFile);
-
         } catch (IOException ignored) {
         }
     }
