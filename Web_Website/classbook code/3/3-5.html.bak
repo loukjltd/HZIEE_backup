@@ -1,0 +1,14 @@
+<!--程序3-5-->
+<html>
+<head>
+<title>在网页中添加添加注释</title>
+</head>
+<body><comment>body标记是主体内容</comment>
+<center>
+<pre><!--pre代表原样显示排版格式-->
+我们永远的家
+——多媒体专业！
+</pre>
+<center>
+</body>
+</html>

@@ -1,0 +1,8 @@
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles/ex01.dir
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles/doWhileSentence.dir
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles/switchSentence.dir
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles/ifSentence.dir
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles/ex02.dir
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles/Class04_1014.dir

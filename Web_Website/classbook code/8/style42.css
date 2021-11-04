@@ -1,0 +1,48 @@
+.dav {
+    background:#00008b;
+    font-color:#ffffff;
+    height:25px;
+}
+a.head:link {
+    color: #ffffff;
+    font-size: 12px;
+    text-decoration: none;
+}
+a.head:visited {
+    color: #ffffff;
+    font-size: 12px;
+    text-decoration: none;
+}
+a.head:hover {
+    color: #FF0000;
+    font-size: 12px;
+    position: relative;
+    top: 1px;
+    right: 1px;
+    text-decoration: none;
+}
+a.head:active {
+    color:#ffffff
+}
+
+a:link {
+    color: #0000ff;
+    font-size: 12px;
+    text-decoration: none;
+}
+a:visited {
+    color: #ffffff;
+    font-size: 12px;
+    text-decoration: none;
+}
+a:hover {
+    color: #FF0000;
+    font-size: 12px;
+    position: relative;
+    top: 1px;
+    right: 1px;
+    text-decoration: none;
+}
+a:active {
+    color:#ffffff
+}

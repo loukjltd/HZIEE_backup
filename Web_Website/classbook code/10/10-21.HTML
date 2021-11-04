@@ -1,0 +1,14 @@
+<!—程序10-21.html -->
+<html>
+<head>
+<title>使用screen定位窗口显示位置</title>
+</head>
+<body>
+<script type="text/javascript">
+   window.resizeTo(500,300);   //设定当前窗口的显示大小
+   var top=((window.screen.availHeight-300)/2); //计算窗口居中后左上角的垂直坐标
+   var left=((window.screen.availWidth-500)/2); //计算窗口居中后左上角的水平坐标   
+   window.moveTo(left, top); //调整当前窗口左上角的显示坐标位置  
+</script>
+</body>
+</html>

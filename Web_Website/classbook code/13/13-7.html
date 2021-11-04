@@ -1,0 +1,32 @@
+<!--程序13-7-->
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>图形转换</title>
+<script>
+ window.onload = function() {
+	var myCanvas=document.getElementById("myCanvas");
+	var context2D=myCanvas.getContext("2d");
+	var rectWidth = 250;
+	var rectHeight = 75;
+	// 平移，画布元素中点
+	context2D.translate(myCanvas.width/2,myCanvas.height/2); 		
+	// y方向上缩放0.5倍 
+	context2D.scale(1,0.5);
+	// 逆时针旋转45度
+	context2D.rotate(-Math.PI/4); 
+	context2D.fillStyle="blue";
+	context2D.fillRect(-rectWidth/2,-rectHeight/2,rectWidth,rectHeight);
+	//水平翻转
+	context2D.scale(-1,1);
+	context2D.font="30pt Calibri";
+	context2D.textAlign="center";
+	context2D.fillStyle="#ffffff";
+	context2D.fillText("Mirror Image",3,10);
+}
+ </script>
+</head>
+<body>
+	<canvas id="myCanvas" width="400" height="300"></canvas>
+</body>
+</html>

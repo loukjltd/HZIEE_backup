@@ -1,0 +1,14 @@
+#kfcTitle {
+    color: red;
+    text-align: center;
+    size: 8px;
+}
+
+#originalPrice {
+    font-size: 5px;
+}
+
+#nowPrice {
+    color: yellow;
+    font-size: 6px;
+}

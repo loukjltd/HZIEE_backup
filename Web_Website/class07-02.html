@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简单计算</title>
+	<script>
+		function calSquare() {
+            const targetValue = document.getElementById("getValue").value;
+            alert("平方的值为：" + targetValue * targetValue);
+		}
+
+        function calSquareRoot() {
+            const targetValue = document.getElementById("getValue").value;
+            alert("平方的值为：" + Math.sqrt(targetValue));
+        }
+
+        function calNaturalLogarithm() {
+            const targetValue = document.getElementById("getValue").value;
+            alert("自然对数为：" + Math.log10(targetValue));
+        }
+	</script>
+</head>
+<body>
+	<form>
+		<label>
+			<input type="number" placeholder="请输入要被计算的值" id="getValue">
+			<input type="button" value="计算它的平方" onclick="calSquare()">
+			<input type="button" value="计算它的平方根" onclick="calSquareRoot()">
+			<input type="button" value="计算它的自然对数" onclick="calNaturalLogarithm()">
+		</label>
+	</form>
+</body>
+</html>

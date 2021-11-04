@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>record text</title>
+	<script>
+		function searchForFirst() {
+            const getString = document.getElementById('getString').value;
+            const getChar = document.getElementById('getChar').value.charAt(0);
+            let nowPosition = -1;
+            for (let i = 0; i < getString.length; i ++) {
+                if (getString.charAt(i) === getChar) {
+                    nowPosition = i;
+                    break;
+                }
+            }
+            if (nowPosition >= 0) {
+                document.getElementById('finalPosition').value = nowPosition;
+            } else {
+                document.getElementById('finalPosition').value = "没有发现字符串";
+            }
+		}
+
+        function totalString() {
+            const getSting = document.getElementById('getString').value;
+            const getChar = document.getElementById('getChar').value.charAt(0);
+            let countTimes = 0;
+            for (let i = 0; i <= getSting.length; i ++) {
+                if (getSting.charAt(i) !== getChar) {
+                    continue;
+                }
+                countTimes ++;
+            }
+            document.getElementById('totalPosition').value = countTimes;
+        }
+	</script>
+</head>
+<body>
+	<form>
+		<label>
+			请输入字符串：<input type="text" name="getString" id="getString"/>
+			<br>
+			输入查找字符：<input type="text" name="getChar" id="getChar"/>
+			<br>
+			第一次出现在：<input type="text" name="finalPosition" id="finalPosition" readonly/>
+			<input type="button" value="开始查找!" onclick="searchForFirst()" />
+			<br>
+			字符总共出现：<input type="text" name="totalPosition" id="totalPosition" readonly/>
+			<input type="button" value="开始统计!" onclick="totalString()" />
+		</label>
+	</form>
+</body>
+</html>

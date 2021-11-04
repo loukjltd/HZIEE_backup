@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+
+   <TITLE>酒店预订</TITLE>            
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" type="text/css" href="css/html.css"/>
+     
+</HEAD>     
+<BODY>
+<DIV id="content"><!-- 主体内容 -->                 
+<DIV class="tip">
+<P>现在&nbsp;<A href="">登录</A>&nbsp;即可预订可享酒店会员专属优惠，并可直接使用常用预订信息</P></DIV>
+ <form id="room" action="" method="post">
+<DIV class="order"><LABEL>入离日期</LABEL>                     
+<INPUT name="inDate" type="date"><SPAN>至</SPAN><INPUT name="outDate" type="date"> 
+                </DIV>
+<DIV class="order"><LABEL>房间数量</LABEL>                         <INPUT type="number" min="1" value="1"> 
+                        <SPAN>房费</SPAN>				        ￥<STRONG>XXX</STRONG>         
+                 </DIV>
+<DIV class="order"><LABEL>住客姓名</LABEL>                         <INPUT type="text" placeholder="住客（中文/英文）（必填）" value=""> 
+                        
+<span>请填写实际入住人姓名，每个房间只需填1位。</span></DIV>
+<DIV class="order"><LABEL>联系手机</LABEL>                     
+<INPUT type="tel" placeholder="联系人手机号码（必填）" value="">                            
+           <SPAN>预订成功后会向您发送短信通知</SPAN>                 </DIV>
+<DIV class="order"><LABEL>邮箱</LABEL>                     
+<INPUT type="email" placeholder="选填" value="">                     
+<SPAN>接收确认邮件</SPAN>                 </DIV>
+<DIV class="order"><LABEL>最晚抵店</LABEL>                     <SELECT name="select" 
+autocomplete="off"><OPTION selected="selected" value="18:00">18:00</OPTION>    
+                       <OPTION value="19:00">19:00</OPTION>                      
+     <OPTION value="20:00">20:00</OPTION>                         <OPTION value="21:00">21:00</OPTION> 
+                          <OPTION value="22:00">22:00</OPTION>                   
+        <OPTION value="23:00">23:00</OPTION>                         <OPTION 
+  value="24:00">24:00</OPTION>                         <OPTION 
+  value="次日6:00">次日6:00</OPTION>                     </SELECT>                     
+<SPAN>该酒店14:00办理入住，早到可能需要等待。</SPAN>                 </DIV>
+<DIV><span>酒店前台付款￥ </span> <SPAN style="color: rgb(255, 102, 0);">XXX</SPAN>
+					 
+<DIV class="submit">提交订单</DIV></DIV>
+</form></DIV></BODY></HTML>

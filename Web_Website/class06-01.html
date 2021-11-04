@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Date</title>
+	<script>
+        const getDay = new Date();
+        const getHour = getDay.getHours();
+
+        const whatTime = getHour < 12 ? "morning" : getHour < 18 ? "afternoon" : "evening";
+        switch (whatTime) {
+            case "morning":
+                document.writeln("现在是上午！");
+                break;
+	        case "afternoon":
+		        document.writeln("现在是下午！");
+                break;
+            case "evening":
+                document.writeln("现在是晚上！");
+                break;
+        }
+	</script>
+</head>
+<body>
+
+</body>
+</html>

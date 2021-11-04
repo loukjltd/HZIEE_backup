@@ -1,0 +1,65 @@
+<!--程序10-24-->
+<html>
+<head>
+<style type="text/css">
+<!--
+.p1{color:#aa0000;}
+.z1{background-color:f7f7f7; border:1px dotted #808080; width=400px; height=65px;}
+.b1{border:2px solid #e7e7e7;}
+-->
+</style>
+<script type="text/javascript">
+    function createOrder(){
+    	 var num=0;   //用来保存用户选择了几本书
+       textbook=document.forms[0].textbook; //获得页面中textbook元素的数组
+       txt="";      //用来保存用户选择的图书的名称
+       textbookid="";  //用来保存用户选择的图书的id
+       for (i=0;i<textbook.length;++ i){
+          if (textbook[i].checked){ //如果对应图书的checkbox框被选中
+             txt=txt + textbook[i].nextSibling.nodeValue + ",";
+             textbookid = textbookid + textbook[i].value + ",";
+             num++;
+          }
+       }
+       //将选择的教材信息输出到文本框中，如果没有选中，清空文本框
+       if(num>0){
+           document.getElementById("order").value="您订购的教材有"+num+"本：" + txt;
+       }else{
+       	   document.getElementById("order").value="";
+       }
+       	
+    }
+</script>
+</head>
+<body>
+<table align="center" cellpadding=15>
+<tr><td><h2 align="center">请假单</h1></td></tr>
+<tr><td class=b1>	
+    <form>
+        <table border=0 class=z1>
+           <tr>
+               <td>学号</td>
+               <td>
+                   <input type="text" id="sid" width=40/>
+               </td>
+           </tr>    
+           <tr>
+               <td>姓名</td>
+               <td>
+                   <input type="text" id="sname" width=40/>
+               </td>
+           </tr>    
+           <tr>
+               <td>请假事由</td>
+               <td>
+                   <textarea style="overflow:hidden" id="cause" rows=4 cols=40>
+                  </textarea>
+               </td>
+           </tr>    
+        </table>
+    </form>
+    <input type="button" onclick="createOrder()" value="提交" >
+</td></tr>
+</table>    
+</body>
+</html>

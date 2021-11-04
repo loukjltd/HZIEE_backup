@@ -1,0 +1,16 @@
+<!--程序13-10-->
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>output显示效果</title>
+</head>
+<script type="text/javascript">
+document.addEventListener(	"input",	function(e){e.target.form.output.value=e.target.form.range.value;},	true);
+</script>
+<body>
+<form onsubmit="return false">
+ <input id="range" type="range" value="0" /> 
+ <output name="output"  >0</output>
+</form>
+</body>
+</html>

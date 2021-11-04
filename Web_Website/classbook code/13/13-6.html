@@ -1,0 +1,29 @@
+<!--³ÌÐò13-6-->
+<!DOCTYPE HTML>
+<html>
+<head>
+   <title>Í¼Ïñ½¥±ä</title>
+</head>
+
+<body>
+<canvas id="myCanvas" width="400" height="200" style="border:1px solid #c3c3c3">
+</canvas>
+<script language="javascript">
+    var context2D = document.getElementById('myCanvas').getContext('2d');
+	var grd=context2D.createLinearGradient(20,0,170,0);
+	grd.addColorStop(0,"white");
+	grd.addColorStop(0.5,"red");
+	context2D.fillStyle=grd;
+	context2D.fillRect(20,20,150,100);
+	context2D.strokeStyle="blue";
+	context2D.strokeRect(20,20,150,100);
+	var grd=context2D.createRadialGradient(275,70,10,275,70,50);
+	grd.addColorStop(0,"blue");
+	grd.addColorStop(1,"white");
+	context2D.fillStyle=grd;
+	context2D.fillRect(200,20,150,100);
+	context2D.strokeStyle="blue";
+	context2D.strokeRect(200,20,150,100);
+</script>
+</body>
+</html>

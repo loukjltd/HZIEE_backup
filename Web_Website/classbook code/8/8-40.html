@@ -1,0 +1,65 @@
+<!--程序8-40-->
+<html>
+<head>
+    <title>教材选购单</title>
+    <style type="text/css">
+   
+
+	.ContentBody/*内容主体*/{
+	    border:2px solid #e7e7e7;
+	    width:450px;
+	    height:220px;
+	    padding:10px;
+	}
+	.diankuang/*教材目录 背景为灰，边为点线*/{
+	    background-color:f7f7f7; 
+	    border:1px dotted #808080; 
+	    width:400px;
+   	    height:80px;
+	    padding-top:8px;
+		margin-top:50px;
+		margin-left:20px;
+	}
+	.div_height/*单行的div*/{
+	    margin-left:22px;
+	    margin-top:10px;
+	    padding-bottom:8px;
+	}
+	.fasong/*发送div样式*/{
+	    background-color:ffffff; 
+	    width:400px;
+   	    height:60px;
+	    margin-top:10px;
+	    padding-top:10px;
+	    padding-bottom:15px;
+	}
+	.title{
+	    color:#aa0000;
+	    padding:15px;
+	    float:left;
+	}
+
+    </style>
+</head>
+<body>
+<div id="Container"><!--页面层容器-->
+  <div id="Header"><!--页面头部-->
+    <h2 style="margin-left:280px">教材选购单</h2>
+  </div>
+  <div id="PageBody" ><!--页面主体-->
+	<div class=ContentBody style="border:1px solid #400;margin-left:100px;" >
+       <div class=title>你想订那几本教材？</div>
+         <form>
+	       <div class=diankuang>
+              <div class=div_height align=left><input type="checkbox" name="textbook">JSP实用教程（第二版）</div>
+              <div class=div_height align=left><input type="checkbox" name="textbook">SQL Server2000数据库管理与开发实用教程</div>
+	       </div>
+	    
+              <div class=div_height align=left><input type="button" value="发送教材选购单"></div>
+             
+        </form>
+      </div>
+   </div>
+</div>
+</body>
+</html>
