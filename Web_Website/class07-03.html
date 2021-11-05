@@ -14,11 +14,11 @@
             d = 0;
 
             if (splitTargetDate[0] % 4 === 0) {
-                for (let i = 1; i <= parseInt(splitTargetDate[1]) - 1; i ++) {
+                for (let i = 0; i < parseInt(splitTargetDate[1]) - 1; i ++) {
                     d = d + monthDayLeap[i];
                 }
             } else {
-                for (let j = 1; j <= parseInt(splitTargetDate[1]) - 1; j ++) {
+                for (let j = 0; j < parseInt(splitTargetDate[1]) - 1; j ++) {
                     d = d + monthDayNotLeap[j];
                 }
             }
