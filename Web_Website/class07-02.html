@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>简单计算</title>
-	<script>
-		function calSquare() {
-            const targetValue = document.getElementById("getValue").value;
-            alert("平方的值为：" + targetValue * targetValue);
-		}
+	<meta charset="utf-8">
+	<title>组成奇数</title>
+	<script >
+        function odd_number() {
+            const num1 = document.getElementById("s").value;
+            const num2 = document.getElementById("t").value;
+            if(num1 >= 10 && num2 >= 2){
+                alert("请输入10以内的数字");
+                return;
+            }
+            const max = num1 > num2 ? num1 : num2;
+            const min = num1 < num2 ? num1 : num2;
+            const lt = [];
+            const ln = [];
+            let k = 0;
+            if(max === min){
+                if (max % 2 !==0){
+                    ln.push(max + min);
+                    k++;
+                } else {
+                    ln.push("没有奇数")
+                }
+            } else {
+                for (let i = min; i <= max; i++) {
+                    lt.push(i)
+                }
+                for( let i = 0; i < lt.length; i++){
+                    for(let j = 0; j < lt.length; j++){
+                        if(i === j){
+                            continue
+                        }
+                        if((i * 10 + j) % 2 !== 0)
+                        {
+                            ln.push(i * 10 + j)
+                            k ++;
+                        }
+                    }
+                }
+            }
 
-        function calSquareRoot() {
-            const targetValue = document.getElementById("getValue").value;
-            alert("平方的值为：" + Math.sqrt(targetValue));
-        }
-
-        function calNaturalLogarithm() {
-            const targetValue = document.getElementById("getValue").value;
-            alert("自然对数为：" + Math.log10(targetValue));
+            alert(ln + "一共" + k + "个");
         }
 	</script>
 </head>
 <body>
-	<form>
-		<label>
-			<input type="number" placeholder="请输入要被计算的值" id="getValue">
-			<input type="button" value="计算它的平方" onclick="calSquare()">
-			<input type="button" value="计算它的平方根" onclick="calSquareRoot()">
-			<input type="button" value="计算它的自然对数" onclick="calNaturalLogarithm()">
-		</label>
-	</form>
+	<label for="s">请输入第一个数：</label><input type="text" id="s"/><br>
+	<label for="t">请输入第二个数：</label><input type="text" id="t"/>
+	<input type="button" value="提交" onclick="odd_number()">
 </body>
 </html>

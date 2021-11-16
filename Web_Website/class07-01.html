@@ -2,40 +2,38 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>价格比较</title>
+	<title>计算函数</title>
 	<script>
-		function readText() {
-            const car1Text = document.getElementById("car1id").value;
-            const car2Text = document.getElementById("car2id").value;
-
-            const car1Split = car1Text.split(",");
-            const car2Split = car2Text.split(",");
-
-			if (car1Split[2] !== car2Split[2]) {
-				if (car1Split[2] > car2Split[2]) {
-                    alert("价格比较高的品牌是" + car1Split[3]);
-				} else {
-                    alert("价格比较高的品牌是" + car2Split[3]);
-				}
-			} else {
-                alert("价格一致！")
-			}
-
+		function add() {
+            const n1 = parseInt(document.getElementById("getNum1").value);
+            const n2 = parseInt(document.getElementById("getNum2").value);
+            console.log(n1 + n2);
+		}
+        function minus() {
+            const n1 = parseInt(document.getElementById("getNum1").value);
+            const n2 = parseInt(document.getElementById("getNum2").value);
+            console.log(n1 - n2);
+        }
+        function multi() {
+            const n1 = parseInt(document.getElementById("getNum1").value);
+            const n2 = parseInt(document.getElementById("getNum2").value);
+            console.log(n1 * n2);
+        }
+        function divide() {
+            const n1 = parseInt(document.getElementById("getNum1").value);
+            const n2 = parseInt(document.getElementById("getNum2").value);
+            console.log(n1 / n2);
         }
 	</script>
 </head>
 <body>
-    <form>
-
-	    <p>Car1: </p>
-	    <label>
-            <input type="text" placeholder="请输入Car1的属性" id="car1id">
-	    </label>
-	    <p>Car2: </p>
-	    <label>
-            <input type="text" placeholder="请输入Car2的属性" id="car2id">
-	        <input type="button" value="提交" onclick="readText()">
-	    </label>
-    </form>
+<label>
+	<input type="text" placeholder="请输入n1" id="getNum1">
+	<input type="text" placeholder="请输入n2" id="getNum2">
+	<input type="button" value="+" onclick="add()">
+	<input type="button" value="-" onclick="minus()">
+	<input type="button" value="*" onclick="multi()">
+	<input type="button" value="/" onclick="divide()">
+</label>
 </body>
 </html>

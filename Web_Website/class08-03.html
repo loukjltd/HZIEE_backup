@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>第几天了</title>
+	<script>
+		function DayOfYear(d) {
+            const targetDate = document.getElementById("getDate").value;
+            const splitTargetDate = targetDate.split("-");
+
+            const monthDayNotLeap = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            const monthDayLeap = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+            d = 0;
+
+            if (splitTargetDate[0] % 4 === 0) {
+                for (let i = 0; i < parseInt(splitTargetDate[1]) - 1; i ++) {
+                    d = d + monthDayLeap[i];
+                }
+            } else {
+                for (let j = 0; j < parseInt(splitTargetDate[1]) - 1; j ++) {
+                    d = d + monthDayNotLeap[j];
+                }
+            }
+			d = d + parseInt(splitTargetDate[2]);
+            alert("今天是今年的第" + d + "天！")
+        }
+	</script>
+</head>
+<body>
+	<form>
+		<label>
+			<input type="date" id="getDate">
+			<input type="button" value="提交" onclick="DayOfYear()">
+		</label>
+	</form>
+</body>
+</html>
