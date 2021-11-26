@@ -1,0 +1,5 @@
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class09_1118/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class09_1118/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class09_1118/cmake-build-debug/CMakeFiles/Q02.dir
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class09_1118/cmake-build-debug/CMakeFiles/Q01.dir
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class09_1118/cmake-build-debug/CMakeFiles/Class09_1118.dir

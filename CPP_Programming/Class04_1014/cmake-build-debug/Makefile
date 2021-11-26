@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5457.51/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
+RM = "/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5457.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014
+CMAKE_SOURCE_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+	"/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5457.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5457.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -115,6 +115,19 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named ex02_new
+
+# Build rule for target.
+ex02_new: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ex02_new
+.PHONY : ex02_new
+
+# fast build rule for target.
+ex02_new/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02_new.dir/build.make CMakeFiles/ex02_new.dir/build
+.PHONY : ex02_new/fast
 
 #=============================================================================
 # Target rules for targets named ex01
@@ -217,6 +230,30 @@ class04ex01.s: class04ex01.cpp.s
 class04ex01.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex01.dir/build.make CMakeFiles/ex01.dir/class04ex01.cpp.s
 .PHONY : class04ex01.cpp.s
+
+class04ex02-new.o: class04ex02-new.cpp.o
+.PHONY : class04ex02-new.o
+
+# target to build an object file
+class04ex02-new.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02_new.dir/build.make CMakeFiles/ex02_new.dir/class04ex02-new.cpp.o
+.PHONY : class04ex02-new.cpp.o
+
+class04ex02-new.i: class04ex02-new.cpp.i
+.PHONY : class04ex02-new.i
+
+# target to preprocess a source file
+class04ex02-new.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02_new.dir/build.make CMakeFiles/ex02_new.dir/class04ex02-new.cpp.i
+.PHONY : class04ex02-new.cpp.i
+
+class04ex02-new.s: class04ex02-new.cpp.s
+.PHONY : class04ex02-new.s
+
+# target to generate assembly for a file
+class04ex02-new.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02_new.dir/build.make CMakeFiles/ex02_new.dir/class04ex02-new.cpp.s
+.PHONY : class04ex02-new.cpp.s
 
 class04ex02.o: class04ex02.cpp.o
 .PHONY : class04ex02.o
@@ -350,11 +387,15 @@ help:
 	@echo "... doWhileSentence"
 	@echo "... ex01"
 	@echo "... ex02"
+	@echo "... ex02_new"
 	@echo "... ifSentence"
 	@echo "... switchSentence"
 	@echo "... class04ex01.o"
 	@echo "... class04ex01.i"
 	@echo "... class04ex01.s"
+	@echo "... class04ex02-new.o"
+	@echo "... class04ex02-new.i"
+	@echo "... class04ex02-new.s"
 	@echo "... class04ex02.o"
 	@echo "... class04ex02.i"
 	@echo "... class04ex02.s"

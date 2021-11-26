@@ -1,4 +1,4 @@
-# Install script for directory: /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014
+# Install script for directory: /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

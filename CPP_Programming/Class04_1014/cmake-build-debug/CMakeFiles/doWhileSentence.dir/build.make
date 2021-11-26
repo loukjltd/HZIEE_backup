@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5457.51/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
+RM = "/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5457.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014
+CMAKE_SOURCE_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/doWhileSentence.dir/depend.make
@@ -68,16 +68,16 @@ include CMakeFiles/doWhileSentence.dir/flags.make
 
 CMakeFiles/doWhileSentence.dir/doWhileSentence.cpp.o: CMakeFiles/doWhileSentence.dir/flags.make
 CMakeFiles/doWhileSentence.dir/doWhileSentence.cpp.o: ../doWhileSentence.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/doWhileSentence.dir/doWhileSentence.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/doWhileSentence.dir/doWhileSentence.cpp.o -c /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/doWhileSentence.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/doWhileSentence.dir/doWhileSentence.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/doWhileSentence.dir/doWhileSentence.cpp.o -c /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/doWhileSentence.cpp
 
 CMakeFiles/doWhileSentence.dir/doWhileSentence.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/doWhileSentence.dir/doWhileSentence.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/doWhileSentence.cpp > CMakeFiles/doWhileSentence.dir/doWhileSentence.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/doWhileSentence.cpp > CMakeFiles/doWhileSentence.dir/doWhileSentence.cpp.i
 
 CMakeFiles/doWhileSentence.dir/doWhileSentence.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/doWhileSentence.dir/doWhileSentence.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/doWhileSentence.cpp -o CMakeFiles/doWhileSentence.dir/doWhileSentence.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/doWhileSentence.cpp -o CMakeFiles/doWhileSentence.dir/doWhileSentence.cpp.s
 
 # Object files for target doWhileSentence
 doWhileSentence_OBJECTS = \
@@ -89,7 +89,7 @@ doWhileSentence_EXTERNAL_OBJECTS =
 doWhileSentence: CMakeFiles/doWhileSentence.dir/doWhileSentence.cpp.o
 doWhileSentence: CMakeFiles/doWhileSentence.dir/build.make
 doWhileSentence: CMakeFiles/doWhileSentence.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable doWhileSentence"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable doWhileSentence"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/doWhileSentence.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -101,6 +101,6 @@ CMakeFiles/doWhileSentence.dir/clean:
 .PHONY : CMakeFiles/doWhileSentence.dir/clean
 
 CMakeFiles/doWhileSentence.dir/depend:
-	cd /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014 /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014 /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles/doWhileSentence.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014 /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014 /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles/doWhileSentence.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doWhileSentence.dir/depend
 

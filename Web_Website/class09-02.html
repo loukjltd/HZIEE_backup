@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字符反转</title>
+	<script>
+		function alterString() {
+            const targetString = document.getElementById("targetString").value;
+            let resultString = targetString.split('').reverse().join('');
+            alert(resultString);
+		}
+	</script>
+</head>
+<body>
+	<label>
+		<input type="text" placeholder="请输入内容" id="targetString">
+		<input type="submit" value="提交" onclick="alterString()">
+	</label>
+</body>
+</html>

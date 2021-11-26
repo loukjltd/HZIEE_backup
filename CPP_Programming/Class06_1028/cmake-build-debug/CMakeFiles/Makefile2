@@ -54,10 +54,10 @@ RM = "/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028
+CMAKE_SOURCE_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -87,14 +87,14 @@ clean: CMakeFiles/q01.dir/clean
 CMakeFiles/Class06_1028.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Class06_1028.dir/build.make CMakeFiles/Class06_1028.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Class06_1028.dir/build.make CMakeFiles/Class06_1028.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target Class06_1028"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target Class06_1028"
 .PHONY : CMakeFiles/Class06_1028.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Class06_1028.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Class06_1028.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Class06_1028.dir/rule
 
 # Convenience name for target.
@@ -113,14 +113,14 @@ CMakeFiles/Class06_1028.dir/clean:
 CMakeFiles/q03.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/q03.dir/build.make CMakeFiles/q03.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/q03.dir/build.make CMakeFiles/q03.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target q03"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target q03"
 .PHONY : CMakeFiles/q03.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/q03.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/q03.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/q03.dir/rule
 
 # Convenience name for target.
@@ -139,14 +139,14 @@ CMakeFiles/q03.dir/clean:
 CMakeFiles/q02.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/q02.dir/build.make CMakeFiles/q02.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/q02.dir/build.make CMakeFiles/q02.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target q02"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target q02"
 .PHONY : CMakeFiles/q02.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/q02.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/q02.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/q02.dir/rule
 
 # Convenience name for target.
@@ -165,14 +165,14 @@ CMakeFiles/q02.dir/clean:
 CMakeFiles/q01.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/q01.dir/build.make CMakeFiles/q01.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/q01.dir/build.make CMakeFiles/q01.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target q01"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target q01"
 .PHONY : CMakeFiles/q01.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/q01.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/q01.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/q01.dir/rule
 
 # Convenience name for target.

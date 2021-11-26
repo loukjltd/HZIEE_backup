@@ -3,8 +3,8 @@ using namespace std;
 
 bool wanshu(int n){
     int i, totalNum = 0;
-    for(i = 1; i < n; i++){
-        if(n % i == 0){
+    for (i = 1; i < n; i++){
+        if (n % i == 0){
             totalNum += i;
         }
     }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项反选</title>
+	<script>
+        function switchCheck() {
+            const targetCheck = document.getElementsByName("courseList");
+            for (let i = 0; i < targetCheck.length; i++) {
+                targetCheck[i].checked = targetCheck[i].checked === false;
+                }
+            }
+	</script>
+</head>
+<body>
+	<label>
+		<input type="checkbox" name="courseList">语文
+		<input type="checkbox" name="courseList">数学
+		<input type="checkbox" name="courseList">英语
+		<input type="checkbox" name="courseList">科学
+		<input type="checkbox" name="courseList">技术
+		<input type="button" value="反选" onclick="switchCheck()">
+	</label>
+</body>
+</html>

@@ -45,24 +45,25 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5457.51/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
+RM = "/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/212.5457.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014
+CMAKE_SOURCE_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/ex02_new.dir/all
 all: CMakeFiles/ex01.dir/all
 all: CMakeFiles/doWhileSentence.dir/all
 all: CMakeFiles/switchSentence.dir/all
@@ -76,6 +77,7 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/ex02_new.dir/clean
 clean: CMakeFiles/ex01.dir/clean
 clean: CMakeFiles/doWhileSentence.dir/clean
 clean: CMakeFiles/switchSentence.dir/clean
@@ -85,20 +87,46 @@ clean: CMakeFiles/Class04_1014.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/ex02_new.dir
+
+# All Build rule for target.
+CMakeFiles/ex02_new.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02_new.dir/build.make CMakeFiles/ex02_new.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02_new.dir/build.make CMakeFiles/ex02_new.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target ex02_new"
+.PHONY : CMakeFiles/ex02_new.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ex02_new.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ex02_new.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/ex02_new.dir/rule
+
+# Convenience name for target.
+ex02_new: CMakeFiles/ex02_new.dir/rule
+.PHONY : ex02_new
+
+# clean rule for target.
+CMakeFiles/ex02_new.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02_new.dir/build.make CMakeFiles/ex02_new.dir/clean
+.PHONY : CMakeFiles/ex02_new.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/ex01.dir
 
 # All Build rule for target.
 CMakeFiles/ex01.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex01.dir/build.make CMakeFiles/ex01.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex01.dir/build.make CMakeFiles/ex01.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target ex01"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target ex01"
 .PHONY : CMakeFiles/ex01.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ex01.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ex01.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/ex01.dir/rule
 
 # Convenience name for target.
@@ -117,14 +145,14 @@ CMakeFiles/ex01.dir/clean:
 CMakeFiles/doWhileSentence.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/doWhileSentence.dir/build.make CMakeFiles/doWhileSentence.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/doWhileSentence.dir/build.make CMakeFiles/doWhileSentence.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target doWhileSentence"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target doWhileSentence"
 .PHONY : CMakeFiles/doWhileSentence.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/doWhileSentence.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/doWhileSentence.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/doWhileSentence.dir/rule
 
 # Convenience name for target.
@@ -143,14 +171,14 @@ CMakeFiles/doWhileSentence.dir/clean:
 CMakeFiles/switchSentence.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/switchSentence.dir/build.make CMakeFiles/switchSentence.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/switchSentence.dir/build.make CMakeFiles/switchSentence.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles --progress-num=11,12 "Built target switchSentence"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles --progress-num=13,14 "Built target switchSentence"
 .PHONY : CMakeFiles/switchSentence.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/switchSentence.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/switchSentence.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/switchSentence.dir/rule
 
 # Convenience name for target.
@@ -169,14 +197,14 @@ CMakeFiles/switchSentence.dir/clean:
 CMakeFiles/ifSentence.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ifSentence.dir/build.make CMakeFiles/ifSentence.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ifSentence.dir/build.make CMakeFiles/ifSentence.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target ifSentence"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles --progress-num=11,12 "Built target ifSentence"
 .PHONY : CMakeFiles/ifSentence.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ifSentence.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ifSentence.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/ifSentence.dir/rule
 
 # Convenience name for target.
@@ -195,14 +223,14 @@ CMakeFiles/ifSentence.dir/clean:
 CMakeFiles/ex02.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ex02.dir/build.make CMakeFiles/ex02.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target ex02"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target ex02"
 .PHONY : CMakeFiles/ex02.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ex02.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ex02.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/ex02.dir/rule
 
 # Convenience name for target.
@@ -221,14 +249,14 @@ CMakeFiles/ex02.dir/clean:
 CMakeFiles/Class04_1014.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Class04_1014.dir/build.make CMakeFiles/Class04_1014.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Class04_1014.dir/build.make CMakeFiles/Class04_1014.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target Class04_1014"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target Class04_1014"
 .PHONY : CMakeFiles/Class04_1014.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Class04_1014.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Class04_1014.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class04_1014/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class04_1014/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Class04_1014.dir/rule
 
 # Convenience name for target.

@@ -57,10 +57,10 @@ RM = "/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028
+CMAKE_SOURCE_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028/cmake-build-debug/CMakeFiles /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028/cmake-build-debug/CMakeFiles /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/C_plus_plus_programming_development/Class06_1028/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class06_1028/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
