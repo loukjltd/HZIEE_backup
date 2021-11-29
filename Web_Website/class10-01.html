@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>某产品</title>
+	<script>
+		function WeekSales() {
+			this.getMonth = [];
+            this.init = init;
+            this.getAverageSomeMonth = getAverageSomeMonth;
+            this.getAverageSomeWeek = getAverageSomeWeek;
+		}
+
+        function init(getMonth) {
+            let i = 0, j = 0, k = 0;
+            for (i = 0; i < getMonth; i ++) {
+                this.getMonth[i] = [];
+                for (j = 0; j < 4; j ++) {
+                    this.getMonth[i][j] = [];
+                    for (k = 0; k < 7; k ++) {
+                        this.getMonth[i][j][k] = Math.random() * 10000;
+                    }
+                }
+            }
+        }
+
+        function getAverageSomeMonth(getMonth) {
+            getMonth = getMonth || 12;
+            console.log(getMonth + "月的日平均销售额是：" + this.getMonth[getMonth - 1].map(function (newArray) {
+                return newArray.reduce(function (num1, num2) {
+                    return num1 + num2;
+                });
+            }).reduce(function (num1, num2) {
+                return num1 + num2;
+            }) / 28);
+        }
+
+        function getAverageSomeWeek(getMonth, getWeek) {
+            getMonth = getMonth || 12;
+            getWeek = getWeek || 1;
+            console.log(getMonth + "月第" + getWeek + "周的日平均销售额是：" +
+	            this.getMonth[getMonth - 1][getWeek - 1].reduce(function (num1, num2) {
+                    return num1 + num2;
+	            }) / 7);
+        }
+
+        const getNewNum = new WeekSales();
+        getNewNum.init(12);
+        getNewNum.getAverageSomeMonth(12);
+        getNewNum.getAverageSomeWeek(12, 4);
+	</script>
+</head>
+<body>
+</body>
+</html>
