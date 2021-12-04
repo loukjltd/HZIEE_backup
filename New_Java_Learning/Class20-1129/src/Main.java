@@ -20,7 +20,8 @@ public class Main {
             Scanner getPassword = new Scanner(System.in);
             String enteredPassword = getPassword.nextLine();
 
-            if ((Objects.equals(enteredUserName, "hziee")) && (Objects.equals(enteredPassword, "edu"))) {
+            if ((Objects.equals(enteredUserName, "219350623")) &&
+                    (Objects.equals(enteredPassword, "Loukj@123"))) {
                 System.out.println("登陆成功！");
                 break;
             } else {
@@ -42,14 +43,14 @@ public class Main {
 
     // 欢迎界面的方法
     public static void welcomeSystem() {
-        ArrayList<Student> stuArray = new ArrayList<Student>();
+        ArrayList<Student> stuArray = new ArrayList<>();
         while (true) {
             System.out.println("-----欢迎来到主界面-----");
-            System.out.println("1.添加学生");
-            System.out.println("2.删除学生");
-            System.out.println("3.修改学生");
-            System.out.println("4.查看所有学生");
-            System.out.println("5.退出");
+            System.out.println("1. 添加学生");
+            System.out.println("2. 删除学生");
+            System.out.println("3. 修改学生");
+            System.out.println("4. 查看所有学生");
+            System.out.println("5. 退出");
             System.out.println("请输入你的选择");
 
             Scanner getOptionNum = new Scanner(System.in);
@@ -127,15 +128,15 @@ public class Main {
         System.out.println("请输入学生新成绩：");
         String newGrade = getStuInfo.nextLine();
 
-        Student s = new Student();
-        s.setStuID(stuID);
-        s.setStuName(newName);
-        s.setStuGrade(newGrade);
+        Student testStuInfo = new Student();
+        testStuInfo.setStuID(stuID);
+        testStuInfo.setStuName(newName);
+        testStuInfo.setStuGrade(newGrade);
 
         int positionIndex = -1;
         for (int i = 0; i < stuArray.size(); i++) {
-            Student student = stuArray.get(i);
-            if (student.getStuID().equals(stuID)) {
+            Student testStu = stuArray.get(i);
+            if (testStu.getStuID().equals(stuID)) {
                 positionIndex = i;
                 break;
             }
@@ -144,7 +145,7 @@ public class Main {
         if (positionIndex == -1) {
             System.out.println("该学生信息不存在!");
         } else {
-            stuArray.set(positionIndex, s);
+            stuArray.set(positionIndex, testStuInfo);
             System.out.println("已成功修改一位学生信息！");
 
         }
@@ -160,7 +161,7 @@ public class Main {
         System.out.println("学号 姓名 成绩");
         for (int i = 0; i < stuArray.size(); i++) {
             Student testStu = stuArray.get(i);
-            System.out.println(testStu.getStuID() + "\t" + testStu.getStuName() + "\t" + testStu.getStuGrade() + "分");
+            System.out.println(testStu.getStuID() + " " + testStu.getStuName() + " " + testStu.getStuGrade() + "分");
         }
     }
 }
