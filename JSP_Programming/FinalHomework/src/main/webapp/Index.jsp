@@ -1,8 +1,7 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>首页</title>
+    <title>主页</title>
     <link rel="stylesheet" href="CSS/Index.css">
 </head>
 <body>
@@ -66,7 +65,7 @@
         <div id="loginPart">
             <img src="${pageContext.request.contextPath}/ImageFiles/SmallLogo.png" alt="Small Logo"/>
             <h2>用户登录/User Login</h2>
-            <div id="userPwd">
+            <div id="userPwdLogin">
                 <form>
                     <label>
                         <span>账户 Username：</span>
@@ -83,6 +82,10 @@
             </div>
         </div>
     </div>
-<%--    <a href="MenuList">点击进入小店</a>--%>
+
+
+
+
+
 </body>
 </html>
