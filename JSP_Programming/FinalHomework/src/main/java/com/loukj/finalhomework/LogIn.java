@@ -26,9 +26,9 @@ public class LogIn extends HttpServlet {
         getPassword = GBK(getPassword);
 
         Statement newSta = null;
-        ResultSet newRst = null;
+        ResultSet newRst;
         Connection newConn = null;
-        PreparedStatement newPrepSta = null;
+        PreparedStatement newPrepSta;
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -71,6 +71,7 @@ public class LogIn extends HttpServlet {
                     e.printStackTrace();
                 }
             }
+
         }
     }
 

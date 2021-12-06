@@ -2,10 +2,22 @@
 <html>
 <head>
     <title>注销登陆</title>
-    <link rel="stylesheet" href="CSS/LogOut.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/LogOut.css">
 </head>
 <body>
     <%@include file="TemplateHead.jsp"%>
-    <h1 style="width: 1000px; height: 50px; margin: 0 auto; padding-top: 20px">恭喜您，退出成功！</h1>
+    <div id="specInfo">
+        <div id="LogOutPart">
+            <img src="${pageContext.request.contextPath}/ImageFiles/SmallLogo.png" alt="Small Logo"/>
+            <h2>退出登录/Log Out</h2>
+            <div id="userLogOut">
+                <form action="LogOut" method="post">
+                    <label>
+                        <input type="submit" value="是否确认？" name="confirmLogOut">
+                    </label>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
