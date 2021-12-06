@@ -42,15 +42,15 @@
             <img src="${pageContext.request.contextPath}/ImageFiles/SmallLogo.png" alt="Small Logo"/>
             <h2>用户登录/User Login</h2>
             <div id="userPwdLogin">
-                <form>
+                <form action="LogIn" method="post">
                     <label>
                         <span>账户 Username：</span>
-                        <input type="text" placeholder="小写英文、数字为组合">
+                        <input type="text" placeholder="小写英文、数字为组合" name="webUserNameLogIn">
                         <br><br>
                         <span>密码 Password：</span>
-                        <input type="password" placeholder="大小写字母、数字及特殊符号">
+                        <input type="password" placeholder="大小写字母、数字及特殊符号" name="webPasswordLogIn">
                         <br><br>
-                        <input type="submit" value="登陆 Login">
+                        <input type="submit" value="登陆 Login" name="loginInfo">
                         <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                         <input type="reset" value="重新填写 Reset">
                     </label>

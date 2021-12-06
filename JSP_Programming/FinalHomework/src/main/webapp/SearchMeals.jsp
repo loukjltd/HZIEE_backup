@@ -40,7 +40,7 @@
                         <a href="#">
                             <img src="ImageFiles/干煸四季豆.jpeg" alt="Main Image">
                             <h3>干煸四季豆</h3>
-                            <p class="englishName">Stir-fried green beans</p>
+                            <p class="englishName">Stir-fried Green Beans</p>
                             <p class="price">￥8</p>
                         </a>
                     </li>
