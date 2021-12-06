@@ -6,13 +6,13 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.sql.*;
+import java.util.Objects;
 
-
-@WebServlet(name = "Register", value = "/Register")
-public class Register extends HttpServlet {
+@WebServlet(name = "LogIn", value = "/LogIn")
+public class LogIn extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("Register.jsp");
+
     }
 
     @Override
@@ -20,13 +20,15 @@ public class Register extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
 
-        String getUserName = request.getParameter("webUserNameReg");
+        String getUserName = request.getParameter("webUserNameLogIn");
         getUserName = GBK(getUserName);
-        String getPassword = request.getParameter("webPasswordReg");
+        String getPassword = request.getParameter("webPasswordLogIn");
         getPassword = GBK(getPassword);
 
-        PreparedStatement newPrepSta = null;
+        Statement newSta = null;
+        ResultSet newRst = null;
         Connection newConn = null;
+        PreparedStatement newPrepSta = null;
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -35,17 +37,29 @@ public class Register extends HttpServlet {
             String sqlPassword = "root";
             newConn = DriverManager.getConnection(url, sqlUserName, sqlPassword);
 
-            String sqlInsertLang = "INSERT INTO basicinfo(username, password) VALUES(?,?)";
-            newPrepSta = newConn.prepareStatement(sqlInsertLang);
-            newPrepSta.setString(1, getUserName);
-            newPrepSta.setString(2, getPassword);
-            newPrepSta.executeUpdate();
+            newSta = newConn.createStatement();
+            String sqlSelectLang = "SELECT * FROM basicinfo";
+            String sqlInsertLang = "INSERT INTO loggedin(username, password) VALUES(?,?)";
+            assert false;
+            newRst = newSta.executeQuery(sqlSelectLang);
+
+            System.out.println("userName password");
+            while (newRst.next()) {
+                if (Objects.equals(newRst.getString("username"), getUserName) &&
+                        Objects.equals(newRst.getString("password"), getPassword)) {
+                    newPrepSta = newConn.prepareStatement(sqlInsertLang);
+                    newPrepSta.setString(1, getUserName);
+                    newPrepSta.setString(2, getPassword);
+                    newPrepSta.executeUpdate();
+                    response.sendRedirect("LogIn.jsp");
+                }
+            }
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         } finally {
-            if (newPrepSta != null) {
+            if (newSta != null) {
                 try {
-                    newPrepSta.close();
+                    newConn.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -58,8 +72,6 @@ public class Register extends HttpServlet {
                 }
             }
         }
-
-        response.sendRedirect("RegisterSuccess.jsp");
     }
 
     private String GBK(String properties) {
@@ -67,4 +79,3 @@ public class Register extends HttpServlet {
         return properties;
     }
 }
-
