@@ -26,7 +26,7 @@ public class LogOut extends HttpServlet {
             newConn = JdbcUtils.getConnection();
             newSta = newConn.createStatement();
 
-            String sqlDelLang = "DELETE FROM loggedin WHERE userno = 1";
+            String sqlDelLang = "DELETE FROM loggedin";
             assert false;
             newSta.executeUpdate(sqlDelLang);
         } catch (ClassNotFoundException | SQLException e) {

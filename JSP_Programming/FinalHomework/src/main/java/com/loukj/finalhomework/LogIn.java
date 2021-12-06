@@ -31,11 +31,8 @@ public class LogIn extends HttpServlet {
         PreparedStatement newPrepSta;
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/userinfo";
-            String sqlUserName = "root";
-            String sqlPassword = "root";
-            newConn = DriverManager.getConnection(url, sqlUserName, sqlPassword);
+            newConn = JdbcUtils.getConnection();
+            newSta = newConn.createStatement();
 
             newSta = newConn.createStatement();
             String sqlSelectLang = "SELECT * FROM basicinfo";
@@ -43,7 +40,6 @@ public class LogIn extends HttpServlet {
             assert false;
             newRst = newSta.executeQuery(sqlSelectLang);
 
-            System.out.println("userName password");
             while (newRst.next()) {
                 if (Objects.equals(newRst.getString("username"), getUserName) &&
                         Objects.equals(newRst.getString("password"), getPassword)) {
