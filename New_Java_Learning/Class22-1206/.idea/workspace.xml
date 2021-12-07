@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="237176a2-f031-448e-9ac3-4bbcadb1aede" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Exercise06_03.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSP_Programming/FinalHomework/src/main/webapp/Index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../JSP_Programming/FinalHomework/src/main/webapp/Index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JSP_Programming/FinalHomework/target/FinalHomework-1.0-SNAPSHOT/Index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../JSP_Programming/FinalHomework/target/FinalHomework-1.0-SNAPSHOT/Index.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="237176a2-f031-448e-9ac3-4bbcadb1aede" name="变更" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +39,7 @@
       <option name="presentableId" value="Default" />
       <updated>1638786907408</updated>
       <workItem from="1638786909287" duration="1060000" />
+      <workItem from="1638848494401" duration="78000" />
     </task>
     <servers />
   </component>
@@ -59,5 +56,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
