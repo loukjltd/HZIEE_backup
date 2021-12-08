@@ -53,14 +53,14 @@
     line-height: 50px;
     font-size: 19px;
 }
-#specInfo #loginPart #userPwdLogin {
+#specInfo #loginPart #removeNamePrice {
     padding-left: 20px;
 }
-#specInfo #loginPart #userPwdLogin span {
+#specInfo #loginPart #removeNamePrice span {
     font-size: 16px;
     line-height: 10px;
 }
-#specInfo #loginPart #userPwdLogin input {
+#specInfo #loginPart #removeNamePrice input {
     width: 200px;
     height: 30px;
 }

@@ -34,7 +34,6 @@ public class LogIn extends HttpServlet {
             newConn = JdbcUtils.getConnection();
             newSta = newConn.createStatement();
 
-            newSta = newConn.createStatement();
             String sqlSelectLang = "SELECT * FROM basicinfo";
             String sqlInsertLang = "INSERT INTO loggedin(username, password) VALUES(?,?)";
             assert false;
@@ -48,26 +47,15 @@ public class LogIn extends HttpServlet {
                     newPrepSta.setString(2, getPassword);
                     newPrepSta.executeUpdate();
                     response.sendRedirect("LogIn.jsp");
+                } else if (Objects.equals("admin", getUserName) && Objects.equals("admin", getPassword)) {
+                    RequestDispatcher newDispatcher = getServletContext().getRequestDispatcher("/WEB-INF/AdminManager.jsp");
+                    newDispatcher.forward(request, response);
                 }
             }
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         } finally {
-            if (newSta != null) {
-                try {
-                    newConn.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (newConn != null) {
-                try {
-                    newConn.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-
+            JdbcUtils.release(null, newSta, newConn);
         }
     }
 

@@ -1,3 +1,76 @@
+#topTitle {
+    margin: 0 auto;
+    width: 1000px;
+    height: 100px;
+    line-height: 100px;
+    color: #1869A8;
+}
+
+#updatePart {
+    width: 1000px;
+    height: 400px;
+    margin: 0 auto;
+}
+#updatePart #addPart {
+    width: 500px;
+    height: 300px;
+    float: left;
+    background: ghostwhite;
+}
+#updatePart #addPart img{
+    padding-left: 20px;
+    width: 50px;
+    height: 30px;
+    float: left;
+    margin-top: 30px;
+}
+#updatePart #addPart h2 {
+    height: 50px;
+    line-height: 50px;
+    font-size: 19px;
+}
+#updatePart #addPart #addNamePrice {
+    padding-left: 20px;
+}
+#updatePart #addPart #addNamePrice span {
+    font-size: 16px;
+    line-height: 10px;
+}
+#updatePart #addPart #addNamePrice input {
+    width: 200px;
+    height: 30px;
+}
+
+#updatePart #removePart {
+    width: 500px;
+    height: 300px;
+    float: left;
+    background: lightgray;
+}
+#updatePart #removePart img{
+    padding-left: 20px;
+    width: 50px;
+    height: 30px;
+    float: left;
+    margin-top: 30px;
+}
+#updatePart #removePart h2 {
+    height: 50px;
+    line-height: 50px;
+    font-size: 19px;
+}
+#updatePart #removePart #removeNamePrice {
+    padding-left: 20px;
+}
+#updatePart #removePart #removeNamePrice span {
+    font-size: 16px;
+    line-height: 10px;
+}
+#updatePart #removePart #removeNamePrice input {
+    width: 200px;
+    height: 30px;
+}
+
 #menuList {
     width: 1000px;
     height: 1200px;
@@ -80,15 +153,6 @@
     margin: 0 0 10px;
     font-size: 12px;
     color: #FF6700;
-    text-align: center;
-    line-height: 21px;
-}
-#menuList #menuPart ul li a a.addToCart {
-    width: 194px;
-    height: 21px;
-    margin: 0 0 10px;
-    font-size: 12px;
-    color: gray;
     text-align: center;
     line-height: 21px;
 }

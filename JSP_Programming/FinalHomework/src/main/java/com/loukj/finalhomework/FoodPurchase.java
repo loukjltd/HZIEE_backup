@@ -14,7 +14,7 @@ public class FoodPurchase extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String foodNo = request.getParameter("foodNo");
         if (foodNo == null) {
-            String url = "FoodList";
+            String url = "SearchMeals";
             response.sendRedirect(url);
             return;
         }
@@ -22,7 +22,7 @@ public class FoodPurchase extends HttpServlet {
         HttpSession newSession = request.getSession();
         List<FoodInfo> foodInfoList = (List)newSession.getAttribute("foodInfoList");
         if (foodInfoList == null) {
-            foodInfoList = new ArrayList<FoodInfo>();
+            foodInfoList = new ArrayList<>();
             newSession.setAttribute("foodInfoList", foodInfoList);
         }
         foodInfoList.add(getFood);
@@ -30,7 +30,7 @@ public class FoodPurchase extends HttpServlet {
         newCookie.setMaxAge(60 * 30);
         newCookie.setPath("/");
         response.addCookie(newCookie);
-        String url = "/AddCart";
+        String url = "AddCart";
         response.sendRedirect(url);
     }
 

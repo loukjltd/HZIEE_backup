@@ -19,7 +19,7 @@
             <li>|</li>
             <li><a href="FindPassword">找回密码</a></li>
             <li>|</li>
-            <li><a href="SearchMeals">餐点搜索</a></li>
+            <li><a href="SearchMeals">菜单查看</a></li>
             <li>|</li>
             <li><a href="AddCart">购物车</a></li>
             <li>|</li>

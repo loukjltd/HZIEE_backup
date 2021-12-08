@@ -1,0 +1,102 @@
+#purchasedList {
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+}
+#purchasedList #purchasedPart {
+    width: 1000px;
+    height: 1000px;
+    float: left;
+    background: ghostwhite;
+}
+#purchasedList #purchasedPart img{
+    padding-left: 20px;
+    width: 50px;
+    height: 30px;
+    float: left;
+    margin-top: 30px;
+}
+#purchasedList #purchasedPart h2 {
+    height: 50px;
+    line-height: 50px;
+    font-size: 19px;
+}
+
+#purchasedList #purchasedPart ul {
+    width: 1000px;
+    height: 340px;
+    list-style: none;
+}
+#purchasedList #purchasedPart ul > h2 {
+    height: 50px;
+    line-height: 50px;
+    font-size: 19px;
+}
+#purchasedList #purchasedPart ul a {
+    text-decoration: underline 1px blue;
+}
+#purchasedList #purchasedPart ul li {
+    width: 200px;
+    height: 300px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    background-color: white;
+    float: left;
+    box-shadow: 0 3px 3px lightgray;
+}
+#purchasedList #purchasedPart ul li a {
+    display: block;
+    width: 200px;
+    height: 300px;
+    padding-top: 39px;
+    text-decoration: none;
+}
+#purchasedList #purchasedPart ul li a img {
+    display: block;
+    width: 160px;
+    height: 166px;
+    margin: 0 auto 0;
+}
+#purchasedList #purchasedPart ul li a h3 {
+    width: 194px;
+    height: 21px;
+    margin: 0 0 3px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #212121;
+    text-align: center;
+    line-height: 21px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#purchasedList #purchasedPart ul li a p.englishName {
+    width: 194px;
+    height: 18px;
+    margin: 0 0 12px;
+    font-size: 12px;
+    color: #B0B0B0;
+    text-align: center;
+    line-height: 18px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#purchasedList #purchasedPart ul li a p.price {
+    width: 194px;
+    height: 21px;
+    margin: 0 0 10px;
+    font-size: 12px;
+    color: #FF6700;
+    text-align: center;
+    line-height: 21px;
+}
+#purchasedList #purchasedPart ul li a a.addToCart {
+    width: 194px;
+    height: 21px;
+    margin: 0 0 10px;
+    font-size: 12px;
+    color: gray;
+    text-align: center;
+    line-height: 21px;
+}
