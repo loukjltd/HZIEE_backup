@@ -1,0 +1,31 @@
+.titleAuthor {
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+}
+.titleAuthor .titleDetail {
+    font-size: 24px;
+    color: #0E5D98;
+    text-align: center;
+    line-height: 80px;
+}
+.titleAuthor .authorDetail {
+    font-size: 14px;
+    color: #8D9596;
+    text-align: center;
+    line-height: 50px;
+}
+
+.detailInfo {
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+}
+.detailInfo > p {
+    text-indent: 2pc;
+    line-height: 32px;
+}
+.detailInfo > img {
+    width: 1000px;
+    height: 100%;
+}

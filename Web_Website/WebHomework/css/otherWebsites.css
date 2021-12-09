@@ -1,0 +1,60 @@
+.otherWebsites{
+    width: 100%;
+    min-width: 1200px;
+
+}
+.otherWebsites .otherWebsitesContent{
+    width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+    background-color: #E2E2E2;
+}
+
+.otherWebsites .otherWebsitesContent .otherGroupOne{
+    margin-left: 10px;
+    width: 400px;
+    height: 80px;
+    float: left;
+}
+.otherWebsites .otherWebsitesContent .otherGroupOne ul{
+    width: 400px;
+    height: 80px;
+    float: left;
+}
+.otherWebsites .otherWebsitesContent .otherGroupOne ul li{
+    line-height: 80px;
+    list-style: none;
+    float: left;
+}
+.otherWebsites .otherWebsitesContent .otherGroupOne ul li a{
+    font-size: 14px;
+    font-weight: bold;
+    color: #1769A7;
+    margin: 20px;
+}
+.otherWebsites .otherWebsitesContent .otherGroupTwo{
+    width: 750px;
+    height: 80px;
+    float: left;
+    /*background-color: #FFE035;*/
+}
+.otherWebsites .otherWebsitesContent .otherGroupTwo ul{
+    width: 600px;
+    height: 80px;
+    float: right;
+}
+.otherWebsites .otherWebsitesContent .otherGroupTwo ul li{
+    line-height: 80px;
+    list-style: none;
+    float: left;
+    margin: auto 18px;
+}
+.otherWebsites .otherWebsitesContent .otherGroupTwo ul li img{
+    width: 30px;
+    height: 30px;
+}
+.otherWebsites .otherWebsitesContent .otherGroupTwo ul li a{
+    font-size: 14px;
+    font-weight: bold;
+    color: #1769A7;
+}

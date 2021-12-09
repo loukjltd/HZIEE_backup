@@ -1,0 +1,12 @@
+INSERT INTO `foodinfo` (`foodno`, `foodname`, `foodname_eng`, `price`) VALUES (1, '口水猪肝', 'The Saliva Pork Liver', '￥23');
+INSERT INTO `foodinfo` (`foodno`, `foodname`, `foodname_eng`, `price`) VALUES (2, '姜爆鸭子', 'Ginger Duck Blasting', '￥18');
+INSERT INTO `foodinfo` (`foodno`, `foodname`, `foodname_eng`, `price`) VALUES (3, '家常干锅排骨', 'Homemade Dry Pot Ribs', '￥32');
+INSERT INTO `foodinfo` (`foodno`, `foodname`, `foodname_eng`, `price`) VALUES (4, '干煸四季豆', 'Stir-fried Green Beans', '￥8');
+INSERT INTO `foodinfo` (`foodno`, `foodname`, `foodname_eng`, `price`) VALUES (5, '重庆豆花鱼', 'Chongqing Bean Fish', '￥98');
+INSERT INTO `foodinfo` (`foodno`, `foodname`, `foodname_eng`, `price`) VALUES (6, '红油蒜泥肘花', 'Cubit Flower Of Garlic In Red Oil', '￥1');
+INSERT INTO `foodinfo` (`foodno`, `foodname`, `foodname_eng`, `price`) VALUES (7, '麻辣鱼', 'Spicy Fish', '￥2');
+INSERT INTO `foodinfo` (`foodno`, `foodname`, `foodname_eng`, `price`) VALUES (8, '麻婆豆腐', 'The Bean Curd', '￥3');
+INSERT INTO `foodinfo` (`foodno`, `foodname`, `foodname_eng`, `price`) VALUES (9, '魔芋烧鸭', 'Braised Duck With Shredded Konjak', '￥4');
+INSERT INTO `foodinfo` (`foodno`, `foodname`, `foodname_eng`, `price`) VALUES (10, '魔芋鸭子', 'Konjac Duck', '￥88');
+INSERT INTO `foodinfo` (`foodno`, `foodname`, `foodname_eng`, `price`) VALUES (11, '铁板豆腐', 'The Sizzling Bean Curd', '￥79');
+INSERT INTO `foodinfo` (`foodno`, `foodname`, `foodname_eng`, `price`) VALUES (12, '自制烟熏腊肉', 'Homemade Smoked Bacon', '￥188');

@@ -1,0 +1,126 @@
+.scienceNavBar{
+	width: 100%;
+	min-width: 1200px;
+	height: 40px;
+}
+
+.scienceNavBar .content{
+	width: 1200px;
+	height: 220px;
+	margin: 0 auto;
+	background-color:#1769a7;
+	position: relative;
+}
+
+.scienceNavBar .content .scienceImg{
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.scienceNavBar .content .scienceImg img{
+	display: block;
+	width: 1200px;
+	height: 200px;
+	position: absolute;
+	top: 40px;
+}
+
+.scienceNavBar .content .scienceImg img:nth-child(1){
+	display: block;
+}
+
+
+.scienceNavBar .content .scienceImg div{
+	width: 41.5px;
+	height: 69px;
+	background-image: url(../img/image/icon-slides.png);
+	position: absolute;
+	top: 195.5px;
+}
+
+.scienceNavBar .content .scienceImg div .left{
+	left: 234px;
+	background-position: -83px;
+
+}
+
+.scienceNavBar .content .scienceImg div.left:hover{
+	background-position: 0px;
+}
+
+.scienceNavBar .content .scienceImg div.right{
+	right: 0;
+	background-position: -124.5px;
+}
+
+.scienceNavBar .content .scienceImg div.right:hover{
+	background-position: -41.5px;
+}
+
+.scienceNavBar .content .scienceImg ul{
+	display: inline-block;
+	position: absolute;
+	right: 30px;
+	bottom: -10px;
+}
+
+.scienceNavBar .content .scienceImg ul li{
+	width: 10px;
+	height: 10px;
+	float: left;
+	list-style: none;
+	border-radius: 50%;
+	margin: 0 4px;
+
+}
+
+.scienceNavBar .content .scienceImg ul li.seleted{
+	border: 2px solid rgba(0,0,0,0.4);
+	background-color: #ff4019;
+}
+
+.scienceNavBar .content .scienceImg ul li.nomal{
+	border: 2px solid rgba(255,255,255,0.4);
+	background-color: rgba(0,0,0,0.4);
+}
+
+
+.scienceNavBar .content .texts{
+	width: 1200px;
+	height: 40px;
+	position: absolute;
+	margin: 0 auto;
+	top: 0px;
+}
+
+
+
+.scienceNavBar .content .texts ul{
+	top: 40px;
+
+}
+
+.scienceNavBar .content .texts ul li{
+	display: inline-block;
+	list-style: none;
+	float: left;
+	margin: 0 auto;
+}
+
+.scienceNavBar .content .texts ul li a{
+	display: inline-block;
+	padding: 0 34px;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	font-size: 16px;
+	margin: 0 auto;
+}
+
+
+
+
+
+

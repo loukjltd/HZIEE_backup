@@ -1,0 +1,45 @@
+.specialRec{
+    width: 100%;
+    min-width: 1200px;
+}
+.specialRec .specialContent{
+    width: 1200px;
+    height: 180px;
+    margin: 0 auto;
+    /*background-color: #FF0000;*/
+}
+.specialRec .specialContent .specialHead{
+    width: 1200px;
+    height: 35px;
+    /*background-color: #00FF00;*/
+}
+.specialRec .specialContent .specialHead img{
+    float: left;
+    /*background-color: #FFE035;*/
+}
+.specialRec .specialContent .specialHead h2{
+    float: left;
+}
+.specialRec .specialContent .specialModules{
+    width: 1200px;
+    height: 137px;
+    /*background-color: powderblue;*/
+}
+.specialRec .specialContent .specialModules ul{
+    width: 1200px;
+    height: 137px;
+}
+.specialRec .specialContent .specialModules ul li{
+    list-style: none;
+    float: left;
+}
+.specialRec .specialContent .specialModules ul li a img{
+    width: 185px;
+    height: 83px;
+    margin: auto 27px;
+}
+.specialRec .specialContent .specialModules ul li a p{
+    text-align: center;
+    color: #1769A7;
+    font-size: 14px;
+}

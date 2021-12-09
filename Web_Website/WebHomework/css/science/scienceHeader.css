@@ -1,0 +1,144 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	cursor: pointer;
+}
+
+.box{
+	width: 100%;
+	min-width: 1200px;
+}
+
+.header{
+	/* 需要注释掉 */
+	/* background-color: tan; */
+	height: 131px;
+	padding: 10px;
+}
+
+.header .content{
+	width: 1200px;
+	height: 100%;
+	/* 需要注释掉 */
+	/* background-color: teal; */
+	margin: 0 auto;
+}
+
+.header .content .content-1{
+	width: 1200px;
+	height: 131px;
+	/* 需要注释掉 */
+	/* background-color: thistle; */
+	margin: 0px 11px ;
+	position: relative;
+}
+
+.header .content .content-1 .scienceWindow1{
+	width: 362px;
+	height: 111px;
+	margin: 0px 10px;
+	/* 需要注释掉 */
+	/* background-color: turquoise; */
+	padding: 21px 0;
+	position: absolute;
+}
+
+.header .content .content-1 .scienceWindow1 img{
+	display: block;
+	width: 352px;
+	height: 68px;
+	/* 需要注释掉 */
+	/* background-color: tomato; */
+	float: left;
+}
+
+.header .content .content-1 .scienceWindow2{
+	width: %26;
+	margin-right: 10px;
+	margin-bottom: 12px;
+	/* 需要注释掉 */
+	/* background-color: hotpink; */
+	position: absolute;
+	top: 44px;
+	right: 0;
+}
+
+.header .content .content-1 .scienceWindow2-1{
+	border: 1px solid #d7d7d7;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.header .content .content-1 .scienceWindow2-1 form{
+	display: block;
+	width: 211px;
+	height: 28px;
+	/* 需要注释掉 */
+	/* background-color: lawngreen; */
+	float: right;
+}
+
+.header .content .content-1 .scienceWindow2-1 form input:nth-child(1){
+	height: 20px;
+	padding: 8px 10px 0px 10px;
+	outline: none;
+	border: 1px solid #E0E0E0;
+	border-right: none;
+	float: left;
+}
+
+.header .content .content-1 .scienceWindow2-1 form button{
+	width: 30px;
+	height: 28px;
+	padding: 9px;
+}
+
+.header .content .content-1 .scienceWindow3{
+	width: 240px;
+	height: 36px;
+	/* 需要注释掉 */
+	/* background-color: brown; */
+	float: left;
+	margin-bottom: 12px;
+	margin-right: 6px;
+	position: absolute;
+	right: 29%;
+	top: 31%;
+	margin: 0 auto;
+}
+
+.header .content .content-1 .scienceWindow3-1{
+	width: 250px;
+	height: 26px;
+	/* 需要注释掉 */
+	/* background-color: aqua; */
+}
+
+.header .content .content-1 .scienceWindow3-1 ul{
+	list-style: none;
+	float: left;
+	height: 10px;
+}
+
+.header .content .content-1 .scienceWindow3-1 ul li{
+	display: inline-block;
+	float: left;
+	line-height: 25px;
+	font-size: 14px;
+	color: #737373;
+	margin: 0 6px;
+}
+
+.header .content .content-1 .scienceWindow3-1 ul li a{
+	color: #737373;
+}
+
+.header .content .content-1 .scienceWindow3-1 ul li a:hover{
+	color: orange;
+}
+
+
+

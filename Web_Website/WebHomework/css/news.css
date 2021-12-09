@@ -1,0 +1,173 @@
+.news .newsContent{;
+    width: 1200px;
+    height: 500px;
+    margin: 50px auto 15px;
+}
+
+
+.news .newsContent .recNews{
+    width: 312px;
+    height: 400px;
+    /*background-color: #00FF00;*/
+    float: left;
+}
+.news .newsContent .recNews .recNewsTop{
+    width: 312px;
+    height: 50px;
+    background-color: #1769A7;
+
+}
+.news .newsContent .recNews .recNewsTop p{
+    color: white;
+    font-size: 19px;
+    line-height: 50px;
+    padding-left: 10px;
+}
+.news .newsContent .recNews .recNewsTop .recNewsImage img{
+    width: 312px;
+    height: 168px;
+}
+.news .newsContent .recNews .recNewsText{
+    width: 312px;
+    height: 144px;
+    /*background-color: #FF0000;*/
+    margin-top: 180px;
+}
+.news .newsContent .recNews .recNewsText p{
+    color: #1769A7;
+    font-size: 14px;
+    line-height: 25px;
+}
+.news .newsContent .recNews .recNewsLearnMore{
+    width: 312px;
+    height: 24px;
+}
+.news .newsContent .recNews .recNewsLearnMore a{
+    color: #999999;
+    font-size: 12px;
+    line-height: 50px;
+    text-align: right;
+    margin-right: 20px;
+    text-decoration: none;
+    float: right;
+}
+
+.news .newsContent .newsPartOne{
+    width: 420px;
+    height: 300px;
+    float: left;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.news .newsContent .newsPartOne img{
+    float: left;
+}
+.news .newsContent .newsPartOne h1{
+    float: left;
+}
+.news .newsContent .newsPartOne ul{
+    list-style: none;
+}
+.news .newsContent .newsPartOne ul li{
+    line-height: 30px;
+}
+.news .newsContent .newsPartOne ul li a{
+    color: #1769A7;
+    font-size: 14px;
+    text-decoration: none;
+    float: left;
+}
+.news .newsContent .newsPartOne ul li p{
+    color: #999999;
+    font-size: 14px;
+    float: right;
+}
+
+
+.news .newsContent .newsPartTwo{
+    width: 360px;
+    height: 300px;
+    float: left;
+}
+.news .newsContent .newsPartTwo img{
+    float: left;
+}
+.news .newsContent .newsPartTwo h1{
+    float: left;
+}
+.news .newsContent .newsPartTwo ul{
+    list-style: none;
+}
+.news .newsContent .newsPartTwo ul li{
+    line-height: 30px;
+}
+.news .newsContent .newsPartTwo ul li a{
+    color: #1769A7;
+    font-size: 14px;
+    text-decoration: none;
+    float: left;
+}
+.news .newsContent .newsPartTwo ul li p{
+    color: #999999;
+    font-size: 14px;
+    float: right;
+}
+
+.news .newsContent .newsPartThree{
+    width: 420px;
+    height: 100px;
+    float: left;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.news .newsContent .newsPartThree img{
+    float: left;
+}
+.news .newsContent .newsPartThree h1{
+    float: left;
+}
+.news .newsContent .newsPartThree ul{
+    list-style: none;
+}
+.news .newsContent .newsPartThree ul li{
+    line-height: 30px;
+}
+.news .newsContent .newsPartThree ul li a{
+    color: #1769A7;
+    font-size: 14px;
+    text-decoration: none;
+}
+.news .newsContent .newsPartThree ul li p{
+    color: #999999;
+    font-size: 14px;
+    float: right;
+}
+
+.news .newsContent .newsPartFour{
+    width: 360px;
+    height: 100px;
+    float: left;
+}
+.news .newsContent .newsPartFour img{
+    float: left;
+}
+.news .newsContent .newsPartFour h1{
+    float: left;
+}
+.news .newsContent .newsPartFour ul{
+    list-style: none;
+}
+.news .newsContent .newsPartFour ul li{
+    line-height: 31px;
+}
+.news .newsContent .newsPartFour ul li a{
+    color: #1769A7;
+    font-size: 14px;
+    text-decoration: none;
+    float: left;
+}
+.news .newsContent .newsPartFour ul li p{
+    color: #999999;
+    font-size: 14px;
+    float: right;
+}

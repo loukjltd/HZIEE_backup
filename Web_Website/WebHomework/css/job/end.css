@@ -1,0 +1,81 @@
+.end{
+	width: 100%;
+	height: 126px;
+	background-color: #0E5D98;
+}
+
+.end .content{
+	width: 1200px;
+	height: 126px;
+	margin: 0 auto;
+	/* 需要注释掉 */
+	/* background-color:tan; */
+	position: relative;
+}
+
+.end .content .photos{
+	width: 100%;
+	height: 100%;
+	top: 10px;
+	bottom: 40px;
+	left: 10px;
+}
+
+.end .content .photos img{
+	display: block;
+	position: absolute;
+	top: 20px;
+	left: 10px;
+}
+
+.end .content .texts ul{
+	display: inline-block;
+	list-style: none;
+	float: right;
+	margin: 0 auto;
+	position: relative;
+}
+
+.end .content .texts ul.left{
+	width: 800px;
+	height: 24px;
+	float: right;
+	position: absolute;
+	top: 20px;
+	left: 350px;
+}
+
+.end .content .texts ul.left li{
+	float: right;
+	padding: 0 5px;
+	color: #fdfdfd;
+	margin: 10px 0;
+	font-size: 14px;
+	text-align: center;
+}
+
+.end .content .texts ul.right{
+	width: 800px;
+	height: 24px;
+	float: right;
+	position: absolute;
+	top: 40px;
+	left: 300px;
+	text-align: center;
+}
+
+.end .content .texts ul.right li{
+	float: right;
+	padding: 0 15px;
+	color: #cfdfea;
+	margin: 10px 0;
+	font-size: 14px;
+	text-align: center;
+	line-height: 24px;
+}
+
+.end .content .texts ul.right img{
+	position: absolute;
+	left: 556px;
+	top: 8px;
+}

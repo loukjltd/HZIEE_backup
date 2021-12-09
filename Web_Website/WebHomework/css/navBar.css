@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    cursor: pointer;
+}
+
+.jhc{
+    width: 100%;
+    min-width: 1200px;
+}
+.topLogoSearch{
+    width: 1200px;
+    height: 132px;
+    /*background-color: #FF6700;*/
+    margin: 0 auto;
+}
+
+.topLogoSearch .logo{
+    width: 352px;
+    height: 68px;
+    /*background-color: #00FF00;*/
+    margin-top: 34px;
+    float: left;
+}
+.topLogoSearch form{
+    width: 310px;
+    height: 28px;
+    float: right;
+    margin-top: 52px;
+    /*background-color: #FF0000;*/
+}
+.topLogoSearch form input{
+    width: 250px;
+    height: 26px;
+    outline: none;
+    padding: 0 10px;
+    border: #D7D7D7 solid 1px;
+    float: left;
+}
+.topLogoSearch form button{
+    width: 36px;
+    height: 28px;
+    outline: none;
+    border: #FFE035 solid 1px;
+    background-color: #FFE035;
+    font-size: 26px;
+}

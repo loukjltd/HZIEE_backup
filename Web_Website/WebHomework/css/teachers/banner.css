@@ -1,0 +1,120 @@
+.navBar{
+	width: 100%;
+	min-width: 1226px;
+	height: 40px;
+	/*需要注释掉*/
+	/* background-color: tan; */
+}
+.navBar .content{
+	width: 1200px;
+	height: 100%;
+	/*需要注释掉*/
+	/* background-color: teal; */
+	margin: 0 auto;
+	position: relative;
+}
+.navBar .content .images{
+	width: 100%;
+	height: 240px;
+	/*需要注释掉*/
+	/* background-color: thistle; */
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.navBar .content .images img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.navBar .content .images img:nth-child(2){
+	display: block;
+}
+.navBar .content .images div{
+	width: 41px;
+	height: 69px;
+	background-image: url(../img/img/icon-slides.png);
+	position: absolute;
+	top: 100px;	
+}
+.navBar .content .images div.left{
+	left: 0px;
+	background-position-x: -83px;
+	
+}
+.navBar .content .images div.left:hover{
+	background-position-x: 0px;
+}
+.navBar .content .images div.right{
+	right: 0;
+	background-position-x: -124.5px;
+}
+.navBar .content .images div.right:hover{
+	background-position-x:-41.5px;
+}
+.navBar .content .images ul{
+	display: inline-block;
+	/* 需要注释 */
+	/* background-color: turquoise; */
+	position: absolute;
+	right: 10px;
+	bottom: 8px;
+}
+.navBar .content .images ul li{
+	width: 8px;
+	height: 8px;
+	float: left;
+	list-style: none;
+	border-radius: 50%;
+	margin: 0 4px;
+
+}
+.navBar .content .images ul li.seleted{
+	border: 0px solid rgba(0,0,0,0.4);
+	background-color: #FF4019;	
+}
+.navBar .content .images ul li.normal{
+	border: 0px solid rgba(255,255,255,0.4);
+	background-color: rgba(0,0,0,0.4);	
+}
+.navBar .content .images ul li.normal:hover{
+	border: 0px solid rgba(0,0,0,0.4);
+	background-color: rgba(255,255,255,0.4);
+}
+
+.navBar .content .texts{
+	display: block;
+}
+.navBar .content .texts ul{
+	margin: 0 auto;
+	list-style: none;
+	display: block;
+
+	
+}
+.navBar .content .texts ul li{
+	display: inline-block;
+	float: left;
+	position: relative;
+	z-index: 100;
+	background-color: #0E5D98;
+}
+.navBar .content .texts ul li a{
+	display: inline-block;
+	padding: 0 34px;
+	height: 40px;
+	line-height: 40px;
+	color: #FFFFFF;
+	font-size: 16px;
+}
+.navBar .content .texts ul li a:hover{
+	color: #FFFFFF;
+	background-color: #1769A7;
+}
+
+
+

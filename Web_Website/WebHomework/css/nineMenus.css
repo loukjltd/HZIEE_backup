@@ -1,0 +1,25 @@
+.nineMenus .menuContent{
+    width: 1200px;
+    height: 40px;
+    background-color: #1769A7;
+    margin: 0 auto;
+}
+.nineMenus .menuContent ul{
+    list-style: none;
+    float: left;
+    height: 40px;
+    padding: 0 34px;
+}
+.nineMenus .menuContent ul li{
+    float: left;
+    padding: 0 30px;
+    line-height: 40px;
+    font-size: 16px;
+}
+.nineMenus .menuContent ul li a{
+    color: white;
+    text-decoration: none;
+}
+.nineMenus .menuContent ul li:hover{
+    background-color: #3597C5;
+}

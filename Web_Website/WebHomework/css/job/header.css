@@ -1,0 +1,128 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	cursor: pointer;
+}
+
+.box{
+	width: 100%;
+	min-width: 1226px;
+}
+
+.header{
+	/* 需要注释掉 */
+	/* background-color: tan; */
+	height: 114px;
+}
+
+.header .top_nav{
+	width: 1200px;
+	height: 100%;
+	/* 需要注释掉 */
+	/* background-color: teal; */
+	margin: 0 auto;
+}
+
+.header .top_nav .top_nav1{
+	width: 1200px;
+	height: 131px;
+	/* 需要注释掉 */
+	/* background-color: thistle; */
+	margin: 0px 10px ;
+	position: relative;
+}
+
+.header .top_nav .content .top_nav1{
+	width: 352px;
+	height: 68px;
+	margin: 0px 10px;
+	/* 需要注释掉 */
+	/* background-color: turquoise; */
+	padding: 21px 0;
+	position: absolute;
+}
+
+.header .top_nav .content .top_nav1 img{
+	display: block;
+	width: 352px;
+	height: 68px;
+	/* 需要注释掉 */
+	/* background-color: tomato; */
+	float: left;
+}
+
+.header .top_nav .content .top_nav2{
+	width: 250px;
+	/* 需要注释掉 */
+	/* background-color: hotpink; */
+   display: block;
+   float: right;
+   margin-top:40px;
+}
+
+.header .top_nav .content .top_nav2 .search{
+	border: 1px solid #d7d7d7;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.header .top_nav .content .top_nav2 .search form{
+	display: block;
+	width: 250px;
+	height: 28px;
+	/* 需要注释掉 */
+	/* background-color: lawngreen; */
+    float: right;
+}
+
+.header .top_nav .content .top_nav2 .search form input:nth-child(1){
+	height: 20px;
+	padding: 8px 10px 0px 10px;
+	outline: none;
+	border: 1px solid #E0E0E0;
+	border-right: none;
+	float: left;
+	font-size: 10px;
+}
+
+.header .top_nav .content .top_nav2 .search form button{
+	width: 30px;
+	height: 28px;
+	outline: none;
+	float: right;
+	background-color: orange;
+	border: 0;
+}
+
+.header .top_nav .content .top_nav3{
+	display: block;
+	margin-left: 600px;
+	position: absolute;
+	top: 40px;
+	
+}
+.header .top_nav .content .top_nav3 ul{
+	list-style: none;
+}
+.header .top_nav .content .top_nav3 ul li{
+	float: left;
+	display: inline-block;
+}
+.header .top_nav .content .top_nav3 ul li a{
+	display: inline-block;
+	margin: 0 6px;
+	height: 36px;
+	line-height: 36px;
+	color: #737373;
+	font-size: 14px;
+}
+.header .top_nav .content .top_nav3 ul li a:hover{
+	color: orange;
+	text-decoration: underline;
+}
+
+
+

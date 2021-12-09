@@ -1,0 +1,192 @@
+.zhongjian{
+	width: 100%;
+	min-width: 1200px;
+	height: 500px;
+	/* 需要注释掉 */
+	/* background-color: tan; */
+	margin-top: 200px;
+}
+
+.zhongjian .content{
+	width: 1200px;
+	height: 500px;
+	/* 需要注释掉 */
+	/* background-color: teal; */
+	margin: 0 auto;
+	position: relative;
+}
+
+.zhongjian .content .left{
+	width: 220px;
+	height: 300px;
+	/* 需要注释掉 */
+	/* background-color: thistle; */
+
+}
+
+.zhongjian .content .left ul{
+	list-style: none;
+	padding: 10px;
+}
+
+.zhongjian .content .left ul.head{
+	background-color: #0e5d98;
+}
+
+.zhongjian .content .left ul.head h3{
+	width: 75px;
+	height: 24px;
+	color: #FFFFFF;
+	font-size: 18px;
+}
+
+
+.zhongjian .content .left ul.buttom{
+	width: 220px;
+	height: 156px;
+	padding: 0;
+}
+
+
+
+.zhongjian .content .left ul.buttom li{
+	width: 220px;
+	height: 31px;
+	padding: 10px;
+	list-style: none;
+	line-height: 31px;
+	font-size: 16px;
+	color: #383838;
+}
+
+.zhongjian .content .left ul.buttom li:nth-child(1){
+	width: 200px;
+	background-color: #8d9596;
+	padding: 0 10px;
+}
+
+.zhongjian .content .left ul.buttom li:hover{
+	background-color: #8d9596;
+	width: 200px;
+}
+
+.zhongjian .content .right{
+	width: 945px;
+	height: 500px;
+	/* 需要注释掉 */
+	/* background-color: tomato; */
+	position: absolute;
+	top: 0;
+	left: 245px;
+}
+
+.zhongjian .content .right .head{
+	width: 100%;
+	height: 46px;
+	/* 需要注释掉 */
+	/* background-color: turquoise; */
+}
+
+.zhongjian .content .right .head ul{
+	display: inline-block;
+	list-style: none;
+	float: right;
+	margin: 0 auto;
+}
+
+.zhongjian .content .right .head ul li{
+	float: right;
+	line-height: 46px;
+	padding: 0 1px;
+	color: #454545;
+}
+
+.zhongjian .content .right .head ul li a{
+	padding: 0 1px;
+}
+
+.zhongjian .content .right .center h2{
+	display: block;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	/* 需要注释掉 */
+	/* background-color: steelblue; */
+	text-align: center;
+}
+
+.zhongjian .content .right .buttom{
+	width: 100%;
+	height: 190px;
+	/* 需要注释掉 */
+	/* background-color: antiquewhite; */
+}
+
+.zhongjian .content .right .buttom ul.news {
+	list-style: none;
+	width: 100%;
+	height: 190px;
+	padding: 30px 0px;
+}
+
+.zhongjian .content .right .buttom ul.news li{
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+	font-size: 14px;
+	bottom: 20px;
+
+}
+
+.zhongjian .content .right .buttom ul.news li a{
+	width: 100%;
+	display: block;
+	height: 20px;
+	color: #1769a7;
+}
+
+.zhongjian .content .right .buttom ul.news li a:hover{
+	color: #383838;
+}
+
+
+.zhongjian .content .right .buttom ul.news li a em{
+	float: right;
+	font-size: 14px;
+	line-height: 20px;
+	margin-right: 20px;
+	font-style: normal;
+	color: #383838;
+}
+
+.zhongjian .content .right .buttom ul.commend{
+	width: 100%;
+	height: 30px;
+	/* 需要注释掉 */
+	/* background-color: yellow; */
+}
+
+.zhongjian .content .right .buttom ul.commend li{
+	list-style: none;
+	float: right;
+	line-height: 30px;
+	padding: 0 1px;
+	color: #666;
+	margin-right: 20px;
+		font-size: 13px;
+}
+
+
+.zhongjian .content .right .buttom ul.commend li input{
+	width: 26px;
+}
+
+.zhongjian .content .right .buttom ul.commend li a:hover{
+	color: #383838;
+}
+
+
+
+
+
+
