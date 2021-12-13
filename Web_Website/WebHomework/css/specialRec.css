@@ -15,7 +15,6 @@
 }
 .specialRec .specialContent .specialHead img{
     float: left;
-    /*background-color: #FFE035;*/
 }
 .specialRec .specialContent .specialHead h2{
     float: left;
@@ -23,7 +22,6 @@
 .specialRec .specialContent .specialModules{
     width: 1200px;
     height: 137px;
-    /*background-color: powderblue;*/
 }
 .specialRec .specialContent .specialModules ul{
     width: 1200px;

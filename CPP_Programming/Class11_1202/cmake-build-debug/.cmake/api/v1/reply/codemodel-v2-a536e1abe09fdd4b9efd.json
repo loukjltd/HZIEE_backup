@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Class11_1202",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Class11_1202::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Class11_1202-Debug-3ade05b549850e03dbf9.json",
+					"name" : "Class11_1202",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Complex::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Complex-Debug-4a89c9df199a3fe40c85.json",
+					"name" : "Complex",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Test-Debug-ee37bcf585e8084159f9.json",
+					"name" : "Test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Time::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Time-Debug-91a2559a5c9242d73bb7.json",
+					"name" : "Time",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug",
+		"source" : "/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

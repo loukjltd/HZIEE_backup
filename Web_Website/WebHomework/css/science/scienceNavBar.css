@@ -35,7 +35,6 @@
 .scienceNavBar .content .scienceImg div{
 	width: 41.5px;
 	height: 69px;
-	background-image: url(../img/image/icon-slides.png);
 	position: absolute;
 	top: 195.5px;
 }
@@ -117,6 +116,7 @@
 	color: #fff;
 	font-size: 16px;
 	margin: 0 auto;
+	text-decoration: none;
 }
 
 

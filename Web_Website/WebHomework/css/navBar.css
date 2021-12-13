@@ -5,7 +5,6 @@
 a{
     cursor: pointer;
 }
-
 .jhc{
     width: 100%;
     min-width: 1200px;
@@ -13,14 +12,12 @@ a{
 .topLogoSearch{
     width: 1200px;
     height: 132px;
-    /*background-color: #FF6700;*/
     margin: 0 auto;
 }
 
 .topLogoSearch .logo{
     width: 352px;
     height: 68px;
-    /*background-color: #00FF00;*/
     margin-top: 34px;
     float: left;
 }
@@ -29,7 +26,6 @@ a{
     height: 28px;
     float: right;
     margin-top: 52px;
-    /*background-color: #FF0000;*/
 }
 .topLogoSearch form input{
     width: 250px;

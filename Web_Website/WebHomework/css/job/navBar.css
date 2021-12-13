@@ -110,6 +110,7 @@
 	line-height: 40px;
 	color: #FFFFFF;
 	font-size: 16px;
+	text-decoration: none;
 }
 .navBar .content .texts ul li a:hover{
 	color: #FFFFFF;

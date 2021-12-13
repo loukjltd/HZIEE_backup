@@ -1,0 +1,40 @@
+#welcomeRegister {
+    width: 1000px;
+    margin: 0 auto;
+}
+#welcomeRegister > img {
+    padding-top: 50px;
+    float: left;
+}
+#welcomeRegister > p {
+    float: left;
+    text-align: center;
+    font-size: 32px;
+    margin-left: 20px;
+    padding-top: 35px;
+    padding-bottom: 50px;
+}
+
+#formPart {
+    width: 415px;
+    margin: 0 auto;
+}
+#formPart input {
+    width: 290px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #cccccc;
+    padding-left: 10px;
+}
+#formPart .checkInfo {
+    width: 100px;
+    height: 30px;
+    padding-left: 5px;
+}
+#formPart .checkInfo:hover {
+    border-color: #0E5D98;
+}
+#formPart #submitPart {
+    text-align: center;
+}
