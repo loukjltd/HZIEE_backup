@@ -1,0 +1,96 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Class13_1216",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Circle::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Circle-Debug-f731e03405e357e1a9b7.json",
+					"name" : "Circle",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Class13_1216::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Class13_1216-Debug-034be66a9c58330507b1.json",
+					"name" : "Class13_1216",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Str::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Str-Debug-6f3b8c0e8d6384cb7e0e.json",
+					"name" : "Str",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Test-Debug-ee37bcf585e8084159f9.json",
+					"name" : "Test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Three::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Three-Debug-5e21bf180c6e82b1aceb.json",
+					"name" : "Three",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class13_1216/cmake-build-debug",
+		"source" : "/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class13_1216"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

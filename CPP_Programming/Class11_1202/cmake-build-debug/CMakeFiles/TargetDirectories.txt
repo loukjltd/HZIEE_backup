@@ -1,6 +1,10 @@
 /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles/Test.dir
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles/S05.dir
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles/S04.dir
 /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles/Time.dir
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles/S02.dir
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles/S03.dir
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles/S01.dir
 /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles/Complex.dir
 /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles/Class11_1202.dir

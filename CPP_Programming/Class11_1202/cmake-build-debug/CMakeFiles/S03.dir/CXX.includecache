@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/Simulation_03.cpp
+iostream
+-
+

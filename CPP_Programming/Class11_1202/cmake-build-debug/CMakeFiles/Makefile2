@@ -63,8 +63,12 @@ CMAKE_BINARY_DIR = /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Pro
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Test.dir/all
+all: CMakeFiles/S05.dir/all
+all: CMakeFiles/S04.dir/all
 all: CMakeFiles/Time.dir/all
+all: CMakeFiles/S02.dir/all
+all: CMakeFiles/S03.dir/all
+all: CMakeFiles/S01.dir/all
 all: CMakeFiles/Complex.dir/all
 all: CMakeFiles/Class11_1202.dir/all
 .PHONY : all
@@ -74,37 +78,67 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Test.dir/clean
+clean: CMakeFiles/S05.dir/clean
+clean: CMakeFiles/S04.dir/clean
 clean: CMakeFiles/Time.dir/clean
+clean: CMakeFiles/S02.dir/clean
+clean: CMakeFiles/S03.dir/clean
+clean: CMakeFiles/S01.dir/clean
 clean: CMakeFiles/Complex.dir/clean
 clean: CMakeFiles/Class11_1202.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Test.dir
+# Target rules for target CMakeFiles/S05.dir
 
 # All Build rule for target.
-CMakeFiles/Test.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target Test"
-.PHONY : CMakeFiles/Test.dir/all
+CMakeFiles/S05.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S05.dir/build.make CMakeFiles/S05.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S05.dir/build.make CMakeFiles/S05.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles --progress-num=13,14 "Built target S05"
+.PHONY : CMakeFiles/S05.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Test.dir/rule: cmake_check_build_system
+CMakeFiles/S05.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Test.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/S05.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/Test.dir/rule
+.PHONY : CMakeFiles/S05.dir/rule
 
 # Convenience name for target.
-Test: CMakeFiles/Test.dir/rule
-.PHONY : Test
+S05: CMakeFiles/S05.dir/rule
+.PHONY : S05
 
 # clean rule for target.
-CMakeFiles/Test.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/clean
-.PHONY : CMakeFiles/Test.dir/clean
+CMakeFiles/S05.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S05.dir/build.make CMakeFiles/S05.dir/clean
+.PHONY : CMakeFiles/S05.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/S04.dir
+
+# All Build rule for target.
+CMakeFiles/S04.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S04.dir/build.make CMakeFiles/S04.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S04.dir/build.make CMakeFiles/S04.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles --progress-num=11,12 "Built target S04"
+.PHONY : CMakeFiles/S04.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/S04.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/S04.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/S04.dir/rule
+
+# Convenience name for target.
+S04: CMakeFiles/S04.dir/rule
+.PHONY : S04
+
+# clean rule for target.
+CMakeFiles/S04.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S04.dir/build.make CMakeFiles/S04.dir/clean
+.PHONY : CMakeFiles/S04.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/Time.dir
@@ -113,7 +147,7 @@ CMakeFiles/Test.dir/clean:
 CMakeFiles/Time.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Time.dir/build.make CMakeFiles/Time.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Time.dir/build.make CMakeFiles/Time.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target Time"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles --progress-num=15,16 "Built target Time"
 .PHONY : CMakeFiles/Time.dir/all
 
 # Build rule for subdir invocation for target.
@@ -131,6 +165,84 @@ Time: CMakeFiles/Time.dir/rule
 CMakeFiles/Time.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Time.dir/build.make CMakeFiles/Time.dir/clean
 .PHONY : CMakeFiles/Time.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/S02.dir
+
+# All Build rule for target.
+CMakeFiles/S02.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S02.dir/build.make CMakeFiles/S02.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S02.dir/build.make CMakeFiles/S02.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target S02"
+.PHONY : CMakeFiles/S02.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/S02.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/S02.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/S02.dir/rule
+
+# Convenience name for target.
+S02: CMakeFiles/S02.dir/rule
+.PHONY : S02
+
+# clean rule for target.
+CMakeFiles/S02.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S02.dir/build.make CMakeFiles/S02.dir/clean
+.PHONY : CMakeFiles/S02.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/S03.dir
+
+# All Build rule for target.
+CMakeFiles/S03.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S03.dir/build.make CMakeFiles/S03.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S03.dir/build.make CMakeFiles/S03.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target S03"
+.PHONY : CMakeFiles/S03.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/S03.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/S03.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/S03.dir/rule
+
+# Convenience name for target.
+S03: CMakeFiles/S03.dir/rule
+.PHONY : S03
+
+# clean rule for target.
+CMakeFiles/S03.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S03.dir/build.make CMakeFiles/S03.dir/clean
+.PHONY : CMakeFiles/S03.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/S01.dir
+
+# All Build rule for target.
+CMakeFiles/S01.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S01.dir/build.make CMakeFiles/S01.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S01.dir/build.make CMakeFiles/S01.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target S01"
+.PHONY : CMakeFiles/S01.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/S01.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/S01.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class11_1202/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/S01.dir/rule
+
+# Convenience name for target.
+S01: CMakeFiles/S01.dir/rule
+.PHONY : S01
+
+# clean rule for target.
+CMakeFiles/S01.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/S01.dir/build.make CMakeFiles/S01.dir/clean
+.PHONY : CMakeFiles/S01.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/Complex.dir

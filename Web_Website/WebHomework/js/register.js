@@ -17,17 +17,14 @@ function isChinese(str) {
 
 function isEmail(str) {
     return /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/.test(str);
-
 }
 
 function isPost(str) {
     return /^\d{1,6}$/.test(str);
 }
 
-
 function isMobile(str) {
     return /^1[35]\d{9}/.test(str);
-
 }
 
 function isQQ(str) {

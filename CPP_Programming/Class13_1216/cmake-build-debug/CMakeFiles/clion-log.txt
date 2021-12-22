@@ -1,0 +1,4 @@
+"/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/213.5744.254/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Users/loukj/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/213.5744.254/CLion.app/Contents/bin/ninja/mac/ninja" -G Ninja /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class13_1216
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/loukj/Documents/GitHub/Hziee_class_code_backup/CPP_Programming/Class13_1216/cmake-build-debug
