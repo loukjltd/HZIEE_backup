@@ -1,0 +1,27 @@
+#specInfo {
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+}
+#specInfo #userInfoPart {
+    width: 1000px;
+    height: 250px;
+    float: left;
+    background: ghostwhite;
+}
+#specInfo #userInfoPart img{
+    padding-left: 20px;
+    width: 50px;
+    height: 30px;
+    float: left;
+    margin-top: 30px;
+}
+#specInfo #userInfoPart h2 {
+    height: 50px;
+    line-height: 50px;
+    font-size: 19px;
+}
+
+#specInfo #userInfoPart #userCenterPart {
+    padding-left: 25px;
+}
