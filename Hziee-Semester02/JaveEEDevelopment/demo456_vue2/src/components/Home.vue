@@ -1,13 +1,10 @@
 <template>
-  <div>
-    Home
-  </div>
+  <div>Home</div>
 </template>
 
 <script>
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: "Home"
+name: "Home"
 }
 </script>
 

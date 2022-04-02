@@ -2,13 +2,17 @@ package com.loukjltd.edittextdemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    private String choice = "男";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +23,28 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View listenerView) {
                 processLogin(listenerView);
+            }
+        });
+
+        RadioGroup rgSex = findViewById(R.id.rgSex);
+        rgSex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @SuppressLint("NonConstantResourceId")
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i) {
+                    case R.id.rbMale:
+                        choice = "男";
+                        Toast.makeText(MainActivity.this,"您的性别是：" + choice, Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.rbFemale:
+                        choice = "女";
+                        Toast.makeText(MainActivity.this,"您的性别是：" + choice, Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        choice = "无性别";
+                        Toast.makeText(MainActivity.this,"您的性别是：" + choice, Toast.LENGTH_SHORT).show();
+                        break;
+                }
             }
         });
     }

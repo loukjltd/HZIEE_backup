@@ -43,6 +43,40 @@
         android:minHeight="48dp"
         android:padding="10dp" />
 
+    <RadioGroup
+        android:id="@+id/rgSex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:checked="true"
+            android:padding="10dp"
+            android:text="男" />
+
+        <RadioButton
+            android:id="@+id/rbFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:padding="10dp"
+            android:text="女" />
+
+        <RadioButton
+            android:id="@+id/rbNoSex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:padding="10dp"
+            android:text="无性别" />
+    </RadioGroup>
+
     <CheckBox
         android:id="@+id/cbRemember"
         android:layout_width="wrap_content"
@@ -58,8 +92,8 @@
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:padding="10dp"
         android:text="登录"
         android:textColor="@color/my_pure_color"
