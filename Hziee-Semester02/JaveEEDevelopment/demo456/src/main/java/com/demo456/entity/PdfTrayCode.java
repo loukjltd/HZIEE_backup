@@ -12,6 +12,8 @@ public class PdfTrayCode {
     private int actFlag;
     private int scanId;
     private int whId;
+    private int fstId;
+    private int pkStatus;
 
     public int getStId() {
         return stId;
@@ -75,5 +77,21 @@ public class PdfTrayCode {
 
     public void setWhId(int whId) {
         this.whId = whId;
+    }
+
+    public int getFstId() {
+        return fstId;
+    }
+
+    public void setFstId(int fstId) {
+        this.fstId = fstId;
+    }
+
+    public int getPkStatus() {
+        return pkStatus;
+    }
+
+    public void setPkStatus(int pkStatus) {
+        this.pkStatus = pkStatus;
     }
 }

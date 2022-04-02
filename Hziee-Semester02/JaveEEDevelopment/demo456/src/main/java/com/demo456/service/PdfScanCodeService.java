@@ -27,9 +27,43 @@ public class PdfScanCodeService {
                                      int currentFstId,int scanId,int loginId){
         PdfTrayCode pdfTrayCode = new PdfTrayCode();
 
-
-
+        String msg = this.checkPdfTrayCode(pdaCode, trayCode, currentWhId, currentFstId, scanId, loginId);
+        if (msg != "success") {
+            return pdfTrayCode;
+        }
 
         return pdfTrayCode;
+    }
+
+    private String checkPdfTrayCode(String pdaCode,String trayCode,int currentWhId,
+                                    int currentFstId,int scanId,int loginId) {
+        String msg = "success";
+
+        int existSums = pdfScanMapper.checkTrayCodeExist(trayCode);
+        if (existSums <= 0) {
+            msg = "托码不是本系统的托码，请核实后重新扫入";
+            return msg;
+        }
+
+        PdfTrayCode pdfTrayCode =  pdfScanMapper.checkTrayCodeStatus(trayCode);
+        if (pdfTrayCode.getPkStatus() != 1) {
+            msg = "托码状态不是待入库状态，请核实后重新扫入";
+            return msg;
+        }
+
+        if (pdfTrayCode.getWhId() != currentFstId) {
+            msg = "托码不是本仓库的托码，请核实后重新扫入";
+            return msg;
+        }
+
+        if (pdfTrayCode.getFstId() != currentFstId) {
+            msg = "托码不是公司的托码，请核实后重新扫入";
+            return msg;
+        }
+
+
+
+
+        return msg;
     }
 }
