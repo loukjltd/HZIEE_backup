@@ -1,6 +1,7 @@
 package com.demo456.service;
 
 
+import com.demo456.entity.PackageItems;
 import com.demo456.entity.PdfScanParameter;
 import com.demo456.entity.PdfTrayCode;
 import com.demo456.mapper.PdfScanMapper;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,9 +30,30 @@ public class PdfScanCodeService {
         PdfTrayCode pdfTrayCode = new PdfTrayCode();
 
         String msg = this.checkPdfTrayCode(pdaCode, trayCode, currentWhId, currentFstId, scanId, loginId);
-        if (msg != "success") {
+        if (! msg.equals("success")) {
             return pdfTrayCode;
         }
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String createDate = sdf.format(new java.util.Date());
+
+        PdfTrayCode tray = pdfScanMapper.checkTrayCodeStatus(trayCode);
+        int trayId = tray.getTrayId();
+        int fstId = tray.getFstId();
+        int iTray = pdfScanMapper.insertTrayCodeToStorageTray(pdaCode, trayId, trayCode, loginId,
+                createDate, scanId, fstId);
+        System.out.println("插入值:" + iTray);
+
+        List<PackageItems> packageItemsList = pdfScanMapper.getBarCodes(trayId);
+        int iBar = 0;
+        for (int i = 0; i < packageItemsList.size(); i++) {
+            int stId = 0;
+            int proId = packageItemsList.get(i).getProId();
+            String barCode = packageItemsList.get(i).getBarCode();
+            pdfScanMapper.insertBarToStorageBar(stId, proId, trayId, barCode);
+            iBar++;
+        }
+        System.out.println("条码插入值:" + iBar);
 
         return pdfTrayCode;
     }
@@ -51,7 +74,7 @@ public class PdfScanCodeService {
             return msg;
         }
 
-        if (pdfTrayCode.getWhId() != currentFstId) {
+        if (pdfTrayCode.getWhId() != currentWhId) {
             msg = "托码不是本仓库的托码，请核实后重新扫入";
             return msg;
         }
@@ -60,10 +83,6 @@ public class PdfScanCodeService {
             msg = "托码不是公司的托码，请核实后重新扫入";
             return msg;
         }
-
-
-
-
         return msg;
     }
 }
