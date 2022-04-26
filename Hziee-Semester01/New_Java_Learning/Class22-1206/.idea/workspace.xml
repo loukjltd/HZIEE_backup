@@ -1,7 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="237176a2-f031-448e-9ac3-4bbcadb1aede" name="变更" comment="" />
+    <list default="true" id="237176a2-f031-448e-9ac3-4bbcadb1aede" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoFragments/app/src/main/java/com/loukjltd/demofragments/ContactFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoFragments/app/src/main/java/com/loukjltd/demofragments/DiscoverFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoFragments/app/src/main/java/com/loukjltd/demofragments/MeFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoFragments/app/src/main/java/com/loukjltd/demofragments/WxFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoFragments/app/src/main/res/drawable/ic_action_arrow_left_bottom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoFragments/app/src/main/res/drawable/ic_action_arrow_left_top.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoFragments/app/src/main/res/drawable/ic_action_arrow_right_bottom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoFragments/app/src/main/res/drawable/ic_action_arrow_right_top.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoFragments/app/src/main/res/layout/fragment_contact.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoFragments/app/src/main/res/layout/fragment_discover.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoFragments/app/src/main/res/layout/fragment_me.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoFragments/app/src/main/res/layout/fragment_wx.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoFragments/app/src/main/res/menu/bottom_nav_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoFragments/app/src/main/res/navigation/bottom_nav.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoLifeCycle/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoLifeCycle/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoLifeCycle/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoLifeCycle/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoLifeCycle/.idea/render.experimental.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoLifeCycle/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoLifeCycle/app/src/main/java/com/loukjltd/demolifecycle/SecondActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/AndroidBasicDevelopment/DemoLifeCycle/app/src/main/res/layout/activity_second.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/DataStructure/demo0426/demo0426/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/DataStructure/demo0426/demo0426/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/DataStructure/demo0426/demo0426/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/DataStructure/demo0426/demo0426/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/DataStructure/demo0426/demo0426/demo0426.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/DataStructure/demo0426/demo0426/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/mapper/PrimeTableInfoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/resources/mapping/primetable_mapping.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/Demo456Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/Demo456Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/controller/ErpOrganController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/controller/ErpOrganController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/controller/PdfScanCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/controller/PdfScanCodeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/controller/TestTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/controller/TestTableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/entity/ErpFunc.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/entity/ErpFunc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/entity/ErpOrgan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/entity/ErpOrgan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/entity/PackageItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/entity/PackageItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/entity/PdfScanParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/entity/PdfScanParameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/entity/PdfTrayCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/entity/PdfTrayCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/entity/TestTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/entity/TestTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/entity/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/entity/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/mapper/ErpOrganMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/mapper/ErpOrganMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/mapper/PdfScanMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/mapper/PdfScanMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/service/ErpOrganService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/service/ErpOrganService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/service/PdfScanCodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/java/com/demo456/service/PdfScanCodeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/test/java/com/demo456/Demo456ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456/src/test/java/com/demo456/Demo456ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/jsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/jsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/public/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/public/index2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/assets/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/components/HelloWorld.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/components/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/components/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/components/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/components/PdfScanCodeInWarehouse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/components/PdfScanCodeInWarehouse.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/util/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/util/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/util/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/src/util/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Hziee-Semester02/JaveEEDevelopment/demo456_vue2/vue.config.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +93,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="ProjectId" id="21uNFCXK283OY83tG5bSCYTUfqP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -25,11 +103,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/loukj/Documents/GitHub/HzieeBackup/Hziee-Semester01/New_Java_Learning/Class22-1206",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  }
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -40,6 +122,7 @@
       <updated>1638786907408</updated>
       <workItem from="1638786909287" duration="1060000" />
       <workItem from="1638848494401" duration="78000" />
+      <workItem from="1650934026357" duration="21000" />
     </task>
     <servers />
   </component>
@@ -56,6 +139,10 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../.." />
+    </ignored-roots>
   </component>
 </project>

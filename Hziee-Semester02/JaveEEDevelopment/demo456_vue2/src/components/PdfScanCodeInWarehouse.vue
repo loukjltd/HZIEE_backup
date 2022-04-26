@@ -2,31 +2,30 @@
   <div>
     <el-container>
       <el-header>
-        <div style="width: 100%; font-size: 24px"><b>开始扫码</b></div>
-        <el-row :gutter="8">
-          <el-col :span="12">
-            <el-input style="width:100%" v-model="input" type="text" placeholder="请输入内容"></el-input>
+        <el-row :gutter="10">
+          <el-col :span="16">
+            <el-input style="width:80%" v-model="input" type="text" placeholder="请输入内容"></el-input>
           </el-col>
-          <el-col :span="8">
+          <el-col :span="4">
             <el-button type="primary" v-on:click="scanCode">扫码</el-button>
           </el-col>
         </el-row>
       </el-header>
-      <el-main>
-        <div style="width: 100%; font-size: 24px"><b>扫入列表</b></div>
+      <el-main>Main
         <ul>
-          <li  v-for="section in pdfScanCodeList" v-bind:key="section">
+          <li v-for="section in pdfScanCodeList" v-bind:key="section">
             <p>{{section.pdaCode}}</p>
             <p>{{section.trayCode}}</p>
           </li>
+<!--          <el-button type="primary" v-on:click="doLoadingPdfScanCode">查询</el-button>-->
         </ul>
       </el-main>
       <el-footer>
         <el-row>
-          <el-col :span="12">
-            <div style="width: 100%; font-size: 24px"><b>扫入卷数</b></div>
+          <el-col :span="16">
+            <div style="width:80%">扫入卷数</div>
           </el-col>
-          <el-col :span="8">
+          <el-col :span="4">
             <el-button type="primary" v-on:click="commitScanCodeList">提交</el-button>
           </el-col>
         </el-row>
@@ -36,60 +35,78 @@
 </template>
 
 <script>
-import {LoadingPdfTrayCodes, scanATrayCode} from "@/util/api";
+import {LoadingPdfTrayCodes, ScanATrayCode ,CommitTrayCodeList } from "@/util/api";
 
 export default {
   name: "PdfScanCodeInWarehouse",
-  data () {
-    return {
+  data (){
+    return{
       pdfScanCodeList: [],
-      input: 'abcde'
+      input:'abcde',
+      pdfTrayCode: ''
     }
   },
-  mounted(){
-    this.doLoadingPdfScanCodes()
+  mounted() {
+    this.doLoadingPdfScanCode()
   },
-
   methods:{
     scanCode:function (){
+      //alert('调用了扫码函数')
       let params = {
         trayCode:'ZT4C03140003',
         currentWhId:5,
         currentFstId:4,
-        currentPdaCode:'FC',
+        currentPdaCode:'Fc',
+        loginId: 1262,
+        scanId: 1001
+
+      }
+      console.log(params)
+      ScanATrayCode(params).then((res)=>{
+        console.log("---------")
+        console.log(res)
+        this.pdfScanCodeList = res
+        // this.pdfScanCodeList.result = res
+        this.input = res.trayCode
+        console.log("-------")
+      })
+    },
+
+    commitScanCodeList:function (){
+      let params = {
+        currentWhId:5,
+        currentFstId:4,
+        currentPdaCode:'Fc',
         loginId: 1262,
         scanId: 1001
       }
       console.log(params)
-      scanATrayCode(params).then((res)=>{
-        console.log("--------")
+      CommitTrayCodeList(params).then((res)=>{
+        console.log("---------")
         console.log(res)
-        this.pdfScanCodeList = res
-        this.input = res.trayCode;
-
-        console.log("--------")
+        console.log("-------")
       })
-    },
-    commitScanCodeList:function (){
-      alert('调用了提交函数')
+      //alert('提交了卷数')
     },
 
-    doLoadingPdfScanCodes: function (){
+    doLoadingPdfScanCode:function (){
       let params = {
         fstId:4,
         whId:5,
         scanId:1001,
         createPerson:1262,
-        pdaCode: 'FC'
+        pdaCode:'FC'
       }
       console.log(params)
       LoadingPdfTrayCodes(params).then((res)=>{
-        console.log("--------")
+        console.log("---------")
         console.log(res)
         this.pdfScanCodeList = res
-        console.log("--------")
+        // this.pdfScanCodeList.result = res
+        console.log("-------")
       })
     }
+
   }
 }
 </script>

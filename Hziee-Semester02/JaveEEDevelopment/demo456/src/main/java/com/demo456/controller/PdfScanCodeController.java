@@ -54,27 +54,27 @@ public class PdfScanCodeController {
     }
 
     //2：扫码进入暂存表，分为测试请求和正式请求
-//    @RequestMapping("scanATrayCodeByTest")//测试
-//    @ResponseBody
-//    public PdfTrayCode scanATrayCodeByTest (HttpServletRequest request){
-//        PdfTrayCode pdfTrayCode = new PdfTrayCode();
-//        pdfTrayCode.setScanId(1006);
-//        pdfTrayCode.setTrayCode("ZT-0001-2");
-//
-//        String trayCode = request.getParameter("trayCode");
-//        int currentWhId = Integer.parseInt(request.getParameter("currentWhId"));
-//        int currentFstId = Integer.parseInt(request.getParameter("currentFstId"));
-//        String currentPdaCode = request.getParameter("currentPdaCode");
-//        int loginId = Integer.parseInt(request.getParameter("loginId"));
-//        int scanId = Integer.parseInt(request.getParameter("scanId"));
-//
-//        System.out.println(trayCode + "---" + currentWhId + "---" +currentFstId + "---" +
-//                currentPdaCode + "---" +loginId + "---" +scanId + "---");
-//
-//        return pdfScanCodeService.scanATrayCode(currentPdaCode,trayCode,currentWhId,
-//                currentFstId,scanId,loginId);
-//    }
-    @RequestMapping("scanATrayCode")
+    @RequestMapping("scanATrayCodeByTest")//测试
+    @ResponseBody
+    public PdfTrayCode scanATrayCodeByTest (HttpServletRequest request){
+        PdfTrayCode pdfTrayCode = new PdfTrayCode();
+        pdfTrayCode.setScanId(1006);
+        pdfTrayCode.setTrayCode("ZT-0001-2");
+
+        String trayCode = request.getParameter("trayCode");
+        int currentWhId = Integer.parseInt(request.getParameter("currentWhId"));
+        int currentFstId = Integer.parseInt(request.getParameter("currentFstId"));
+        String currentPdaCode = request.getParameter("currentPdaCode");
+        int loginId = Integer.parseInt(request.getParameter("loginId"));
+        int scanId = Integer.parseInt(request.getParameter("scanId"));
+
+        System.out.println(trayCode + "---" + currentWhId + "---" +currentFstId + "---" +
+                currentPdaCode + "---" +loginId + "---" +scanId + "---");
+
+        return pdfScanCodeService.scanATrayCode(currentPdaCode,trayCode,currentWhId,
+                currentFstId,scanId,loginId);
+    }
+    @RequestMapping("scanATrayCode")//正式
     @ResponseBody
     public PdfTrayCode scanATrayCode (@RequestBody Map<String, Object> map){
         String trayCode = map.get("trayCode").toString();
@@ -85,9 +85,31 @@ public class PdfScanCodeController {
         int scanId = Integer.parseInt(map.get("scanId").toString());
 
         System.out.println(trayCode + "---" + currentWhId + "---" +currentFstId + "---" +
-                currentPdaCode + "---" +loginId + "---" +scanId);
+                currentPdaCode + "---" +loginId + "---" +scanId + "---");
 
         return pdfScanCodeService.scanATrayCode(currentPdaCode,trayCode,currentWhId,
                 currentFstId,scanId,loginId);
     }
+
+    @RequestMapping("commitTrayCodeList")
+    @ResponseBody
+    public String commitTrayCodeList(@RequestBody Map<String, Object> map){
+        String retValue = "success";
+
+        int currentWhId = Integer.parseInt(map.get("currentWhId").toString());
+        int currentFstId = Integer.parseInt(map.get("currentFstId").toString());
+        String currentPdaCode = map.get("currentPdaCode").toString();
+        int loginId = Integer.parseInt(map.get("loginId").toString());
+        int scanId = Integer.parseInt(map.get("scanId").toString());
+
+        System.out.println(currentWhId + "---" +currentFstId + "---" +
+                currentPdaCode + "---" +loginId + "---" +scanId + "---");
+
+        retValue = pdfScanCodeService.commitTrayCodeList(currentWhId, currentFstId,
+                currentPdaCode, loginId, scanId);
+
+        return retValue;
+    }
 }
+
+
