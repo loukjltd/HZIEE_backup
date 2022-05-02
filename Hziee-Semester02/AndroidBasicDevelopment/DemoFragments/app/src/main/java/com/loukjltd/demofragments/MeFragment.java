@@ -1,12 +1,16 @@
 package com.loukjltd.demofragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +18,11 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class MeFragment extends Fragment {
+    private OnInteractionListener listener;
+
+    private ImageView ivUserPhoto;
+    private TextView tvUserName;
+    private TextView tvUserPhone;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +68,32 @@ public class MeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_me, container, false);
+        View view =  inflater.inflate(R.layout.fragment_me, container, false);
+        ivUserPhoto = view.findViewById(R.id.ivUserPhoto);
+        tvUserName = view.findViewById(R.id.tvUserName);
+        tvUserPhone = view.findViewById(R.id.tvUserPhone);
+        return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if (listener != null) {
+            User userInfo = listener.getUser();
+            ivUserPhoto.setImageResource(userInfo.getUserPhoto());
+            tvUserName.setText(userInfo.getUserName());
+            tvUserPhone.setText(userInfo.getUserPhone());
+        }
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof OnInteractionListener) {
+            listener = (OnInteractionListener) context;
+        } else {
+            listener = null;
+            throw new RuntimeException(context.toString());
+        }
     }
 }

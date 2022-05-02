@@ -1,12 +1,17 @@
 package com.loukjltd.demofragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +19,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class ContactFragment extends Fragment {
+    private TextView tvFriends;
+    private OnInteractionListener listener;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +66,29 @@ public class ContactFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact, container, false);
+        View view = inflater.inflate(R.layout.fragment_contact, container, false);
+        tvFriends = view.findViewById(R.id.tvFriends);
+        return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if (listener != null) {
+            List<User> friends = listener.getFriends();
+            StringBuffer buffer = new StringBuffer();
+            for (User user : friends) {
+                buffer.append(user.getUserName()).append(", ").append(user.getUserPhone()).append("\n");
+            }
+            tvFriends.setText(buffer);
+        }
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof OnInteractionListener) {
+            listener = (OnInteractionListener) context;
+        }
     }
 }

@@ -1,12 +1,16 @@
 package com.loukjltd.demofragments;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +18,10 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class DiscoverFragment extends Fragment {
+    private OnInteractionListener listener;
+    private EditText etUserName;
+    private EditText etUserPhone;
+    private Button btnOK;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +67,29 @@ public class DiscoverFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_discover, container, false);
+        View view = inflater.inflate(R.layout.fragment_discover, container, false);
+        etUserName = view.findViewById(R.id.etUserName);
+        etUserPhone = view.findViewById(R.id.etUserPhone);
+        btnOK = view.findViewById(R.id.btnOK);
+        btnOK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String userName = etUserName.getText().toString();
+                String userPhone = etUserPhone.getText().toString();
+                User friend = new User(userName, R.drawable.ic_launcher_foreground, userPhone);
+                if (listener != null) {
+                    listener.addFriend(friend);
+                }
+            }
+        });
+        return view;
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof OnInteractionListener) {
+            listener = (OnInteractionListener) context;
+        }
     }
 }

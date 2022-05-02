@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    // 输入学生的学号，姓名，各科成绩及总分，以end结束
     public static void main(String[] args) {
         welcomeSystem();
     }
     // 欢迎界面的方法
     public static void welcomeSystem() {
         ArrayList<Student> stuArray = new ArrayList<>();
+
         while (true) {
             System.out.println("-----欢迎来到主界面-----");
             System.out.println("1. 添加学生");
@@ -35,22 +35,27 @@ public class Main {
         Scanner getStuInfo = new Scanner(System.in);
         System.out.println("请输入学生的学号：");
         String stuID = getStuInfo.nextLine();
+
         System.out.println("请输入学生的姓名：");
         String stuName = getStuInfo.nextLine();
+
         System.out.println("请输入学生的语文成绩：");
         int stuChinGrade = getStuInfo.nextInt();
+
         System.out.println("请输入学生的数学成绩：");
         int stuMathGrade = getStuInfo.nextInt();
+
         System.out.println("请输入学生的英语成绩：");
         int stuEngGrade = getStuInfo.nextInt();
 
-
         Student testStu = new Student();
+
         testStu.setStuID(stuID);
         testStu.setStuName(stuName);
         testStu.setStuChinGrade(stuChinGrade);
         testStu.setStuMathGrade(stuMathGrade);
         testStu.setStuEngGrade(stuEngGrade);
+
         testStu.setStuTotalGrade(stuChinGrade + stuMathGrade + stuEngGrade);
 
         stuArray.add(testStu);
@@ -75,12 +80,13 @@ public class Main {
             }
         }
 
-
         System.out.println("名次 学号 姓名 语文 数学 英语 总分");
         for (int i = 0; i < stuArray.size(); i++) {
             int rank = i + 1;
+
             Student testStu = stuArray.get(i);
             Student lastStu;
+
             if (i > 0) {
                 lastStu = stuArray.get(i - 1);
             } else {
@@ -107,16 +113,15 @@ class Student {
     private int stuEngGrade;
     private int stuTotalGrade;
     public Student() {
-
     }
 
-    public Student(String stuID, String stuName, int stuChinGrade, int stuMathGrade, int stuEngGrade, int stuGrade) {
+    public Student(String stuID, String stuName, int stuChinGrade, int stuMathGrade, int stuEngGrade, int stuTotalGrade) {
         this.stuID = stuID;
         this.stuName = stuName;
         this.stuChinGrade = stuChinGrade;
         this.stuMathGrade = stuMathGrade;
         this.stuEngGrade = stuEngGrade;
-        this.stuTotalGrade = stuGrade;
+        this.stuTotalGrade = stuTotalGrade;
     }
 
     public String getStuID() {
