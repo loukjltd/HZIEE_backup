@@ -1,0 +1,97 @@
+#otherInfo {
+    position: fixed;
+    top: 150px;
+    width: 250px;
+    height: 1200px;
+    background-color: #F9F8F6;
+}
+
+#otherInfo ul {
+    list-style: none;
+    height: 40px;
+    padding: 0 55px;
+}
+
+#otherInfo ul li {
+    padding-top: 12px;
+}
+
+#otherInfo ul li a {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+#addedFood {
+    margin-top: 125px;
+    margin-left: 225px;
+    width: 925px;
+    padding-top: 16px;
+    padding-left: 50px;
+}
+
+table {
+    width: 96%;
+    margin-top: 40px;
+    text-align: center;
+    line-height: 32px;
+}
+
+table td {
+    border-bottom: solid black;
+}
+
+table .rankNum {
+    width: 50px;
+}
+
+table .foodImage {
+    width: 220px;
+}
+
+table .foodImage img {
+    width: 200px;
+    height: 200px;
+}
+
+table .foodName {
+    width: 200px;
+}
+
+table .foodPrice {
+    width: 100px;
+}
+
+table .foodQuantity {
+    width: 50px;
+}
+
+table .foodOperation {
+    width: 100px;
+}
+
+table .foodOperation .addButton, .minusButton {
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    background-color: #D12D35;
+    border-radius: 25px;
+}
+
+table .foodOperation a {
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    line-height: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+table .foodOperation a:hover {
+    text-decoration: underline;
+}
+
+table img {
+    width: 200px;
+    height: 200px;
+}
+

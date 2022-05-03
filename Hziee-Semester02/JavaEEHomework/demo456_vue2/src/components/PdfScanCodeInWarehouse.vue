@@ -14,10 +14,10 @@
       <el-main>Main
         <ul>
           <li v-for="section in pdfScanCodeList" v-bind:key="section">
-            <p>{{section.pdaCode}}</p>
-            <p>{{section.trayCode}}</p>
+            <p>{{ section.pdaCode }}</p>
+            <p>{{ section.trayCode }}</p>
           </li>
-<!--          <el-button type="primary" v-on:click="doLoadingPdfScanCode">查询</el-button>-->
+          <!--          <el-button type="primary" v-on:click="doLoadingPdfScanCode">查询</el-button>-->
         </ul>
       </el-main>
       <el-footer>
@@ -35,34 +35,34 @@
 </template>
 
 <script>
-import {LoadingPdfTrayCodes, ScanATrayCode ,CommitTrayCodeList } from "@/util/api";
+import {LoadingPdfTrayCodes, ScanATrayCode, CommitTrayCodeList} from "@/util/api";
 
 export default {
   name: "PdfScanCodeInWarehouse",
-  data (){
-    return{
+  data() {
+    return {
       pdfScanCodeList: [],
-      input:'abcde',
+      input: 'abcde',
       pdfTrayCode: ''
     }
   },
   mounted() {
     this.doLoadingPdfScanCode()
   },
-  methods:{
-    scanCode:function (){
+  methods: {
+    scanCode: function () {
       //alert('调用了扫码函数')
       let params = {
-        trayCode:'ZT4C03140003',
-        currentWhId:5,
-        currentFstId:4,
-        currentPdaCode:'Fc',
+        trayCode: 'ZT4C03140003',
+        currentWhId: 5,
+        currentFstId: 4,
+        currentPdaCode: 'Fc',
         loginId: 1262,
         scanId: 1001
 
       }
       console.log(params)
-      ScanATrayCode(params).then((res)=>{
+      ScanATrayCode(params).then((res) => {
         console.log("---------")
         console.log(res)
         this.pdfScanCodeList = res
@@ -72,16 +72,16 @@ export default {
       })
     },
 
-    commitScanCodeList:function (){
+    commitScanCodeList: function () {
       let params = {
-        currentWhId:5,
-        currentFstId:4,
-        currentPdaCode:'Fc',
+        currentWhId: 5,
+        currentFstId: 4,
+        currentPdaCode: 'Fc',
         loginId: 1262,
         scanId: 1001
       }
       console.log(params)
-      CommitTrayCodeList(params).then((res)=>{
+      CommitTrayCodeList(params).then((res) => {
         console.log("---------")
         console.log(res)
         console.log("-------")
@@ -89,16 +89,16 @@ export default {
       //alert('提交了卷数')
     },
 
-    doLoadingPdfScanCode:function (){
+    doLoadingPdfScanCode: function () {
       let params = {
-        fstId:4,
-        whId:5,
-        scanId:1001,
-        createPerson:1262,
-        pdaCode:'FC'
+        fstId: 4,
+        whId: 5,
+        scanId: 1001,
+        createPerson: 1262,
+        pdaCode: 'FC'
       }
       console.log(params)
-      LoadingPdfTrayCodes(params).then((res)=>{
+      LoadingPdfTrayCodes(params).then((res) => {
         console.log("---------")
         console.log(res)
         this.pdfScanCodeList = res

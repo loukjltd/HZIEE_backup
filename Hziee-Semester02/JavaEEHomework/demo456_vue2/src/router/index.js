@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '../components/Home'
-import Login from "@/components/Login";
-import HelloWorld from "@/components/HelloWorld";
-import PdfScanCodeInWarehouse from "@/components/PdfScanCodeInWarehouse";
+// import Home from '../components/Home'
+// import Login from "@/components/Login";
+// import HelloWorld from "@/components/HelloWorld";
+// import PdfScanCodeInWarehouse from "@/components/PdfScanCodeInWarehouse";
+import GetUserInfo from "@/components/display_pages/GetUserInfo";
 Vue.use(Router)
 
 Router.prototype.goBack = function () {
@@ -15,23 +16,48 @@ export default new Router({
     routes: [
         {
             path: '/',
-            name: 'PdfScanCodeInWarehouse',
-            component: PdfScanCodeInWarehouse
+            name: 'GetUserInfo',
+            component: GetUserInfo
         },
         {
-            path: '/',
-            name: 'Login',
-            component: Login
+            path: '/MenuList',
+            name: 'MenuList',
+            component: () => import('@/components/display_pages/MenuList')
         },
         {
-            path: '/',
-            name: 'HelloWorld',
-            component: HelloWorld
+            path: '/ShoppingCart',
+            name: 'ShoppingCart',
+            component: () => import('@/components/display_pages/ShoppingCart')
         },
         {
-            path: '/',
-            name: 'Home',
-            component: Home
+            path: '/FinishedOrder',
+            name: 'FinishedOrder',
+            component: () => import('@/components/display_pages/FinishedOrder')
         },
+        {
+            path: '/DisplayFinishedOrders',
+            name: 'DisplayFinishedOrders',
+            component: () => import('@/components/display_pages/DisplayFinishedOrders')
+        }
+        // {
+        //     path: '/',
+        //     name: 'PdfScanCodeInWarehouse',
+        //     component: PdfScanCodeInWarehouse
+        // },
+        // {
+        //     path: '/',
+        //     name: 'Login',
+        //     component: Login
+        // },
+        // {
+        //     path: '/',
+        //     name: 'HelloWorld',
+        //     component: HelloWorld
+        // },
+        // {
+        //     path: '/',
+        //     name: 'Home',
+        //     component: Home
+        // },
     ]
 })
