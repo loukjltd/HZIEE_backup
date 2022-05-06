@@ -15,7 +15,9 @@
         </li>
         <li><a href="#">关于KFC</a></li>
         <li><a href="#">查找KFC</a></li>
-        <li><a href="#">商城</a></li>
+        <li>
+          <router-link to="/DisplayFinishedOrders">商城</router-link>
+        </li>
         <li>
           <router-link to="/FinishedOrder" id="finish_order">完成点单</router-link>
         </li>
@@ -23,7 +25,7 @@
     </div>
 
     <div id="mainTitle">
-      <p>您的订单已提交</p>
+      <p>您的订单已提交，请完成付款，付款完成后请点击"已付款"</p>
     </div>
 
     <div id="orderInfo">
@@ -41,7 +43,8 @@
           </li>
           <br>
           <li>
-            <router-link to="/DisplayFinishedOrders" class="payStatus">已完成</router-link>
+            <router-link to="/DisplayFinishedOrders"><a class="payStatus" v-on:click="finishPayment">已完成</a>
+            </router-link>
           </li>
           <br>
           <br>
@@ -62,16 +65,30 @@
 </style>
 
 <script>
+import {FinishPayment} from "@/util/api";
+import global from "@/util/global";
+
 export default {
   name: "FinishedOrder",
   data() {
     return {
-      //
+      usingOrderNumber: "",
     }
   },
   methods: {
     showPayInfo: function () {
       alert("请先付款！");
+    },
+
+    finishPayment: function () {
+      let testParams = {
+        dingId: global.presentOrderNumber,
+      }
+      FinishPayment(testParams).then(res => {
+        this.usingOrderNumber = res;
+      });
+      alert("付款完成！");
+      alert("即将跳转到完成订单的页面！");
     }
   },
 }

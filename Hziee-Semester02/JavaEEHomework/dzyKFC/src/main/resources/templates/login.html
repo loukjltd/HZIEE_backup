@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thumeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="checkLogin" method="post">
+        <div>
+            菜品：<input type="text" th:name="caiName" maxlength="10"/>
+        </div>
+        <div>
+            密码：<input type="password" th:name="password" maxlength="16"/>
+        </div>
+        <div>
+            <input type="submit" th:value="登录" />
+        </div>
+
+    </form>
+</body>
+</html>

@@ -21,20 +21,22 @@
         </li>
       </ul>
     </div>
-
     <div id="mainTitle">
-      <p>在这里你可以看到已经提交的订单</p>
+      <p>付款成功！</p>
     </div>
-
     <div id="orderInfo">
       <div id="otherInfo">
         <ul>
-          <li><a><b>点餐人数</b></a></li>
-          <li><a>2人</a></li>
+          <li><a><b>当前点餐人数</b></a></li>
+          <li v-for="userInfo in shoppingCartList.slice(0, 1)" :key="userInfo">
+            <a>{{ userInfo.yongHuRS }}人</a>
+          </li>
           <br>
           <br>
-          <li><a><b>点餐桌号</b></a></li>
-          <li><a>B814</a></li>
+          <li><a><b>当前点餐桌号</b></a></li>
+          <li v-for="userInfo in shoppingCartList.slice(0, 1)" :key="userInfo">
+            <a>{{ userInfo.wei }}</a>
+          </li>
           <br>
           <br>
         </ul>
@@ -44,51 +46,30 @@
         <table>
           <tr>
             <td class="rankNum"><b>序号</b></td>
-            <td class="foodImage"><b>图片</b></td>
             <td class="foodName"><b>商品名称</b></td>
             <td class="foodPrice"><b>价格</b></td>
             <td class="foodQuantity"><b>数量</b></td>
-            <td class="foodOperation"><b>序列号</b></td>
+            <td class="foodOperation"><b>状态</b></td>
+          </tr>
+          <tr v-for="item in specificTableInfo" :key="item">
+            <td class="rankNum">{{ item.dingId }}</td>
+            <td class="foodName">{{ item.cai }}</td>
+            <td class="foodPrice">{{ item.caiJG }}</td>
+            <td class="foodQuantity">{{ item.caiPinShuLiang }}</td>
+            <td class="foodOperation">付款成功！</td>
           </tr>
           <tr>
-            <td class="rankNum">1</td>
-            <td class="foodImage"><img src="../../assets/FoodImage_01.jpeg"></td>
-            <td class="foodName">BucketForOne</td>
-            <td class="foodPrice">¥49.99</td>
-            <td class="foodQuantity">2</td>
-            <td class="foodOperation">KFC202205010001</td>
-          </tr>
-          <tr>
-            <td class="rankNum">2</td>
-            <td class="foodImage"><img src="../../assets/FoodImage_01.jpeg"></td>
-            <td class="foodName">BucketForOne</td>
-            <td class="foodPrice">¥49.99</td>
-            <td class="foodQuantity">2</td>
-            <td class="foodOperation">KFC202205010002</td>
-          </tr>
-          <tr>
-            <td class="rankNum">3</td>
-            <td class="foodImage"><img src="../../assets/FoodImage_01.jpeg"></td>
-            <td class="foodName">BucketForOne</td>
-            <td class="foodPrice">¥49.99</td>
-            <td class="foodQuantity">2</td>
-            <td class="foodOperation">KFC202205010003</td>
-          </tr>
-          <tr>
-            <td class="rankNum">4</td>
-            <td class="foodImage"><img src="../../assets/FoodImage_01.jpeg"></td>
-            <td class="foodName">BucketForOne</td>
-            <td class="foodPrice">¥49.99</td>
-            <td class="foodQuantity">2</td>
-            <td class="foodOperation">KFC202205010004</td>
-          </tr>
-          <tr>
-            <td class="rankNum">5</td>
-            <td class="foodImage"><img src="../../assets/FoodImage_01.jpeg"></td>
-            <td class="foodName">BucketForOne</td>
-            <td class="foodPrice">¥49.99</td>
-            <td class="foodQuantity">2</td>
-            <td class="foodOperation">KFC202205010005</td>
+            <td class="rankNum"></td>
+            <td class="foodName"></td>
+            <td class="foodPrice"></td>
+            <td class="foodQuantity">总价：</td>
+            <td class="foodOperation">¥499</td>
+          </tr><tr>
+            <td class="rankNum"></td>
+            <td class="foodName"></td>
+            <td class="foodPrice"></td>
+            <td class="foodQuantity">数量：</td>
+            <td class="foodOperation">50份</td>
           </tr>
         </table>
       </div>
@@ -98,12 +79,54 @@
 
 <style>
 @import "../using_css/CommonStyleSheet.css";
-@import "../using_css/DisplayFinishedOrders.css";
+@import "../using_css/ShoppingCart.css";
 </style>
 
 <script>
+import {DoLoadShoppingCartData, DoLoadUserInfo} from "@/util/api";
+import global from "@/util/global";
+
 export default {
-  name: "DisplayFinishedOrders"
+  name: "ShoppingCart",
+
+  data() {
+    return {
+      // userInfoList: [],
+      shoppingCartList: [],
+      requestFoodName: [],
+      totalPrice: 0,
+    }
+  },
+
+  mounted() {
+    this.doLoadUserInfo();
+    this.doLoadShoppingCartData();
+    // this.doCalculateTotalPrice();
+  },
+
+  computed: {
+    specificTableInfo: function () {
+      let targetTableNum = this.userInfoList[0].dingId;
+      return this.shoppingCartList.filter(tableNum => tableNum.dingId === targetTableNum);
+    }
+  },
+
+  methods: {
+    doLoadUserInfo: function() {
+      DoLoadUserInfo().then(res => {this.userInfoList = res;});
+    },
+
+    doLoadShoppingCartData: function() {
+      DoLoadShoppingCartData().then(res => {this.shoppingCartList = res;});
+      global.presentOrderNumber = "";
+      console.log(global.presentOrderNumber);
+    },
+
+    // doCalculateTotalPrice: function() {
+    //   DoCalculateTotalPrice().then(res => {this.totalPrice = res;});
+    // }
+
+  }
 }
 </script>
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itMessage"
+        android:icon="@drawable/ic_action_arrow_left_bottom"
+        android:title="消息" />
+    <item
+        android:id="@+id/itContact"
+        android:icon="@drawable/ic_action_arrow_left_top"
+        android:title="联系人" />
+    <item
+        android:id="@+id/itMoment"
+        android:icon="@drawable/ic_action_arrow_right_bottom"
+        android:title="动态" />
+    <item
+        android:id="@+id/itMine"
+        android:icon="@drawable/ic_action_arrow_right_top"
+        android:title="我的" />
+</menu>
