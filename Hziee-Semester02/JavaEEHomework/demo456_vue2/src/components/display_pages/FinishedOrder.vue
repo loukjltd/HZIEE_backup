@@ -66,30 +66,28 @@
 
 <script>
 import {FinishPayment} from "@/util/api";
-import global from "@/util/global";
 
 export default {
   name: "FinishedOrder",
   data() {
     return {
       usingOrderNumber: "",
+      savedTime: [],
     }
   },
+
   methods: {
     showPayInfo: function () {
       alert("请先付款！");
     },
 
     finishPayment: function () {
-      let testParams = {
-        dingId: global.presentOrderNumber,
-      }
-      FinishPayment(testParams).then(res => {
+      FinishPayment().then(res => {
         this.usingOrderNumber = res;
       });
       alert("付款完成！");
       alert("即将跳转到完成订单的页面！");
-    }
+    },
   },
 }
 

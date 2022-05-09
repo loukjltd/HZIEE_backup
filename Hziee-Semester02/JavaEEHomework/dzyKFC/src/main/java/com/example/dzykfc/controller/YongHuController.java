@@ -22,6 +22,34 @@ public class YongHuController {
     @Autowired
     private YongHuService yongHuService;
 
+
+    private String dingId=null;
+
+    public String getDingId() {
+        return dingId;
+    }
+
+    public void setDingId(String dingId) {
+        this.dingId = dingId;
+    }
+
+    //这个方法用于将前端传过来dingId进行存储
+    @RequestMapping("YongHuDingId")
+    @ResponseBody
+    public void YongHuDingId(@RequestBody Map<String,Object> map){
+        String dingId = map.get("dingId").toString();
+        setDingId(dingId);
+        System.out.println("通过专门获取dingID得到的ID：" + getDingId());
+    }
+
+    //释放dingId
+    @RequestMapping("wCYongHuNotDingId")
+    @ResponseBody
+    public void wCYongHuNotDingId(){
+        setDingId(null);
+    }
+
+
     @RequestMapping("yongHuShuJuXS")//前端用户信息显示需要的数据
     @ResponseBody
     public List<YongHu> yongHuShuJuXS(){
@@ -31,11 +59,12 @@ public class YongHuController {
     //这个方法用于放入用户表数据
     @RequestMapping("yongHuShuJuShuR")
     @ResponseBody
-    public void zhuangTaiChaRuList(@RequestBody Map<String, Object> map){
-        String dingId = map.get("dingId").toString();
+    public String zhuangTaiChaRuList(@RequestBody Map<String, Object> map){
+        System.out.println("直接输出dingID：" + getDingId());
         String userName = map.get("userName").toString();
         int yongHuRS = Integer.parseInt(map.get("yongHuRS").toString());
-
-        yongHuService.yongHuShuJuShuR(dingId,userName,yongHuRS);
+        System.out.println("通过外部的方式获得的dingID：" + getDingId() + "，以及userName：" + userName + "，以及yongHuRS：" + yongHuRS);
+        //将数据进行存入，同时返回0或桌号string类型。0：没有位置了
+        return yongHuService.yongHuShuJuShuR(getDingId(),userName,yongHuRS);
     }
 }

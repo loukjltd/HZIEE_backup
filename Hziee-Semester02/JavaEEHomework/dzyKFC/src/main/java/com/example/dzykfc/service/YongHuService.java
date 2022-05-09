@@ -29,7 +29,9 @@ public class YongHuService {
     }
 
     //这个方法用于放入yonghu表数据
-    public void yongHuShuJuShuR(String dingId, String userName ,int yongHuRS){
+    public String yongHuShuJuShuR(String dingId, String userName ,int yongHuRS){
+
+        String fahuizhi = "0";//0:没有位置了，其余内容有位置
 
         //现在需要查询数据库中所有的座位的使用情况，如果有空位，加入用户信息
         List<WeiHao> weiHaoList = new ArrayList<WeiHao>();
@@ -51,12 +53,14 @@ public class YongHuService {
                 yongHuMapper.yongHuShuJuShuR(dingId,userName,yongHuRS);
                 //完成上面的同时，我们需要将已经使用的位置状态转为1
                 zhuangTaiMapper.setWeiZhuangTai(weiHao.getWeiId());
-
+                //让反回值为桌号
+                fahuizhi = weiHao.getWei();
 
                 break;//只要一个桌子
             }
 
         }
+        return fahuizhi;
 
     }
 

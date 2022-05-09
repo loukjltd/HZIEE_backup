@@ -51,25 +51,26 @@
             <td class="foodQuantity"><b>数量</b></td>
             <td class="foodOperation"><b>状态</b></td>
           </tr>
-          <tr v-for="item in specificTableInfo" :key="item">
+          <tr v-for="item in shoppingCartList" :key="item">
             <td class="rankNum">{{ item.dingId }}</td>
             <td class="foodName">{{ item.cai }}</td>
             <td class="foodPrice">{{ item.caiJG }}</td>
             <td class="foodQuantity">{{ item.caiPinShuLiang }}</td>
             <td class="foodOperation">付款成功！</td>
           </tr>
-          <tr>
+          <tr v-for="price in totalInfo" :key="price">
             <td class="rankNum"></td>
             <td class="foodName"></td>
             <td class="foodPrice"></td>
             <td class="foodQuantity">总价：</td>
-            <td class="foodOperation">¥499</td>
-          </tr><tr>
+            <td class="foodOperation">{{ price.jingEZhong }}</td>
+          </tr>
+          <tr v-for="price in totalInfo" :key="price">
             <td class="rankNum"></td>
             <td class="foodName"></td>
             <td class="foodPrice"></td>
             <td class="foodQuantity">数量：</td>
-            <td class="foodOperation">50份</td>
+            <td class="foodOperation">{{ price.shuLiangZhong }}</td>
           </tr>
         </table>
       </div>
@@ -83,8 +84,10 @@
 </style>
 
 <script>
-import {DoLoadShoppingCartData, DoLoadUserInfo} from "@/util/api";
-import global from "@/util/global";
+import {
+  DoCalculateTotalPrice,
+  DoLoadShoppingCartData2,
+} from "@/util/api";
 
 export default {
   name: "ShoppingCart",
@@ -94,37 +97,33 @@ export default {
       // userInfoList: [],
       shoppingCartList: [],
       requestFoodName: [],
-      totalPrice: 0,
+      totalInfo: [],
+      savedTime: [],
+      overTimeCheck: [],
     }
   },
 
   mounted() {
-    this.doLoadUserInfo();
-    this.doLoadShoppingCartData();
-    // this.doCalculateTotalPrice();
-  },
-
-  computed: {
-    specificTableInfo: function () {
-      let targetTableNum = this.userInfoList[0].dingId;
-      return this.shoppingCartList.filter(tableNum => tableNum.dingId === targetTableNum);
-    }
+    this.doLoadShoppingCartData2();
+    this.doCalculateTotalPrice();
   },
 
   methods: {
-    doLoadUserInfo: function() {
-      DoLoadUserInfo().then(res => {this.userInfoList = res;});
+    doLoadShoppingCartData2: function() {
+      let testParams = {
+        //
+      }
+      DoLoadShoppingCartData2(testParams).then(res => {this.shoppingCartList = res;});
     },
 
-    doLoadShoppingCartData: function() {
-      DoLoadShoppingCartData().then(res => {this.shoppingCartList = res;});
-      global.presentOrderNumber = "";
-      console.log(global.presentOrderNumber);
+    doCalculateTotalPrice: function() {
+      let testParams = {
+        //
+      }
+      DoCalculateTotalPrice(testParams).then(res => {this.totalInfo = res;});
+      console.log(this.totalInfo);
     },
 
-    // doCalculateTotalPrice: function() {
-    //   DoCalculateTotalPrice().then(res => {this.totalPrice = res;});
-    // }
 
   }
 }

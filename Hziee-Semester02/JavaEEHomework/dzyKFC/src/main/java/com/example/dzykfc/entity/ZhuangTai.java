@@ -1,5 +1,7 @@
 package com.example.dzykfc.entity;
 
+import java.util.Date;
+
 //订单状态表
 public class ZhuangTai {
     private String DingId;//订单序号

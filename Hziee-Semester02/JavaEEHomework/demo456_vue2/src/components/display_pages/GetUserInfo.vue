@@ -44,6 +44,7 @@
             <br>
             <router-link to="/MenuList"><input type="button" value="提交" id="submitInfo"
                                                v-on:click="submitUserInfo()"></router-link>
+<!--            <input type="button" value="提交" id="submitInfo" v-on:click="submitUserInfo()">-->
           </label>
         </form>
       </div>
@@ -58,8 +59,12 @@
 </style>
 
 <script>
-import {ParseUserInfoToDataBase} from "@/util/api";
-import global from "@/util/global";
+import {
+  DoSaveOrderNumber0,
+  DoSaveOrderNumber1,
+  DoSaveOrderNumber2, DoSaveOrderNumber3,
+  ParseUserInfoToDataBase
+} from "@/util/api";
 
 export default {
   name: "GetUserInfo",
@@ -67,27 +72,57 @@ export default {
     return {
       phoneNumber: "",
       userNumber: "",
-      orderNumber: "KFC" + "-" + (new Date().getTime()).toString(),
+      orderNumber: "",
       userInfoList: [],
+      testSavedNumber1: [],
+      testSavedNumber2: [],
+      testSavedNumber3: [],
+      testSavedNumber0: [],
+      generateNumber: "KFC" + "-" + (new Date().getTime()).toString() +
+          (Math.floor(Math.random() * 790) + 110).toString()
     }
   },
   mounted() {
-    console.log(global.presentOrderNumber);
+    console.log("刷新页面得到的订单号为：" + this.generateNumber);
   },
-
   methods: {
     submitUserInfo: function () {
       let testParams = {
-        dingId: this.orderNumber,
         userName: this.phoneNumber,
         yongHuRS: this.userNumber,
       };
-      ParseUserInfoToDataBase(testParams).then(res => {this.userInfoList = res;});
+      console.log("传递第一次的订单号为：" + this.generateNumber);
+
+
+      let onlyOrderNum = {
+        dingId: this.generateNumber,
+      }
+      console.log("传递第二次的订单号为：" + onlyOrderNum.dingId);
+
+      DoSaveOrderNumber0(onlyOrderNum).then(res => {
+        this.testSavedNumber0 = res;
+      });
+      DoSaveOrderNumber1(onlyOrderNum).then(res => {
+        this.testSavedNumber1 = res;
+      });
+      DoSaveOrderNumber2(onlyOrderNum).then(res => {
+        this.testSavedNumber2 = res;
+      });
+      DoSaveOrderNumber3(onlyOrderNum).then(res => {
+        this.testSavedNumber3 = res;
+      });
+
+      ParseUserInfoToDataBase(testParams).then(res => {
+        this.userInfoList = res;
+      });
+      console.log("完成的test的订单号为：" + onlyOrderNum.dingId);
+      console.log("再看一遍原本的：" + this.generateNumber);
+
       alert("已提交用户信息！");
       alert("点击确认跳转到菜单页面！");
-      global.presentOrderNumber = this.orderNumber;
-      console.log(global.presentOrderNumber);
     },
+
+
   },
 }
 </script>

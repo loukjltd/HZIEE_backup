@@ -261,6 +261,8 @@ export default {
       categoryList: [],
       foodList: [],
       requestFoodId: "",
+      checkTime: [],
+      overTimeStatus: 10,
     }
   },
 
@@ -326,7 +328,7 @@ export default {
       }
       DoAddFood(testParams).then(res => {this.requestFoodId = res;});
       alert("已成功加入购物车！编号：" + food);
-    }
+    },
   }
 }
 </script>

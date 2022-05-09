@@ -51,18 +51,18 @@
             <td class="foodQuantity"><b>数量</b></td>
             <td class="foodOperation"><b>操作</b></td>
           </tr>
-          <tr v-for="item in specificTableInfo" :key="item">
+          <tr v-for="item in shoppingCartList" :key="item">
             <td class="rankNum">{{ item.dingId }}</td>
             <td class="foodName">{{ item.cai }}</td>
             <td class="foodPrice">{{ item.caiJG }}</td>
             <td class="foodQuantity">{{ item.caiPinShuLiang }}</td>
-            <td class="foodOperation" v-for="param in shoppingCartList.slice(0, 1)" :key="param">
+            <td class="foodOperation">
               <div class="addButton">
-                <a href="#" v-on:click="doAddOrMinusFoodQuantity(param.caiId, 1)">+</a>
+                <a href="#" v-on:click="doAddOrMinusFoodQuantity(item.caiId, 1)">+</a>
               </div>
               <br>
               <div class="minusButton">
-                <a href="#" v-on:click="doAddOrMinusFoodQuantity(param.caiId, 0)">-</a>
+                <a href="#" v-on:click="doAddOrMinusFoodQuantity(item.caiId, 0)">-</a>
               </div>
             </td>
           </tr>
@@ -78,38 +78,32 @@
 </style>
 
 <script>
-import {DoAddOrMinusFoodQuantity, DoLoadShoppingCartData, DoLoadUserInfo} from "@/util/api";
+import {
+  DoAddOrMinusFoodQuantity,
+  DoLoadShoppingCartData,
+} from "@/util/api";
 
 export default {
   name: "ShoppingCart",
 
   data() {
     return {
-      // userInfoList: [],
       shoppingCartList: [],
       requestFoodName: [],
     }
   },
 
   mounted() {
-    this.doLoadUserInfo();
     this.doLoadShoppingCartData();
   },
 
-  computed: {
-    specificTableInfo: function () {
-      let targetTableNum = this.userInfoList[0].dingId;
-      return this.shoppingCartList.filter(tableNum => tableNum.dingId === targetTableNum);
-    }
-  },
-
   methods: {
-    doLoadUserInfo: function() {
-      DoLoadUserInfo().then(res => {this.userInfoList = res;});
-    },
 
     doLoadShoppingCartData: function() {
-      DoLoadShoppingCartData().then(res => {this.shoppingCartList = res;});
+      let testParams = {
+        //
+      }
+      DoLoadShoppingCartData(testParams).then(res => {this.shoppingCartList = res;});
     },
 
     doAddOrMinusFoodQuantity: function(foodId, quantityStatus) {
@@ -120,12 +114,18 @@ export default {
       DoAddOrMinusFoodQuantity(testParams).then(res => {this.requestFoodName = res;});
       if (quantityStatus === 1) {
         alert("已增加1份！");
-        location.reload();
-      } else {
+        this.doLoadShoppingCartData();
+        this.doLoadShoppingCartData();
+        this.doLoadShoppingCartData();
+      } else if(quantityStatus === 0) {
         alert("已减少1份！");
-        location.reload();
+        this.doLoadShoppingCartData();
+        this.doLoadShoppingCartData();
+        this.doLoadShoppingCartData();
       }
-    }
+    },
+
+
 
   }
 }

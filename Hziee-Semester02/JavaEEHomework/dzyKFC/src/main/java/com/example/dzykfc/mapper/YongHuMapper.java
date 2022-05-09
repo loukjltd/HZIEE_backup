@@ -30,7 +30,7 @@ public interface YongHuMapper {
 
     //传入用户dingId，得到weiId
     @Select("select weiId from ZhuangTai " +
-            " join YongHu on ZhuangTai.dingId = YongHu.dingId")
+            " join YongHu on ZhuangTai.dingId = YongHu.dingId where YongHu.dingId = #{dingId}")
     int dingGetWei(@Param("dingId") String dingId);
 
     //传入固定weiId，将位置状态改为0

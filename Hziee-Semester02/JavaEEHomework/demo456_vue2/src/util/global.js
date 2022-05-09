@@ -1,5 +1,5 @@
-const presentOrderNumber = "KFC-default";
+const presentOrderNumber = "KFC";
 
 export default {
-    presentOrderNumber
+  presentOrderNumber
 }

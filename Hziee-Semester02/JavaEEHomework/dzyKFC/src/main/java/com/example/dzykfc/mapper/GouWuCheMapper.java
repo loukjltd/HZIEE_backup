@@ -31,18 +31,19 @@ public interface GouWuCheMapper {
                             @Param("dingTime") String dingTime);
 
     //显示购物车数据
-    @Select("select * from GouWuChe")
-    List<GouWuChe> gouWuCheShuJuXS();
+    @Select("select * from GouWuChe where dingId = #{dingId}")
+    List<GouWuChe> gouWuCheShuJuXS(@Param("dingId")String dingId);
 
     //删除购物车中符合的菜品记录
-    @Delete("delete from GouWuChe where caiId = #{caiId}")
-    int ifCaiIdCai(@Param("caiId") int caiId);
+    @Delete("delete from GouWuChe where caiId = #{caiId} and dingId = #{dingId}")
+    int ifCaiIdCai(@Param("caiId") int caiId,
+                   @Param("dingId")String dingId);
 
     //显示状态表的数据
     @Select("select * from ZhuangTai")
     List<ZhuangTai> zhuangTaiShuJuXS();
 
-    //获得购物车的DingId，CaiPinShuLiang，状态表的ZhuangTai，DingTime，座位表的Wei。
+    //获得购物车的DingId，CaiPinShuLiang，状态表的ZhuangTai，DingTime，座位表的Wei等。并且是未支付状态
     @Select("select GouWuChe.DingId,GouWuChe.CaiPinShuLiang,ZhuangTai.ZhuangTaiId,ZhuangTai.DingTime,WeiHao.Wei," +
             " CaiPinBiao.Cai,CaiJG,GouWuChe.CaiId,YongHu.YongHuRS  " +
             " from GouWuChe " +
@@ -50,18 +51,46 @@ public interface GouWuCheMapper {
             " join ZhuangTai on GouWuChe.DingId = ZhuangTai.DingId" +
             " join WeiHao on ZhuangTai.WeiId = WeiHao.WeiId " +
             " join YongHu on GouWuChe.DingId = YongHu.DingId " +
-            " where GouWuChe.DingId = #{dingId}")
+            " where GouWuChe.DingId = #{dingId} and ZhuangTaiId = 2")
     List<QDGouWuChe> qDGouWuCheXS(@Param("dingId") String dingId);
+
+    //获得购物车的DingId，CaiPinShuLiang，状态表的ZhuangTai，DingTime，座位表的Wei等。并且是完成支付状态
+    @Select("select GouWuChe.DingId,GouWuChe.CaiPinShuLiang,ZhuangTai.ZhuangTaiId,ZhuangTai.DingTime,WeiHao.Wei," +
+            " CaiPinBiao.Cai,CaiJG,GouWuChe.CaiId,YongHu.YongHuRS  " +
+            " from GouWuChe " +
+            " join CaiPinBiao on GouWuChe.CaiId = CaiPinBiao.CaiId" +
+            " join ZhuangTai on GouWuChe.DingId = ZhuangTai.DingId" +
+            " join WeiHao on ZhuangTai.WeiId = WeiHao.WeiId " +
+            " join YongHu on GouWuChe.DingId = YongHu.DingId " +
+            " where GouWuChe.DingId = #{dingId} and ZhuangTaiId = 1")
+    List<QDGouWuChe> qD2GouWuCheXS(@Param("dingId") String dingId);
+
+    //获得购物车的DingId，CaiPinShuLiang，状态表的ZhuangTai，DingTime，座位表的Wei等。并且是超时的
+    @Select("select GouWuChe.DingId,GouWuChe.CaiPinShuLiang,ZhuangTai.ZhuangTaiId,ZhuangTai.DingTime,WeiHao.Wei," +
+            " CaiPinBiao.Cai,CaiJG,GouWuChe.CaiId,YongHu.YongHuRS  " +
+            " from GouWuChe " +
+            " join CaiPinBiao on GouWuChe.CaiId = CaiPinBiao.CaiId" +
+            " join ZhuangTai on GouWuChe.DingId = ZhuangTai.DingId" +
+            " join WeiHao on ZhuangTai.WeiId = WeiHao.WeiId " +
+            " join YongHu on GouWuChe.DingId = YongHu.DingId " +
+            " where GouWuChe.DingId = #{dingId} and ZhuangTaiId = 1")
+    List<QDGouWuChe> qD3GouWuCheXS(@Param("dingId") String dingId);
+
+
+
+
 
     //向购物车中的某个商品进行加一操作
     @Update("update GouWuChe set CaiPinShuLiang = CaiPinShuLiang +1 " +
             " where caiId = #{caiId}")
-    int shuliangADD(@Param("caiId") int caiId);
+    int shuliangADD(@Param("caiId") int caiId,
+                    @Param("dingId") String dingId);
 
     //向购物车中的某个商品进行减一操作
     @Update("update GouWuChe set CaiPinShuLiang = CaiPinShuLiang -1 " +
-            " where caiId = #{caiId}")
-    int shuliangSUB(@Param("caiId") int caiId);
+            " where caiId = #{caiId} and dingId = #{dingId}")
+    int shuliangSUB(@Param("caiId") int caiId,
+                    @Param("dingId")String dingId);
 
 
 
