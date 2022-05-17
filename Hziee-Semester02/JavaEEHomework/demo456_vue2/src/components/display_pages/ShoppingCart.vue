@@ -15,9 +15,9 @@
         </li>
         <li><a href="#">关于KFC</a></li>
         <li><a href="#">查找KFC</a></li>
-        <li><a href="#">商城</a></li>
+        <li><a href="#" v-on:click="doLoadShoppingCartData()">刷新</a></li>
         <li>
-          <router-link to="/FinishedOrder" id="finish_order">完成点单</router-link>
+          <router-link to="/FinishedOrders" id="finish_orders">完成点单</router-link>
         </li>
       </ul>
     </div>
@@ -27,15 +27,22 @@
     <div id="orderInfo">
       <div id="otherInfo">
         <ul>
-          <li><a><b>当前点餐人数</b></a></li>
-          <li v-for="userInfo in shoppingCartList.slice(0, 1)" :key="userInfo">
-            <a>{{ userInfo.yongHuRS }}人</a>
+          <li><a><b>当前点餐桌号</b></a></li>
+          <li>
+            <select id="tableNumber" v-model="tableNumber">
+              <option v-for="selectTableNumber in availableTableNumber" :key="selectTableNumber"
+                      :value="selectTableNumber.weiId" v-on:click="doLoadShoppingCartData()">{{ selectTableNumber.wei }}</option>
+            </select>
+          </li>
+          <br>
+          <li>
+            <a id="confirmOption" v-on:click="doLoadShoppingCartData()">确认</a>
           </li>
           <br>
           <br>
-          <li><a><b>当前点餐桌号</b></a></li>
+          <li><a><b>当前点餐人数</b></a></li>
           <li v-for="userInfo in shoppingCartList.slice(0, 1)" :key="userInfo">
-            <a>{{ userInfo.wei }}</a>
+            <a>{{ userInfo.yongHuRS }}人</a>
           </li>
           <br>
           <br>
@@ -80,7 +87,7 @@
 <script>
 import {
   DoAddOrMinusFoodQuantity,
-  DoLoadShoppingCartData,
+  DoLoadShoppingCartData, DoOverTimeCheck, DoParseTableNumber, GiveMeUsingTableNumber,
 } from "@/util/api";
 
 export default {
@@ -88,43 +95,53 @@ export default {
 
   data() {
     return {
+      tableNumber: "1",
       shoppingCartList: [],
       requestFoodName: [],
+      availableTableNumber: [],
     }
   },
 
   mounted() {
+    DoOverTimeCheck();
     this.doLoadShoppingCartData();
+    this.giveMeUsingTableNumber();
   },
 
   methods: {
 
-    doLoadShoppingCartData: function() {
+    doLoadShoppingCartData: function () {
       let testParams = {
-        //
+        weiId: this.tableNumber,
       }
-      DoLoadShoppingCartData(testParams).then(res => {this.shoppingCartList = res;});
+      DoParseTableNumber(testParams);
+      DoLoadShoppingCartData(testParams).then(res => {
+        this.shoppingCartList = res;
+      });
     },
 
-    doAddOrMinusFoodQuantity: function(foodId, quantityStatus) {
+    doAddOrMinusFoodQuantity: function (foodId, quantityStatus) {
       let testParams = {
         caiId: foodId,
         status: quantityStatus,
       };
-      DoAddOrMinusFoodQuantity(testParams).then(res => {this.requestFoodName = res;});
+      DoAddOrMinusFoodQuantity(testParams).then(res => {
+        this.requestFoodName = res;
+      });
       if (quantityStatus === 1) {
         alert("已增加1份！");
         this.doLoadShoppingCartData();
-        this.doLoadShoppingCartData();
-        this.doLoadShoppingCartData();
-      } else if(quantityStatus === 0) {
+      } else if (quantityStatus === 0) {
         alert("已减少1份！");
-        this.doLoadShoppingCartData();
-        this.doLoadShoppingCartData();
         this.doLoadShoppingCartData();
       }
     },
 
+    giveMeUsingTableNumber: function () {
+      GiveMeUsingTableNumber().then((res) => {
+        this.availableTableNumber = res;
+      })
+    }
 
 
   }

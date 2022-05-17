@@ -6,6 +6,15 @@
     background-color: #F9F8F6;
 }
 
+#tableNumber {
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #DCDCDC;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
 #otherInfo ul {
     list-style: none;
     height: 20px;
@@ -13,7 +22,7 @@
 }
 
 #otherInfo ul li {
-    padding-top: 12px;
+    padding-top: 8px;
 }
 
 #otherInfo ul li a {
@@ -67,6 +76,24 @@
     background-color: #D12D35;
     border-radius: 20px;
 }
+
 .foodDetailsText a:hover {
     text-decoration: underline;
 }
+
+#submitInfo {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: #D12D35;
+    margin-left: 10px;
+    color: white;
+    border: none;
+}
+
+#submitInfo:hover {
+    text-decoration: underline;
+}
+
+

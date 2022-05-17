@@ -2,6 +2,8 @@ package com.example.dzykfc.service;
 
 
 import com.example.dzykfc.entity.ZhuangTai;
+import com.example.dzykfc.mapper.WeiHaoMapper;
+import com.example.dzykfc.mapper.YongHuMapper;
 import com.example.dzykfc.mapper.ZhuangTaiMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,10 @@ import java.util.zip.DataFormatException;
 public class ZhuangTaiService {
     @Autowired
     private ZhuangTaiMapper zhuangTaiMapper;
+    @Autowired
+    private YongHuMapper yongHuMapper;
+    @Autowired
+    private WeiHaoMapper weiHaoMapper;
 
     //dingId超时检测
     public List<ZhuangTai> chaoShiJC(String dingId){
@@ -38,7 +44,9 @@ public class ZhuangTaiService {
             if (fen>30){
                 //如果时间超过30分钟，将状态转为0
                 zhuangTaiMapper.zTW0(zhuangTai.getDingId());
+                yongHuMapper.setYongHuZT(zhuangTai.getDingId());
 
+                weiHaoMapper.getdingIdsetweizhuangtai0(zhuangTai.getDingId());
             }
 
 

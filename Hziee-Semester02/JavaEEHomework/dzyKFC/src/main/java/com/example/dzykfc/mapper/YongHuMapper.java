@@ -12,15 +12,40 @@ import java.util.List;
 @Mapper
 @Repository
 public interface YongHuMapper {
-    //用户表信息传输
-    @Select("select * from YongHu")
-    List<YongHu> yongHuShuJuXS();
 
+    //-----------new-------------------
+
+
+
+    //------------new and old-------------------------
     //用户信息写入YongHu表
     @Insert("insert into YongHu( DingId, UserName, YongHuRs) values (#{dingId}, #{userName}, #{yongHuRS})")
     int yongHuShuJuShuR(@Param("dingId") String dingId,
                         @Param("userName") String userName,
                         @Param("yongHuRS") int yongHuRS);
+    //提供dingId将用户表中的状态改为0离线
+    @Update("update yongHu set YHZTID = 0 where dingId = #{dingId}")
+    int setYongHuZT(@Param("dingId") String dingId);
+
+
+    //------------old------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+    //用户表信息传输
+    @Select("select * from YongHu")
+    List<YongHu> yongHuShuJuXS();
+
+
 
 
 
@@ -29,8 +54,7 @@ public interface YongHuMapper {
     List<WeiHao> weiHaoXS();
 
     //传入用户dingId，得到weiId
-    @Select("select weiId from ZhuangTai " +
-            " join YongHu on ZhuangTai.dingId = YongHu.dingId where YongHu.dingId = #{dingId}")
+    @Select("select weiId from ZhuangTai join YongHu on ZhuangTai.dingId = YongHu.dingId where YongHu.dingId = #{dingId}")
     int dingGetWei(@Param("dingId") String dingId);
 
     //传入固定weiId，将位置状态改为0
@@ -42,8 +66,5 @@ public interface YongHuMapper {
     List<ZhuangTai> zhuangTaiXS();
 
 
-    //提供dingId将用户表中的状态改为0离线
-    @Update("update yongHu set YHZTID = 0 where dingId = #{dingId}")
-    int setYongHuZT(@Param("dingId") String dingId);
 
 }

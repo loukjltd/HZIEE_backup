@@ -7,16 +7,16 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DBOpenHelper extends SQLiteOpenHelper {
-    private final String DB_NAME = "demo.db";
-    private final String TABLE_NAME = "people";
-    private final String COLLUM_ID = "_id";
-    private final String COLLUM_NAME = "name";
-    private final String COLLUM_AGE = "age";
-    private final String COLLUM_HEIGHT = "height";
-    private final String SQL_CREATE_TABLE = "create table ( "
+    public static final String DB_NAME = "demo.db";
+    public static final String TABLE_NAME = "people";
+    public static final String COLLUM_ID = "_id";
+    public static final String COLLUM_NAME = "name";
+    public static final String COLLUM_AGE = "age";
+    public static final String COLLUM_HEIGHT = "height";
+    public static final String SQL_CREATE_TABLE = "create table " + TABLE_NAME + " ("
             + COLLUM_ID + " integer primary key autoincrement, "
-            + COLLUM_NAME + " text not null,"
-            + COLLUM_AGE + " integer"
+            + COLLUM_NAME + " text not null, "
+            + COLLUM_AGE + " integer, "
             + COLLUM_HEIGHT + " float );";
     private SQLiteDatabase database;
 

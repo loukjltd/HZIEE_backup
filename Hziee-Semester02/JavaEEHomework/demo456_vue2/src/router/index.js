@@ -30,14 +30,14 @@ export default new Router({
             component: () => import('@/components/display_pages/ShoppingCart')
         },
         {
-            path: '/FinishedOrder',
-            name: 'FinishedOrder',
-            component: () => import('@/components/display_pages/FinishedOrder')
+            path: '/FinishedOrders',
+            name: 'FinishedOrders',
+            component: () => import('@/components/display_pages/FinishedOrders')
         },
         {
-            path: '/DisplayFinishedOrders',
-            name: 'DisplayFinishedOrders',
-            component: () => import('@/components/display_pages/DisplayFinishedOrders')
+            path: '/ChooseToPay',
+            name: 'ChooseToPay',
+            component: () => import('@/components/display_pages/ChooseToPay')
         }
         // {
         //     path: '/',

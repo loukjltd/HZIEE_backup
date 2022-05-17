@@ -7,6 +7,6 @@
 
     <!--映射模型-->
     <list>
-        <mapping class="com.example.wechating.domain.User"/>
+        <mapping class="com.example.fakewechatproject.domain.User"/>
     </list>
 </litepal>

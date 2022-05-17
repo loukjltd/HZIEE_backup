@@ -19,10 +19,145 @@ import java.util.Map;
 @Controller
 @CrossOrigin//？？？？？
 public class GouWuCheController {
+    private int weiId;
+
+    public int getWeiId() {
+        return weiId;
+    }
+
+    public void setWeiId(int weiId) {
+        this.weiId = weiId;
+    }
+
+    //-------------------new------------------
+    //购物车换座位号得weiId
+    @RequestMapping("huanGetWeiId")
+    @ResponseBody
+    public void huanGetWeiId (@RequestBody Map<String,Object> map){
+        int weiId = Integer.parseInt(map.get("weiId").toString());
+        setWeiId(weiId);
+    }
+    //这个方法用于放入购物车数据
+    @RequestMapping("newgouWuCheChaRuList")
+    @ResponseBody
+    public void newgouWuCheChaRuList (@RequestBody Map<String, Object> map){
+        int caiId = Integer.parseInt(map.get("caiId").toString());
+//        int weiId = Integer.parseInt(map.get("weiId").toString());
+        System.out.println("放入购物车成功:::::::" + getWeiId());
+        gouWuCheService.newgouWuCheChaRuList(caiId,getWeiId());
+
+    }
+
+
+    @RequestMapping("newshuLiang")
+    @ResponseBody
+    public void newshuLiang(@RequestBody Map<String, Object> map){
+        int caiId = Integer.parseInt(map.get("caiId").toString());
+        int status = Integer.parseInt(map.get("status").toString());
+//        int weiId = Integer.parseInt(map.get("weiId").toString());
+//        String dingId  = map.get("dingId").toString();
+
+        gouWuCheService.newshuLiang(caiId,status,getWeiId());
+    }
+    //----------------------new and old---------------
+    //获得购物车的DingId，CaiPinShuLiang，状态表的ZhuangTai，DingTime，座位表的Wei。
+    @RequestMapping("qDGouWuCheXS")//前端购物显示需要的数据
+    @ResponseBody
+    public List<QDGouWuChe> qDGouWuCheXS(@RequestBody Map<String,Object> map){
+//        int weiId = Integer.parseInt(map.get("weiId").toString());
+
+        return gouWuCheService.qDGouWuCheXS(getWeiId());
+    }
+
+    //完成支付后调用的方法
+    @RequestMapping("wanChengZF")
+    @ResponseBody
+    public void wanChengZF(@RequestBody Map<String ,Object> map){
+//        int weiId = Integer.parseInt(map.get("weiId").toString());
+        gouWuCheService.wanChengZF(getWeiId());
+    }
+
+    //结账完成提供菜品数量总数和总价格
+    @RequestMapping("wcDingDaiShuJuXS")
+    @ResponseBody
+    public List<WCDingDaiShuJuXS> wcDingDaiShuJuXS(@RequestBody Map<String,Object> map){
+//        int weiId = Integer.parseInt(map.get("weiId").toString());
+        return gouWuCheService.wcDingDaiShuJuXS(getWeiId());
+    }
+
+
+    //对数据进行判断，判断是0还1，1商品数量+1，0商品数量-1
+    //status表示商品增减状态
+    @RequestMapping("shuLiang")
+    @ResponseBody
+    public void shuLiang(@RequestBody Map<String, Object> map){
+        int caiId = Integer.parseInt(map.get("caiId").toString());
+        int status = Integer.parseInt(map.get("status").toString());
+//        String dingId  = map.get("dingId").toString();
+
+        gouWuCheService.shuLiang(caiId,status,getDingId());
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //old
     @Autowired
     private GouWuCheService gouWuCheService;
     //创建一个dingId，将前端的dingId进行后端存储
     private String dingId=null;
+
+
+
 
     public String getDingId() {
         return dingId;
@@ -32,12 +167,24 @@ public class GouWuCheController {
         this.dingId = dingId;
     }
 
+
+
+
     //这个方法用于将前端传过来dingId进行存储
     @RequestMapping("GouWuCheDingId")
     @ResponseBody
     public void gouWuCheDingId(@RequestBody Map<String,Object> map){
         String dingId = map.get("dingId").toString();
         setDingId(dingId);
+    }
+
+
+    //这个方法用于将前端传过来dingId进行存储
+    @RequestMapping("GouWuCheWeiId")
+    @ResponseBody
+    public void GouWuCheWeiId(@RequestBody Map<String,Object> map){
+        int weiId = Integer.parseInt(map.get("weiId").toString());
+        setWeiId(weiId);
     }
 
 
@@ -86,57 +233,15 @@ public class GouWuCheController {
 
 
 
-    //获得购物车的DingId，CaiPinShuLiang，状态表的ZhuangTai，DingTime，座位表的Wei。
-    @RequestMapping("qDGouWuCheXS")//前端购物显示需要的数据
-    @ResponseBody
-    public List<QDGouWuChe> qDGouWuCheXS(@RequestBody Map<String,Object> map){
-//        String dingId  = map.get("dingId").toString();
-
-        return gouWuCheService.qDGouWuCheXS(getDingId());
-    }
-    @RequestMapping("qD2GouWuCheXS")//前端购物显示需要的数据，已经完成支付的数据
-    @ResponseBody
-    public List<QDGouWuChe> qD2GouWuCheXS(@RequestBody Map<String,Object> map){
-//        String dingId  = map.get("dingId").toString();
-        return gouWuCheService.qD2GouWuCheXS(getDingId());
-    }
-    @RequestMapping("qD3GouWuCheXS")//前端购物显示需要的数据，超时的数据
-    @ResponseBody
-    public List<QDGouWuChe> qD3GouWuCheXS(@RequestBody Map<String,Object> map){
-//        String dingId  = map.get("dingId").toString();
-        return gouWuCheService.qD3GouWuCheXS(getDingId());
-    }
 
 
 
-    //结账完成提供菜品数量总数和总价格
-    @RequestMapping("wcDingDaiShuJuXS")
-    @ResponseBody
-    public List<WCDingDaiShuJuXS> wcDingDaiShuJuXS(@RequestBody Map<String,Object> map){
-//        String dingId  = map.get("dingId").toString();
-        return gouWuCheService.wcDingDaiShuJuXS(getDingId());
-    }
 
 
-    //对数据进行判断，判断是0还1，1商品数量+1，0商品数量-1
-    //status表示商品增减状态
-    @RequestMapping("shuLiang")
-    @ResponseBody
-    public void shuLiang(@RequestBody Map<String, Object> map){
-        int caiId = Integer.parseInt(map.get("caiId").toString());
-        int status = Integer.parseInt(map.get("status").toString());
-//        String dingId  = map.get("dingId").toString();
-
-        gouWuCheService.shuLiang(caiId,status,getDingId());
-    }
 
 
-    //完成支付后调用的方法
-    @RequestMapping("wanChengZF")
-    @ResponseBody
-    public void wanChengZF(){
-        gouWuCheService.wanChengZF(getDingId());
-    }
+
+
 
     //释放dingId
     @RequestMapping("wCGouWuCheNotDingId")

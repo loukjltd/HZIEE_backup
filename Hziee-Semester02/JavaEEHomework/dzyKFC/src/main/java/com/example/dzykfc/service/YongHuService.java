@@ -18,7 +18,43 @@ public class YongHuService {
     private YongHuMapper yongHuMapper;
     @Autowired
     private ZhuangTaiMapper zhuangTaiMapper;
+    //new
+    //这个方法用于放入yonghu表数据
+    public void newyongHuShuJuShuR(String dingId, String userName ,int yongHuRS,int weiId){
 
+
+        //时间获取
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String createDate = sdf.format(new java.util.Date());
+        //1：weiId状态为1
+        zhuangTaiMapper.setWeiZhuangTai(weiId);
+        //将数据与没有人使用的桌子进行绑定，也就是将数据写入状态表
+        zhuangTaiMapper.zhuangTaiShuJuShuR(dingId,weiId,createDate);
+        //将用户信息写入用户表;
+        yongHuMapper.yongHuShuJuShuR(dingId,userName,yongHuRS);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //old
 //    public YongHuService(ZhuangTaiMapper zhuangTaiMapper) {
 //        this.zhuangTaiMapper = zhuangTaiMapper;
 //    }

@@ -7,7 +7,7 @@
     tools:context=".ui.index.IndexFragment">
 
     <ListView
-        android:id="@+id/index_listView"
+        android:id="@+id/lvIndex"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

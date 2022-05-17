@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.fakewechatproject.component.FriendsSlideLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvCatalog"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#E0E0E0"
+            android:padding="10dp"
+            android:textColor="#454545"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/ivFriendAvatar"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_below="@id/tvCatalog" />
+
+
+        <TextView
+            android:id="@+id/tvFriendName"
+            android:layout_width="412dp"
+            android:layout_height="70dp"
+            android:layout_below="@id/tvCatalog"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/design_default_color_background"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:textColor="#336598"
+            android:textSize="25sp" />
+
+    </RelativeLayout>
+
+</com.example.fakewechatproject.component.FriendsSlideLayout>
+
+
+
+
+

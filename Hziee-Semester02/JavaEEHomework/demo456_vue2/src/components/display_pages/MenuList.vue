@@ -15,9 +15,9 @@
         </li>
         <li><a href="#">关于KFC</a></li>
         <li><a href="#">查找KFC</a></li>
-        <li><a href="#">商城</a></li>
+        <li><a href="#" v-on:click="doLoadFoodData()">刷新</a></li>
         <li>
-          <router-link to="/FinishedOrder" id="finish_order">完成点单</router-link>
+          <router-link to="/FinishedOrders" id="finish_orders">完成点单</router-link>
         </li>
       </ul>
     </div>
@@ -26,8 +26,15 @@
     </div>
     <div id="orderPart">
       <div id="otherInfo">
-        <ul v-for="category in categoryList" :key="category">
-          <li><a>{{ category.caiLei }}</a></li>
+        <ul>
+          <li><a><b>当前点餐桌号</b></a></li>
+          <li>
+            <select id="tableNumber" v-model="tableNumber">
+              <option v-for="selectTableNumber in availableTableNumber" :key="selectTableNumber" :value="selectTableNumber.weiId" v-on:select="doLoadFoodData()">{{ selectTableNumber.wei }}</option>
+            </select>
+          </li>
+          <li><a><b>菜品分类</b></a></li>
+          <li v-for="category in categoryList" :key="category"><a>{{ category.caiLei }}</a></li>
         </ul>
       </div>
       <div id="foodDetails">
@@ -54,7 +61,7 @@
                 <img src="../../assets/FoodImage_02.png" class="foodDetailsImage">
                 <div class="foodDetailsText">
                   <p>菜品名称：{{ singleMeal.cai }}</p>
-                  <p>菜品序号：{{ singleMeal.caiId}}</p>
+                  <p>菜品序号：{{ singleMeal.caiId }}</p>
                   <p>菜品价格：¥{{ singleMeal.caiJG }}</p>
                   <br>
                   <a href="#" v-on:click="doAddFood(singleMeal.caiId)">加入购物车</a>
@@ -71,7 +78,7 @@
                 <img src="../../assets/FoodImage_03.png" class="foodDetailsImage">
                 <div class="foodDetailsText">
                   <p>菜品名称：{{ doubleMeal.cai }}</p>
-                  <p>菜品序号：{{ doubleMeal.caiId}}</p>
+                  <p>菜品序号：{{ doubleMeal.caiId }}</p>
                   <p>菜品价格：¥{{ doubleMeal.caiJG }}</p>
                   <br>
                   <a href="#" v-on:click="doAddFood(doubleMeal.caiId)">加入购物车</a>
@@ -87,7 +94,7 @@
                 <img src="../../assets/FoodImage_04.jpeg" class="foodDetailsImage">
                 <div class="foodDetailsText">
                   <p>菜品名称：{{ fullChicken.cai }}</p>
-                  <p>菜品序号：{{ fullChicken.caiId}}</p>
+                  <p>菜品序号：{{ fullChicken.caiId }}</p>
                   <p>菜品价格：¥{{ fullChicken.caiJG }}</p>
                   <br>
                   <a href="#" v-on:click="doAddFood(fullChicken.caiId)">加入购物车</a>
@@ -103,7 +110,7 @@
                 <img src="../../assets/FoodImage_05.png" class="foodDetailsImage">
                 <div class="foodDetailsText">
                   <p>菜品名称：{{ friedChicken.cai }}</p>
-                  <p>菜品序号：{{ friedChicken.caiId}}</p>
+                  <p>菜品序号：{{ friedChicken.caiId }}</p>
                   <p>菜品价格：¥{{ friedChicken.caiJG }}</p>
                   <br>
                   <a href="#" v-on:click="doAddFood(friedChicken.caiId)">加入购物车</a>
@@ -119,7 +126,7 @@
                 <img src="../../assets/FoodImage_06.png" class="foodDetailsImage">
                 <div class="foodDetailsText">
                   <p>菜品名称：{{ hamburger.cai }}</p>
-                  <p>菜品序号：{{ hamburger.caiId}}</p>
+                  <p>菜品序号：{{ hamburger.caiId }}</p>
                   <p>菜品价格：¥{{ hamburger.caiJG }}</p>
                   <br>
                   <a href="#" v-on:click="doAddFood(hamburger.caiId)">加入购物车</a>
@@ -135,7 +142,7 @@
                 <img src="../../assets/FoodImage_07.png" class="foodDetailsImage">
                 <div class="foodDetailsText">
                   <p>菜品名称：{{ rice.cai }}</p>
-                  <p>菜品序号：{{ rice.caiId}}</p>
+                  <p>菜品序号：{{ rice.caiId }}</p>
                   <p>菜品价格：¥{{ rice.caiJG }}</p>
                   <br>
                   <a href="#" v-on:click="doAddFood(rice.caiId)">加入购物车</a>
@@ -151,7 +158,7 @@
                 <img src="../../assets/FoodImage_08.png" class="foodDetailsImage">
                 <div class="foodDetailsText">
                   <p>菜品名称：{{ drink.cai }}</p>
-                  <p>菜品序号：{{ drink.caiId}}</p>
+                  <p>菜品序号：{{ drink.caiId }}</p>
                   <p>菜品价格：¥{{ drink.caiJG }}</p>
                   <br>
                   <a href="#" v-on:click="doAddFood(drink.caiId)">加入购物车</a>
@@ -167,7 +174,7 @@
                 <img src="../../assets/FoodImage_09.png" class="foodDetailsImage">
                 <div class="foodDetailsText">
                   <p>菜品名称：{{ coffee.cai }}</p>
-                  <p>菜品序号：{{ coffee.caiId}}</p>
+                  <p>菜品序号：{{ coffee.caiId }}</p>
                   <p>菜品价格：¥{{ coffee.caiJG }}</p>
                   <br>
                   <a href="#" v-on:click="doAddFood(coffee.caiId)">加入购物车</a>
@@ -183,7 +190,7 @@
                 <img src="../../assets/FoodImage_10.png" class="foodDetailsImage">
                 <div class="foodDetailsText">
                   <p>菜品名称：{{ dessert.cai }}</p>
-                  <p>菜品序号：{{ dessert.caiId}}</p>
+                  <p>菜品序号：{{ dessert.caiId }}</p>
                   <p>菜品价格：¥{{ dessert.caiJG }}</p>
                   <br>
                   <a href="#" v-on:click="doAddFood(dessert.caiId)">加入购物车</a>
@@ -199,7 +206,7 @@
                 <img src="../../assets/FoodImage_11.png" class="foodDetailsImage">
                 <div class="foodDetailsText">
                   <p>菜品名称：{{ bake.cai }}</p>
-                  <p>菜品序号：{{ bake.caiId}}</p>
+                  <p>菜品序号：{{ bake.caiId }}</p>
                   <p>菜品价格：¥{{ bake.caiJG }}</p>
                   <br>
                   <a href="#" v-on:click="doAddFood(bake.caiId)">加入购物车</a>
@@ -215,7 +222,7 @@
                 <img src="../../assets/FoodImage_12.png" class="foodDetailsImage">
                 <div class="foodDetailsText">
                   <p>菜品名称：{{ iceCream.cai }}</p>
-                  <p>菜品序号：{{ iceCream.caiId}}</p>
+                  <p>菜品序号：{{ iceCream.caiId }}</p>
                   <p>菜品价格：¥{{ iceCream.caiJG }}</p>
                   <br>
                   <a href="#" v-on:click="doAddFood(iceCream.caiId)">加入购物车</a>
@@ -231,7 +238,7 @@
                 <img src="../../assets/FoodImage_13.png" class="foodDetailsImage">
                 <div class="foodDetailsText">
                   <p>菜品名称：{{ childrenMeal.cai }}</p>
-                  <p>菜品序号：{{ childrenMeal.caiId}}</p>
+                  <p>菜品序号：{{ childrenMeal.caiId }}</p>
                   <p>菜品价格：¥{{ childrenMeal.caiJG }}</p>
                   <br>
                   <a href="#" v-on:click="doAddFood(childrenMeal.caiId)">加入购物车</a>
@@ -251,18 +258,29 @@
 </style>
 
 <script>
-import {DoAddFood, DoLoadCategoryData, DoLoadFoodData} from "@/util/api";
+import {
+  DoAddFood,
+  DoLoadCategoryData,
+  DoLoadFoodData,
+  DoOverTimeCheck,
+  DoParseTableNumber,
+  GiveMeUsingTableNumber
+} from "@/util/api";
 
 export default {
   name: "MenuList",
 
   data() {
     return {
+      tableNumber: "1",
       categoryList: [],
       foodList: [],
       requestFoodId: "",
       checkTime: [],
       overTimeStatus: 10,
+      tableNumList: [],
+      parseTableNumTest: [],
+      availableTableNumber: [],
     }
   },
 
@@ -309,26 +327,45 @@ export default {
 
   },
   mounted() {
+    DoOverTimeCheck();
     this.doLoadCategoryData();
     this.doLoadFoodData();
+    this.giveMeUsingTableNumber();
   },
 
   methods: {
     doLoadCategoryData: function () {
-      DoLoadCategoryData().then(res => {this.categoryList = res;});
+      DoLoadCategoryData().then(res => {
+        this.categoryList = res;
+      });
     },
 
     doLoadFoodData: function () {
-      DoLoadFoodData().then((res) => {this.foodList = res;});
+      DoLoadFoodData().then((res) => {
+        this.foodList = res;
+      });
+      let testParams = {
+        weiId: this.tableNumber
+      }
+      DoParseTableNumber(testParams);
     },
 
     doAddFood: function (food) {
+      this.doLoadFoodData();
       let testParams = {
         caiId: food,
       }
-      DoAddFood(testParams).then(res => {this.requestFoodId = res;});
+      DoAddFood(testParams).then(res => {
+        this.requestFoodId = res;
+      });
       alert("已成功加入购物车！编号：" + food);
     },
+
+    giveMeUsingTableNumber: function () {
+      GiveMeUsingTableNumber().then((res) => {
+        this.availableTableNumber = res;
+      })
+    }
   }
 }
 </script>

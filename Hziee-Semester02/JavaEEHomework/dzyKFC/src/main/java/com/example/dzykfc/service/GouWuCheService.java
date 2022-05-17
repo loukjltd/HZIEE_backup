@@ -3,7 +3,9 @@ package com.example.dzykfc.service;
 
 import com.example.dzykfc.entity.*;
 import com.example.dzykfc.mapper.GouWuCheMapper;
+import com.example.dzykfc.mapper.WeiHaoMapper;
 import com.example.dzykfc.mapper.YongHuMapper;
+import com.example.dzykfc.mapper.ZhuangTaiMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,32 +20,153 @@ public class GouWuCheService {
     private GouWuCheMapper gouWuCheMapper;
     @Autowired
     private YongHuMapper yongHuMapper;
+    @Autowired
+    private WeiHaoMapper weiHaoMapper;
+    @Autowired
+    private ZhuangTaiMapper zhuangTaiMapper;
+    //-----------------new------------------
+    public void   newgouWuCheChaRuList(int caiId ,int weiId) {
+        //判断这个座位是否已经被使用
+        int weizhuangTai = weiHaoMapper.setWeiIdgetweiZhuangTai(weiId);
+        //如果位置是在使用的
+        if (weizhuangTai == 1){
+            //判断数据库有没有出现过这个菜品
+            List<GouWuChe> gouWuCheList = new ArrayList<GouWuChe>();
+            gouWuCheList = gouWuCheMapper.newDCIdCK(weiId, caiId);
+            //通过weiId查询dingId
+            String dingId = zhuangTaiMapper.setWeiIdgetdingId2(weiId);
+            if (gouWuCheList.size() == 0) {
+                //没有这个菜品进行插入
+                gouWuCheMapper.chaRuShuJuGouWuChe(dingId, caiId);
+            } else {
+                //有则+1
+                gouWuCheMapper.shuliangADD(caiId, dingId);
 
-    //这个方法是前端完成支付时调用的方法
-    public void wanChengZF(String dingId){
-        //首先获取用户表的信息，对用户表的用户的状态进行判断用户目前的状态
-//        List<YongHu> yongHuList = new ArrayList<YongHu>();
-//        yongHuList = yongHuMapper.yongHuShuJuXS();
-//        //for循环遍历所有的用户
-//        for (int i = 0;i < yongHuList.size();i++){
-//            YongHu YH = new YongHu();
-//            YH = yongHuList.get(i);
-//            if (YH.getYHZTID() == 1){
-                //将这个用户的weiId找到weiId
-                int weiId = yongHuMapper.dingGetWei(dingId);
+            }
+        }
+    }
 
-                //将在线条的用户订单状态改为已支付1
-                gouWuCheMapper.setdingdanWCZF(dingId);
-                //同时还要将在线的用户的状态改为不在线0
-                yongHuMapper.setYongHuZT(dingId);
-                //并且将桌子的状态改回0
-                yongHuMapper.weiIdGaiZT(weiId);
-                //只执行一次
-//                break;
-//            }
-//        }
+
+    //对数据进行判断，判断是0还1，1商品数量+1，0商品数量-1
+    public void newshuLiang(int caiId,int status,int weiId){//status表示商品增减状态
+        //通过weiId查询dingId
+        String dingId = zhuangTaiMapper.setWeiIdgetdingId2(weiId);
+        if (status == 1){
+            //菜品数量加1
+            gouWuCheMapper.shuliangADD(caiId,dingId);
+        }else {
+            //但是当减的时候可能会减少为0，当为0时数据消失
+            //查询购物车数据库符合caiId的目前数量
+            List<GouWuChe> gouWuCheList = new ArrayList<GouWuChe>();
+            gouWuCheList = gouWuCheMapper.gouWuCheShuJuXS(dingId);
+            for (int i=0;i<gouWuCheList.size();i++){
+                GouWuChe gouWuChe = new GouWuChe();
+                gouWuChe = gouWuCheList.get(i);
+                //如果菜品名相同，数量为1
+                if (gouWuChe.getCaiId() == caiId && gouWuChe.getCaiPinShuLiang() == 1){
+                    //删除购物车中符合的菜品记录
+                    gouWuCheMapper.ifCaiIdCai(caiId,dingId);
+                    break;
+                }
+            }
+            //菜品数量减1
+            gouWuCheMapper.shuliangSUB(caiId,dingId);
+        }
 
     }
+
+
+    //------------------------new and old-----------------
+    //供给前端的购物车数据
+    public List<QDGouWuChe> qDGouWuCheXS(int weiId){
+
+        String dingId = zhuangTaiMapper.setWeiIdgetdingId2(weiId);
+
+        //对总价进行一个计算
+        List<QDGouWuChe> qdGouWuCheZhong = new ArrayList<QDGouWuChe>();
+        qdGouWuCheZhong = gouWuCheMapper.qDGouWuCheXS(dingId);
+
+        for (int i = 0; i < qdGouWuCheZhong.size();i++){
+            QDGouWuChe qdhqgg = new QDGouWuChe();
+            qdhqgg = qdGouWuCheZhong.get(i);
+
+            int caiPinShuLiang = qdhqgg.getCaiPinShuLiang();
+
+            float caiJG = qdhqgg.getCaiJG();
+            float zongJG = caiJG*caiPinShuLiang;
+            qdhqgg.setZongJG(zongJG);
+            qdGouWuCheZhong.set(i,qdhqgg);
+
+        }
+        return qdGouWuCheZhong;
+    }
+
+    //这个方法是前端完成支付时调用的方法,状态重置
+    public void wanChengZF(int weiId){
+
+        String dingId = zhuangTaiMapper.setWeiIdgetdingId2(weiId);
+
+        //将在线条的用户订单状态改为已支付1
+        gouWuCheMapper.setdingdanWCZF(dingId);
+        //同时还要将在线的用户的状态改为不在线0
+        yongHuMapper.setYongHuZT(dingId);
+        //并且将桌子的状态改回0
+        yongHuMapper.weiIdGaiZT(weiId);
+    }
+
+    //结账完成提供菜品数量总数和总价格
+    public List<WCDingDaiShuJuXS> wcDingDaiShuJuXS(int weiId){
+        List<WCDingDaiShuJuXS> a = new ArrayList<WCDingDaiShuJuXS>();
+
+        WCDingDaiShuJuXS wcDingDaiShuJuXS = new WCDingDaiShuJuXS();
+
+        int ShuLiangZhong=0;
+        float JGZhong=0;
+        String dingId = zhuangTaiMapper.setWeiIdgetdingId2(weiId);
+
+
+        List<QDGouWuChe> qdGouWuCheZhong = new ArrayList<QDGouWuChe>();
+        qdGouWuCheZhong = gouWuCheMapper.qDGouWuCheXS(dingId);
+
+        for (int i = 0; i < qdGouWuCheZhong.size();i++){
+            QDGouWuChe qdhqgg = new QDGouWuChe();
+            qdhqgg = qdGouWuCheZhong.get(i);
+
+            int caiPinShuLiang = qdhqgg.getCaiPinShuLiang();
+
+            float caiJG = qdhqgg.getCaiJG();
+            float zongJG = caiJG*caiPinShuLiang;
+
+            ShuLiangZhong = ShuLiangZhong + caiPinShuLiang;
+            JGZhong =JGZhong + zongJG;
+
+        }
+
+        wcDingDaiShuJuXS.setShuLiangZhong(ShuLiangZhong);
+        wcDingDaiShuJuXS.setJingEZhong(JGZhong);
+
+        a.add(wcDingDaiShuJuXS);
+
+        return a;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //-----------------old---------------------
+
 
 
     //这个方法用于放入购物车数据
@@ -112,39 +235,7 @@ public class GouWuCheService {
 
 
 
-    //供给前端的购物车数据
-    public List<QDGouWuChe> qDGouWuCheXS(String dingId){
-//        List<YongHu> yongHus = new ArrayList<YongHu>();
-//        yongHus = yongHuMapper.yongHuShuJuXS();//获得用户信息用于判断用户是否在线
-//        YongHu zxID = new YongHu();
-//        //判断用户是否在线
-//        for (int j = 0; j < yongHus.size(); j++){
-//            YongHu yongHu = new YongHu();
-//            yongHu = yongHus.get(j);
-//            if (yongHu.getYHZTID() == 1){
-//                zxID.setDingId(yongHu.getDingId());
-//                break;
-//            }
-//        }
 
-        //对总价进行一个计算
-        List<QDGouWuChe> qdGouWuCheZhong = new ArrayList<QDGouWuChe>();
-        qdGouWuCheZhong = gouWuCheMapper.qDGouWuCheXS(dingId);
-
-        for (int i = 0; i < qdGouWuCheZhong.size();i++){
-            QDGouWuChe qdhqgg = new QDGouWuChe();
-            qdhqgg = qdGouWuCheZhong.get(i);
-
-            int caiPinShuLiang = qdhqgg.getCaiPinShuLiang();
-
-            float caiJG = qdhqgg.getCaiJG();
-            float zongJG = caiJG*caiPinShuLiang;
-            qdhqgg.setZongJG(zongJG);
-            qdGouWuCheZhong.set(i,qdhqgg);
-
-        }
-        return qdGouWuCheZhong;
-    }
 
     //供给前端的购物车数据，已经完成支付的
     public List<QDGouWuChe> qD2GouWuCheXS(String dingId){
@@ -198,40 +289,7 @@ public class GouWuCheService {
 
 
 
-    //结账完成提供菜品数量总数和总价格
-    public List<WCDingDaiShuJuXS> wcDingDaiShuJuXS(String dingId){
-        List<WCDingDaiShuJuXS> a = new ArrayList<WCDingDaiShuJuXS>();
 
-        WCDingDaiShuJuXS wcDingDaiShuJuXS = new WCDingDaiShuJuXS();
-
-        int ShuLiangZhong=0;
-        float JGZhong=0;
-
-
-        List<QDGouWuChe> qdGouWuCheZhong = new ArrayList<QDGouWuChe>();
-        qdGouWuCheZhong = gouWuCheMapper.qD2GouWuCheXS(dingId);
-
-        for (int i = 0; i < qdGouWuCheZhong.size();i++){
-            QDGouWuChe qdhqgg = new QDGouWuChe();
-            qdhqgg = qdGouWuCheZhong.get(i);
-
-            int caiPinShuLiang = qdhqgg.getCaiPinShuLiang();
-
-            float caiJG = qdhqgg.getCaiJG();
-            float zongJG = caiJG*caiPinShuLiang;
-
-            ShuLiangZhong = ShuLiangZhong + caiPinShuLiang;
-            JGZhong =JGZhong + zongJG;
-
-        }
-
-        wcDingDaiShuJuXS.setShuLiangZhong(ShuLiangZhong);
-        wcDingDaiShuJuXS.setJingEZhong(JGZhong);
-
-        a.add(wcDingDaiShuJuXS);
-
-        return a;
-    }
 
 
 

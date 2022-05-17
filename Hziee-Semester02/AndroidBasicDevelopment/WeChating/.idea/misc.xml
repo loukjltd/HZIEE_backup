@@ -3,7 +3,50 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2195" />
+        <entry key="app/src/main/res/drawable/buttonbackground.xml" value="0.2195" />
+        <entry key="app/src/main/res/drawable/dialog_left.xml" value="0.2195" />
+        <entry key="app/src/main/res/drawable/dialog_right.xml" value="0.2195" />
+        <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2195" />
+        <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2195" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2195" />
+        <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2195" />
+        <entry key="app/src/main/res/drawable/inputbackground.xml" value="0.2195" />
+        <entry key="app/src/main/res/drawable/rounded_edittext.xml" value="0.2195" />
+        <entry key="app/src/main/res/layout/activity_add_friend.xml" value="0.3890625" />
+        <entry key="app/src/main/res/layout/activity_chat.xml" value="0.3890625" />
+        <entry key="app/src/main/res/layout/activity_empty.xml" value="0.31875" />
+        <entry key="app/src/main/res/layout/activity_friend_list.xml" value="0.31875" />
+        <entry key="app/src/main/res/layout/activity_index.xml" value="0.4041666666666667" />
+        <entry key="app/src/main/res/layout/activity_item.xml" value="0.3890625" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.3890625" />
+        <entry key="app/src/main/res/layout/activity_login_register.xml" value="0.3890625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.390625" />
+        <entry key="app/src/main/res/layout/activity_message_item.xml" value="0.3890625" />
+        <entry key="app/src/main/res/layout/activity_moment_item.xml" value="0.3890625" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.3890625" />
+        <entry key="app/src/main/res/layout/activity_send_monent.xml" value="0.3890625" />
+        <entry key="app/src/main/res/layout/add_friend_page.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/chat_page.xml" value="0.3" />
+        <entry key="app/src/main/res/layout/empty_content_page.xml" value="0.3" />
+        <entry key="app/src/main/res/layout/fragment_discover.xml" value="0.3890625" />
+        <entry key="app/src/main/res/layout/fragment_friends.xml" value="0.3" />
+        <entry key="app/src/main/res/layout/fragment_index.xml" value="0.3" />
+        <entry key="app/src/main/res/layout/fragment_me.xml" value="0.3890625" />
+        <entry key="app/src/main/res/layout/fragment_mine.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/fragment_news.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/friends_item.xml" value="0.3" />
+        <entry key="app/src/main/res/layout/item.xml" value="0.3" />
+        <entry key="app/src/main/res/layout/login.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/make_moment_page.xml" value="0.3" />
+        <entry key="app/src/main/res/layout/message_item.xml" value="0.3" />
+        <entry key="app/src/main/res/layout/msg_item.xml" value="0.3" />
+        <entry key="app/src/main/res/layout/news_item.xml" value="0.4041666666666667" />
+        <entry key="app/src/main/res/layout/regist.xml" value="0.4041666666666667" />
+        <entry key="app/src/main/res/layout/register.xml" value="0.4041666666666667" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.4041666666666667" />
+        <entry key="app/src/main/res/menu/other_menu.xml" value="0.3890625" />
+        <entry key="app/src/main/res/menu/popumenu.xml" value="0.4041666666666667" />
       </map>
     </option>
   </component>

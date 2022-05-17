@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorLighterGray">
+
+        <ImageView
+            android:id="@+id/ivMomentAvatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="10dp" />
+
+        <LinearLayout
+            android:id="@+id/llMomentLine1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/ivMomentAvatar"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvMomentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorGray" />
+
+            <TextView
+                android:id="@+id/tvMomentText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llMomentLine2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llMomentLine1"
+            android:layout_alignLeft="@id/llMomentLine1"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/ivMomentImage"
+                android:layout_width="240dp"
+                android:layout_height="240dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvMomentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llMomentLine2"
+            android:layout_alignLeft="@id/llMomentLine2"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorGray" />
+
+
+        <View
+            android:id="@+id/vSpace"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tvMomentTime"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/darker_gray" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

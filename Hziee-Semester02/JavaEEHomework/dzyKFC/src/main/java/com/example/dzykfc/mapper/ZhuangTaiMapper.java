@@ -11,17 +11,31 @@ import java.util.List;
 @Mapper
 @Repository
 public interface ZhuangTaiMapper {
+    //-----------new-------------------
 
+    //------------new and old-------------------------
     //用户信息写入ZhuangTai表
     @Insert("insert into ZhuangTai( DingId, WeiId, DingTime) values (#{dingId}, #{weiId}, #{dingTime})")
     int zhuangTaiShuJuShuR( @Param("dingId") String dingId,
                             @Param("weiId") int weiId,
                             @Param("dingTime") String dingTime);
-
-
     //将已经使用的位置状态转为1
     @Update("update WeiHao set WeiZhuangTai = 1 where WeiId = #{weiId}")
     int setWeiZhuangTai(@Param("weiId") int weiId);
+    //通过weiId查询dingId
+    @Select("select dingId from zhuangtai where weiId = #{weiId}")
+    String setWeiIdgetdingId(@Param("weiId") int weiId);
+
+    //通过weiId查询dingId，状态是2
+    @Select("select dingId from zhuangtai where weiId = #{weiId} and zhuangtaiid = 2")
+    String setWeiIdgetdingId2(@Param("weiId") int weiId);
+
+    //------------old------------------------
+
+
+
+
+
 
     //查找为完成支付的zhuangtai表信息
     @Select("select * from ZhuangTai where ZhuangTaiId = 2")

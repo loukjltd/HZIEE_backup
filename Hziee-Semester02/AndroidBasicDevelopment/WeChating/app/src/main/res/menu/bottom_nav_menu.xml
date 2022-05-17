@@ -3,21 +3,21 @@
 
     <item
         android:id="@+id/message_id"
-        android:icon="@drawable/message"
+        android:icon="@drawable/weixin"
         android:title="@string/message" />
     <item
         android:id="@+id/friends_id"
-        android:icon="@drawable/friends"
+        android:icon="@drawable/dianhua"
         android:title="@string/friends" />
 
     <item
         android:id="@+id/news_id"
-        android:icon="@drawable/news"
+        android:icon="@drawable/faxian"
         android:title="@string/news" />
 
     <item
         android:id="@+id/mine_id"
-        android:icon="@drawable/mine"
+        android:icon="@drawable/wode"
         android:title="@string/mine" />
 
 

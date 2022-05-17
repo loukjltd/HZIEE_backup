@@ -43,6 +43,15 @@
     padding-left: 10px;
 }
 
+#infoCollection #tableNumber {
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #DCDCDC;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
 #infoCollection #submitInfo {
     width: 100px;
     height: 40px;

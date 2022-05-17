@@ -6,17 +6,8 @@
     tools:context=".ui.friends.FriendsFragment">
 
     <ListView
-        android:id="@+id/friends_listView"
+        android:id="@+id/lvFriends"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
-    <com.example.wechating.component.SideBar
-        android:id="@+id/side_bar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
-        android:paddingRight="10dp"
-        android:textColor="@color/design_default_color_error"
-        android:textSize="15sp" />
 
 </RelativeLayout>
