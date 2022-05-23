@@ -18,12 +18,9 @@ import com.example.fakewechatproject.R;
 
 public class MeFragment extends Fragment implements View.OnClickListener {
 
-    private MeViewModel mineViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        mineViewModel =
-                new ViewModelProvider(this).get(MeViewModel.class);
+        MeViewModel mineViewModel = new ViewModelProvider(this).get(MeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_me, container, false);
         mineViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override

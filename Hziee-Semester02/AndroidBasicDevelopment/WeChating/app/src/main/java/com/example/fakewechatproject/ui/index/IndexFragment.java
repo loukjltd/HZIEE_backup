@@ -2,6 +2,7 @@ package com.example.fakewechatproject.ui.index;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.fakewechatproject.ChatPage;
 import com.example.fakewechatproject.R;
 import com.example.fakewechatproject.component.MessageSlideLayout;
 import com.example.fakewechatproject.domain.Friends;
@@ -117,10 +119,13 @@ public class IndexFragment extends Fragment {
             viewHolder.profile.setImageResource(idList.get(position));
             viewHolder.contentView.setText(friendsData.get(position).getName());
 
+            String nickname = viewHolder.contentView.getText().toString();
             viewHolder.contentView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(content, "click " + ((TextView) v).getText(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(), ChatPage.class);
+                    intent.putExtra("nickname", nickname);
+                    startActivity(intent);
                 }
             });
             final Friends myContent = friendsData.get(position);
@@ -130,7 +135,7 @@ public class IndexFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     MessageSlideLayout slideLayout = (MessageSlideLayout) v.getParent();
-                    slideLayout.closeMenu(); //解决删除item后下一个item变成open状态问题
+                    slideLayout.closeMenu();
                     friendsData.remove(myContent);
                     idList.remove(p_id);
                     notifyDataSetChanged();
@@ -147,9 +152,6 @@ public class IndexFragment extends Fragment {
         public MessageSlideLayout slideLayout = null;
 
         class MyOnStateChangeListener implements MessageSlideLayout.OnStateChangeListener {
-            /**
-             * 滑动后每次手势抬起保证只有一个item是open状态，加入sets集合中
-             **/
             @Override
             public void onOpen(MessageSlideLayout layout) {
                 slideLayout = layout;

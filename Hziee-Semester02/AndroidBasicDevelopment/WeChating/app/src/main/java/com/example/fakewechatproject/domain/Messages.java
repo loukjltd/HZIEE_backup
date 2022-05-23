@@ -1,13 +1,13 @@
 package com.example.fakewechatproject.domain;
  
-public class Msg {
+public class Messages {
     public static final int type_received = 0;
     public static final int type_sent = 1;
     private String content;
     private int type;
     private int avatarId;
  
-    public Msg(String content, int type) {
+    public Messages(String content, int type) {
         this.content = content;
         this.type = type;
     }

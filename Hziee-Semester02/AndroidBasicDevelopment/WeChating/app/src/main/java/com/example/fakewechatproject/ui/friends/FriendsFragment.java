@@ -114,7 +114,6 @@ public class FriendsFragment extends Fragment {
             viewHolder.nameView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(content, "click " + ((TextView) v).getText(), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getActivity(), ChatPage.class);
                     intent.putExtra("nickname", nickname);
                     startActivity(intent);
@@ -131,9 +130,6 @@ public class FriendsFragment extends Fragment {
         public FriendsSlideLayout slideLayout = null;
 
         class MyOnStateChangeListener implements FriendsSlideLayout.OnStateChangeListener {
-            /**
-             * 滑动后每次手势抬起保证只有一个item是open状态，加入sets集合中
-             **/
             @Override
             public void onOpen(FriendsSlideLayout layout) {
                 slideLayout = layout;

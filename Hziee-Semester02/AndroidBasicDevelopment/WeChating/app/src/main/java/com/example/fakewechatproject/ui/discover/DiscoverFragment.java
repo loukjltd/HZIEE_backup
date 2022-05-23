@@ -29,14 +29,11 @@ import java.util.List;
 
 public class DiscoverFragment extends Fragment implements View.OnClickListener {
 
-    private DiscoverViewModel newsViewModel;
     private List<Friends> list;
     private static DiscoveryAdapter adapter;
-    private ImageView goMakeMoment;
     private List<Integer> profiles;
     private List<String> nickname;
     private List<List<Integer>> itemPictures;
-    private List<Integer> itemPicture;
     private List<String> copyWriting;
     private List<Integer> times;
     private static boolean flag = false;
@@ -44,7 +41,7 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        newsViewModel = new ViewModelProvider(this).get(DiscoverViewModel.class);
+        DiscoverViewModel newsViewModel = new ViewModelProvider(this).get(DiscoverViewModel.class);
         View root = inflater.inflate(R.layout.fragment_discover, container, false);
         newsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -62,9 +59,9 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener {
                 int color = Color.argb(200, 0, 0, 0);
                 collapsingToolbar.setCollapsedTitleTextColor(color);
                 ImageView imageView = root.findViewById(R.id.ivMyAvatar);
-                if (Math.abs(verticalOffset) >= appBarLayout.getTotalScrollRange()) { // 折叠状态
+                if (Math.abs(verticalOffset) >= appBarLayout.getTotalScrollRange()) {
                     imageView.setVisibility(View.GONE);
-                } else { // 非折叠状态
+                } else {
                     collapsingToolbar.setTitle("");
                     imageView.setVisibility(View.VISIBLE);
                 }
@@ -78,7 +75,7 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener {
         recyclerView.setAdapter(adapter);
 
 
-        goMakeMoment = root.findViewById(R.id.ivPublishIcon);
+        ImageView goMakeMoment = root.findViewById(R.id.ivPublishIcon);
         goMakeMoment.setOnClickListener(this);
 
         return root;
@@ -117,7 +114,7 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener {
         nickname.add("半夜汽笛");
         nickname.add("黑夜的海");
 
-        profiles = new ArrayList<>();//朋友圈好友的头像
+        profiles = new ArrayList<>();
         if (flag)
             profiles.add(R.drawable.mello);
         profiles.add(R.drawable.afterclap_2);
@@ -129,7 +126,7 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener {
         profiles.add(R.drawable.afterclap_4);
         profiles.add(R.drawable.afterclap_3);
 
-        times = new ArrayList<>();//发布动态距离现在的时间
+        times = new ArrayList<>();
         if (flag)
             times.add(0);
         times.add(35);
@@ -143,7 +140,7 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener {
 
 
         itemPictures = new ArrayList<>();
-        itemPicture = new ArrayList<>();
+        List<Integer> itemPicture = new ArrayList<>();
         if (flag) {
             itemPicture.add(R.drawable.moment_09);
             itemPictures.add(itemPicture);

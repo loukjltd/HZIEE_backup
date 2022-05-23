@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
             usernameText.setText(username);
             passwordText.setText(password);
             rememberCheckBox.setChecked(true);
-            Toast.makeText(this, "记住密码lo", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "记住密码lo", Toast.LENGTH_SHORT).show();
         }
 
 

@@ -16,14 +16,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fakewechatproject.R;
-import com.example.fakewechatproject.domain.Msg;
+import com.example.fakewechatproject.domain.Messages;
 
-public class MsgAdapter extends RecyclerView.Adapter<MsgAdapter.ViewHolder> {
-    List<Msg> messages = new ArrayList<>();
+public class MessageHelper extends RecyclerView.Adapter<MessageHelper.ViewHolder> {
+    List<Messages> messages = new ArrayList<>();
     Context context;
     LayoutInflater inflater;
 
-    public MsgAdapter(List<Msg> messages, Context context) {
+    public MessageHelper(List<Messages> messages, Context context) {
         this.messages = messages;
         this.context = context;
         inflater = LayoutInflater.from(context);
@@ -31,22 +31,22 @@ public class MsgAdapter extends RecyclerView.Adapter<MsgAdapter.ViewHolder> {
 
     @NonNull
     @Override
-    public MsgAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MessageHelper.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         @SuppressLint("InflateParams") View view = inflater.inflate(R.layout.activity_message_item, null);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MsgAdapter.ViewHolder holder, int position) {
-        Msg msg = messages.get(position);
-        if (msg.getType() == Msg.type_received) {
+    public void onBindViewHolder(@NonNull MessageHelper.ViewHolder holder, int position) {
+        Messages msg = messages.get(position);
+        if (msg.getType() == Messages.type_received) {
             if (position < 2)
                 holder.left_layout.setVisibility(View.VISIBLE);
             else
                 holder.left_layout.setVisibility(View.GONE);
             holder.right_layout.setVisibility(View.GONE);
             holder.left_msg.setText(msg.getContent());
-        } else if (msg.getType() == Msg.type_sent) {
+        } else if (msg.getType() == Messages.type_sent) {
             holder.right_layout.setVisibility(View.VISIBLE);
             holder.left_layout.setVisibility(View.GONE);
             holder.right_msg.setText(msg.getContent());

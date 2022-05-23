@@ -19,12 +19,13 @@ public class MakeMomentPage extends AppCompatActivity {
         setContentView(R.layout.activity_send_monent);
 
 
-        makeMomentBtn=(Button)findViewById(R.id.btnPublishMoment);
+        makeMomentBtn = (Button) findViewById(R.id.btnPublishMoment);
         makeMomentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DiscoverFragment.update();
-                Intent intent=new Intent(MakeMomentPage.this, Index.class);
+
+                Intent intent = new Intent(MakeMomentPage.this, Index.class);
                 intent.putExtra("flag", 2);
                 startActivity(intent);
                 MakeMomentPage.this.finish();

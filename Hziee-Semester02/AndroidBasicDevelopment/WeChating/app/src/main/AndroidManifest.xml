@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.fakewechatproject.LoginActivity" />
-        <activity android:name="com.example.fakewechatproject.RegistActivity" />
+        <activity android:name="com.example.fakewechatproject.RegisterActivity" />
     </application>
 
 </manifest>

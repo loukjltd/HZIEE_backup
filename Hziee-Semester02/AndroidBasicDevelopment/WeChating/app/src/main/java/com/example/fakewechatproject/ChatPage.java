@@ -16,8 +16,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.fakewechatproject.component.MsgAdapter;
-import com.example.fakewechatproject.domain.Msg;
+import com.example.fakewechatproject.component.MessageHelper;
+import com.example.fakewechatproject.domain.Messages;
 import com.github.xubo.statusbarutils.StatusBarUtils;
 
 import java.util.ArrayList;
@@ -25,10 +25,10 @@ import java.util.List;
 
 public class ChatPage extends AppCompatActivity {
 
-    List<Msg> list = new ArrayList<>();
+    List<Messages> list = new ArrayList<>();
     RecyclerView recyclerView;
     Toolbar toolbar;
-    MsgAdapter msgAdapter;
+    MessageHelper messageHelper;
     Context context = ChatPage.this;
     EditText msg_say;
     TextView send;
@@ -45,31 +45,24 @@ public class ChatPage extends AppCompatActivity {
         linearLayout = findViewById(R.id.linear);
         initData();
         initView();
-        initStatusBar();
     }
 
-    @SuppressLint("ResourceAsColor")
-    private void initStatusBar() {
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-        StatusBarUtils.setStatusBarColor(ChatPage.this, R.color.colorGray);
-    }
 
     private void initData() {
         Intent intent = getIntent();
         toolbar.setTitle(intent.getStringExtra("nickname"));
 
-        Msg msg = new Msg("这是一条接受的信息", Msg.type_received);
-        list.add(msg);
-        Msg msg1 = new Msg("这时一条发送的信息", Msg.type_sent);
+        Messages msg0 = new Messages("这是一条接受的信息", Messages.type_received);
+        list.add(msg0);
+        Messages msg1 = new Messages("这是一条发送的信息", Messages.type_sent);
         list.add(msg1);
     }
 
     private void initView() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-        msgAdapter = new MsgAdapter(list, context);
-        recyclerView.setAdapter(msgAdapter);
+        messageHelper = new MessageHelper(list, context);
+        recyclerView.setAdapter(messageHelper);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,11 +76,11 @@ public class ChatPage extends AppCompatActivity {
                 if (msg_say.getEditableText().length() >= 1) {
                     String content = msg_say.getText().toString();
                     if (!"".equals(content)) {
-                        Msg msg = new Msg(content, Msg.type_sent);
+                        Messages msg = new Messages(content, Messages.type_sent);
                         list.add(msg);
-                        Msg msg1 = new Msg(content, Msg.type_received);
+                        Messages msg1 = new Messages(content, Messages.type_received);
                         list.add(msg1);
-                        msgAdapter.notifyItemInserted(list.size() - 1);
+                        messageHelper.notifyItemInserted(list.size() - 1);
                         recyclerView.scrollToPosition(list.size() - 1);
                         msg_say.setText("");
                     }

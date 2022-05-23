@@ -1,16 +1,15 @@
 package com.example.fakewechatproject.domain;
 
+import androidx.annotation.NonNull;
+
 import org.litepal.annotation.Column;
 import org.litepal.crud.DataSupport;
 
-/**
- * Created by txllg on 2020/11/29.
- */
 
 public class User extends DataSupport {
-    @Column(unique = true)//用户名唯一
+    @Column(unique = true)
     private String username;
-    @Column(nullable = false)//密码不为空
+    @Column(nullable = false)
     private String password;
 
 
@@ -39,6 +38,7 @@ public class User extends DataSupport {
     }
 
 
+    @NonNull
     @Override
     public String toString() {
         return "User{" +

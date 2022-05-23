@@ -13,12 +13,12 @@ import com.example.fakewechatproject.domain.Friends;
 
 import java.util.List;
 
-public class SortAdapter extends BaseAdapter{
+public class OrderHelper extends BaseAdapter{
 
     private List<Friends> list = null;
     private final Context mContext;
 
-    public SortAdapter(Context mContext, List<Friends> list) {
+    public OrderHelper(Context mContext, List<Friends> list) {
         this.mContext = mContext;
         this.list = list;
     }

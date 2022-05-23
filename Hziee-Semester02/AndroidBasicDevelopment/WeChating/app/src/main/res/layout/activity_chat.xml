@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorLightGray"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".ChatPage">
@@ -12,9 +13,16 @@
         android:id="@+id/tbMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/inputbackground"
-        android:fitsSystemWindows="true"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:background="@color/colorLightGray"
+        android:fitsSystemWindows="true" />
+
+    <View
+        android:id="@+id/vSpace2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tvMomentTime"
+        android:background="@android:color/darker_gray" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvList"
@@ -42,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="@drawable/inputbackground">
+                android:background="@drawable/type_something_background">
 
                 <EditText
                     android:id="@+id/etTypeWords"
