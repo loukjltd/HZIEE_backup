@@ -32,7 +32,7 @@
 
     <div id="creatorContent">
       <p class="creatorMainTitle">数据总览</p>
-      <ul>
+      <ul v-for="item in creatorData" v-bind:key="item">
         <li>
           <p class="creatorTitle">近7日阅读数</p>
           <p class="creatorNumber">12345</p>
@@ -55,23 +55,70 @@
         </li>
         <li>
           <p class="creatorTitle">总阅读数</p>
-          <p class="creatorNumber">12345</p>
+          <p class="creatorNumber">{{ item.tRead }}</p>
           <p class="creatorPercentage">已经超过12%的创作者啦</p>
         </li>
         <li>
           <p class="creatorTitle">总赞同数</p>
-          <p class="creatorNumber">23</p>
+          <p class="creatorNumber">{{ item.tLike }}</p>
           <p class="creatorPercentage">已经超过15%的创作者啦</p>
         </li>
         <li>
           <p class="creatorTitle">总评论数</p>
-          <p class="creatorNumber">6</p>
+          <p class="creatorNumber">{{ item.tComment }}</p>
           <p class="creatorPercentage">已经超过1%的创作者啦</p>
         </li>
         <li>
           <p class="creatorTitle">总收益（元）</p>
-          <p class="creatorNumber">88.88</p>
+          <p class="creatorNumber">{{ item.tCash }}</p>
           <p class="creatorPercentage">已经超过24%的创作者啦</p>
+        </li>
+      </ul>
+      <ul v-if="creatorData == false">
+        <li>
+          <p class="creatorTitle">近7日阅读数</p>
+          <p class="creatorNumber">暂无</p>
+          <p class="creatorPercentage">请先登录！</p>
+        </li>
+        <li>
+          <p class="creatorTitle">近7日赞同数</p>
+          <p class="creatorNumber">暂无</p>
+          <p class="creatorPercentage">请先登录！</p>
+        </li>
+        <li>
+          <p class="creatorTitle">近7日评论数</p>
+          <p class="creatorNumber">暂无</p>
+          <p class="creatorPercentage">请先登录！</p>
+        </li>
+        <li>
+          <p class="creatorTitle">近7日收益（元）</p>
+          <p class="creatorNumber">暂无</p>
+          <p class="creatorPercentage">请先登录！</p>
+        </li>
+        <li>
+          <p class="creatorTitle">总阅读数</p>
+          <p class="creatorNumber">暂无</p>
+          <p class="creatorPercentage">请先登录！</p>
+        </li>
+        <li>
+          <p class="creatorTitle">总赞同数</p>
+          <p class="creatorNumber">暂无</p>
+          <p class="creatorPercentage">请先登录！</p>
+        </li>
+        <li>
+          <p class="creatorTitle">总评论数</p>
+          <p class="creatorNumber">暂无</p>
+          <p class="creatorPercentage">请先登录！</p>
+        </li>
+        <li>
+          <p class="creatorTitle">总收益（元）</p>
+          <p class="creatorNumber">暂无</p>
+          <p class="creatorPercentage">请先登录！</p>
+        </li>
+        <li style="background: none">
+          <div id="enterCreatorCenter">
+            <router-link to="/Mine"><a style="padding-left: 45px">进入登陆页面 ></a></router-link>
+          </div>
         </li>
       </ul>
     </div>
@@ -80,8 +127,27 @@
 
 <script>
 /* eslint-disable*/
+import {DoLoadLoggedUserInfoInCreatorCenter} from "@/utility/api";
+
 export default {
-  name: "Creator"
+  name: "Creator",
+  data() {
+    return {
+      creatorData: []
+    }
+  },
+
+  methods: {
+    doLoadCreator: function () {
+      DoLoadLoggedUserInfoInCreatorCenter().then(res => {
+        this.creatorData = res;
+      });
+    },
+  },
+
+  mounted() {
+    this.doLoadCreator();
+  }
 }
 </script>
 

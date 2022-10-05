@@ -73,13 +73,13 @@
         </li>
 
         <li>
-          <div id="homePageSecondContent">
+          <div id="homePageSecondContent" v-for="item in creatorData" v-bind:key="item">
             <br>
             <a id="creatorCenterTitle">创作中心</a>
             <br>
-            <img src="../assets/avatar/avataaars-10.png" alt="找不到图片">
+            <img v-bind:src="require('@/assets/avatar/' + item.uAvatar)" alt="找不到图片">
             <br>
-            <a id="creatorCenterSecondContent">旅客君</a>
+            <a id="creatorCenterSecondContent">{{ item.uNickName }}</a>
             <br>
             <br>
             <ul id="activityButton">
@@ -104,19 +104,68 @@
             <ul id="bigDataNumber">
               <li>
                 <p class="bigDataTitle">阅读数</p>
-                <p class="bigDataContent">1888</p>
+                <p class="bigDataContent">{{ item.tRead }}</p>
               </li>
               <li>
                 <p class="bigDataTitle">点赞数</p>
-                <p class="bigDataContent">8</p>
+                <p class="bigDataContent">{{ item.tLike}}</p>
               </li>
               <li>
                 <p class="bigDataTitle">金币数</p>
-                <p class="bigDataContent">45</p>
+                <p class="bigDataContent">{{ item.tCoin }}</p>
               </li>
             </ul>
             <br>
-            <router-link to="/Creator"><a id="enterCreatorCenter">进入创作中心 ></a></router-link>
+            <div id="enterCreatorCenter">
+              <router-link to="/Creator"><a>进入创作中心 ></a></router-link>
+            </div>
+          </div>
+          <div id="homePageSecondContent" v-if="creatorData == false">
+            <br>
+            <a id="creatorCenterTitle">创作中心</a>
+            <br>
+            <img src = "../assets/avatar/avataaars-10.png" alt="找不到图片">
+            <br>
+            <a id="creatorCenterSecondContent">请先登陆！</a>
+            <br>
+            <br>
+            <ul id="activityButton">
+              <li>
+                <img src="../assets/system/Answer.png">
+                <p>回答问题</p>
+              </li>
+              <li>
+                <img src="../assets/system/Question.png">
+                <p>提出问题</p>
+              </li>
+              <li>
+                <img src="../assets/system/Paragraph.png">
+                <p>写文章</p>
+              </li>
+              <li>
+                <img src="../assets/system/Task.png">
+                <p>做任务</p>
+              </li>
+            </ul>
+            <br>
+            <ul id="bigDataNumber">
+              <li>
+                <p class="bigDataTitle">阅读数</p>
+                <p class="bigDataContent">暂无</p>
+              </li>
+              <li>
+                <p class="bigDataTitle">点赞数</p>
+                <p class="bigDataContent">暂无</p>
+              </li>
+              <li>
+                <p class="bigDataTitle">金币数</p>
+                <p class="bigDataContent">暂无</p>
+              </li>
+            </ul>
+            <br>
+            <div id="enterCreatorCenter">
+              <router-link to="/Mine"><a>进入登陆页面 ></a></router-link>
+            </div>
           </div>
         </li>
       </ul>
@@ -130,7 +179,9 @@
 </template>
 
 <script>
-import {DoLoadHomePageData, DoLoadHomePageData2} from "@/utility/api";
+import {DoLoadHomePageParagraphData,
+  DoLoadHomePageQuestionData,
+  DoLoadLoggedUserInfoInCreatorCenter} from "@/utility/api";
 
 export default {
   /* eslint-disable*/
@@ -138,27 +189,35 @@ export default {
   data() {
     return {
       homePageData: [],
-      homePageData2: []
+      homePageData2: [],
+      creatorData: []
     }
   },
 
   methods: {
-    doLoadHomePage: function () {
-      DoLoadHomePageData().then(res => {
+    doLoadHomePageParagraph: function () {
+      DoLoadHomePageParagraphData().then(res => {
         this.homePageData = res;
       });
     },
 
-    doLoadHomePage2: function () {
-      DoLoadHomePageData2().then(res => {
+    doLoadHomePageQuestion: function () {
+      DoLoadHomePageQuestionData().then(res => {
         this.homePageData2 = res;
+      });
+    },
+
+    doLoadLoggedUserInfoInCreatorCenter: function () {
+      DoLoadLoggedUserInfoInCreatorCenter().then(res => {
+        this.creatorData = res;
       });
     }
   },
 
   mounted() {
-    this.doLoadHomePage();
-    this.doLoadHomePage2();
+    this.doLoadHomePageParagraph();
+    this.doLoadHomePageQuestion();
+    this.doLoadLoggedUserInfoInCreatorCenter();
   }
 }
 

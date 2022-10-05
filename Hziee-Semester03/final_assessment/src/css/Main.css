@@ -60,7 +60,7 @@ body {
 }
 
 .contentCategory {
-    padding: 6px 6px;
+    padding: 3px 6px;
     background-color: #E5F0FD;
     border: #056DE8 1px solid;
     border-radius: 5px;
@@ -98,6 +98,10 @@ body {
     color: #056DE8;
     line-height: 50px;
     margin-right: 10px;
+}
+
+.contentLikeNumber:hover {
+    background-color: #DAE9FC;
 }
 
 #homePageSecondContent {
@@ -170,12 +174,25 @@ body {
     margin-bottom: 25px;
 }
 
-#enterCreatorCenter {
-    padding: 10px 50px;
+#enterCreatorCenter{
+    /*padding: 10px 50px;*/
+    width: 200px;
     border: #056DE8 1px solid;
     background-color: #E5F0FD;
-    border-radius: 5px;
+    border-radius: 10px;
+}
+
+#enterCreatorCenter:hover{
+    background-color: #DAE9FC;
+}
+
+#enterCreatorCenter a {
     font-size: medium;
+    color: #056DE8;
+    text-decoration: none;
     line-height: 50px;
+}
+
+#enterCreatorCenter a:hover{
     color: #056DE8;
 }

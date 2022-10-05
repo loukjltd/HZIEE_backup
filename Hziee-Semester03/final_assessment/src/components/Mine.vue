@@ -29,16 +29,130 @@
         </li>
       </ul>
     </div>
+
+    <div id="pageLayoutList">
+      <ul>
+        <li>
+          <div id="mineContent">
+            <p class="mineMainTitle">登陆</p>
+            <div class="mineMainContent">
+              <form>
+                <input type="text" placeholder="请输入电话号码" class="enterInfo" v-model="enteredPhone">
+                <br>
+                <input type="password" placeholder="请输入密码" class="enterInfo" v-model="enteredPassword">
+                <br>
+                <div class="acceptOrNotTitle">
+                  <input type="checkbox" name="savePassword" class="acceptOrNotContent">
+                  <a>&nbsp;保存密码</a>
+                </div>
+                <br>
+                <input type="button" name="chooseLogIn" value="登陆" class="enterButton" v-on:click="doLogInUser()">
+              </form>
+            </div>
+            <p style="text-align: center; color: #DAE9FC; margin-top: 25px">——————————————————————————————</p>
+            <p class="mineMainTitle">当前已登陆用户</p>
+            <p class="mineMainLoggedUser" v-for="item in filterUser" v-bind:key="item">{{ item.uNickName }}</p>
+            <p class="mineMainLoggedUser" v-if="filterUser == false">未登陆！</p>
+            <div class="mineMainContent">
+              <form>
+                <input type="button" name="chooseExitLogIn" value="退出登录" class="enterButton"
+                       v-for="item in filterUser" v-bind:key="item" v-on:click="doLogOutUser(item.uNickName)">
+              </form>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div id="mineSecondContent">
+            <p class="mineMainTitle">注册</p>
+            <div class="mineMainContent">
+              <form>
+                <input type="text" name="enterPhone" placeholder="请输入电话号码" class="enterInfo">
+                <br>
+                <input type="password" name="enterPassword" placeholder="请输入密码" class="enterInfo">
+                <br>
+                <input type="text" name="enterNickName" placeholder="请输入昵称" class="enterInfo">
+                <br>
+                <input type="text" name="enterMotto" placeholder="请输入签名" class="enterInfo">
+                <br>
+                <div class="acceptOrNotTitle">
+                  <input type="checkbox" name="acceptAgreement" class="acceptOrNotContent">
+                  <a class="extraInfo">&nbsp;我接受《有偿在线问答系统最终用户许可协议》</a>
+                </div>
+                <br>
+                <input type="submit" name="chooseRegister" value="注册" class="enterButton">
+              </form>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
+
 </template>
 
 <script>
 /* eslint-disable*/
+import {DoCheckIfThereIsLoggedUser, DoLogInUser, DoLogOutUser} from "@/utility/api";
+
 export default {
-  name: "Mine"
+  name: "Mine",
+  data() {
+    return {
+      enteredPhone: "",
+      enteredPassword: "",
+      returnedUser: [],
+      returnedInUser: [],
+      returnedOutUser: []
+    }
+  },
+
+  methods: {
+    doCheckIfThereIsLoggedUser: function () {
+      DoCheckIfThereIsLoggedUser().then(res => {
+        this.returnedUser = res;
+      });
+    },
+
+    doLogInUser: function () {
+      let testParams = {
+        uPhone: this.enteredPhone,
+        // uPassword: this.enteredPassword 接下来准备设计传入密码并与数据库做对比！！！
+      };
+      DoLogInUser(testParams).then(res => {
+        this.returnedInUser = res;
+      });
+      alert("登陆成功！");
+      location.reload();
+      },
+
+    doLogOutUser: function (uNickName) {
+      let testParams = {
+        uNickName: uNickName
+      };
+      DoLogOutUser(testParams).then(res => {
+        this.returnedOutUser = res;
+      });
+      alert("退出成功！");
+      location.reload();
+    }
+  },
+
+  computed: {
+    filterUser: function () {
+      return this.returnedUser.filter(res => {
+        return res.uIfLogged === 1;
+      })
+    }
+  },
+
+  mounted() {
+    this.doCheckIfThereIsLoggedUser();
+  }
 }
 </script>
 
 <style scoped>
 @import "../css/Main.css";
+@import "../css/Mine.css";
 </style>

@@ -13,6 +13,7 @@
     padding-left: 55px;
     margin-bottom: 25px;
     font-size: x-large;
+    font-weight: 900;
 }
 
 #creatorContent ul li {
@@ -39,5 +40,6 @@
     font-size: xx-large;
     line-height: 48px;
     font-style: italic;
-    font-weight: bold;
+    font-weight: 900;
+    color: #056DE8;
 }

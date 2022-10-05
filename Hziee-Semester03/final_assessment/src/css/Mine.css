@@ -1,0 +1,75 @@
+#mineContent {
+    width: 575px;
+    height: 500px;
+    margin-top: 10px;
+    background-color: white;
+    box-shadow: 0 0 2px 2px #ECECEC;
+    padding-bottom: 100px;
+    border-radius: 15px;
+}
+
+.mineMainTitle {
+    padding-top: 25px;
+    padding-left: 55px;
+    margin-bottom: 25px;
+    font-size: x-large;
+    font-weight: 900;
+}
+
+.mineMainContent {
+    padding-top: 25px;
+    padding-left: 55px;
+}
+
+.mineMainLoggedUser {
+    padding-top: 25px;
+    padding-left: 55px;
+    font-weight: 900;
+    font-size: medium;
+    margin-top: -15px;
+}
+
+.enterInfo {
+    width: 400px;
+    height: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    border: #056DE8 solid 1px;
+    font-size: small;
+    padding-left: 10px;
+}
+
+.enterButton {
+    -webkit-appearance: button;
+    width: 200px;
+    height: 50px;
+    margin-right: 5px;
+    border-radius: 5px;
+    background-color: #056DE8;
+    color: white;
+    border: none;
+    font-size: larger;
+}
+
+.enterButton:hover {
+    background-color: #1665C9;
+}
+
+#mineSecondContent {
+    width: 575px;
+    height: 500px;
+    margin-top: 10px;
+    background-color: white;
+    box-shadow: 0 0 2px 2px #ECECEC;
+    padding-bottom: 100px;
+    border-radius: 15px;
+    margin-left: 10px;
+}
+
+.extraInfo {
+    font-size: large;
+}
+
+.acceptOrNotContent {
+    margin-top: 5px;
+}

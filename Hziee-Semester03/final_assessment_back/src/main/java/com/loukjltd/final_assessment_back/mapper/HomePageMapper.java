@@ -1,7 +1,7 @@
 package com.loukjltd.final_assessment_back.mapper;
 
-import com.loukjltd.final_assessment_back.entity.HomePage;
-import com.loukjltd.final_assessment_back.entity.HomePage2;
+import com.loukjltd.final_assessment_back.entity.HomePageParagraph;
+import com.loukjltd.final_assessment_back.entity.HomePageQuestion;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -22,7 +22,7 @@ public interface HomePageMapper {
             "FROM\n" +
             "\tParagraph\n" +
             "JOIN User on Paragraph.uID = User.uID")
-    List<HomePage> getHomePageList();
+    List<HomePageParagraph> getHomePageList();
 
     @Select("SELECT\n" +
             "\tQuestion.qTitle,\n" +
@@ -33,5 +33,5 @@ public interface HomePageMapper {
             "FROM\n" +
             "\tQuestion\n" +
             "\tJOIN USER ON Question.uID = USER.uID")
-    List<HomePage2> getHomePageList2();
+    List<HomePageQuestion> getHomePageList2();
 }

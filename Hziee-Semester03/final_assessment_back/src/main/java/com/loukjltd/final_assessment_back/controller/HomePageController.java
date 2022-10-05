@@ -1,7 +1,7 @@
 package com.loukjltd.final_assessment_back.controller;
 
-import com.loukjltd.final_assessment_back.entity.HomePage;
-import com.loukjltd.final_assessment_back.entity.HomePage2;
+import com.loukjltd.final_assessment_back.entity.HomePageParagraph;
+import com.loukjltd.final_assessment_back.entity.HomePageQuestion;
 import com.loukjltd.final_assessment_back.service.HomePageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,15 +17,15 @@ public class HomePageController {
     @Autowired
     private HomePageService homePageService;
 
-    @RequestMapping("HomePage")
+    @RequestMapping("HomePageParagraph")
     @ResponseBody
-    public List<HomePage> getHomePage() {
+    public List<HomePageParagraph> getHomePage() {
         return homePageService.getHomePageList();
     }
 
-    @RequestMapping("HomePage2")
+    @RequestMapping("HomePageQuestion")
     @ResponseBody
-    public List<HomePage2> getHomePage2() {
+    public List<HomePageQuestion> getHomePage2() {
         return homePageService.getHomePageList2();
     }
 }
