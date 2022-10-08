@@ -102,7 +102,7 @@ export default {
       enteredPhone: "",
       enteredPassword: "",
       returnedUser: [],
-      returnedInUser: [],
+      returnedLogResultCode: [],
       returnedOutUser: []
     }
   },
@@ -117,14 +117,25 @@ export default {
     doLogInUser: function () {
       let testParams = {
         uPhone: this.enteredPhone,
-        // uPassword: this.enteredPassword 接下来准备设计传入密码并与数据库做对比！！！
+        uPassword: this.enteredPassword
       };
       DoLogInUser(testParams).then(res => {
-        this.returnedInUser = res;
+        this.returnedLogResultCode = res;
+        switch (this.returnedLogResultCode) {
+          case 100:
+            alert("登陆成功！");
+            break;
+          case 144:
+            alert("账号或密码错误！");
+            break;
+          case 122:
+            alert("请填写账号或密码！");
+            break;
+        }
+        // console.log("登陆返回结果代码为：" + this.returnedLogResultCode);
+        location.reload();
       });
-      alert("登陆成功！");
-      location.reload();
-      },
+    },
 
     doLogOutUser: function (uNickName) {
       let testParams = {
@@ -132,8 +143,8 @@ export default {
       };
       DoLogOutUser(testParams).then(res => {
         this.returnedOutUser = res;
+        alert("退出成功！");
       });
-      alert("退出成功！");
       location.reload();
     }
   },

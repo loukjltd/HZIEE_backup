@@ -3,6 +3,8 @@ package com.loukjltd.final_assessment_back.entity;
 public class Mine {
     private int uID;
     private String uNickName;
+    private String uPhone;
+    private String uPassword;
     private String uMotto;
     private String uAvatar;
     private int uGroup;
@@ -28,6 +30,22 @@ public class Mine {
 
     public void setuNickName(String uNickName) {
         this.uNickName = uNickName;
+    }
+
+    public String getuPhone() {
+        return uPhone;
+    }
+
+    public void setuPhone(String uPhone) {
+        this.uPhone = uPhone;
+    }
+
+    public String getuPassword() {
+        return uPassword;
+    }
+
+    public void setuPassword(String uPassword) {
+        this.uPassword = uPassword;
     }
 
     public String getuMotto() {

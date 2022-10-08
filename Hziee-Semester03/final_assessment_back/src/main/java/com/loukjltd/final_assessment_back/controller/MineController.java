@@ -26,16 +26,22 @@ public class MineController {
 
     @RequestMapping("MineLogIn")
     @ResponseBody
-    public void MineLogIn(@RequestBody Map<String, Object> map) {
+    public int MineLogIn(@RequestBody Map<String, Object> map) {
         String uPhone = map.get("uPhone").toString();
-        mineService.MineLogIn(uPhone);
+        String uPassword = map.get("uPassword").toString();
+/*
+        int result = mineService.MineLogIn(uPhone, uPassword);
+        System.out.println("MineController中登陆返回的代码为" + result);
+        System.out.println("MineController中登陆返回的uPhone为" + uPhone);
+        System.out.println("MineController中登陆返回的uPassword为" + uPassword);
+*/
+        return mineService.MineLogIn(uPhone, uPassword);
     }
 
     @RequestMapping("MineLogOut")
     @ResponseBody
     public void MineLogOut(@RequestBody Map<String, Object> map) {
         String uNickName = map.get("uNickName").toString();
-//        int uIfLogged = Integer.parseInt(map.get("uIfLogged").toString());
         mineService.MineLogOut(uNickName);
     }
 }

@@ -12,33 +12,51 @@ import java.util.List;
 @Mapper
 @Repository
 public interface MineMapper {
-    @Select("SELECT\n" +
-            "\tuID,\n" +
-            "\tuNickName,\n" +
-            "\tuMotto,\n" +
-            "\tuAvatar,\n" +
-            "\tuGroup,\n" +
-            "\ttRead,\n" +
-            "\ttLike,\n" +
-            "\ttCoin,\n" +
-            "\ttComment,\n" +
-            "\ttCash,\n" +
-            "\tuIfLogged,\n" +
-            "\tuLastLoggedTime\n" +
-            "FROM\n" +
-            "USER")
+    @Select("""
+            SELECT
+            \tuID,
+            \tuNickName,
+            \tuPhone,
+            \tuPassword,
+            \tuMotto,
+            \tuAvatar,
+            \tuGroup,
+            \ttRead,
+            \ttLike,
+            \ttCoin,
+            \ttComment,
+            \ttCash,
+            \tuIfLogged,
+            \tuLastLoggedTime
+            FROM
+            USER""")
     List<Mine> getMineList();
-    
-    @Update("UPDATE USER \n" +
-            "\tSET uIfLogged = 1 \n" +
-            "WHERE\n" +
-            "\tuPhone = #{uPhone};")
+
+    @Select("""
+            SELECT
+            \tuNickName,
+            \tuPhone,
+            \tuPassword,
+            \tuIfLogged
+            FROM
+            USER
+            WHERE
+            uPhone = #{uPhone} & uPassword = #{uPassword}""")
+    List<Mine> checkIfAccountExist(@Param("uPhone") String uPhone,
+                                   @Param("uPassword") String uPassword);
+
+    @Update("""
+            UPDATE USER\s
+            \tSET uIfLogged = 1\s
+            WHERE
+            \tuPhone = #{uPhone};""")
     void updateStatusToIn(@Param("uPhone") String uPhone);
 
-    @Update("UPDATE USER \n" +
-            "\tSET uIfLogged = 0 \n" +
-            "WHERE\n" +
-            "\tuNickName = #{uNickName};")
+    @Update("""
+            UPDATE USER\s
+            \tSET uIfLogged = 0\s
+            WHERE
+            \tuNickName = #{uNickName};""")
     void updateStatusToOut(@Param("uNickName") String uNickName);
 
 
