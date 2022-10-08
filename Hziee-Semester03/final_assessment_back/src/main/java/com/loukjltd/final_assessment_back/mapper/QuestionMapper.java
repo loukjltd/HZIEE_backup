@@ -10,15 +10,15 @@ import java.util.List;
 @Mapper
 @Repository
 public interface QuestionMapper {
-
-    @Select("SELECT\n" +
-            "\tQuestion.qTitle,\n" +
-            "\tQuestion.qContent,\n" +
-            "\tUSER.uNickName,\n" +
-            "\tUSER.uMotto,\n" +
-            "\tUSER.uAvatar \n" +
-            "FROM\n" +
-            "\tQuestion\n" +
-            "\tJOIN USER ON Question.uID = USER.uID")
-    List<Question> getQuestionList();
+	
+	@Select("SELECT\n" +
+			"\tQuestion.qTitle,\n" +
+			"\tQuestion.qContent,\n" +
+			"\tUSER.uNickName,\n" +
+			"\tUSER.uMotto,\n" +
+			"\tUSER.uAvatar \n" +
+			"FROM\n" +
+			"\tQuestion\n" +
+			"\tJOIN USER ON Question.uID = USER.uID")
+	List<Question> getQuestionList();
 }

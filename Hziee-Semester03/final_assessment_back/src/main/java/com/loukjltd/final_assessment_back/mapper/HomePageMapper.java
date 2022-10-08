@@ -11,27 +11,27 @@ import java.util.List;
 @Mapper
 @Repository
 public interface HomePageMapper {
-
-    @Select("SELECT\n" +
-            "\tParagraph.pTitle,\n" +
-            "\tParagraph.pContent,\n" +
-            "\tParagraph.pLike,\n" +
-            "\tUser.uNickName,\n" +
-            "\tUser.uMotto,\n" +
-            "\tUser.uAvatar \n" +
-            "FROM\n" +
-            "\tParagraph\n" +
-            "JOIN User on Paragraph.uID = User.uID")
-    List<HomePageParagraph> getHomePageList();
-
-    @Select("SELECT\n" +
-            "\tQuestion.qTitle,\n" +
-            "\tQuestion.qContent,\n" +
-            "\tUSER.uNickName,\n" +
-            "\tUSER.uMotto,\n" +
-            "\tUSER.uAvatar \n" +
-            "FROM\n" +
-            "\tQuestion\n" +
-            "\tJOIN USER ON Question.uID = USER.uID")
-    List<HomePageQuestion> getHomePageList2();
+	
+	@Select("SELECT\n" +
+			"\tParagraph.pTitle,\n" +
+			"\tParagraph.pContent,\n" +
+			"\tParagraph.pLike,\n" +
+			"\tUser.uNickName,\n" +
+			"\tUser.uMotto,\n" +
+			"\tUser.uAvatar \n" +
+			"FROM\n" +
+			"\tParagraph\n" +
+			"JOIN User on Paragraph.uID = User.uID")
+	List<HomePageParagraph> getHomePageList();
+	
+	@Select("SELECT\n" +
+			"\tQuestion.qTitle,\n" +
+			"\tQuestion.qContent,\n" +
+			"\tUSER.uNickName,\n" +
+			"\tUSER.uMotto,\n" +
+			"\tUSER.uAvatar \n" +
+			"FROM\n" +
+			"\tQuestion\n" +
+			"\tJOIN USER ON Question.uID = USER.uID")
+	List<HomePageQuestion> getHomePageList2();
 }
