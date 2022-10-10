@@ -68,20 +68,22 @@
 						<p class="mineMainTitle">注册</p>
 						<div class="mineMainContent">
 							<form>
-								<input class="enterInfo" name="enterPhone" placeholder="请输入电话号码" type="text">
+								<input v-model="enteredRegPhone" class="enterInfo" placeholder="请输入电话号码" type="text">
 								<br>
-								<input class="enterInfo" name="enterPassword" placeholder="请输入密码" type="password">
+								<input v-model="enteredRegPassword" class="enterInfo" placeholder="请输入密码" type="password">
 								<br>
-								<input class="enterInfo" name="enterNickName" placeholder="请输入昵称" type="text">
+								<input v-model="enteredRegNickName" class="enterInfo" placeholder="请输入昵称" type="text">
 								<br>
-								<input class="enterInfo" name="enterMotto" placeholder="请输入签名" type="text">
+								<input v-model="enteredRegMotto" class="enterInfo" placeholder="请输入签名" type="text">
 								<br>
 								<div class="acceptOrNotTitle">
-									<input class="acceptOrNotContent" name="acceptAgreement" type="checkbox">
+									<input v-model="enteredRegAgreement" class="acceptOrNotContent" name="acceptAgreement"
+									       type="checkbox">
 									<a class="extraInfo">&nbsp;我接受《有偿在线问答系统最终用户许可协议》</a>
 								</div>
 								<br>
-								<input class="enterButton" name="chooseRegister" type="submit" value="注册">
+								<input class="enterButton" name="chooseLogIn" type="button" value="注册"
+								       v-on:click="doRegisterAccount()">
 							</form>
 						</div>
 					</div>
@@ -93,17 +95,23 @@
 </template>
 
 <script>
-/* eslint-disable*/
-import {DoCheckIfThereIsLoggedUser, DoLogInUser, DoLogOutUser} from "@/utility/api";
+import {DoCheckIfThereIsLoggedUser, DoLogInUser, DoLogOutUser, DoRegisterAccount} from "@/utility/api";
 
 export default {
+	/* eslint-disable*/
 	name: "Mine",
 	data() {
 		return {
 			enteredPhone: "",
 			enteredPassword: "",
+			enteredRegPhone: "",
+			enteredRegPassword: "",
+			enteredRegNickName: "",
+			enteredRegMotto: "",
+			enteredRegAgreement: false,
 			returnedUser: [],
 			returnedLogResultCode: [],
+			returnedRegisterResultCode: [],
 			returnedOutUser: []
 		}
 	},
@@ -147,6 +155,35 @@ export default {
 				alert("退出成功！");
 			});
 			location.reload();
+		},
+		
+		doRegisterAccount: function () {
+			let testParams = {
+				uPhone: this.enteredRegPhone,
+				uPassword: this.enteredRegPassword,
+				uNickName: this.enteredRegNickName,
+				uMotto: this.enteredRegMotto,
+				uAgreement: this.enteredRegAgreement
+			};
+			DoRegisterAccount(testParams).then(res => {
+				this.returnedRegisterResultCode = res;
+				switch (this.returnedRegisterResultCode) {
+					case 200:
+						alert("注册成功！");
+						break;
+					case 244:
+						alert("注册失败！");
+						break;
+					case 222:
+						alert("请填写完整信息！");
+						break;
+					case 233:
+						alert("该账号或昵称已被注册！");
+						break;
+				}
+				console.log("登陆返回结果代码为：" + this.returnedLogResultCode);
+				location.reload();
+			})
 		}
 	},
 	

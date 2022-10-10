@@ -1,10 +1,7 @@
 package com.loukjltd.final_assessment_back.mapper;
 
 import com.loukjltd.final_assessment_back.entity.Mine;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -59,5 +56,9 @@ public interface MineMapper {
 			\tuNickName = #{uNickName};""")
 	void updateStatusToOut(@Param("uNickName") String uNickName);
 	
-	
+	@Insert("INSERT INTO USER (uPhone, uPassword, uNickName, uMotto) VALUES (#{uPhone}, #{uPassword}, #{uNickName}, #{uMotto});")
+	void insertNewAccount(@Param("uPhone") String uPhone,
+	                      @Param("uPassword") String uPassword,
+	                      @Param("uNickName") String uNickName,
+	                      @Param("uMotto") String uMotto);
 }
