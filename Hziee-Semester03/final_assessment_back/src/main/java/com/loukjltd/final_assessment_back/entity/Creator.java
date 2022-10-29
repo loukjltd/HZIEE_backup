@@ -13,6 +13,16 @@ public class Creator {
 	private float tCash;
 	private int uIfLogged;
 	
+	private int qID;
+	private String qTitle;
+	private String qContent;
+	private int qStatus;
+	private int pID;
+	private String pTitle;
+	private String pContent;
+	private int pLike;
+	private int pStatus;
+	
 	public int getuID() {
 		return uID;
 	}
@@ -99,5 +109,77 @@ public class Creator {
 	
 	public void setuIfLogged(int uIfLogged) {
 		this.uIfLogged = uIfLogged;
+	}
+	
+	public int getqID() {
+		return qID;
+	}
+	
+	public void setqID(int qID) {
+		this.qID = qID;
+	}
+	
+	public String getqTitle() {
+		return qTitle;
+	}
+	
+	public void setqTitle(String qTitle) {
+		this.qTitle = qTitle;
+	}
+	
+	public String getqContent() {
+		return qContent;
+	}
+	
+	public void setqContent(String qContent) {
+		this.qContent = qContent;
+	}
+	
+	public int getqStatus() {
+		return qStatus;
+	}
+	
+	public void setqStatus(int qStatus) {
+		this.qStatus = qStatus;
+	}
+	
+	public int getpID() {
+		return pID;
+	}
+	
+	public void setpID(int pID) {
+		this.pID = pID;
+	}
+	
+	public String getpTitle() {
+		return pTitle;
+	}
+	
+	public void setpTitle(String pTitle) {
+		this.pTitle = pTitle;
+	}
+	
+	public String getpContent() {
+		return pContent;
+	}
+	
+	public void setpContent(String pContent) {
+		this.pContent = pContent;
+	}
+	
+	public int getpLike() {
+		return pLike;
+	}
+	
+	public void setpLike(int pLike) {
+		this.pLike = pLike;
+	}
+	
+	public int getpStatus() {
+		return pStatus;
+	}
+	
+	public void setpStatus(int pStatus) {
+		this.pStatus = pStatus;
 	}
 }

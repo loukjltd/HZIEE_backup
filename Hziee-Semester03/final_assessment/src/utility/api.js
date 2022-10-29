@@ -71,3 +71,67 @@ export const DoRegisterAccount = (params) => {
 		data: params
 	})
 }
+
+export const DoLoadTaskInfo = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/Task",
+		method: "post",
+		data: params
+	})
+}
+
+export const DoEveryDaySignIn = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/MineEverydaySignIn",
+		method: "post",
+		data: params
+	})
+}
+
+export const DoParseTaskContent = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/TaskUpdateStatus",
+		method: "post",
+		data: params
+	})
+}
+
+export const DoTaskUpdateUserCoin = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/TaskUpdateUserCoin",
+		method: "post",
+		data: params
+	})
+}
+
+export const DoInsertQuestionToDatabase = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/InsertQuestionToDatabase",
+		method: "post",
+		data: params
+	})
+}
+
+export const DoInsertParagraphToDatabase = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/InsertParagraphToDatabase",
+		method: "post",
+		data: params
+	})
+}
+
+export const DoInsertRelatedTaskWithNewUser = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/InsertRelatedTaskWithNewUser",
+		method: "post",
+		data: params
+	})
+}
+
+export const DoViewParagraphDetail = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/ViewParagraphDetail",
+		method: "post",
+		data: params
+	})
+}

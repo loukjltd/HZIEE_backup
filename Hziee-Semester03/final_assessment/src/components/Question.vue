@@ -37,22 +37,27 @@
 					<div id="questionContent">
 						<ul>
 							<li v-for="item in questionData" v-bind:key="item">
-								<a class="contentCategory">专</a>
-								<a class="contentTitle"><b>&nbsp;{{ item.qTitle }}</b></a>
+								<a class="contentCategory">问</a>
+								<a class="contentTitle" href="#"><b>&nbsp;{{ item.qTitle }}</b></a>
 								<br>
 								<img alt="找不到图片" v-bind:src="require('@/assets/avatar/' + item.uAvatar)">
-								<a class="contentNickName" href="#">{{ item.uNickName }}&nbsp;</a>
+								<a class="contentNickName">&nbsp;{{ item.uNickName }}&nbsp;</a>
 								<a class="contentMotto">&nbsp;{{ item.uMotto }}</a>
 								<br>
 								<br>
-								<a class="contentInfo">{{ item.qContent }}</a>
-								<hr>
+								<a v-if="(item.qContent).length < 100" class="contentInfo">{{ item.qContent }}</a>
+								<a v-else class="contentInfo">{{ (item.qContent).substring(0, 100) }}... ...&nbsp;&nbsp;<a
+										href="#" style="color: #1665C9; font-weight: bold">阅读全文 ></a></a>
+								<br>
+								<a class="contentLikeNumber" href="#">🙋我要回答这个问题</a>
+								<p style="text-align: center; color: #DAE9FC; margin-top: 15px">
+									————————————————————————————————————————</p>
 							</li>
 						</ul>
 						
 						<div id="bottomLine">
 							<br><br><br>
-							<p>——————————我是有底线的～！——————————</p>
+							<p>-&nbsp;&nbsp;到底啦&nbsp;&nbsp;-</p>
 						</div>
 					</div>
 				</li>
@@ -102,7 +107,7 @@
 						</ul>
 						<br>
 						<div id="enterCreatorCenter">
-							<router-link to="/Creator"><a>进入创作中心 ></a></router-link>
+							<router-link to="/Creator"><a href="#">进入创作中心 ></a></router-link>
 						</div>
 					</div>
 					<div v-if="creatorData == false" id="homePageSecondContent">
@@ -149,7 +154,7 @@
 						</ul>
 						<br>
 						<div id="enterCreatorCenter">
-							<router-link to="/Mine"><a>进入登陆页面 ></a></router-link>
+							<router-link to="/Mine"><a href="#">进入登陆页面 ></a></router-link>
 						</div>
 					</div>
 				</li>

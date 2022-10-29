@@ -3,12 +3,21 @@
 package com.loukjltd.final_assessment_back.entity;
 
 public class HomePageQuestion {
+	private int uID;
 	private String uNickName;
 	private String uMotto;
 	private String uAvatar;
 	private int qID;
 	private String qTitle;
 	private String qContent;
+	
+	public int getuID() {
+		return uID;
+	}
+	
+	public void setuID(int uID) {
+		this.uID = uID;
+	}
 	
 	public String getuNickName() {
 		return uNickName;

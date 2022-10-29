@@ -11,54 +11,91 @@ import java.util.List;
 public interface MineMapper {
 	@Select("""
 			SELECT
-			\tuID,
-			\tuNickName,
-			\tuPhone,
-			\tuPassword,
-			\tuMotto,
-			\tuAvatar,
-			\tuGroup,
-			\ttRead,
-			\ttLike,
-			\ttCoin,
-			\ttComment,
-			\ttCash,
-			\tuIfLogged,
-			\tuLastLoggedTime
+				uID,
+				uNickName,
+				uPhone,
+				uPassword,
+				uMotto,
+				uAvatar,
+				uGroup,
+				tRead,
+				tLike,
+				tCoin,
+				tComment,
+				tCash,
+				uIfLogged,
+				uLastLoggedTime
 			FROM
-			USER""")
+				USER
+			""")
 	List<Mine> getMineList();
 	
 	@Select("""
 			SELECT
-			\tuNickName,
-			\tuPhone,
-			\tuPassword,
-			\tuIfLogged
+				uNickName,
+				uPhone,
+				uPassword,
+				uIfLogged
 			FROM
-			USER
+				USER
 			WHERE
-			uPhone = #{uPhone} & uPassword = #{uPassword}""")
+				uPhone = #{uPhone} &
+				uPassword = #{uPassword}
+			""")
 	List<Mine> checkIfAccountExist(@Param("uPhone") String uPhone,
 	                               @Param("uPassword") String uPassword);
 	
 	@Update("""
-			UPDATE USER\s
-			\tSET uIfLogged = 1\s
+			UPDATE
+				USER
+			SET
+				uIfLogged = 1
 			WHERE
-			\tuPhone = #{uPhone};""")
+				uPhone = #{uPhone};
+			""")
 	void updateStatusToIn(@Param("uPhone") String uPhone);
 	
 	@Update("""
-			UPDATE USER\s
-			\tSET uIfLogged = 0\s
+			UPDATE
+				USER
+			SET
+				uIfLogged = 0
 			WHERE
-			\tuNickName = #{uNickName};""")
+				uNickName = #{uNickName};
+			""")
 	void updateStatusToOut(@Param("uNickName") String uNickName);
 	
-	@Insert("INSERT INTO USER (uPhone, uPassword, uNickName, uMotto) VALUES (#{uPhone}, #{uPassword}, #{uNickName}, #{uMotto});")
-	void insertNewAccount(@Param("uPhone") String uPhone,
+	@Insert("""
+			INSERT INTO
+			    USER (uID, uPhone, uPassword, uNickName, uMotto, uAvatar)
+			    VALUES (#{uID}, #{uPhone}, #{uPassword}, #{uNickName}, #{uMotto}, #{uAvatar});
+			""")
+	void insertNewAccount(@Param("uID") int uID,
+	                      @Param("uPhone") String uPhone,
 	                      @Param("uPassword") String uPassword,
 	                      @Param("uNickName") String uNickName,
-	                      @Param("uMotto") String uMotto);
+	                      @Param("uMotto") String uMotto,
+	                      @Param("uAvatar") String uAvatar);
+	
+	@Insert("""
+			INSERT INTO Task ( tID, uID, tContent, tProgress, tFinish, tValue, tStatus )
+			VALUES
+				( 1, #{uID}, "每日签到", 0, 1, 5, 0 ),
+				( 2, #{uID}, "浏览文章", 0, 5, 2, 0 ),
+				( 3, #{uID}, "提出问题", 0, 1, 3, 0 ),
+				( 4, #{uID}, "回答问题", 0, 2, 10, 0 )
+			""")
+	void insertRelatedTaskWithNewUser(@Param("uID") int uID);
+	
+	@Update("""
+			UPDATE
+				Task
+			SET
+				tProgress = 1
+			WHERE
+				uID = #{uID}
+			AND
+				tContent = '每日签到';
+			""")
+	void updateEverydaySignInProgress(@Param("uID") int uID);
 }

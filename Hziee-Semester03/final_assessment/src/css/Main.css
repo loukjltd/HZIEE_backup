@@ -1,9 +1,14 @@
 * {
-	margin: 0 auto;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin:      0 auto;
 }
 
 body {
 	background-color: #F6F6F6;
+}
+
+a {
+	text-decoration: none;
 }
 
 #navBar {
@@ -62,7 +67,7 @@ body {
 
 .contentCategory {
 	background-color: #E5F0FD;
-	border:           #056DE8 1px solid;
+	/* border:           #056DE8 1px solid; */
 	border-radius:    5px;
 	color:            #056DE8;
 	line-height:      50px;
@@ -93,7 +98,7 @@ body {
 
 .contentLikeNumber {
 	background-color: #E5F0FD;
-	border:           #056DE8 1px solid;
+	/* border:           #056DE8 1px solid; */
 	border-radius:    5px;
 	color:            #056DE8;
 	line-height:      50px;
@@ -107,7 +112,7 @@ body {
 
 #homePageSecondContent {
 	background-color: white;
-	border-radius:    15px;
+	border-radius:    10px;
 	box-shadow:       0 0 2px 2px #ECECEC;
 	height:           475px;
 	margin-top:       10px;
@@ -116,7 +121,8 @@ body {
 }
 
 #homePageSecondContent img {
-	width: 30%;
+	padding-top: 15px;
+	width:       30%;
 }
 
 #creatorCenterTitle {
@@ -170,15 +176,16 @@ body {
 }
 
 .bigDataContent {
-	color:         black;
-	font-size:     large;
-	margin-bottom: 25px;
+	color:          black;
+	font-size:      large;
+	letter-spacing: -1px;
+	margin-bottom:  25px;
 }
 
 #enterCreatorCenter {
 	/*padding: 10px 50px;*/
 	background-color: #E5F0FD;
-	border:           #056DE8 1px solid;
+	/* border:           #056DE8 1px solid; */
 	border-radius:    10px;
 	width:            200px;
 }
@@ -195,5 +202,61 @@ body {
 }
 
 #enterCreatorCenter a:hover {
+	color: #056DE8;
+}
+
+.enterButton {
+	-webkit-appearance: button;
+	background-color:   #056DE8;
+	border:             none;
+	border-radius:      5px;
+	color:              white;
+	font-size:          larger;
+	height:             50px;
+	margin-right:       5px;
+	width:              200px;
+}
+
+.contentNickName {
+	vertical-align: 7px;
+}
+
+.contentMotto {
+	vertical-align: 7px;
+}
+
+.postMainContent {
+	margin-left: 50px;
+}
+
+.enterPostTitle {
+	border:         solid #8590A6 1px;
+	border-radius:  5px;
+	font-size:      large;
+	height:         30px;
+	margin-bottom:  30px;
+	padding-bottom: 10px;
+	padding-left:   10px;
+	padding-top:    8px;
+	width:          675px;
+}
+
+.enterPostContent {
+	border:         solid #8590A6 1px;
+	border-radius:  5px;
+	font-size:      large;
+	height:         400px;
+	margin-bottom:  30px;
+	padding-bottom: 10px;
+	padding-left:   10px;
+	padding-top:    10px;
+	width:          675px;
+}
+
+.contentTitle {
+	color: black;
+}
+
+.contentTitle:hover {
 	color: #056DE8;
 }

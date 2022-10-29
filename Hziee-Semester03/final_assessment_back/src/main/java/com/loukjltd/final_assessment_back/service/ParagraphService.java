@@ -17,4 +17,8 @@ public class ParagraphService {
 	public List<Paragraph> getParagraphList() {
 		return paragraphMapper.getParagraphList();
 	}
+	
+	public List<Paragraph> viewParagraphDetail(int uID, String pTitle) {
+		return paragraphMapper.viewParagraphDetail(uID, pTitle);
+	}
 }

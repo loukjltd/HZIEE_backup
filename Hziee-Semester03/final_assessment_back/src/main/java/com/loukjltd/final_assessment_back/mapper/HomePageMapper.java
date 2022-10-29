@@ -12,26 +12,38 @@ import java.util.List;
 @Repository
 public interface HomePageMapper {
 	
-	@Select("SELECT\n" +
-			"\tParagraph.pTitle,\n" +
-			"\tParagraph.pContent,\n" +
-			"\tParagraph.pLike,\n" +
-			"\tUser.uNickName,\n" +
-			"\tUser.uMotto,\n" +
-			"\tUser.uAvatar \n" +
-			"FROM\n" +
-			"\tParagraph\n" +
-			"JOIN User on Paragraph.uID = User.uID")
+	@Select("""
+			SELECT
+				Paragraph.pTitle,
+				Paragraph.pContent,
+				Paragraph.pLike,
+				User.uNickName,
+				User.uMotto,
+				User.uAvatar,
+				Paragraph.uID
+			FROM
+				Paragraph
+			JOIN
+				User
+			ON
+				Paragraph.uID = User.uID
+			""")
 	List<HomePageParagraph> getHomePageList();
 	
-	@Select("SELECT\n" +
-			"\tQuestion.qTitle,\n" +
-			"\tQuestion.qContent,\n" +
-			"\tUSER.uNickName,\n" +
-			"\tUSER.uMotto,\n" +
-			"\tUSER.uAvatar \n" +
-			"FROM\n" +
-			"\tQuestion\n" +
-			"\tJOIN USER ON Question.uID = USER.uID")
+	@Select("""
+			SELECT
+				Question.qTitle,
+				Question.qContent,
+				USER.uNickName,
+				USER.uMotto,
+				USER.uAvatar,
+				Question.uID
+			FROM
+				Question
+			JOIN
+				USER
+			ON
+				Question.uID = USER.uID
+			""")
 	List<HomePageQuestion> getHomePageList2();
 }

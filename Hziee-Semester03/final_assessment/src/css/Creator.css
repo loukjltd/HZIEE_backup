@@ -1,11 +1,11 @@
 #creatorContent {
 	background-color: white;
-	border-radius:    15px;
+	border-radius:    10px;
 	box-shadow:       0 0 2px 2px #ECECEC;
-	height:           600px;
+	height:           700px;
 	margin-top:       10px;
 	padding-bottom:   100px;
-	width:            1200px;
+	width:            1000px;
 }
 
 .creatorMainTitle {
@@ -28,18 +28,31 @@
 	padding-left:     25px;
 	padding-right:    25px;
 	padding-top:      10px;
-	width:            200px;
+	width:            150px;
 }
 
 .creatorTitle {
+	color:       #646464;
 	font-size:   larger;
 	line-height: 48px;
 }
 
 .creatorNumber {
-	color:       #056DE8;
-	font-size:   xx-large;
-	font-style:  italic;
+	color:          black;
+	font-size:      xx-large;
+	font-style:     italic;
+	font-weight:    900;
+	letter-spacing: 2px;
+	line-height:    48px;
+}
+
+.creatorPercentageSpecify {
+	color: #056DE8;
+}
+
+.creatorEnterButtonNote {
+	color:       #8590A6;
+	font-size:   medium;
 	font-weight: 900;
 	line-height: 48px;
 }

@@ -39,7 +39,7 @@ public class MineService {
 		mineMapper.updateStatusToOut(uNickName);
 	}
 	
-	public int MineRegister(String uPhone, String uPassword, String uNickName, String uMotto) {
+	public int MineRegister(int uID, String uPhone, String uPassword, String uNickName, String uMotto, String uAvatar) {
 		List<Mine> mineList = mineMapper.getMineList();
 		int registerResultCode = 244; // 表示注册失败的代码
 		for (Mine mine : mineList) {
@@ -50,12 +50,29 @@ public class MineService {
 				registerResultCode = 233; // 表示输入的昵称或手机号已注册的代码
 				break;
 			} else {
-				mineMapper.insertNewAccount(uPhone, uPassword, uNickName, uMotto);
-				registerResultCode = 200;
-				break;
+				if (uPhone.length() != 11) {
+					registerResultCode = 201; // 表示输入的手机号位数不对的代码
+					break;
+				} else if (uPassword.length() < 6) {
+					registerResultCode = 202; // 表示输入的密码位数过短的代码
+					break;
+				} else {
+					registerResultCode = 200; // 表示注册成功的代码
+				}
 			}
+		}
+		if (registerResultCode == 200) {
+			mineMapper.insertNewAccount(uID, uPhone, uPassword, uNickName, uMotto, uAvatar);
 		}
 		System.out.println("MineService中注册返回的代码为" + registerResultCode);
 		return registerResultCode;
+	}
+	
+	public void MineEverydaySignIn(int uID) {
+		mineMapper.updateEverydaySignInProgress(uID);
+	}
+	
+	public void InsertRelatedTaskWithNewUser(int uID) {
+		mineMapper.insertRelatedTaskWithNewUser(uID);
 	}
 }

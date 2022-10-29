@@ -1,6 +1,7 @@
 package com.loukjltd.final_assessment_back.entity;
 
 public class Paragraph {
+	private int uID;
 	private int pID;
 	private String pTitle;
 	private String pContent;
@@ -8,6 +9,14 @@ public class Paragraph {
 	private String uNickName;
 	private String uMotto;
 	private String uAvatar;
+	
+	public int getuID() {
+		return uID;
+	}
+	
+	public void setuID(int uID) {
+		this.uID = uID;
+	}
 	
 	public int getpID() {
 		return pID;

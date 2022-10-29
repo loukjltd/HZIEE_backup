@@ -50,16 +50,26 @@ public class MineController {
 	@RequestMapping("MineRegister")
 	@ResponseBody
 	public int MineRegister(@RequestBody Map<String, Object> map) {
+		int uID = Integer.parseInt(map.get("uID").toString());
 		String uPhone = map.get("uPhone").toString();
 		String uPassword = map.get("uPassword").toString();
 		String uNickName = map.get("uNickName").toString();
 		String uMotto = map.get("uMotto").toString();
-		int result = mineService.MineRegister(uPhone, uPassword, uNickName, uMotto);
-		System.out.println("MineController中注册返回的代码为" + result);
-		System.out.println("MineController中注册返回的uPhone为" + uPhone);
-		System.out.println("MineController中注册返回的uPassword为" + uPassword);
-		System.out.println("MineController中注册返回的uNickName为" + uNickName);
-		System.out.println("MineController中注册返回的uMotto为" + uMotto);
-		return mineService.MineRegister(uPhone, uPassword, uNickName, uMotto);
+		String uAvatar = map.get("uAvatar").toString();
+		return mineService.MineRegister(uID, uPhone, uPassword, uNickName, uMotto, uAvatar);
+	}
+	
+	@RequestMapping("MineEverydaySignIn")
+	@ResponseBody
+	public void MineEverydaySignIn(@RequestBody Map<String, Object> map) {
+		int uID = Integer.parseInt(map.get("uID").toString());
+		mineService.MineEverydaySignIn(uID);
+	}
+	
+	@RequestMapping("InsertRelatedTaskWithNewUser")
+	@ResponseBody
+	public void InsertRelatedTaskWithNewUser(@RequestBody Map<String, Object> map) {
+		int uID = Integer.parseInt(map.get("uID").toString());
+		mineService.InsertRelatedTaskWithNewUser(uID);
 	}
 }

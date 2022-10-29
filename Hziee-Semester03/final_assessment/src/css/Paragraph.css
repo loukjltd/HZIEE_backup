@@ -44,3 +44,72 @@
 #paragraphContent ul li .contentInfo {
 	line-height: 25px;
 }
+
+#postParagraphContent {
+	background-color: white;
+	border-radius:    10px;
+	box-shadow:       0 0 2px 2px #ECECEC;
+	margin-right:     10px;
+	margin-top:       10px;
+	padding-bottom:   100px;
+	width:            800px;
+}
+
+.postParagraphMainTitle {
+	font-size:     x-large;
+	font-weight:   900;
+	margin-bottom: 25px;
+	padding-left:  55px;
+	padding-top:   25px;
+}
+
+#paragraphOfficialTitle {
+	font-size:    x-large;
+	font-weight:  900;
+	padding-left: 35px;
+	padding-top:  35px;
+}
+
+#paragraphOfficialAvatar {
+	padding-left: 35px;
+	width:        5%;
+}
+
+#paragraphOfficialNickName {
+	color:          #444444;
+	vertical-align: 12px;
+	
+}
+
+#paragraphOfficialMotto {
+	color:          #646464;
+	vertical-align: 12px;
+}
+
+#paragraphOfficialLikeNumber {
+	color:        #8792A7;
+	font-size:    larger;
+	padding-left: 35px;
+	padding-top:  25px;
+}
+
+#paragraphOfficialContent {
+	line-height:   30px;
+	padding-left:  35px;
+	padding-right: 35px;
+	padding-top:   10px;
+	
+}
+
+#paragraphOfficialComment {
+	border:         solid #8590A6 1px;
+	border-radius:  5px;
+	font-size:      large;
+	height:         30px;
+	margin-bottom:  30px;
+	margin-left:    65px;
+	padding-bottom: 7px;
+	padding-left:   10px;
+	padding-top:    10px;
+	width:          650px;
+}

@@ -46,6 +46,21 @@ export default new Router({
 			path: '/Mine',
 			name: 'Mine',
 			component: () => import('@/components/Mine')
+		},
+		{
+			path: '/PostQuestion',
+			name: 'PostQuestion',
+			component: () => import('@/components/PostQuestion')
+		},
+		{
+			path: '/PostParagraph',
+			name: 'PostParagraph',
+			component: () => import('@/components/PostParagraph')
+		},
+		{
+			path: '/ParagraphSubPage',
+			name: 'ParagraphSubPage',
+			component: () => import('@/components/ParagraphSubPage')
 		}
 	]
 })

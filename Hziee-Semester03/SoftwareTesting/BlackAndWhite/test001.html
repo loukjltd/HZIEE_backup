@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>黑盒测试</title>
+</head>
+<script>
+	function getDayOfWeek(date) {
+		const daysOfWeek = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+		return daysOfWeek[new Date(date).getDay()];
+	}
+</script>
+<body>
+<div>
+	<form>
+		<p>请输入日期：</p>
+		<label for="date"></label><input id="date" name="date" type="date" value="1970-01-01">
+		<input onclick="alert(getDayOfWeek(document.getElementById('date').value))" type="button" value="星期几？">
+	</form>
+</div>
+</body>
+</html>

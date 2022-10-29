@@ -11,14 +11,19 @@ import java.util.List;
 @Repository
 public interface QuestionMapper {
 	
-	@Select("SELECT\n" +
-			"\tQuestion.qTitle,\n" +
-			"\tQuestion.qContent,\n" +
-			"\tUSER.uNickName,\n" +
-			"\tUSER.uMotto,\n" +
-			"\tUSER.uAvatar \n" +
-			"FROM\n" +
-			"\tQuestion\n" +
-			"\tJOIN USER ON Question.uID = USER.uID")
+	@Select("""
+			SELECT
+				Question.qTitle,
+				Question.qContent,
+				USER.uNickName,
+				USER.uMotto,
+				USER.uAvatar
+			FROM
+				Question
+			JOIN
+				USER
+			ON
+				Question.uID = USER.uID
+			""")
 	List<Question> getQuestionList();
 }

@@ -42,22 +42,20 @@
 								<br>
 								<input v-model="enteredPassword" class="enterInfo" placeholder="请输入密码" type="password">
 								<br>
-								<div class="acceptOrNotTitle">
-									<input class="acceptOrNotContent" name="savePassword" type="checkbox">
-									<a>&nbsp;保存密码</a>
-								</div>
 								<br>
 								<input class="enterButton" name="chooseLogIn" type="button" value="登陆" v-on:click="doLogInUser()">
 							</form>
 						</div>
-						<p style="text-align: center; color: #DAE9FC; margin-top: 25px">——————————————————————————————</p>
+						<p style="text-align: center; color: #DAE9FC; margin-top: 15px">————————————————————————————————</p>
 						<p class="mineMainTitle">当前已登陆用户</p>
 						<p v-for="item in filterUser" v-bind:key="item" class="mineMainLoggedUser">{{ item.uNickName }}</p>
 						<p v-if="filterUser == false" class="mineMainLoggedUser">未登陆！</p>
 						<div class="mineMainContent">
-							<form>
-								<input v-for="item in filterUser" v-bind:key="item" class="enterButton" name="chooseExitLogIn"
+							<form v-for="item in filterUser" v-bind:key="item">
+								<input class="enterButton" name="chooseExitLogIn"
 								       type="button" value="退出登录" v-on:click="doLogOutUser(item.uNickName)">
+								<input class="enterButton" name="chooseEveryDaySignIn" style="text-align: center" type="button"
+								       value="签到" v-on:click="doEverydaySign(item.uID)">
 							</form>
 						</div>
 					</div>
@@ -95,7 +93,14 @@
 </template>
 
 <script>
-import {DoCheckIfThereIsLoggedUser, DoLogInUser, DoLogOutUser, DoRegisterAccount} from "@/utility/api";
+import {
+	DoCheckIfThereIsLoggedUser,
+	DoEveryDaySignIn,
+	DoInsertRelatedTaskWithNewUser,
+	DoLogInUser,
+	DoLogOutUser,
+	DoRegisterAccount
+} from "@/utility/api";
 
 export default {
 	/* eslint-disable*/
@@ -112,7 +117,8 @@ export default {
 			returnedUser: [],
 			returnedLogResultCode: [],
 			returnedRegisterResultCode: [],
-			returnedOutUser: []
+			returnedOutUser: [],
+			returnedEveryDaySignIn: []
 		}
 	},
 	
@@ -158,31 +164,59 @@ export default {
 		},
 		
 		doRegisterAccount: function () {
+			let generateRandomID = Math.round(Math.random() * 89999 + 10000);
+			let generateRandomAvatar = Math.round(Math.random() * 49 + 1);
 			let testParams = {
+				uID: generateRandomID,
+				uAvatar: "avataaars-" + generateRandomAvatar.toString() + ".png",
 				uPhone: this.enteredRegPhone,
 				uPassword: this.enteredRegPassword,
 				uNickName: this.enteredRegNickName,
-				uMotto: this.enteredRegMotto,
-				uAgreement: this.enteredRegAgreement
+				uMotto: this.enteredRegMotto
 			};
+			let onlyEuID = {
+				uID: generateRandomID
+			}
 			DoRegisterAccount(testParams).then(res => {
 				this.returnedRegisterResultCode = res;
-				switch (this.returnedRegisterResultCode) {
-					case 200:
-						alert("注册成功！");
-						break;
-					case 244:
-						alert("注册失败！");
-						break;
-					case 222:
-						alert("请填写完整信息！");
-						break;
-					case 233:
-						alert("该账号或昵称已被注册！");
-						break;
+				if (this.enteredRegAgreement === false) {
+					alert("请接受《有偿在线问答系统最终用户许可协议》！");
+				} else {
+					switch (this.returnedRegisterResultCode) {
+						case 200:
+							DoInsertRelatedTaskWithNewUser(onlyEuID);
+							alert("注册成功！");
+							location.reload();
+							break;
+						case 201:
+							alert("输入手机号的格式不正确！")
+							break;
+						case 202:
+							alert("输入密码的位数过短！")
+							break;
+						case 244:
+							alert("注册失败！");
+							break;
+						case 222:
+							alert("请填写完整信息！");
+							break;
+						case 233:
+							alert("该账号或昵称已被注册！");
+							break;
+					}
+					console.log("登陆返回结果代码为：" + this.returnedLogResultCode);
 				}
-				console.log("登陆返回结果代码为：" + this.returnedLogResultCode);
-				location.reload();
+			})
+		},
+		
+		doEverydaySign: function (uID) {
+			let testParams = {
+				uID: uID
+			};
+			DoEveryDaySignIn(testParams).then(res => {
+				this.returnedEveryDaySignIn = res;
+				alert("签到成功，点击确认跳转领取金币！")
+				this.$router.push({path: "/Task"});
 			})
 		}
 	},

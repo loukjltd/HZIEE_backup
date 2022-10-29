@@ -1,0 +1,54 @@
+#taskContent {
+	background-color: white;
+	border-radius:    10px;
+	box-shadow:       0 0 2px 2px #ECECEC;
+	height:           600px;
+	margin-top:       10px;
+	width:            1000px;
+}
+
+.taskMainTitle {
+	font-size:    x-large;
+	font-weight:  900;
+	padding-left: 55px;
+	padding-top:  25px;
+}
+
+#taskContent ul {
+	list-style: none;
+}
+
+#taskContent ul li {
+	background-color: #F9F9FB;
+	float:            left;
+	font-size:        large;
+	height:           190px;
+	margin:           10px 10px;
+	padding-left:     20px;
+	padding-top:      20px;
+	width:            425px;
+}
+
+#taskContent ul li a {
+	line-height: 30px;
+}
+
+#taskContent ul li input {
+	background-color: #056DE8;
+	border:           none;
+	border-radius:    5px;
+	color:            white;
+	font-size:        large;
+	font-weight:      900;
+	height:           50px;
+	margin-left:      200px;
+	margin-top:       30px;
+	padding-left:     25px;
+	padding-right:    25px;
+	width:            200px;
+}
+
+#taskContent img {
+	height: 18px;
+	width:  18px;
+}

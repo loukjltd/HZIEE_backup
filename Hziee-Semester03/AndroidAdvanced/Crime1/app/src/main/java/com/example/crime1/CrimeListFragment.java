@@ -4,20 +4,33 @@ package com.example.crime1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 
 public class CrimeListFragment extends Fragment {
 	private RecyclerView mCrimeRecyclerView;
 	private CrimeAdapter mAdapter;
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setHasOptionsMenu(true);
+	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstancsState) {
@@ -31,12 +44,54 @@ public class CrimeListFragment extends Fragment {
 		return view;
 	}
 	
+	@Override
+	public void onResume() {
+		super.onResume();
+		updateUI();
+	}
+	
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		super.onCreateOptionsMenu(menu, inflater);
+		inflater.inflate(R.menu.fragment_crime_list, menu);
+		
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case R.id.new_crime:
+				Crime crime = new Crime();
+				CrimeLab.get(getActivity()).addCrime(crime);
+				Intent intent = CrimePagerActivity.newIntent(getActivity(), crime.getId());
+				startActivity(intent);
+				return true;
+			case R.id.show_subtitle:
+				updateSubtitle();
+				return true;
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+	}
+	
+	private void updateSubtitle() {
+		CrimeLab crimeLab = CrimeLab.get(getActivity());
+		int crimeNum = crimeLab.getCrimes().size();
+		String subtitle = getString(R.string.subtitle_format, crimeNum);
+		
+		AppCompatActivity activity = (AppCompatActivity) getActivity();
+		activity.getSupportActionBar().setSubtitle(subtitle);
+	}
+	
 	private void updateUI() {
 		CrimeLab crimeLab = CrimeLab.get(getActivity());
 		List<Crime> crimes = crimeLab.getCrimes();
-		
-		mAdapter = new CrimeAdapter(crimes);
-		mCrimeRecyclerView.setAdapter(mAdapter);
+		if (mAdapter == null) {
+			mAdapter = new CrimeAdapter(crimes);
+			mCrimeRecyclerView.setAdapter(mAdapter);
+		} else {
+			mAdapter.notifyDataSetChanged();
+		}
 	}
 	
 	private class CrimeHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -59,7 +114,10 @@ public class CrimeListFragment extends Fragment {
 		public void bind(Crime crime) {
 			mCrime = crime;
 			mTitleTextView.setText(mCrime.getTitle());
-			mDateTextView.setText(mCrime.getDate().toString());
+			Date date = mCrime.getDate();
+			SimpleDateFormat testFormat = new SimpleDateFormat("E, MMMM  dd, yyyy", Locale.ENGLISH);
+			mDateTextView.setText(testFormat.format(date));
+			System.out.println(mCrime.getDate().toString());
 			mSolvedImageView.setVisibility(crime.isSolved() ? View.VISIBLE : View.GONE);
 		}
 		
@@ -67,7 +125,7 @@ public class CrimeListFragment extends Fragment {
 		public void onClick(View view) {
 //			Toast.makeText(getActivity(), mCrime.getTitle() + "clicked!", Toast.LENGTH_SHORT)
 //					.show();
-			Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());
+			Intent intent = CrimePagerActivity.newIntent(getActivity(), mCrime.getId());
 			startActivity(intent);
 		}
 		

@@ -1,11 +1,11 @@
 #mineContent {
 	background-color: white;
-	border-radius:    15px;
+	border-radius:    10px;
 	box-shadow:       0 0 2px 2px #ECECEC;
 	height:           500px;
 	margin-top:       10px;
 	padding-bottom:   100px;
-	width:            575px;
+	width:            555px;
 }
 
 .mineMainTitle {
@@ -39,18 +39,6 @@
 	width:         400px;
 }
 
-.enterButton {
-	-webkit-appearance: button;
-	background-color:   #056DE8;
-	border:             none;
-	border-radius:      5px;
-	color:              white;
-	font-size:          larger;
-	height:             50px;
-	margin-right:       5px;
-	width:              200px;
-}
-
 .enterButton:hover {
 	background-color: #1665C9;
 }
@@ -63,7 +51,7 @@
 	margin-left:      10px;
 	margin-top:       10px;
 	padding-bottom:   100px;
-	width:            575px;
+	width:            555px;
 }
 
 .extraInfo {

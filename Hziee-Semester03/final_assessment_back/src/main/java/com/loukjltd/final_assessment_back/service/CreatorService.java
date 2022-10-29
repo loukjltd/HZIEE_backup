@@ -17,4 +17,14 @@ public class CreatorService {
 	public List<Creator> getCreatorList() {
 		return creatorMapper.getCreatorList();
 	}
+	
+	public int InsertQuestionToDatabase(String qTitle, String qContent, int uID) {
+		creatorMapper.insertQuestionToDatabase(qTitle, qContent, uID);
+		return 100;
+	}
+	
+	public int InsertParagraphToDatabase(String pTitle, String pContent, int uID) {
+		creatorMapper.insertParagraphToDatabase(pTitle, pContent, uID);
+		return 100;
+	}
 }

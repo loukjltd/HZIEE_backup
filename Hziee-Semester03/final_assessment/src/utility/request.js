@@ -27,7 +27,7 @@ instance.interceptors.request.use(config => {
 				if (rMap.get(config.url).isRun) {
 					loading = Loading.service({
 						lock: true,
-						text: '拼命的加载数据中',
+						text: '服务器已断开连接，请尝试刷新页面……',
 						spinner: 'el-icon-loading',
 						background: 'rgba(0, 0, 0, 0.7)'
 					})
