@@ -17,6 +17,7 @@ public interface ParagraphMapper {
 				Paragraph.pTitle,
 				Paragraph.pContent,
 				Paragraph.pLike,
+				Paragraph.pID,
 				USER.uNickName,
 				USER.uMotto,
 				USER.uAvatar,
@@ -35,14 +36,15 @@ public interface ParagraphMapper {
 				USER.uAvatar,
 				Paragraph.pTitle,
 				Paragraph.pContent,
-				Paragraph.pLike
+				Paragraph.pLike,
+				Paragraph.pID
 			FROM
 				Paragraph
 				JOIN USER ON Paragraph.uID = USER.uID
 			WHERE
 				Paragraph.uID = #{uID}
-				AND Paragraph.pTitle = #{pTitle}
+				AND Paragraph.pID = #{pID}
 			""")
 	List<Paragraph> viewParagraphDetail(@Param("uID") int uID,
-	                                    @Param("pTitle") String pTitle);
+	                                    @Param("pID") int pID);
 }

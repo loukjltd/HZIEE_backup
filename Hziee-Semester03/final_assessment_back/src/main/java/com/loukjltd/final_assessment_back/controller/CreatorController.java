@@ -38,8 +38,8 @@ public class CreatorController {
 	@RequestMapping("InsertParagraphToDatabase")
 	@ResponseBody
 	public int insertParagraphToDatabase(@RequestBody Map<String, Object> map) {
-		String pTitle = map.get("qTitle").toString();
-		String pContent = map.get("qContent").toString();
+		String pTitle = map.get("pTitle").toString();
+		String pContent = map.get("pContent").toString();
 		int uID = Integer.parseInt(map.get("uID").toString());
 		return creatorService.InsertParagraphToDatabase(pTitle, pContent, uID);
 	}

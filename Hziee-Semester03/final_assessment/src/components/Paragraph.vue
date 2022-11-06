@@ -39,8 +39,8 @@
 							<li v-for="item in paragraphData" v-bind:key="item">
 								<a class="contentCategory">专</a>
 								<a class="contentTitle"
-								   href="#" v-on:click="doSaveClickedParagraph(item.uID, item.pTitle)"><b>&nbsp;{{ item.pTitle
-								                                                                          }}</b></a>
+								   href="#" v-on:click="doSaveClickedParagraph(item.uID, item.pID)"><b>&nbsp;{{ item.pTitle
+								                                                                       }}</b></a>
 								<br>
 								<img alt="找不到图片" v-bind:src="require('@/assets/avatar/' + item.uAvatar)">
 								<a class="contentNickName">&nbsp;{{ item.uNickName }}&nbsp;</a>
@@ -48,14 +48,12 @@
 								<br>
 								<br>
 								<a v-if="(item.pContent).length < 100" class="contentInfo">{{ item.pContent }}</a>
-								<a v-else class="contentInfo">{{ (item.pContent).substring(0, 100) }}... ...&nbsp;&nbsp;<a
-										href="#"
-										style="color: #1665C9; font-weight: bold"
-										v-on:click="doSaveClickedParagraph(item.uID, item.pTitle)">阅读全文 ></a></a>
+								<a v-else class="contentInfo">{{ (item.pContent).substring(0, 100) }}... ...</a>
 								<br>
 								<a class="contentLikeNumber" href="#">▲&nbsp;赞同&nbsp;{{ item.pLike }}</a>
 								<a class="contentLikeNumber" href="#">反对</a>
-								<a class="contentLikeNumber" href="#">评论</a>
+								<a class="contentLikeNumber" href="#"
+								   v-on:click="doSaveClickedParagraph(item.uID, item.pID)">阅读全文</a>
 								<p style="text-align: center; color: #DAE9FC; margin-top: 15px">
 									————————————————————————————————————————</p>
 							</li>
@@ -197,12 +195,12 @@ export default {
 			});
 		},
 		
-		doSaveClickedParagraph: function (uID, pTitle) {
+		doSaveClickedParagraph: function (uID, pID) {
 			this.$router.push({
 				path: '/ParagraphSubPage',
 				query: {
 					uID: uID,
-					pTitle: pTitle
+					pID: pID
 				}
 			});
 		}

@@ -34,21 +34,22 @@
 		<div id="pageLayoutList">
 			<ul>
 				<li>
-					<div id="mineContent">
+					<div v-for="item in filterUser" id="mineContent" v-bind:key="item">
 						<p class="mineMainTitle">登陆</p>
-						<div class="mineMainContent">
+						<div v-if="filterUser == true" class="mineMainContent">
 							<form>
 								<input v-model="enteredPhone" class="enterInfo" placeholder="请输入电话号码" type="text">
 								<br>
 								<input v-model="enteredPassword" class="enterInfo" placeholder="请输入密码" type="password">
 								<br>
 								<br>
-								<input class="enterButton" name="chooseLogIn" type="button" value="登陆" v-on:click="doLogInUser()">
+								<input class="enterButton" name="chooseLogIn" type="button" value="登陆"
+								       v-on:click="doLogInUser(0)">
 							</form>
 						</div>
 						<p style="text-align: center; color: #DAE9FC; margin-top: 15px">————————————————————————————————</p>
 						<p class="mineMainTitle">当前已登陆用户</p>
-						<p v-for="item in filterUser" v-bind:key="item" class="mineMainLoggedUser">{{ item.uNickName }}</p>
+						<p class="mineMainLoggedUser">{{ item.uNickName }}</p>
 						<p v-if="filterUser == false" class="mineMainLoggedUser">未登陆！</p>
 						<div class="mineMainContent">
 							<form v-for="item in filterUser" v-bind:key="item">
@@ -64,6 +65,7 @@
 				<li>
 					<div id="mineSecondContent">
 						<p class="mineMainTitle">注册</p>
+						<p style="text-align: center; color: #DAE9FC; margin-top: 15px">————————————————————————————————</p>
 						<div class="mineMainContent">
 							<form>
 								<input v-model="enteredRegPhone" class="enterInfo" placeholder="请输入电话号码" type="text">
@@ -129,16 +131,20 @@ export default {
 			});
 		},
 		
-		doLogInUser: function () {
+		doLogInUser: function (adminFlag) {
 			let testParams = {
 				uPhone: this.enteredPhone,
-				uPassword: this.enteredPassword
+				uPassword: this.enteredPassword,
+				adminFlag: adminFlag
 			};
 			DoLogInUser(testParams).then(res => {
 				this.returnedLogResultCode = res;
 				switch (this.returnedLogResultCode) {
 					case 100:
 						alert("登陆成功！");
+						break;
+					case 133:
+						alert("登陆用户组错误！");
 						break;
 					case 144:
 						alert("账号或密码错误！");
@@ -224,7 +230,7 @@ export default {
 	computed: {
 		filterUser: function () {
 			return this.returnedUser.filter(res => {
-				return res.uIfLogged === 1;
+				return res.uIfLogged === 1 && res.uGroup === 1;
 			})
 		}
 	},

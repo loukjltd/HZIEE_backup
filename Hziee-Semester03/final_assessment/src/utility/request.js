@@ -11,10 +11,6 @@ let instance = axios.create({
 let loading = null;
 let rMap = new Map();
 
-// instance.defaults.baseURL = "/BossWebApi";
-// instance.defaults.timeout = 10000;
-// instance.defaults.timeoutErrorMessage = "网络请求超时";
-
 // 添加请求拦截器
 instance.interceptors.request.use(config => {
 	if (rMap.has(config.url)) {

@@ -1,0 +1,112 @@
+#answerOfficialTitle {
+	font-size:    x-large;
+	font-weight:  900;
+	padding-left: 35px;
+	padding-top:  35px;
+}
+
+#answerOfficialAvatar {
+	padding-left: 35px;
+	width:        5%;
+}
+
+.answerOfficialNickName {
+	color:          #444444;
+	vertical-align: 12px;
+}
+
+.answerOfficialMotto {
+	color:          #646464;
+	vertical-align: 12px;
+}
+
+.answerOfficialLikeNumber {
+	color:        #8792A7;
+	font-size:    larger;
+	padding-left: 35px;
+	padding-top:  25px;
+}
+
+.answerOfficialContent {
+	line-height:   30px;
+	padding-left:  35px;
+	padding-right: 35px;
+	padding-top:   10px;
+	
+}
+
+#answerOfficialLikeNumber {
+	color:        #8792A7;
+	font-size:    larger;
+	padding-left: 35px;
+	padding-top:  25px;
+}
+
+#answerDetailContent {
+	background-color: white;
+	border-radius:    10px;
+	box-shadow:       0 0 2px 2px #ECECEC;
+	margin-right:     10px;
+	margin-top:       10px;
+	padding-bottom:   100px;
+	width:            800px;
+}
+
+#answerDetailOfficialTitle {
+	font-size:    x-large;
+	font-weight:  900;
+	padding-left: 35px;
+	padding-top:  35px;
+}
+
+#answerDetailOfficialAvatar {
+	padding-left: 35px;
+	width:        5%;
+}
+
+#answerDetailOfficialNickName {
+	color:          #444444;
+	vertical-align: 12px;
+	
+}
+
+#answerDetailOfficialMotto {
+	color:          #646464;
+	vertical-align: 12px;
+}
+
+#answerDetailOfficialLikeNumber {
+	color:        #8792A7;
+	font-size:    larger;
+	padding-left: 35px;
+	padding-top:  25px;
+}
+
+#answerDetailOfficialContent {
+	line-height:   30px;
+	padding-left:  35px;
+	padding-right: 35px;
+	padding-top:   10px;
+	
+}
+
+#answerDetailOfficialComment {
+	border:         solid #8590A6 1px;
+	border-radius:  5px;
+	font-size:      large;
+	height:         30px;
+	margin-bottom:  30px;
+	margin-left:    65px;
+	padding-bottom: 7px;
+	padding-left:   10px;
+	padding-top:    10px;
+	width:          650px;
+}
+
+.adminMainLoggedUser {
+	font-size:    medium;
+	font-weight:  900;
+	margin-top:   -15px;
+	padding-left: 55px;
+	padding-top:  25px;
+}

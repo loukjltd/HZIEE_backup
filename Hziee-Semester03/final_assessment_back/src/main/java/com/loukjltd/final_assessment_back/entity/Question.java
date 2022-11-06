@@ -1,12 +1,21 @@
 package com.loukjltd.final_assessment_back.entity;
 
 public class Question {
+	private int uID;
 	private int qID;
 	private String qTitle;
 	private String qContent;
 	private String uNickName;
 	private String uMotto;
 	private String uAvatar;
+	
+	public int getuID() {
+		return uID;
+	}
+	
+	public void setuID(int uID) {
+		this.uID = uID;
+	}
 	
 	public int getqID() {
 		return qID;

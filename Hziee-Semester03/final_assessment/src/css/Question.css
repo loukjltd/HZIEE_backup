@@ -63,3 +63,53 @@
 	padding-top:   25px;
 }
 
+#questionOfficialTitle {
+	font-size:    x-large;
+	font-weight:  900;
+	padding-left: 35px;
+	padding-top:  35px;
+}
+
+#questionOfficialAvatar {
+	padding-left: 35px;
+	width:        5%;
+}
+
+#questionOfficialNickName {
+	color:          #444444;
+	vertical-align: 12px;
+	
+}
+
+#questionOfficialMotto {
+	color:          #646464;
+	vertical-align: 12px;
+}
+
+#questionOfficialLikeNumber {
+	color:        #8792A7;
+	font-size:    larger;
+	padding-left: 35px;
+	padding-top:  25px;
+}
+
+#questionOfficialContent {
+	line-height:   30px;
+	padding-left:  35px;
+	padding-right: 35px;
+	padding-top:   10px;
+	
+}
+
+#questionOfficialComment {
+	border:         solid #8590A6 1px;
+	border-radius:  5px;
+	font-size:      large;
+	height:         30px;
+	margin-bottom:  30px;
+	margin-left:    65px;
+	padding-bottom: 7px;
+	padding-left:   10px;
+	padding-top:    10px;
+	width:          650px;
+}

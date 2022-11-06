@@ -46,18 +46,33 @@
 							<p id="paragraphOfficialLikeNumber">有{{ item.pLike }}人点赞了此文章</p>
 							<p v-for="content in item.pContent.split('<br>')" id="paragraphOfficialContent" v-bind:key="content">
 								{{ content }}</p>
-							<br>
 							<a class="contentLikeNumber" href="#" style="margin-left: 30px">▲&nbsp;赞同&nbsp;{{ item.pLike }}</a>
 							<a class="contentLikeNumber" href="#">反对</a>
 							<a class="contentLikeNumber" href="#" v-on:click="doChooseComment(commentFlag)">评论</a>
 							<br>
+							<p id="paragraphOfficialLikeNumber">以下是此专栏的评论</p>
+							<br>
 						</div>
 						
 						<form v-if="this.commentFlag">
-							<textarea id="paragraphOfficialComment" placeholder="评论千万条，友善第一条"
-							          style="margin-top: 10px;"></textarea>
-							<input class="enterButton" style="margin-left: 65px; margin-top: -20px;" type="button" value="发表评论">
+							<textarea id="paragraphOfficialComment" v-model="enteredParagraphCommentContent"
+							          placeholder="评论千万条，友善第一条" style="margin-top: 10px;"></textarea>
+							<input v-for="uID in creatorData" v-bind:key="uID" class="enterButton"
+							       style="margin-left: 65px; margin-top: -20px;"
+							       type="button" value="发表评论"
+							       v-on:click="doInsertNewCommentToDatabase(uID.uID)">
 						</form>
+						
+						<div v-for="item in paragraphCommentData" v-bind:key="item" class="commentPart">
+							<img alt="找不到图片" class="commentAvatar" v-bind:src="require('@/assets/avatar/' + item.uAvatar)">
+							<a class="commentNickName">{{ item.uNickName }}</a>
+							<br>
+							<a class="commentContent">{{ item.pcContent }}</a>
+							<br>
+							<a class="commentLikeNumber" href="#">▲&nbsp;{{ item.pcLike }}</a>
+							<br>
+						</div>
+						
 						<div id="bottomLine">
 							<br><br><br>
 							<p>-&nbsp;&nbsp;到底啦&nbsp;&nbsp;-</p>
@@ -167,7 +182,12 @@
 </template>
 
 <script>
-import {DoLoadLoggedUserInfoInCreatorCenter, DoViewParagraphDetail} from "@/utility/api";
+import {
+	DoInsertNewCommentToDatabase,
+	DoLoadLoggedUserInfoInCreatorCenter,
+	DoLoadParagraphCommentData,
+	DoViewParagraphDetail
+} from "@/utility/api";
 
 export default {
 	/* eslint-disable*/
@@ -177,7 +197,10 @@ export default {
 			queryParams: {},
 			creatorData: [],
 			paragraphData: [],
-			commentFlag: false
+			commentFlag: false,
+			paragraphCommentData: [],
+			enteredParagraphCommentContent: "",
+			returnedPostParagraphCommentResultCode: 0
 		}
 	},
 	
@@ -199,17 +222,42 @@ export default {
 		doChooseComment: function (commentFlag) {
 			this.commentFlag = !commentFlag;
 		},
+		
+		doLoadParagraphCommentData: function () {
+			let testParams = this.queryParams;
+			DoLoadParagraphCommentData(testParams).then(res => {
+				this.paragraphCommentData = res;
+			})
+		},
+		
+		doInsertNewCommentToDatabase: function (uID) {
+			let currentTime = new Date();
+			let testParams = {
+				pID: this.queryParams.pID,
+				uID: uID,
+				pcContent: this.enteredParagraphCommentContent,
+				pcTime: currentTime.toLocaleString()
+			}
+			DoInsertNewCommentToDatabase(testParams).then(res => {
+				this.returnedPostParagraphCommentResultCode = res;
+				switch (this.returnedPostParagraphCommentResultCode) {
+					case 100:
+						alert("评论成功！")
+				}
+			});
+		}
 	},
 	
 	mounted() {
 		this.doLoadLoggedUserInfoInCreatorCenter();
 		this.doViewParagraphDetail();
+		this.doLoadParagraphCommentData();
 	},
 	
 	created() {
 		this.queryParams = {
 			uID: this.$route.query.uID,
-			pTitle: this.$route.query.pTitle
+			pID: this.$route.query.pID
 		}
 	}
 }

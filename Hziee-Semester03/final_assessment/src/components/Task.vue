@@ -134,7 +134,7 @@ export default {
 	computed: {
 		filterUser: function () {
 			return this.returnedUser.filter(res => {
-				return res.uIfLogged === 1;
+				return res.uIfLogged === 1 && res.uGroup === 1;
 			})
 		},
 	},

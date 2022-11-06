@@ -18,7 +18,7 @@ public class MineService {
 		return mineMapper.getMineList();
 	}
 	
-	public int MineLogIn(String uPhone, String uPassword) {
+	public int MineLogIn(String uPhone, String uPassword, int adminFlag) {
 		List<Mine> mineList = mineMapper.getMineList();
 		int logResultCode = 144; // 表示登陆失败的代码
 		for (Mine mine : mineList) {
@@ -26,12 +26,16 @@ public class MineService {
 				logResultCode = 122; // 表示输入框为空的代码
 				break;
 			} else if (mine.getuPhone().equals(uPhone) && mine.getuPassword().equals(uPassword)) {
-				mineMapper.updateStatusToIn(uPhone);
-				logResultCode = 100; // 表示登陆成功的代码
+				if (mine.getuGroup() == adminFlag) {
+					logResultCode = 133;
+				} else {
+					mineMapper.updateStatusToIn(uPhone);
+					logResultCode = 100; // 表示登陆成功的代码
+				}
 				break;
 			}
 		}
-//        System.out.println("MineService中登陆返回的代码为" + logResultCode);
+		System.out.println("MineService中登陆返回的代码为" + logResultCode);
 		return logResultCode;
 	}
 	

@@ -20,7 +20,8 @@ public interface HomePageMapper {
 				User.uNickName,
 				User.uMotto,
 				User.uAvatar,
-				Paragraph.uID
+				Paragraph.uID,
+				Paragraph.pID
 			FROM
 				Paragraph
 			JOIN
@@ -37,7 +38,8 @@ public interface HomePageMapper {
 				USER.uNickName,
 				USER.uMotto,
 				USER.uAvatar,
-				Question.uID
+				Question.uID,
+				Question.qID
 			FROM
 				Question
 			JOIN

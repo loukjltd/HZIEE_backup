@@ -13,11 +13,12 @@ a {
 
 #navBar {
 	background-color: white;
+	border-radius:    10px;
 	box-shadow:       0 0 2px 2px #ECECEC;
 	height:           50px;
-	padding-bottom:   10px;
-	padding-top:      10px;
-	width:            100%;
+	margin-top:       7px;
+	padding-bottom:   6px;
+	width:            1400px;
 }
 
 #navBar ul {
@@ -211,6 +212,7 @@ a {
 	border:             none;
 	border-radius:      5px;
 	color:              white;
+	cursor:             pointer;
 	font-size:          larger;
 	height:             50px;
 	margin-right:       5px;
@@ -259,4 +261,38 @@ a {
 
 .contentTitle:hover {
 	color: #056DE8;
+}
+
+.commentPart {
+	padding-left:  65px;
+	padding-right: 65px;
+}
+
+.commentAvatar {
+	padding-top: 10px;
+	width:       4%;
+}
+
+.commentNickName {
+	font-size:      medium;
+	padding-left:   5px;
+	vertical-align: 7px;
+}
+
+.commentContent {
+	font-size:   small;
+	line-height: 20px;
+}
+
+.commentLikeNumber {
+	background-color: #E5F0FD;
+	border-radius:    5px;
+	color:            #056DE8;
+	line-height:      50px;
+	margin-right:     10px;
+	padding:          5px 8px;
+}
+
+.commentLikeNumber:hover {
+	background-color: #DAE9FC;
 }

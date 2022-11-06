@@ -30,7 +30,7 @@ public class ParagraphController {
 	@ResponseBody
 	public List<Paragraph> viewParagraphDetail(@RequestBody Map<String, Object> map) {
 		int uID = Integer.parseInt(map.get("uID").toString());
-		String pTitle = map.get("pTitle").toString();
-		return paragraphService.viewParagraphDetail(uID, pTitle);
+		int pID = Integer.parseInt(map.get("pID").toString());
+		return paragraphService.viewParagraphDetail(uID, pID);
 	}
 }

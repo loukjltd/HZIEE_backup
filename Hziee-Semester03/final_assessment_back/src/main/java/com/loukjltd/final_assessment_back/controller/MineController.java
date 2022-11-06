@@ -31,13 +31,14 @@ public class MineController {
 	public int MineLogIn(@RequestBody Map<String, Object> map) {
 		String uPhone = map.get("uPhone").toString();
 		String uPassword = map.get("uPassword").toString();
+		int adminFlag = Integer.parseInt(map.get("adminFlag").toString());
 /*
         int result = mineService.MineLogIn(uPhone, uPassword);
         System.out.println("MineController中登陆返回的代码为" + result);
         System.out.println("MineController中登陆返回的uPhone为" + uPhone);
         System.out.println("MineController中登陆返回的uPassword为" + uPassword);
 */
-		return mineService.MineLogIn(uPhone, uPassword);
+		return mineService.MineLogIn(uPhone, uPassword, adminFlag);
 	}
 	
 	@RequestMapping("MineLogOut")

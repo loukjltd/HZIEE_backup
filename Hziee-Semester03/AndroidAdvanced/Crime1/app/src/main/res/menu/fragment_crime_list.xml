@@ -11,4 +11,14 @@
         android:id="@+id/show_subtitle"
         android:title="@string/show_subtitle"
         app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/jump_to_first"
+        android:title="@string/jump_to_first"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/jump_to_last"
+        android:title="@string/jump_to_last"
+        app:showAsAction="ifRoom" />
 </menu>

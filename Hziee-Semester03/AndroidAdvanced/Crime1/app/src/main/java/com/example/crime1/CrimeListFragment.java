@@ -21,10 +21,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-
 public class CrimeListFragment extends Fragment {
+	private static final String SAVED_VISIBLE = "subtitle";
+	
 	private RecyclerView mCrimeRecyclerView;
 	private CrimeAdapter mAdapter;
+	private boolean mSubtitleVisible;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,10 @@ public class CrimeListFragment extends Fragment {
 		
 		mCrimeRecyclerView = view.findViewById(R.id.crime_recycler_view);
 		mCrimeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+		
+		if (savedInstancsState != null) {
+			mSubtitleVisible = savedInstancsState.getBoolean(SAVED_VISIBLE);
+		}
 		
 		updateUI();
 		return view;
@@ -55,6 +61,13 @@ public class CrimeListFragment extends Fragment {
 		super.onCreateOptionsMenu(menu, inflater);
 		inflater.inflate(R.menu.fragment_crime_list, menu);
 		
+		MenuItem subtitleItem = menu.findItem(R.id.show_subtitle);
+		if (mSubtitleVisible) {
+			subtitleItem.setTitle(R.string.hide_subtitle);
+		} else {
+			subtitleItem.setTitle(R.string.show_subtitle);
+		}
+		
 	}
 	
 	@Override
@@ -67,6 +80,8 @@ public class CrimeListFragment extends Fragment {
 				startActivity(intent);
 				return true;
 			case R.id.show_subtitle:
+				mSubtitleVisible = !mSubtitleVisible;
+				getActivity().invalidateOptionsMenu();
 				updateSubtitle();
 				return true;
 			default:
@@ -78,6 +93,10 @@ public class CrimeListFragment extends Fragment {
 		CrimeLab crimeLab = CrimeLab.get(getActivity());
 		int crimeNum = crimeLab.getCrimes().size();
 		String subtitle = getString(R.string.subtitle_format, crimeNum);
+		
+		if (!mSubtitleVisible) {
+			subtitle = null;
+		}
 		
 		AppCompatActivity activity = (AppCompatActivity) getActivity();
 		activity.getSupportActionBar().setSubtitle(subtitle);
@@ -92,6 +111,14 @@ public class CrimeListFragment extends Fragment {
 		} else {
 			mAdapter.notifyDataSetChanged();
 		}
+		
+		updateSubtitle();
+	}
+	
+	@Override
+	public void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		outState.putBoolean(SAVED_VISIBLE, mSubtitleVisible);
 	}
 	
 	private class CrimeHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -155,6 +182,4 @@ public class CrimeListFragment extends Fragment {
 			return mCrimes.size();
 		}
 	}
-	
-	
 }

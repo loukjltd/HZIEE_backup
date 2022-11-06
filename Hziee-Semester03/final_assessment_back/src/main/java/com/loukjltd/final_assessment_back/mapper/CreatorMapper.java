@@ -29,12 +29,12 @@ public interface CreatorMapper {
 			FROM
 				USER
 			WHERE
-				uIfLogged = 1;
+				uIfLogged = 1 AND uGroup = 1;
 			""")
 	List<Creator> getCreatorList();
 	
 	@Insert("""
-			INSERT INTO Question (qTitle, qContent, uID)
+			INSERT INTO Question ( qTitle, qContent, uID )
 			VALUES
 				(#{qTitle}, #{qContent}, #{uID});
 			""")
@@ -43,7 +43,7 @@ public interface CreatorMapper {
 	                              @Param("uID") int uID);
 	
 	@Insert("""
-			INSERT INTO Paragraph (pTitle, pContent, uID)
+			INSERT INTO Paragraph ( pTitle, pContent, uID )
 			VALUES
 				(#{pTitle}, #{pContent}, #{uID});
 			""")

@@ -37,12 +37,12 @@
 						<p class="postParagraphMainTitle">撰写专栏</p>
 						<div class="postMainContent">
 							<form v-for="item in creatorData" v-bind:key="item" name="commentPart">
-								<input v-model="enteredQuestionTitle" class="enterPostTitle" placeholder="请输入标题"
+								<input v-model="enteredParagraphTitle" class="enterPostTitle" placeholder="请输入标题"
 								       type="text">
 								<br>
 								<a class="contentLikeNumber" href="#" v-on:click="doAddEnterTextToTextArea()">插入换行符号</a>
 								<a class="contentLikeNumber" href="#" v-on:click="doAddSingleLineToTextArea()">插入分割线</a>
-								<textarea v-model="enteredQuestionContent" class="enterPostContent"
+								<textarea v-model="enteredParagraphContent" class="enterPostContent"
 								          name="commentArea" placeholder="请输入正文"></textarea>
 								<br>
 								<input class="enterButton" type="button" value="发布专栏"
@@ -167,9 +167,9 @@ export default {
 	data() {
 		return {
 			creatorData: [],
-			enteredQuestionTitle: "",
-			enteredQuestionContent: "",
-			returnedPostQuestionResultCode: []
+			enteredParagraphTitle: "",
+			enteredParagraphContent: "",
+			returnedPostParagraphResultCode: 0
 		}
 	},
 	
@@ -182,13 +182,13 @@ export default {
 		
 		doInsertParagraphToDatabase: function (uID) {
 			let testParams = {
-				qTitle: this.enteredQuestionTitle,
-				qContent: this.enteredQuestionContent,
+				pTitle: this.enteredParagraphTitle,
+				pContent: this.enteredParagraphContent,
 				uID: uID
 			}
 			DoInsertParagraphToDatabase(testParams).then(res => {
-				this.returnedPostQuestionResultCode = res;
-				switch (this.returnedPostQuestionResultCode) {
+				this.returnedPostParagraphResultCode = res;
+				switch (this.returnedPostParagraphResultCode) {
 					case 100:
 						alert("提交专栏成功！");
 						this.$router.push("/Paragraph");

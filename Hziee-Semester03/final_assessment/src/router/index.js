@@ -3,13 +3,6 @@ import Router from 'vue-router'
 import HomePage from "@/components/HomePage";
 
 Vue.use(Router)
-
-
-Router.prototype.goBack = function () {
-	this.isBack = true
-	window.history.go(-1)
-}
-
 export default new Router({
 	routes: [
 		{
@@ -61,6 +54,21 @@ export default new Router({
 			path: '/ParagraphSubPage',
 			name: 'ParagraphSubPage',
 			component: () => import('@/components/ParagraphSubPage')
+		},
+		{
+			path: '/QuestionSubPage',
+			name: 'QuestionSubPage',
+			component: () => import('@/components/QuestionSubPage')
+		},
+		{
+			path: '/AnswerSubPage',
+			name: 'AnswerSubPage',
+			component: () => import('@/components/AnswerSubPage')
+		},
+		{
+			path: '/AdminManager',
+			name: 'AdminManager',
+			component: () => import('@/components/AdminManager')
 		}
 	]
 })

@@ -135,3 +135,123 @@ export const DoViewParagraphDetail = (params) => {
 		data: params
 	})
 }
+
+export const DoLoadParagraphCommentData = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/ParagraphComment",
+		method: "post",
+		data: params
+	})
+}
+
+export const DoInsertNewCommentToDatabase = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/InsertNewCommentToDatabase",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoViewQuestionList = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/ViewQuestionList",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoViewQuestionAnswerList = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/ViewQuestionAnswerList",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoLoadViewAnswerDetail = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/ViewAnswerDetail",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoLoadAnswerCommentData = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/AnswerComment",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoInsertNewCommentToDatabase2 = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/InsertNewCommentToDatabase2",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoLoadAllUserInfo = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/AllUserInfo",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoLoadAllParagraphInfo = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/AllParagraphInfo",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoLoadAllQuestionInfo = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/AllQuestionInfo",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoLoadAllAnswerInfo = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/AllAnswerInfo",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoAdminDeleteUser = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/AdminDeleteUser",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoAdminDeleteParagraph = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/AdminDeleteParagraph",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoAdminDeleteQuestion = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/AdminDeleteQuestion",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoAdminDeleteAnswer = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/AdminDeleteAnswer",
+		method: 'post',
+		data: params
+	})
+}
