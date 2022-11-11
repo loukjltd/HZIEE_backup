@@ -1,5 +1,6 @@
 package com.example.crime1;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 
 import java.util.Date;
+import java.util.Objects;
 import java.util.UUID;
 
 public class CrimeFragment extends Fragment {
@@ -24,9 +26,7 @@ public class CrimeFragment extends Fragment {
 	private static final int REQUEST_DATE = 0;
 	
 	private Crime mCrime;
-	private EditText mTitleField;
 	private Button mDateButton;
-	private CheckBox mSolvedCheckBox;
 	
 	public static CrimeFragment newInstance(UUID crimeId) {
 		Bundle args = new Bundle();
@@ -42,16 +42,25 @@ public class CrimeFragment extends Fragment {
 		super.onCreate(savedInstanceState);
 //		mCrime = new Crime();
 //		UUID crimeId = (UUID) getActivity().getIntent().getSerializableExtra(CrimeActivity.EXTRA_CRIME_ID);
+		assert getArguments() != null;
 		UUID crimeId = (UUID) getArguments().getSerializable(ARG_CRIME_ID);
 		mCrime = CrimeLab.get(getActivity()).getCrime(crimeId);
 	}
 	
 	@Override
+	public void onPause() {
+		super.onPause();
+		
+		CrimeLab.get(getActivity()).updateCrime(mCrime);
+	}
+	
+	@SuppressLint("MissingInflatedId")
+	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.fragment_crime, container, false);
 		
 		//名称
-		mTitleField = v.findViewById(R.id.crime_title);
+		EditText mTitleField = v.findViewById(R.id.crime_title);
 		mTitleField.setText(mCrime.getTitle());
 		mTitleField.addTextChangedListener(new TextWatcher() {
 			@Override
@@ -86,8 +95,14 @@ public class CrimeFragment extends Fragment {
 			}
 		});
 		
+		Button mDeleteButton = v.findViewById(R.id.crime_delete);
+		mDeleteButton.setOnClickListener(view -> {
+			CrimeLab.get(getActivity()).deleteCrime(mCrime);
+			Objects.requireNonNull(getActivity()).finish();
+		});
+		
 		//是否解决
-		mSolvedCheckBox = v.findViewById(R.id.crime_solved);
+		CheckBox mSolvedCheckBox = v.findViewById(R.id.crime_solved);
 		mSolvedCheckBox.setChecked(mCrime.isSolved());
 		mSolvedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 			@Override

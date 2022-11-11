@@ -43,4 +43,13 @@ public class CreatorController {
 		int uID = Integer.parseInt(map.get("uID").toString());
 		return creatorService.InsertParagraphToDatabase(pTitle, pContent, uID);
 	}
+	
+	@RequestMapping("InsertAnswerToDatabase")
+	@ResponseBody
+	public int insertAnswerToDatabase(@RequestBody Map<String, Object> map) {
+		String aContent = map.get("aContent").toString();
+		int qID = Integer.parseInt(map.get("qID").toString());
+		int uID = Integer.parseInt(map.get("uID").toString());
+		return creatorService.InsertAnswerToDatabase(aContent, qID, uID);
+	}
 }

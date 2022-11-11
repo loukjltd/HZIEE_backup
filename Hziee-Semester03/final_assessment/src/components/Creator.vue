@@ -18,8 +18,9 @@
 					<router-link to="/Notification"><a>通知</a></router-link>
 				</li>
 				<li>
-					<input id="navBarSearchBox" placeholder="请搜索想要搜索的内容" type="search">
-					<input id="navBarSearchButton" type="button" value="搜索">
+					<input id="navBarSearchBox" v-model="enteredSearchContent" placeholder="请搜索想要搜索的内容"
+					       type="search">
+					<input id="navBarSearchButton" type="button" value="搜索" v-on:click="doSearchDatabase()">
 				</li>
 				<li class="navBarCommonItem">
 					<router-link to="/Creator"><a
@@ -34,28 +35,8 @@
 		<div id="creatorContent">
 			<p class="creatorMainTitle">数据总览</p>
 			<p style="margin-left: 55px; margin-bottom: 15px;color: #8590A6; font-size: small">
-				注：⇧表示同比增长百分比，⎋表示超过全站其他用户的百分比</p>
+				注：⎋表示超过全站其他用户的百分比</p>
 			<ul v-for="item in creatorData" v-bind:key="item">
-				<li v-if="creatorData != false">
-					<p class="creatorTitle">近7日阅读数</p>
-					<p class="creatorNumber">12345</p>
-					<p class="creatorPercentage">⇧&nbsp;<a class="creatorPercentageSpecify">88</a>%</p>
-				</li>
-				<li v-if="creatorData != false">
-					<p class="creatorTitle">近7日赞同数</p>
-					<p class="creatorNumber">23</p>
-					<p class="creatorPercentage">⇧&nbsp;<a class="creatorPercentageSpecify">233</a>%</p>
-				</li>
-				<li v-if="creatorData != false">
-					<p class="creatorTitle">近7日评论数</p>
-					<p class="creatorNumber">6</p>
-					<p class="creatorPercentage">⇧&nbsp;<a class="creatorPercentageSpecify">67</a>%</p>
-				</li>
-				<li v-if="creatorData != false">
-					<p class="creatorTitle">近7日收益（元）</p>
-					<p class="creatorNumber">88.88</p>
-					<p class="creatorPercentage">⇧&nbsp;<a class="creatorPercentageSpecify">268</a>%</p>
-				</li>
 				<li v-if="creatorData != false">
 					<p class="creatorTitle">总阅读数</p>
 					<p class="creatorNumber">{{ item.tRead }}</p>
@@ -77,7 +58,7 @@
 					<p class="creatorPercentage">⎋&nbsp;<a class="creatorPercentageSpecify">24</a>%</p>
 				</li>
 			</ul>
-			<div v-if="creatorData != false" style="margin-top: 400px">
+			<div v-if="creatorData != false" style="margin-top: 200px">
 				<p class="creatorMainTitle">内容创作</p>
 				<div style="margin-left: 55px">
 					<router-link to="/PostQuestion"><input class="enterButton" name="choosePostQuestion" type="button"
@@ -90,7 +71,8 @@
 					<a class="creatorEnterButtonNote">&nbsp;&nbsp;每天写文章，额外奖励分等你来拿</a>
 					<br>
 					<br>
-					<input class="enterButton" name="chooseAnswerQuestion" type="button" value="🙋我要回答问题">
+					<router-link to="/Question"><input class="enterButton" name="chooseAnswerQuestion" type="button"
+					                                   value="🙋我要回答问题"></router-link>
 					<a class="creatorEnterButtonNote">&nbsp;&nbsp;每天答问题，额外奖励分等你来拿</a>
 				</div>
 			
@@ -150,7 +132,8 @@ export default {
 	name: "Creator",
 	data() {
 		return {
-			creatorData: []
+			creatorData: [],
+			enteredSearchContent: ""
 		}
 	},
 	
@@ -160,6 +143,15 @@ export default {
 				this.creatorData = res;
 			});
 		},
+		
+		doSearchDatabase: function () {
+			this.$router.push({
+				path: '/SearchResult',
+				query: {
+					srContent: this.enteredSearchContent
+				}
+			})
+		}
 	},
 	
 	mounted() {

@@ -50,4 +50,13 @@ public interface CreatorMapper {
 	void insertParagraphToDatabase(@Param("pTitle") String pTitle,
 	                               @Param("pContent") String pContent,
 	                               @Param("uID") int uID);
+	
+	@Insert("""
+			INSERT INTO Answer ( aContent, qID, uID )
+			VALUES
+				(#{aContent}, #{qID}, #{uID});
+			""")
+	void insertAnswerToDatabase(@Param("aContent") String aContent,
+	                            @Param("qID") int qID,
+	                            @Param("uID") int uID);
 }

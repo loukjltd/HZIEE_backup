@@ -112,6 +112,14 @@ export const DoInsertQuestionToDatabase = (params) => {
 	})
 }
 
+export const DoInsertAnswerToDatabase = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/InsertAnswerToDatabase",
+		method: "post",
+		data: params
+	})
+}
+
 export const DoInsertParagraphToDatabase = (params) => {
 	return instance({
 		url: "http://127.0.0.1:8080/InsertParagraphToDatabase",
@@ -251,6 +259,86 @@ export const DoAdminDeleteQuestion = (params) => {
 export const DoAdminDeleteAnswer = (params) => {
 	return instance({
 		url: "http://127.0.0.1:8080/AdminDeleteAnswer",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoLoadNotification = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/Notification",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoDeleteNotification = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/DeleteNotification",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoTaskCheckDaily = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/TaskCheckDaily",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoAdminSendNotification = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/AdminSendNotification",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoTaskUpdateReadDetailTimes = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/TaskUpdateReadDetailTimes",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoTaskUpdatePostDetailTimes = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/TaskUpdatePostDetailTimes",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoTaskUpdatePostQuestionCostCoin = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/taskUpdatePostQuestionCostCoin",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoSearchDatabaseParagraph = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/SearchDatabaseParagraph",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoSearchDatabaseQuestion = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/SearchDatabaseQuestion",
+		method: 'post',
+		data: params
+	})
+}
+
+export const DoSearchDatabaseAnswer = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/SearchDatabaseAnswer",
 		method: 'post',
 		data: params
 	})

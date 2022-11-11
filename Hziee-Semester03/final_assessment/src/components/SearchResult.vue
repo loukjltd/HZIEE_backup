@@ -3,15 +3,13 @@
 		<div id="navBar">
 			<ul>
 				<li class="navBarCommonItem">
-					<router-link to="/"><a>首页</a>
-					</router-link>
+					<router-link to="/"><a>首页</a></router-link>
 				</li>
 				<li class="navBarCommonItem">
 					<router-link to="/Question"><a>提问</a></router-link>
 				</li>
 				<li class="navBarCommonItem">
-					<router-link to="/Paragraph"><a
-							style="color: black; font-weight: bold; border-bottom: #056DE8 solid 5px">专栏</a></router-link>
+					<router-link to="/Paragraph"><a>专栏</a></router-link>
 				</li>
 				<li class="navBarCommonItem">
 					<router-link to="/Task"><a>任务</a></router-link>
@@ -36,44 +34,47 @@
 		<div id="pageLayoutList">
 			<ul>
 				<li>
-					<div id="paragraphContent">
-						<div v-for="item in paragraphData" id="paragraphOfficialContent" v-bind:key="item">
-							<p id="paragraphOfficialTitle">{{ item.pTitle }}</p>
+					<div id="searchResultContent">
+						<p class="searchResultMainTitle">搜索结果</p>
+						<div v-for="pItem in searchResultParagraph" id="searchResultParagraph" v-bind:key="pItem">
+							<a class="contentCategory">专</a>
+							<a class="contentTitle"
+							   href="#" v-on:click="doSaveClickedParagraph(pItem.uID, pItem.pID)"><b>&nbsp;{{ pItem.pTitle
+							                                                                         }}</b></a>
 							<br>
-							<img id="paragraphOfficialAvatar" alt="找不到图片"
-							     v-bind:src="require('@/assets/avatar/' + item.uAvatar)">
-							<a id="paragraphOfficialNickName">&nbsp;{{ item.uNickName }}&nbsp;</a>
-							<a id="paragraphOfficialMotto">&nbsp;{{ item.uMotto }}</a>
-							<p id="paragraphOfficialLikeNumber">有{{ item.pLike }}人点赞了此文章</p>
-							<p v-for="content in item.pContent.split('<br>')" id="paragraphOfficialContent" v-bind:key="content">
-								{{ content }}</p>
-							<a class="contentLikeNumber" href="#" style="margin-left: 30px">▲&nbsp;赞同&nbsp;{{ item.pLike }}</a>
+							<img alt="找不到图片" v-bind:src="require('@/assets/avatar/' + pItem.uAvatar)">
+							<a class="contentNickName">&nbsp;{{ pItem.uNickName }}&nbsp;</a>
+							<a class="contentMotto">&nbsp;{{ pItem.uMotto }}</a>
+							<br>
+							<a v-if="(pItem.pContent).length < 100" class="contentInfo">{{ pItem.pContent }}</a>
+							<a v-else class="contentInfo">{{ (pItem.pContent).substring(0, 100) }}... ...</a>
+							<br>
+							<a class="contentLikeNumber" href="#">▲&nbsp;赞同&nbsp;{{ pItem.pLike }}</a>
 							<a class="contentLikeNumber" href="#">反对</a>
-							<a class="contentLikeNumber" href="#" v-on:click="doChooseComment(commentFlag)">评论</a>
-							<br>
-							<p id="paragraphOfficialLikeNumber">以下是此专栏的评论</p>
-							<br>
+							<a class="contentLikeNumber" href="#"
+							   v-on:click="doSaveClickedParagraph(pItem.uID, pItem.pID)">阅读全文</a>
+							<p style="text-align: center; color: #DAE9FC; margin-top: 15px">
+								————————————————————————————————————————</p>
 						</div>
-						
-						<form v-if="this.commentFlag">
-							<textarea id="paragraphOfficialComment" v-model="enteredParagraphCommentContent"
-							          placeholder="评论千万条，友善第一条" style="margin-top: 10px;"></textarea>
-							<input v-for="uID in creatorData" v-bind:key="uID" class="enterButton"
-							       style="margin-left: 65px; margin-top: -20px;"
-							       type="button" value="发表评论"
-							       v-on:click="doInsertNewCommentToDatabase(uID.uID)">
-						</form>
-						
-						<div v-for="item in paragraphCommentData" v-bind:key="item" class="commentPart">
-							<img alt="找不到图片" class="commentAvatar" v-bind:src="require('@/assets/avatar/' + item.uAvatar)">
-							<a class="commentNickName">{{ item.uNickName }}</a>
+						<div v-for="qItem in searchResultQuestion" id="searchResultQuestion" v-bind:key="qItem">
+							<a class="contentCategory">问</a>
+							<a class="contentTitle" href="#"
+							   v-on:click="doSaveClickedQuestion(qItem.uID, qItem.qID)"><b>&nbsp;{{ qItem.qTitle }}</b></a>
 							<br>
-							<a class="commentContent">{{ item.pcContent }}</a>
+							<img alt="找不到图片" v-bind:src="require('@/assets/avatar/' + qItem.uAvatar)">
+							<a class="contentNickName">&nbsp;{{ qItem.uNickName }}&nbsp;</a>
+							<a class="contentMotto">&nbsp;{{ qItem.uMotto }}</a>
 							<br>
-							<a class="commentLikeNumber" href="#">▲&nbsp;{{ item.pcLike }}</a>
+							<a v-if="(qItem.qContent).length < 100" class="contentInfo">{{ qItem.qContent }}</a>
+							<a v-else class="contentInfo">{{ (qItem.qContent).substring(0, 100) }}... ...</a>
 							<br>
+							<a class="contentLikeNumber" href="#"
+							   v-on:click="doSaveClickedQuestionPost(qItem.uID, qItem.qID, qItem.qTitle, qItem.qContent)">🙋我要回答这个问题</a>
+							<a class="contentLikeNumber" href="#"
+							   v-on:click="doSaveClickedQuestion(qItem.uID, qItem.qID)">阅读全文</a>
+							<p style="text-align: center; color: #DAE9FC; margin-top: 15px">
+								————————————————————————————————————————</p>
 						</div>
-						
 						<div id="bottomLine">
 							<br><br><br>
 							<p>-&nbsp;&nbsp;到底啦&nbsp;&nbsp;-</p>
@@ -184,26 +185,22 @@
 
 <script>
 import {
-	DoInsertNewCommentToDatabase,
 	DoLoadLoggedUserInfoInCreatorCenter,
-	DoLoadParagraphCommentData,
-	DoTaskUpdateReadDetailTimes,
-	DoViewParagraphDetail,
+	DoSearchDatabaseAnswer,
+	DoSearchDatabaseParagraph,
+	DoSearchDatabaseQuestion
 } from "@/utility/api";
 
 export default {
 	/* eslint-disable*/
-	name: "ParagraphSubPage",
+	name: "SearchResult",
 	data() {
 		return {
-			queryParams: {},
 			creatorData: [],
-			paragraphData: [],
-			commentFlag: false,
-			paragraphCommentData: [],
-			enteredParagraphCommentContent: "",
-			returnedPostParagraphCommentResultCode: 0,
-			readTimesTimer: null,
+			queryParams: {},
+			searchResultParagraph: [],
+			searchResultQuestion: [],
+			searchResultAnswer: [],
 			enteredSearchContent: ""
 		}
 	},
@@ -215,54 +212,51 @@ export default {
 			});
 		},
 		
-		doViewParagraphDetail: function () {
-			let testParams = this.queryParams;
-			console.log(testParams);
-			DoViewParagraphDetail(testParams).then(res => {
-				this.paragraphData = res;
+		doLoadSearchDatabaseData: function () {
+			let testParams = {
+				srContent: this.queryParams.srContent
+			};
+			DoSearchDatabaseParagraph(testParams).then(res => {
+				this.searchResultParagraph = res;
+			});
+			DoSearchDatabaseQuestion(testParams).then(res => {
+				this.searchResultQuestion = res;
+			});
+			DoSearchDatabaseAnswer(testParams).then(res => {
+				this.searchResultAnswer = res;
 			});
 		},
 		
-		doChooseComment: function (commentFlag) {
-			this.commentFlag = !commentFlag;
-		},
-		
-		doLoadParagraphCommentData: function () {
-			let testParams = this.queryParams;
-			DoLoadParagraphCommentData(testParams).then(res => {
-				this.paragraphCommentData = res;
-			})
-		},
-		
-		doInsertNewCommentToDatabase: function (uID) {
-			let currentTime = new Date();
-			let testParams = {
-				pID: this.queryParams.pID,
-				uID: uID,
-				pcContent: this.enteredParagraphCommentContent,
-				pcTime: currentTime.toLocaleString()
-			}
-			DoInsertNewCommentToDatabase(testParams).then(res => {
-				this.returnedPostParagraphCommentResultCode = res;
-				switch (this.returnedPostParagraphCommentResultCode) {
-					case 100:
-						alert("评论成功！")
+		doSaveClickedParagraph: function (uID, pID) {
+			this.$router.push({
+				path: '/ParagraphSubPage',
+				query: {
+					uID: uID,
+					pID: pID
 				}
 			});
 		},
 		
-		doCalculateReadTimes: function () {
-			clearTimeout(this.readTimesTimer);
-			this.readTimesTimer = setTimeout(() => {
-				this.doTaskUpdateReadDetailTimes()
-			}, 1000)
+		doSaveClickedQuestion: function (uID, qID) {
+			this.$router.push({
+				path: '/QuestionSubPage',
+				query: {
+					uID: uID,
+					qID: qID
+				}
+			})
 		},
 		
-		doTaskUpdateReadDetailTimes: function () {
-			let testParams = {
-				uID: this.creatorData[0].uID
-			}
-			DoTaskUpdateReadDetailTimes(testParams);
+		doSaveClickedQuestionPost: function (uID, qID, qTitle, qContent) {
+			this.$router.push({
+				path: '/PostAnswer',
+				query: {
+					uID: uID,
+					qID: qID,
+					qTitle: qTitle,
+					qContent: qContent
+				}
+			})
 		},
 		
 		doSearchDatabase: function () {
@@ -277,15 +271,12 @@ export default {
 	
 	mounted() {
 		this.doLoadLoggedUserInfoInCreatorCenter();
-		this.doViewParagraphDetail();
-		this.doLoadParagraphCommentData();
-		this.doCalculateReadTimes();
+		this.doLoadSearchDatabaseData();
 	},
 	
 	created() {
 		this.queryParams = {
-			uID: this.$route.query.uID,
-			pID: this.$route.query.pID
+			srContent: this.$route.query.srContent
 		}
 	}
 }
@@ -293,5 +284,7 @@ export default {
 
 <style scoped>
 @import "../css/Main.css";
+@import "../css/SearchResult.css";
 @import "../css/Paragraph.css";
+@import "../css/Question.css";
 </style>

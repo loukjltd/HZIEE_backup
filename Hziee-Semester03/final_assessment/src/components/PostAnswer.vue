@@ -3,15 +3,13 @@
 		<div id="navBar">
 			<ul>
 				<li class="navBarCommonItem">
-					<router-link to="/"><a>首页</a>
-					</router-link>
+					<router-link to="/"><a>首页</a></router-link>
 				</li>
 				<li class="navBarCommonItem">
 					<router-link to="/Question"><a>提问</a></router-link>
 				</li>
 				<li class="navBarCommonItem">
-					<router-link to="/Paragraph"><a
-							style="color: black; font-weight: bold; border-bottom: #056DE8 solid 5px">专栏</a></router-link>
+					<router-link to="/Paragraph"><a>专栏</a></router-link>
 				</li>
 				<li class="navBarCommonItem">
 					<router-link to="/Task"><a>任务</a></router-link>
@@ -36,43 +34,23 @@
 		<div id="pageLayoutList">
 			<ul>
 				<li>
-					<div id="paragraphContent">
-						<div v-for="item in paragraphData" id="paragraphOfficialContent" v-bind:key="item">
-							<p id="paragraphOfficialTitle">{{ item.pTitle }}</p>
-							<br>
-							<img id="paragraphOfficialAvatar" alt="找不到图片"
-							     v-bind:src="require('@/assets/avatar/' + item.uAvatar)">
-							<a id="paragraphOfficialNickName">&nbsp;{{ item.uNickName }}&nbsp;</a>
-							<a id="paragraphOfficialMotto">&nbsp;{{ item.uMotto }}</a>
-							<p id="paragraphOfficialLikeNumber">有{{ item.pLike }}人点赞了此文章</p>
-							<p v-for="content in item.pContent.split('<br>')" id="paragraphOfficialContent" v-bind:key="content">
-								{{ content }}</p>
-							<a class="contentLikeNumber" href="#" style="margin-left: 30px">▲&nbsp;赞同&nbsp;{{ item.pLike }}</a>
-							<a class="contentLikeNumber" href="#">反对</a>
-							<a class="contentLikeNumber" href="#" v-on:click="doChooseComment(commentFlag)">评论</a>
-							<br>
-							<p id="paragraphOfficialLikeNumber">以下是此专栏的评论</p>
-							<br>
+					<div id="questionContent">
+						<p class="postQuestionMainTitle" style="padding-top: 40px">回答问题</p>
+						<p id="answerDetailOfficialTitle" style="margin-left: 18px;margin-top: -36px">{{ queryParams.qTitle }}</p>
+						<p id="answerDetailOfficialContent" style="margin-left: 18px; margin-right: 18px">{{ queryParams.qContent
+						                                                                                  }}</p>
+						<div class="postMainContent">
+							<form v-for="item in creatorData" v-bind:key="item" name="commentPart">
+								<a class="contentLikeNumber" href="#" v-on:click="doAddEnterTextToTextArea()">插入换行符号</a>
+								<a class="contentLikeNumber" href="#" v-on:click="doAddSingleLineToTextArea()">插入分割线</a>
+								<textarea v-model="enteredAnswerContent" class="enterPostContent"
+								          name="commentArea" placeholder="在这里写下你对这个问题的解答吧～"></textarea>
+								<br>
+								<input class="enterButton" type="button" value="提交回答"
+								       v-on:click="doInsertAnswerToDatabase(item.uID)">
+							</form>
 						</div>
 						
-						<form v-if="this.commentFlag">
-							<textarea id="paragraphOfficialComment" v-model="enteredParagraphCommentContent"
-							          placeholder="评论千万条，友善第一条" style="margin-top: 10px;"></textarea>
-							<input v-for="uID in creatorData" v-bind:key="uID" class="enterButton"
-							       style="margin-left: 65px; margin-top: -20px;"
-							       type="button" value="发表评论"
-							       v-on:click="doInsertNewCommentToDatabase(uID.uID)">
-						</form>
-						
-						<div v-for="item in paragraphCommentData" v-bind:key="item" class="commentPart">
-							<img alt="找不到图片" class="commentAvatar" v-bind:src="require('@/assets/avatar/' + item.uAvatar)">
-							<a class="commentNickName">{{ item.uNickName }}</a>
-							<br>
-							<a class="commentContent">{{ item.pcContent }}</a>
-							<br>
-							<a class="commentLikeNumber" href="#">▲&nbsp;{{ item.pcLike }}</a>
-							<br>
-						</div>
 						
 						<div id="bottomLine">
 							<br><br><br>
@@ -126,7 +104,7 @@
 						</ul>
 						<br>
 						<div id="enterCreatorCenter">
-							<router-link to="/Creator"><a>进入创作中心 ></a></router-link>
+							<router-link to="/Creator"><a href="#">进入创作中心 ></a></router-link>
 						</div>
 					</div>
 					<div v-if="creatorData == false" id="homePageSecondContent">
@@ -173,7 +151,7 @@
 						</ul>
 						<br>
 						<div id="enterCreatorCenter">
-							<router-link to="/Mine"><a>进入登陆页面 ></a></router-link>
+							<router-link to="/Mine"><a href="#">进入登陆页面 ></a></router-link>
 						</div>
 					</div>
 				</li>
@@ -184,30 +162,23 @@
 
 <script>
 import {
-	DoInsertNewCommentToDatabase,
+	DoInsertAnswerToDatabase,
 	DoLoadLoggedUserInfoInCreatorCenter,
-	DoLoadParagraphCommentData,
-	DoTaskUpdateReadDetailTimes,
-	DoViewParagraphDetail,
+	DoTaskUpdatePostDetailTimes
 } from "@/utility/api";
 
 export default {
 	/* eslint-disable*/
-	name: "ParagraphSubPage",
+	name: "PostAnswer",
 	data() {
 		return {
 			queryParams: {},
 			creatorData: [],
-			paragraphData: [],
-			commentFlag: false,
-			paragraphCommentData: [],
-			enteredParagraphCommentContent: "",
-			returnedPostParagraphCommentResultCode: 0,
-			readTimesTimer: null,
+			enteredAnswerContent: "",
+			returnedPostAnswerResultCode: 0,
 			enteredSearchContent: ""
 		}
 	},
-	
 	methods: {
 		doLoadLoggedUserInfoInCreatorCenter: function () {
 			DoLoadLoggedUserInfoInCreatorCenter().then(res => {
@@ -215,54 +186,34 @@ export default {
 			});
 		},
 		
-		doViewParagraphDetail: function () {
-			let testParams = this.queryParams;
-			console.log(testParams);
-			DoViewParagraphDetail(testParams).then(res => {
-				this.paragraphData = res;
-			});
-		},
-		
-		doChooseComment: function (commentFlag) {
-			this.commentFlag = !commentFlag;
-		},
-		
-		doLoadParagraphCommentData: function () {
-			let testParams = this.queryParams;
-			DoLoadParagraphCommentData(testParams).then(res => {
-				this.paragraphCommentData = res;
+		doInsertAnswerToDatabase: function (uID) {
+			let testParams = {
+				aContent: this.enteredAnswerContent,
+				qID: this.queryParams.qID,
+				uID: uID
+			}
+			DoInsertAnswerToDatabase(testParams).then(res => {
+				this.returnedPostAnswerResultCode = res;
+				switch (this.returnedPostAnswerResultCode) {
+					case 100:
+						let testParams2 = {
+							uID: this.creatorData[0].uID
+						};
+						DoTaskUpdatePostDetailTimes(testParams2);
+						alert("提交问题成功！");
+						this.$router.push("/Question");
+				}
 			})
 		},
 		
-		doInsertNewCommentToDatabase: function (uID) {
-			let currentTime = new Date();
-			let testParams = {
-				pID: this.queryParams.pID,
-				uID: uID,
-				pcContent: this.enteredParagraphCommentContent,
-				pcTime: currentTime.toLocaleString()
-			}
-			DoInsertNewCommentToDatabase(testParams).then(res => {
-				this.returnedPostParagraphCommentResultCode = res;
-				switch (this.returnedPostParagraphCommentResultCode) {
-					case 100:
-						alert("评论成功！")
-				}
-			});
+		doAddEnterTextToTextArea: function () {
+			const text = "<br>";
+			document.forms[0].commentArea.value += text;
 		},
 		
-		doCalculateReadTimes: function () {
-			clearTimeout(this.readTimesTimer);
-			this.readTimesTimer = setTimeout(() => {
-				this.doTaskUpdateReadDetailTimes()
-			}, 1000)
-		},
-		
-		doTaskUpdateReadDetailTimes: function () {
-			let testParams = {
-				uID: this.creatorData[0].uID
-			}
-			DoTaskUpdateReadDetailTimes(testParams);
+		doAddSingleLineToTextArea: function () {
+			const text = "----------------------------------------";
+			document.forms[0].commentArea.value += text;
 		},
 		
 		doSearchDatabase: function () {
@@ -274,24 +225,23 @@ export default {
 			})
 		}
 	},
-	
 	mounted() {
 		this.doLoadLoggedUserInfoInCreatorCenter();
-		this.doViewParagraphDetail();
-		this.doLoadParagraphCommentData();
-		this.doCalculateReadTimes();
 	},
-	
 	created() {
 		this.queryParams = {
 			uID: this.$route.query.uID,
-			pID: this.$route.query.pID
+			qID: this.$route.query.qID,
+			qTitle: this.$route.query.qTitle,
+			qContent: this.$route.query.qContent
 		}
-	}
+	},
+	
 }
 </script>
 
 <style scoped>
 @import "../css/Main.css";
-@import "../css/Paragraph.css";
+@import "../css/Answer.css";
+@import "../css/Question.css";
 </style>

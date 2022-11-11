@@ -1,0 +1,63 @@
+.notificationMainTitle {
+	font-size:    x-large;
+	font-weight:  900;
+	padding-left: 55px;
+	padding-top:  25px;
+}
+
+.notificationNote {
+	color:        #8792A7;
+	font-size:    larger;
+	padding-left: 55px;
+	padding-top:  25px;
+}
+
+table {
+	border-collapse: collapse;
+	margin-left:     55px;
+	margin-top:      15px;
+	width:           700px;
+}
+
+table td {
+	height: 72px;
+}
+
+.notificationIconClass {
+	height: 50px;
+	width:  50px;
+}
+
+.notificationContent {
+	padding-left: 10px;
+}
+
+table img {
+	border-radius: 20px;
+	width:         40px;
+}
+
+.notificationLevel1 {
+	color: #808080;
+}
+
+.notificationLevel2 {
+	color:       #000000;
+	font-weight: bold;
+}
+
+.notificationOperationButton {
+	background-color: #E5F0FD;
+	border-radius:    5px;
+	color:            #056DE8;
+	font-size:        smaller;
+	line-height:      30px;
+	margin-left:      1px;
+	margin-right:     1px;
+	padding:          5px 8px;
+}
+
+.notificationOperationButton:hover {
+	background-color: #D0E0F9;
+}
+

@@ -18,8 +18,9 @@
 					<router-link to="/Notification"><a>通知</a></router-link>
 				</li>
 				<li>
-					<input id="navBarSearchBox" placeholder="请搜索想要搜索的内容" type="search">
-					<input id="navBarSearchButton" type="button" value="搜索">
+					<input id="navBarSearchBox" v-model="enteredSearchContent" placeholder="请搜索想要搜索的内容"
+					       type="search">
+					<input id="navBarSearchButton" type="button" value="搜索" v-on:click="doSearchDatabase()">
 				</li>
 				<li class="navBarCommonItem">
 					<router-link to="/Creator"><a>创作中心</a></router-link>
@@ -160,7 +161,11 @@
 
 <script>
 /* eslint-disable*/
-import {DoInsertParagraphToDatabase, DoLoadLoggedUserInfoInCreatorCenter} from "@/utility/api";
+import {
+	DoInsertParagraphToDatabase,
+	DoLoadLoggedUserInfoInCreatorCenter,
+	DoTaskUpdatePostDetailTimes
+} from "@/utility/api";
 
 export default {
 	name: "PostParagraph",
@@ -169,7 +174,8 @@ export default {
 			creatorData: [],
 			enteredParagraphTitle: "",
 			enteredParagraphContent: "",
-			returnedPostParagraphResultCode: 0
+			returnedPostParagraphResultCode: 0,
+			enteredSearchContent: ""
 		}
 	},
 	
@@ -190,6 +196,10 @@ export default {
 				this.returnedPostParagraphResultCode = res;
 				switch (this.returnedPostParagraphResultCode) {
 					case 100:
+						let testParams = {
+							uID: this.creatorData[0].uID
+						};
+						DoTaskUpdatePostDetailTimes(testParams);
 						alert("提交专栏成功！");
 						this.$router.push("/Paragraph");
 				}
@@ -205,6 +215,15 @@ export default {
 			const text = "----------------------------------------";
 			document.forms[0].commentArea.value += text;
 		},
+		
+		doSearchDatabase: function () {
+			this.$router.push({
+				path: '/SearchResult',
+				query: {
+					srContent: this.enteredSearchContent
+				}
+			})
+		}
 	},
 	
 	mounted() {

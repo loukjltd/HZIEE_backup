@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -28,17 +31,15 @@ public class MineController {
 	
 	@RequestMapping("MineLogIn")
 	@ResponseBody
-	public int MineLogIn(@RequestBody Map<String, Object> map) {
+	public int MineLogIn(@RequestBody Map<String, Object> map) throws ParseException {
 		String uPhone = map.get("uPhone").toString();
 		String uPassword = map.get("uPassword").toString();
 		int adminFlag = Integer.parseInt(map.get("adminFlag").toString());
-/*
-        int result = mineService.MineLogIn(uPhone, uPassword);
-        System.out.println("MineController中登陆返回的代码为" + result);
-        System.out.println("MineController中登陆返回的uPhone为" + uPhone);
-        System.out.println("MineController中登陆返回的uPassword为" + uPassword);
-*/
-		return mineService.MineLogIn(uPhone, uPassword, adminFlag);
+		String dateFormat = "yyyy/MM/dd HH:mm:ss";
+		SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+		String uLastLoggedTime = map.get("uLastLoggedTime").toString();
+		Date convertedTime = sdf.parse(uLastLoggedTime);
+		return mineService.MineLogIn(uPhone, uPassword, adminFlag, convertedTime);
 	}
 	
 	@RequestMapping("MineLogOut")

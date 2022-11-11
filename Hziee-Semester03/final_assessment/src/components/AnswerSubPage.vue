@@ -20,8 +20,9 @@
 					<router-link to="/Notification"><a>通知</a></router-link>
 				</li>
 				<li>
-					<input id="navBarSearchBox" placeholder="请搜索想要搜索的内容" type="search">
-					<input id="navBarSearchButton" type="button" value="搜索">
+					<input id="navBarSearchBox" v-model="enteredSearchContent" placeholder="请搜索想要搜索的内容"
+					       type="search">
+					<input id="navBarSearchButton" type="button" value="搜索" v-on:click="doSearchDatabase()">
 				</li>
 				<li class="navBarCommonItem">
 					<router-link to="/Creator"><a>创作中心</a></router-link>
@@ -188,7 +189,8 @@ import {
 	DoInsertNewCommentToDatabase2,
 	DoLoadAnswerCommentData,
 	DoLoadLoggedUserInfoInCreatorCenter,
-	DoLoadViewAnswerDetail
+	DoLoadViewAnswerDetail,
+	DoTaskUpdateReadDetailTimes
 } from "@/utility/api";
 
 export default {
@@ -202,6 +204,7 @@ export default {
 			commentFlag: false,
 			answerCommentData: [],
 			enteredAnswerCommentContent: "",
+			enteredSearchContent: ""
 		}
 	},
 	
@@ -246,6 +249,29 @@ export default {
 						alert("评论成功！")
 				}
 			});
+		},
+		
+		doCalculateReadTimes: function () {
+			clearTimeout(this.readTimesTimer);
+			this.readTimesTimer = setTimeout(() => {
+				this.doTaskUpdateReadDetailTimes()
+			}, 1000)
+		},
+		
+		doTaskUpdateReadDetailTimes: function () {
+			let testParams = {
+				uID: this.creatorData[0].uID
+			}
+			DoTaskUpdateReadDetailTimes(testParams);
+		},
+		
+		doSearchDatabase: function () {
+			this.$router.push({
+				path: '/SearchResult',
+				query: {
+					srContent: this.enteredSearchContent
+				}
+			})
 		}
 		
 	},
@@ -254,6 +280,7 @@ export default {
 		this.doLoadLoggedUserInfoInCreatorCenter();
 		this.doLoadViewAnswerDetail();
 		this.doLoadAnswerCommentData();
+		this.doCalculateReadTimes();
 	},
 	
 	created() {

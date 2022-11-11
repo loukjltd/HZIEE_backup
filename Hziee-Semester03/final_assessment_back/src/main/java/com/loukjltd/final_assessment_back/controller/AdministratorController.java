@@ -75,4 +75,38 @@ public class AdministratorController {
 		int aID = Integer.parseInt(map.get("aID").toString());
 		return administratorService.adminDeleteAnswer(uID, qID, aID);
 	}
+	
+	@RequestMapping("AdminSendNotification")
+	@ResponseBody
+	public int adminSendNotification(@RequestBody Map<String, Object> map) {
+		int uID = Integer.parseInt(map.get("uID").toString());
+		String nTitle = map.get("nTitle").toString();
+		String nContent = map.get("nContent").toString();
+		int nClass = Integer.parseInt(map.get("nClass").toString());
+		return administratorService.adminSendNotification(uID, nTitle, nContent, nClass);
+	}
+	
+	@RequestMapping("SearchDatabaseParagraph")
+	@ResponseBody
+	public List<Administrator> searchDatabaseParagraph(@RequestBody Map<String, Object> map) {
+		String srContent = map.get("srContent").toString();
+		String srContentReg = "%" + srContent + "%";
+		return administratorService.searchDatabaseParagraph(srContentReg);
+	}
+	
+	@RequestMapping("SearchDatabaseQuestion")
+	@ResponseBody
+	public List<Administrator> searchDatabaseQuestion(@RequestBody Map<String, Object> map) {
+		String srContent = map.get("srContent").toString();
+		String srContentReg = "%" + srContent + "%";
+		return administratorService.searchDatabaseQuestion(srContentReg);
+	}
+	
+	@RequestMapping("SearchDatabaseAnswer")
+	@ResponseBody
+	public List<Administrator> searchDatabaseAnswer(@RequestBody Map<String, Object> map) {
+		String srContent = map.get("srContent").toString();
+		String srContentReg = "%" + srContent + "%";
+		return administratorService.searchDatabaseAnswer(srContentReg);
+	}
 }

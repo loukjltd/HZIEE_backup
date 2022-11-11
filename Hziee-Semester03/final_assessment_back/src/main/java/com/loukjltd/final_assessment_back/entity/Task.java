@@ -1,5 +1,7 @@
 package com.loukjltd.final_assessment_back.entity;
 
+import java.util.Date;
+
 public class Task {
 	int tID;
 	String tContent;
@@ -8,6 +10,9 @@ public class Task {
 	int tValue;
 	int tStatus;
 	int uID;
+	Date tUpdateTime;
+	int tIfRefreshToday;
+	Date tRefreshTime;
 	
 	public int gettID() {
 		return tID;
@@ -63,5 +68,29 @@ public class Task {
 	
 	public void setuID(int uID) {
 		this.uID = uID;
+	}
+	
+	public Date gettUpdateTime() {
+		return tUpdateTime;
+	}
+	
+	public void settUpdateTime(Date tUpdateTime) {
+		this.tUpdateTime = tUpdateTime;
+	}
+	
+	public int gettIfRefreshToday() {
+		return tIfRefreshToday;
+	}
+	
+	public void settIfRefreshToday(int tIfRefreshToday) {
+		this.tIfRefreshToday = tIfRefreshToday;
+	}
+	
+	public Date gettRefreshTime() {
+		return tRefreshTime;
+	}
+	
+	public void settRefreshTime(Date tRefreshTime) {
+		this.tRefreshTime = tRefreshTime;
 	}
 }

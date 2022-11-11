@@ -4,6 +4,7 @@ import com.loukjltd.final_assessment_back.entity.Mine;
 import com.loukjltd.final_assessment_back.mapper.MineMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -18,7 +19,7 @@ public class MineService {
 		return mineMapper.getMineList();
 	}
 	
-	public int MineLogIn(String uPhone, String uPassword, int adminFlag) {
+	public int MineLogIn(String uPhone, String uPassword, int adminFlag, Date uLastLoggedTime) {
 		List<Mine> mineList = mineMapper.getMineList();
 		int logResultCode = 144; // 表示登陆失败的代码
 		for (Mine mine : mineList) {
@@ -29,13 +30,12 @@ public class MineService {
 				if (mine.getuGroup() == adminFlag) {
 					logResultCode = 133;
 				} else {
-					mineMapper.updateStatusToIn(uPhone);
+					mineMapper.updateStatusToIn(uPhone, uLastLoggedTime);
 					logResultCode = 100; // 表示登陆成功的代码
 				}
 				break;
 			}
 		}
-		System.out.println("MineService中登陆返回的代码为" + logResultCode);
 		return logResultCode;
 	}
 	

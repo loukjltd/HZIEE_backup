@@ -4,6 +4,7 @@ import com.loukjltd.final_assessment_back.entity.Mine;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 @Mapper
@@ -49,11 +50,13 @@ public interface MineMapper {
 			UPDATE
 				USER
 			SET
-				uIfLogged = 1
+				uIfLogged = 1,
+				uLastLoggedTime = #{uLastLoggedTime}
 			WHERE
 				uPhone = #{uPhone};
 			""")
-	void updateStatusToIn(@Param("uPhone") String uPhone);
+	void updateStatusToIn(@Param("uPhone") String uPhone,
+	                      @Param("uLastLoggedTime") Date uLastLoggedTime);
 	
 	@Update("""
 			UPDATE
@@ -81,9 +84,8 @@ public interface MineMapper {
 			INSERT INTO Task ( tID, uID, tContent, tProgress, tFinish, tValue, tStatus )
 			VALUES
 				( 1, #{uID}, "每日签到", 0, 1, 5, 0 ),
-				( 2, #{uID}, "浏览文章", 0, 5, 2, 0 ),
-				( 3, #{uID}, "提出问题", 0, 1, 3, 0 ),
-				( 4, #{uID}, "回答问题", 0, 2, 10, 0 )
+				( 2, #{uID}, "浏览文章/回答", 0, 5, 2, 0 ),
+				( 3, #{uID}, "发表专栏/回答问题", 0, 1, 3, 0 ),
 			""")
 	void insertRelatedTaskWithNewUser(@Param("uID") int uID);
 	

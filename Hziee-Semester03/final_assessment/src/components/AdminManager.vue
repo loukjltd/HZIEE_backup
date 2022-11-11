@@ -75,11 +75,22 @@
 										}}
 									</td>
 									<td>
-										<a class="adminOperationButton" href="#">发送通知</a>
+										<a class="adminOperationButton" href="#"
+										   style="margin-left: -15px"
+										   v-on:click="doChooseSendNotification(notificationFlag, item.uID)">发送通知</a>
 										<a class="adminOperationButton" href="#" v-on:click="doAdminDeleteUser(item.uID)">删除</a>
 									</td>
 								</tr>
 							</table>
+							<form v-if="this.notificationFlag">
+								<textarea id="adminNotification" v-model="enteredNotificationContent" style="margin-top: 20px"
+								          v-bind:placeholder="chooseUser"></textarea>
+								<input class="enterButton"
+								       style="margin-left: 50px; margin-top: -20px"
+								       type="button" value="发送通知"
+								       v-on:click="doAdminSendNotification()">
+							</form>
+							
 							<p class="adminMainTitle">专栏管理</p>
 							<table class="adminTable">
 								<tr class="adminTableTitleCol">
@@ -202,6 +213,7 @@ import {
 	DoAdminDeleteParagraph,
 	DoAdminDeleteQuestion,
 	DoAdminDeleteUser,
+	DoAdminSendNotification,
 	DoCheckIfThereIsLoggedUser,
 	DoLoadAllAnswerInfo,
 	DoLoadAllParagraphInfo,
@@ -226,6 +238,11 @@ export default {
 			returnedDeleteUserCode: 0,
 			returnedDeleteParagraphCode: 0,
 			returnedDeleteQuestionCode: 0,
+			returnedSendNotificationCode: 0,
+			notificationFlag: false,
+			saveChooseNotificationUserID: 0,
+			enteredNotificationContent: "",
+			enteredSearchContent: ""
 		}
 	},
 	
@@ -394,6 +411,28 @@ export default {
 			});
 			location.reload();
 		},
+		
+		doChooseSendNotification: function (notificationFlag, uID) {
+			this.saveChooseNotificationUserID = uID;
+			this.notificationFlag = !notificationFlag;
+		},
+		
+		doAdminSendNotification: function () {
+			let testParams = {
+				uID: this.saveChooseNotificationUserID,
+				nTitle: "来自管理员的重要通知",
+				nContent: this.enteredNotificationContent,
+				nClass: 4
+			}
+			DoAdminSendNotification(testParams).then(res => {
+				this.returnedSendNotificationCode = res;
+				switch (this.returnedSendNotificationCode) {
+					case 100:
+						alert("发送成功！");
+						break;
+				}
+			});
+		}
 	},
 	
 	computed: {
@@ -401,6 +440,11 @@ export default {
 			return this.returnedUser.filter(res => {
 				return res.uIfLogged === 1 && res.uGroup === 0;
 			})
+		},
+		
+		chooseUser() {
+			const staticGrammar = "您已选择用户ID：";
+			return staticGrammar + this.saveChooseNotificationUserID;
 		}
 	},
 	

@@ -58,4 +58,21 @@ public class AdministratorService {
 		administratorMapper.adminDeleteAnswer(uID, qID, aID);
 		return 100;
 	}
+	
+	public int adminSendNotification(int uID, String nTitle, String nContent, int nClass) {
+		administratorMapper.adminSendNotification(uID, nTitle, nContent, nClass);
+		return 100;
+	}
+	
+	public List<Administrator> searchDatabaseParagraph(String srContent) {
+		return administratorMapper.searchDatabaseParagraph(srContent);
+	}
+	
+	public List<Administrator> searchDatabaseQuestion(String srContent) {
+		return administratorMapper.searchDatabaseQuestion(srContent);
+	}
+	
+	public List<Administrator> searchDatabaseAnswer(String srContent) {
+		return administratorMapper.searchDatabaseAnswer(srContent);
+	}
 }

@@ -19,8 +19,9 @@
 					<router-link to="/Notification"><a>通知</a></router-link>
 				</li>
 				<li>
-					<input id="navBarSearchBox" placeholder="请搜索想要搜索的内容" type="search">
-					<input id="navBarSearchButton" type="button" value="搜索">
+					<input id="navBarSearchBox" v-model="enteredSearchContent" placeholder="请搜索想要搜索的内容"
+					       type="search">
+					<input id="navBarSearchButton" type="button" value="搜索" v-on:click="doSearchDatabase()">
 				</li>
 				<li class="navBarCommonItem">
 					<router-link to="/Creator"><a>创作中心</a></router-link>
@@ -50,9 +51,9 @@
 					       style="color: white; background-color: #8893A8" type="button"
 					       value="任务未完成"
 					       v-on:click="doCheckTaskStatus(false, item.uID, item.tContent, item.tStatus)">
-					<input v-else-if="item.tProgress == item.tFinish && item.tStatus != 1" type="button" value="领取奖励"
+					<input v-else-if="item.tProgress >= item.tFinish && item.tStatus != 1" type="button" value="领取奖励"
 					       v-on:click="doCheckTaskStatus(true, item.uID, item.tContent, item.tStatus)">
-					<input v-else-if="item.tProgress == item.tFinish && item.tStatus == 1"
+					<input v-else-if="item.tProgress >= item.tFinish && item.tStatus == 1"
 					       style="color: white; background-color: #8893A8" type="button" value="奖励已领取"
 					       v-on:click="doCheckTaskStatus(true, item.uID, item.tContent, item.tStatus)">
 				</li>
@@ -68,6 +69,7 @@ import {
 	DoLoadLoggedUserInfoInCreatorCenter,
 	DoLoadTaskInfo,
 	DoParseTaskContent,
+	DoTaskCheckDaily,
 	DoTaskUpdateUserCoin
 } from "@/utility/api";
 
@@ -79,7 +81,8 @@ export default {
 			returnedTaskInfo: [],
 			creatorData: [],
 			taskUpdateStatusResultCode: [],
-			taskUpdateUserCoinResultCode: []
+			taskUpdateUserCoinResultCode: [],
+			enteredSearchContent: ""
 		}
 	},
 	
@@ -90,10 +93,13 @@ export default {
 			});
 			DoCheckIfThereIsLoggedUser().then(res => {
 				this.returnedUser = res;
+				let currentTime = new Date();
 				let testParams = {
-					uID: this.creatorData[0].uID
+					uID: this.creatorData[0].uID,
+					currentTime: currentTime.toLocaleString()
 				};
 				if (this.returnedUser) {
+					DoTaskCheckDaily(testParams);
 					DoLoadTaskInfo(testParams).then(res => {
 						this.returnedTaskInfo = res;
 					})
@@ -106,9 +112,11 @@ export default {
 				alert("任务未完成，请先完成任务！");
 				location.reload();
 			} else if (flag == true && tStatus != 1) {
+				let currentTime = new Date();
 				let testParams = {
 					uID: uID,
-					tContent: tContent
+					tContent: tContent,
+					tUpdateTime: currentTime.toLocaleString()
 				}
 				DoParseTaskContent(testParams).then(res => {
 					this.taskUpdateStatusResultCode = res;
@@ -128,6 +136,15 @@ export default {
 				alert("已经领取过奖励！")
 				location.reload();
 			}
+		},
+		
+		doSearchDatabase: function () {
+			this.$router.push({
+				path: '/SearchResult',
+				query: {
+					srContent: this.enteredSearchContent
+				}
+			})
 		}
 	},
 	

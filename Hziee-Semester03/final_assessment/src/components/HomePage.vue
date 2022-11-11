@@ -19,8 +19,9 @@
 					<router-link to="/Notification"><a>通知</a></router-link>
 				</li>
 				<li>
-					<input id="navBarSearchBox" placeholder="请搜索想要搜索的内容" type="search">
-					<router-link to="/AdminManager"><input id="navBarSearchButton" type="button" value="搜索"></router-link>
+					<input id="navBarSearchBox" v-model="enteredSearchContent" placeholder="请搜索想要搜索的内容"
+					       type="search">
+					<input id="navBarSearchButton" type="button" value="搜索" v-on:click="doSearchDatabase()">
 				</li>
 				<li class="navBarCommonItem">
 					<router-link to="/Creator"><a>创作中心</a></router-link>
@@ -204,7 +205,8 @@ export default {
 		return {
 			homePageData: [],
 			homePageData2: [],
-			creatorData: []
+			creatorData: [],
+			enteredSearchContent: ""
 		}
 	},
 	
@@ -243,6 +245,15 @@ export default {
 				query: {
 					uID: uID,
 					qID: qID
+				}
+			})
+		},
+		
+		doSearchDatabase: function () {
+			this.$router.push({
+				path: '/SearchResult',
+				query: {
+					srContent: this.enteredSearchContent
 				}
 			})
 		},

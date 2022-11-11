@@ -1,5 +1,7 @@
 package com.loukjltd.final_assessment_back.entity;
 
+import java.util.Date;
+
 public class Mine {
 	private int uID;
 	private String uNickName;
@@ -14,7 +16,7 @@ public class Mine {
 	private int tComment;
 	private float tCash;
 	private int uIfLogged;
-	private String uLastLoggedTime;
+	private Date uLastLoggedTime;
 	
 	public int getuID() {
 		return uID;
@@ -120,11 +122,11 @@ public class Mine {
 		this.uIfLogged = uIfLogged;
 	}
 	
-	public String getuLastLoggedTime() {
+	public Date getuLastLoggedTime() {
 		return uLastLoggedTime;
 	}
 	
-	public void setuLastLoggedTime(String uLastLoggedTime) {
+	public void setuLastLoggedTime(Date uLastLoggedTime) {
 		this.uLastLoggedTime = uLastLoggedTime;
 	}
 }

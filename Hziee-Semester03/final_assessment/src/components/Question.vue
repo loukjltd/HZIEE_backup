@@ -19,8 +19,9 @@
 					<router-link to="/Notification"><a>通知</a></router-link>
 				</li>
 				<li>
-					<input id="navBarSearchBox" placeholder="请搜索想要搜索的内容" type="search">
-					<input id="navBarSearchButton" type="button" value="搜索">
+					<input id="navBarSearchBox" v-model="enteredSearchContent" placeholder="请搜索想要搜索的内容"
+					       type="search">
+					<input id="navBarSearchButton" type="button" value="搜索" v-on:click="doSearchDatabase()">
 				</li>
 				<li class="navBarCommonItem">
 					<router-link to="/Creator"><a>创作中心</a></router-link>
@@ -49,7 +50,8 @@
 								<a v-if="(item.qContent).length < 100" class="contentInfo">{{ item.qContent }}</a>
 								<a v-else class="contentInfo">{{ (item.qContent).substring(0, 100) }}... ...</a>
 								<br>
-								<a class="contentLikeNumber" href="#">🙋我要回答这个问题</a>
+								<a class="contentLikeNumber" href="#"
+								   v-on:click="doSaveClickedQuestionPost(item.uID, item.qID, item.qTitle, item.qContent)">🙋我要回答这个问题</a>
 								<a class="contentLikeNumber" href="#"
 								   v-on:click="doSaveClickedQuestion(item.uID, item.qID)">阅读全文</a>
 								<p style="text-align: center; color: #DAE9FC; margin-top: 15px">
@@ -176,7 +178,8 @@ export default {
 	data() {
 		return {
 			questionData: [],
-			creatorData: []
+			creatorData: [],
+			enteredSearchContent: ""
 		}
 	},
 	
@@ -199,6 +202,27 @@ export default {
 				query: {
 					uID: uID,
 					qID: qID
+				}
+			})
+		},
+		
+		doSaveClickedQuestionPost: function (uID, qID, qTitle, qContent) {
+			this.$router.push({
+				path: '/PostAnswer',
+				query: {
+					uID: uID,
+					qID: qID,
+					qTitle: qTitle,
+					qContent: qContent
+				}
+			})
+		},
+		
+		doSearchDatabase: function () {
+			this.$router.push({
+				path: '/SearchResult',
+				query: {
+					srContent: this.enteredSearchContent
 				}
 			})
 		}

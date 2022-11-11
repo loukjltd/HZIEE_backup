@@ -41,6 +41,11 @@ export default new Router({
 			component: () => import('@/components/Mine')
 		},
 		{
+			path: '/SearchResult',
+			name: 'SearchResult',
+			component: () => import('@/components/SearchResult')
+		},
+		{
 			path: '/PostQuestion',
 			name: 'PostQuestion',
 			component: () => import('@/components/PostQuestion')
@@ -49,6 +54,11 @@ export default new Router({
 			path: '/PostParagraph',
 			name: 'PostParagraph',
 			component: () => import('@/components/PostParagraph')
+		},
+		{
+			path: '/PostAnswer',
+			name: 'PostAnswer',
+			component: () => import('@/components/PostAnswer')
 		},
 		{
 			path: '/ParagraphSubPage',

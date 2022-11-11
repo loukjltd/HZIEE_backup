@@ -27,4 +27,9 @@ public class CreatorService {
 		creatorMapper.insertParagraphToDatabase(pTitle, pContent, uID);
 		return 100;
 	}
+	
+	public int InsertAnswerToDatabase(String aContent, int qID, int uID) {
+		creatorMapper.insertAnswerToDatabase(aContent, qID, uID);
+		return 100;
+	}
 }

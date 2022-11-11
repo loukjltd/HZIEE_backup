@@ -18,8 +18,9 @@
 					<router-link to="/Notification"><a>通知</a></router-link>
 				</li>
 				<li>
-					<input id="navBarSearchBox" placeholder="请搜索想要搜索的内容" type="search">
-					<input id="navBarSearchButton" type="button" value="搜索">
+					<input id="navBarSearchBox" v-model="enteredSearchContent" placeholder="请搜索想要搜索的内容"
+					       type="search">
+					<input id="navBarSearchButton" type="button" value="搜索" v-on:click="doSearchDatabase()">
 				</li>
 				<li class="navBarCommonItem">
 					<router-link to="/Creator"><a>创作中心</a></router-link>
@@ -160,7 +161,11 @@
 
 <script>
 /* eslint-disable*/
-import {DoInsertQuestionToDatabase, DoLoadLoggedUserInfoInCreatorCenter} from "@/utility/api";
+import {
+	DoInsertQuestionToDatabase,
+	DoLoadLoggedUserInfoInCreatorCenter,
+	DoTaskUpdatePostQuestionCostCoin
+} from "@/utility/api";
 
 export default {
 	name: "PostQuestion",
@@ -169,7 +174,8 @@ export default {
 			creatorData: [],
 			enteredQuestionTitle: "",
 			enteredQuestionContent: "",
-			returnedPostQuestionResultCode: []
+			returnedPostQuestionResultCode: [],
+			enteredSearchContent: ""
 		}
 	},
 	
@@ -186,14 +192,25 @@ export default {
 				qContent: this.enteredQuestionContent,
 				uID: uID
 			}
-			DoInsertQuestionToDatabase(testParams).then(res => {
+			DoTaskUpdatePostQuestionCostCoin(testParams).then(res => {
 				this.returnedPostQuestionResultCode = res;
 				switch (this.returnedPostQuestionResultCode) {
 					case 100:
-						alert("提交问题成功！");
-						this.$router.push("/Question");
+						DoInsertQuestionToDatabase(testParams).then(res => {
+							this.returnedPostQuestionResultCode2 = res;
+							switch (this.returnedPostQuestionResultCode2) {
+								case 100:
+									alert("已消耗10金币，提交问题成功！");
+									this.$router.push("/Question");
+									break;
+							}
+						})
+						break;
+					case 144:
+						alert("您的可用金币数量少于10，发表提问失败！")
+						break;
 				}
-			})
+			});
 		},
 		
 		doAddEnterTextToTextArea: function () {
@@ -205,6 +222,15 @@ export default {
 			const text = "----------------------------------------";
 			document.forms[0].commentArea.value += text;
 		},
+		
+		doSearchDatabase: function () {
+			this.$router.push({
+				path: '/SearchResult',
+				query: {
+					srContent: this.enteredSearchContent
+				}
+			})
+		}
 	},
 	
 	mounted() {

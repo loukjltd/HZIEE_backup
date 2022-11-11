@@ -61,3 +61,9 @@
 .acceptOrNotContent {
 	margin-top: 5px;
 }
+
+.mineLogNote {
+	color:      #8792A7;
+	font-size:  larger;
+	margin-top: -25px;
+}

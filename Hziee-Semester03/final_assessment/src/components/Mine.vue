@@ -18,8 +18,9 @@
 					<router-link to="/Notification"><a>通知</a></router-link>
 				</li>
 				<li>
-					<input id="navBarSearchBox" placeholder="请搜索想要搜索的内容" type="search">
-					<input id="navBarSearchButton" type="button" value="搜索">
+					<input id="navBarSearchBox" v-model="enteredSearchContent" placeholder="请搜索想要搜索的内容"
+					       type="search">
+					<input id="navBarSearchButton" type="button" value="搜索" v-on:click="doSearchDatabase()">
 				</li>
 				<li class="navBarCommonItem">
 					<router-link to="/Creator"><a>创作中心</a></router-link>
@@ -34,10 +35,11 @@
 		<div id="pageLayoutList">
 			<ul>
 				<li>
-					<div v-for="item in filterUser" id="mineContent" v-bind:key="item">
+					<div id="mineContent">
 						<p class="mineMainTitle">登陆</p>
-						<div v-if="filterUser == true" class="mineMainContent">
-							<form>
+						<div class="mineMainContent">
+							<p class="mineLogNote">如果需要重新登录，请先退出登录</p>
+							<form v-if="filterUser == true">
 								<input v-model="enteredPhone" class="enterInfo" placeholder="请输入电话号码" type="text">
 								<br>
 								<input v-model="enteredPassword" class="enterInfo" placeholder="请输入密码" type="password">
@@ -47,17 +49,19 @@
 								       v-on:click="doLogInUser(0)">
 							</form>
 						</div>
-						<p style="text-align: center; color: #DAE9FC; margin-top: 15px">————————————————————————————————</p>
-						<p class="mineMainTitle">当前已登陆用户</p>
-						<p class="mineMainLoggedUser">{{ item.uNickName }}</p>
-						<p v-if="filterUser == false" class="mineMainLoggedUser">未登陆！</p>
-						<div class="mineMainContent">
-							<form v-for="item in filterUser" v-bind:key="item">
-								<input class="enterButton" name="chooseExitLogIn"
-								       type="button" value="退出登录" v-on:click="doLogOutUser(item.uNickName)">
-								<input class="enterButton" name="chooseEveryDaySignIn" style="text-align: center" type="button"
-								       value="签到" v-on:click="doEverydaySign(item.uID)">
-							</form>
+						<div v-for="item in filterUser" v-bind:key="item">
+							<p style="text-align: center; color: #DAE9FC; margin-top: 15px">————————————————————————————————</p>
+							<p class="mineMainTitle">当前已登陆用户</p>
+							<p class="mineMainLoggedUser">{{ item.uNickName }}</p>
+							<p v-if="filterUser == false" class="mineMainLoggedUser">未登陆！</p>
+							<div class="mineMainContent">
+								<form v-for="item in filterUser" v-bind:key="item">
+									<input class="enterButton" name="chooseExitLogIn"
+									       type="button" value="退出登录" v-on:click="doLogOutUser(item.uNickName)">
+									<input class="enterButton" name="chooseEveryDaySignIn" style="text-align: center" type="button"
+									       value="签到" v-on:click="doEverydaySign(item.uID)">
+								</form>
+							</div>
 						</div>
 					</div>
 				</li>
@@ -120,7 +124,8 @@ export default {
 			returnedLogResultCode: [],
 			returnedRegisterResultCode: [],
 			returnedOutUser: [],
-			returnedEveryDaySignIn: []
+			returnedEveryDaySignIn: [],
+			enteredSearchContent: ""
 		}
 	},
 	
@@ -132,10 +137,12 @@ export default {
 		},
 		
 		doLogInUser: function (adminFlag) {
+			let currentTime = new Date();
 			let testParams = {
 				uPhone: this.enteredPhone,
 				uPassword: this.enteredPassword,
-				adminFlag: adminFlag
+				adminFlag: adminFlag,
+				uLastLoggedTime: currentTime.toLocaleString()
 			};
 			DoLogInUser(testParams).then(res => {
 				this.returnedLogResultCode = res;
@@ -231,6 +238,15 @@ export default {
 		filterUser: function () {
 			return this.returnedUser.filter(res => {
 				return res.uIfLogged === 1 && res.uGroup === 1;
+			})
+		},
+		
+		doSearchDatabase: function () {
+			this.$router.push({
+				path: '/SearchResult',
+				query: {
+					srContent: this.enteredSearchContent
+				}
 			})
 		}
 	},

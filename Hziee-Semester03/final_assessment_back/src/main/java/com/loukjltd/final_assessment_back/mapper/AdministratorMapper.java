@@ -1,10 +1,7 @@
 package com.loukjltd.final_assessment_back.mapper;
 
 import com.loukjltd.final_assessment_back.entity.Administrator;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -245,4 +242,110 @@ public interface AdministratorMapper {
 	void adminDeleteAnswer(@Param("uID") int uID,
 	                       @Param("qID") int qID,
 	                       @Param("aID") int aID);
+	
+	@Insert("""
+			INSERT INTO Notification ( nID, uID, nTitle, nContent, nFlag, nClass )
+			VALUES
+			( NULL, #{uID}, #{nTitle}, #{nContent}, 0, #{nClass} );
+			""")
+	void adminSendNotification(@Param("uID") int uID,
+	                           @Param("nTitle") String nTitle,
+	                           @Param("nContent") String nContent,
+	                           @Param("nClass") int nClass);
+	
+	@Select("""
+			SELECT
+				Paragraph.pID,
+				Paragraph.uID,
+				Paragraph.pTitle,
+				Paragraph.pContent,
+				Paragraph.pLike,
+				Paragraph.pStatus,
+				USER.uNickName,
+				USER.uPhone,
+				USER.uPassword,
+				USER.uMotto,
+				USER.uAvatar,
+				USER.uGroup,
+				USER.tRead,
+				USER.tLike,
+				USER.tCoin,
+				USER.tComment,
+				USER.tCash,
+				USER.uIfLogged,
+				USER.uLastLoggedTime
+			FROM
+				Paragraph
+				JOIN USER ON USER.uID = Paragraph.uID
+			WHERE
+				Paragraph.pTitle LIKE #{srContent}
+				OR Paragraph.pContent LIKE #{srContent}
+			""")
+	List<Administrator> searchDatabaseParagraph(@Param("srContent") String srContent);
+	
+	@Select("""
+			SELECT
+				Question.qID,
+				Question.uID,
+				Question.qTitle,
+				Question.qContent,
+				Question.qStatus,
+				User.uNickName,
+				User.uPhone,
+				User.uPassword,
+				User.uMotto,
+				User.uAvatar,
+				User.uGroup,
+				User.tRead,
+				User.tLike,
+				User.tCoin,
+				User.tComment,
+				User.tCash,
+				User.uIfLogged,
+				User.uLastLoggedTime
+			FROM
+				Question
+			JOIN
+				User ON User.uID = Question.uID
+			WHERE
+				Question.qTitle LIKE #{srContent}
+				OR Question.qContent LIKE #{srContent}
+			""")
+	List<Administrator> searchDatabaseQuestion(@Param("srContent") String srContent);
+	
+	@Select("""
+			SELECT
+				Answer.aID,
+				Answer.uID,
+				Answer.qID,
+				Answer.aContent,
+				Answer.aLike,
+				Answer.aStatus,
+				User.uNickName,
+				User.uPhone,
+				User.uPassword,
+				User.uMotto,
+				User.uAvatar,
+				User.uGroup,
+				User.tRead,
+				User.tLike,
+				User.tCoin,
+				User.tComment,
+				User.tCash,
+				User.uIfLogged,
+				User.uLastLoggedTime,
+				Question.qID,
+				Question.uID,
+				Question.qTitle,
+				Question.qContent,
+				Question.qStatus
+			FROM
+				Answer
+			JOIN
+				User ON User.uID = Answer.uID
+				JOIN Question ON Question.qID = Answer.qID
+			WHERE
+				Answer.aContent LIKE #{srContent}
+			""")
+	List<Administrator> searchDatabaseAnswer(@Param("srContent") String srContent);
 }
