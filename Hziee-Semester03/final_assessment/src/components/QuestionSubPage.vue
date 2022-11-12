@@ -60,7 +60,9 @@
 								<a class="contentLikeNumber" href="#">反对</a>
 								<a class="contentLikeNumber" href="#">评论</a>
 								<a class="contentLikeNumber" href="#"
-								   v-on:click="doSaveClickedAnswer(aItem.uID, aItem.qID, aItem.aID, item.qTitle)">阅读全文</a>
+								   v-on:click="doSaveClickedAnswer(aItem.uID, aItem.qID, aItem.aID, item.qTitle, item.uID)">阅读全文</a>
+								<a v-if="aItem.aStatus == 2" class="contentLikeNumber"
+								   style="color: #42B983; border: #42B983 1px solid; background-color: #E9FFF2">最佳回答</a>
 								<p style="text-align: center; color: #DAE9FC; margin-top: 15px">
 									————————————————————————————————————————</p>
 							</div>
@@ -207,19 +209,19 @@ export default {
 		doViewQuestionAnswerList: function () {
 			let testParams = this.queryParams;
 			DoViewQuestionAnswerList(testParams).then(res => {
-				console.log(res);
 				this.answerData = res;
 			});
 		},
 		
-		doSaveClickedAnswer: function (uID, qID, aID, qTitle) {
+		doSaveClickedAnswer: function (uID, qID, aID, qTitle, questionPoster) {
 			this.$router.push({
 				path: '/AnswerSubPage',
 				query: {
 					uID: uID,
 					qID: qID,
 					aID: aID,
-					qTitle: qTitle
+					qTitle: qTitle,
+					questionPoster: questionPoster
 				}
 			})
 		},

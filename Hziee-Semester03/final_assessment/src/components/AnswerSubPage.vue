@@ -50,6 +50,7 @@
 							<a class="contentLikeNumber" href="#" style="margin-left: 30px">▲&nbsp;赞同&nbsp;{{ item.aLike }}</a>
 							<a class="contentLikeNumber" href="#">反对</a>
 							<a class="contentLikeNumber" href="#" v-on:click="doChooseComment(commentFlag)">评论</a>
+							<a class="contentLikeNumber" href="#" v-on:click="doChooseThisAnswerAsBestAnswer(item.aID)">采纳</a>
 							<br>
 							<p id="answerDetailOfficialLikeNumber">以下是此回答的评论</p>
 							<br>
@@ -186,6 +187,7 @@
 
 <script>
 import {
+	DoChooseThisAnswerAsBestAnswer,
 	DoInsertNewCommentToDatabase2,
 	DoLoadAnswerCommentData,
 	DoLoadLoggedUserInfoInCreatorCenter,
@@ -198,13 +200,15 @@ export default {
 	name: "AnswerSubPage",
 	data() {
 		return {
-			queryParams: {},
 			creatorData: [],
+			queryParams: {},
 			answerData: [],
 			commentFlag: false,
 			answerCommentData: [],
 			enteredAnswerCommentContent: "",
-			enteredSearchContent: ""
+			enteredSearchContent: "",
+			returnedChooseThisAnswerAsBestAnswerResultCode: 0,
+			checkIfHaveBestAnswer: false,
 		}
 	},
 	
@@ -272,8 +276,30 @@ export default {
 					srContent: this.enteredSearchContent
 				}
 			})
-		}
+		},
 		
+		doChooseThisAnswerAsBestAnswer: function (aID) {
+			let testParams = {
+				qID: this.$route.query.qID,
+				aID: aID,
+				answerPosterID: this.$route.query.uID
+			}
+			console.log(testParams.qID);
+			DoChooseThisAnswerAsBestAnswer(testParams).then(res => {
+				this.returnedChooseThisAnswerAsBestAnswerResultCode = res;
+				switch (this.returnedChooseThisAnswerAsBestAnswerResultCode) {
+					case 100:
+						alert("已采纳此回答为本提问最佳回答！");
+						break;
+					case 122:
+						alert("您已经选择过最最佳回答了！");
+						break;
+					case 144:
+						alert("您不是该问题的提问者，无法选择最佳答案！");
+						break;
+				}
+			})
+		},
 	},
 	
 	mounted() {
@@ -289,6 +315,7 @@ export default {
 			qID: this.$route.query.qID,
 			aID: this.$route.query.aID,
 			qTitle: this.$route.query.qTitle,
+			questionPoster: this.$route.query.questionPoster,
 		}
 	}
 }

@@ -175,12 +175,12 @@
 				</li>
 				
 				<li>
-					<div v-for="item in filterUser" id="adminManagerSecondContent" v-bind:key="item">
+					<div id="adminManagerSecondContent">
 						<br>
 						<p class="adminManagerTitle">后台登陆</p>
 						<br>
 						<br>
-						<form v-if="filterUser == true">
+						<form v-if="filterUser == false">
 							<input v-model="enteredPhone" class="adminLogInEnterInfo" placeholder="请输入账号" type="text">
 							<br>
 							<input v-model="enteredPassword" class="adminLogInEnterInfo" placeholder="请输入密码" type="password">
@@ -190,7 +190,7 @@
 						</form>
 						<p class="adminManagerTitle">当前已登陆管理员</p>
 						<br>
-						<p class="adminManagerMainLoggedUser">{{ item.uNickName }}</p>
+						<p v-for="item in filterUser" v-bind:key="item" class="adminManagerMainLoggedUser">{{ item.uNickName }}</p>
 						<p v-if="filterUser == false" class="adminManagerMainLoggedUser">未登陆！</p>
 						<div class="adminManagerMainContent">
 							<form v-for="item in filterUser" v-bind:key="item">
@@ -257,7 +257,8 @@ export default {
 			let testParams = {
 				uPhone: this.enteredPhone,
 				uPassword: this.enteredPassword,
-				adminFlag: adminFlag
+				adminFlag: adminFlag,
+				uLastLoggedTime: new Date().toLocaleString()
 			};
 			DoLogInUser(testParams).then(res => {
 				this.returnedLogResultCode = res;

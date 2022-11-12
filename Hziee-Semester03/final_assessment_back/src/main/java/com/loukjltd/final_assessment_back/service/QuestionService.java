@@ -30,4 +30,28 @@ public class QuestionService {
 	public List<Answer> viewAnswerDetail(int aID) {
 		return questionMapper.viewAnswerDetail(aID);
 	}
+	
+	public int chooseThisAnswerAsBestAnswer(int qID, int aID, int answerPosterID) {
+		List<Answer> answerList = questionMapper.getSpecificAnswerList(qID);
+		boolean isBestAnswer = false;
+		for (Answer answer : answerList) {
+			if (answer.getaStatus() == 2) {
+				isBestAnswer = true;
+				break;
+			}
+		}
+		System.out.println("questionPosterID " + questionMapper.getQuestionPosterID(qID));
+		System.out.println("onlineID " + questionMapper.getOnlineUserID());
+		if (questionMapper.getQuestionPosterID(qID) != questionMapper.getOnlineUserID()) {
+			return 144;
+		} else {
+			if (!isBestAnswer) {
+				questionMapper.updateAnswerStatus(aID);
+				questionMapper.updateChooseBestAnswerCoin(answerPosterID);
+				return 100;
+			} else {
+				return 122;
+			}
+		}
+	}
 }

@@ -5,6 +5,7 @@ import com.loukjltd.final_assessment_back.entity.Question;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -57,6 +58,7 @@ public interface QuestionMapper {
 				Answer.qID,
 				Answer.aContent,
 				Answer.aLike,
+				Answer.aStatus,
 				USER.uAvatar,
 				USER.uNickName,
 				USER.uMotto
@@ -65,6 +67,8 @@ public interface QuestionMapper {
 				JOIN USER ON Answer.uID = USER.uID
 			WHERE
 				qID = #{qID}
+			ORDER BY
+				Answer.aStatus DESC
 			""")
 	List<Answer> viewQuestionAnswerList(@Param("qID") int qID);
 	
@@ -85,4 +89,62 @@ public interface QuestionMapper {
 				Answer.aID = #{aID}
 			""")
 	List<Answer> viewAnswerDetail(@Param("aID") int aID);
+	
+	@Select("""
+			SELECT
+				Answer.aID,
+				Answer.uID,
+				Answer.qID,
+				Answer.aContent,
+				Answer.aLike,
+				Answer.aStatus,
+				USER.uAvatar,
+				USER.uNickName,
+				USER.uMotto
+			FROM
+				Answer
+				JOIN USER ON Answer.uID = USER.uID
+			WHERE
+				qID = #{qID}
+			""")
+	List<Answer> getSpecificAnswerList(@Param("qID") int qID);
+	
+	@Update("""
+			UPDATE
+				Answer
+			SET
+				aStatus = 2
+			WHERE
+				aID = #{aID}
+			""")
+	void updateAnswerStatus(@Param("aID") int aID);
+	
+	@Select("""
+			SELECT
+				uID
+			FROM
+				USER
+			WHERE
+				uIfLogged = 1 AND uGroup = 1;
+			""")
+	int getOnlineUserID();
+	
+	@Select("""
+			SELECT
+				uID
+			FROM
+				Question
+			WHERE qID = #{qID}
+			""")
+	int getQuestionPosterID(@Param("qID") int qID);
+	
+	@Update("""
+			UPDATE
+				User
+			SET
+				tCoin = tCoin + 10
+			WHERE
+				uID = #{uID}
+			""")
+	void updateChooseBestAnswerCoin(@Param("uID") int uID);
 }

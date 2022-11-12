@@ -39,7 +39,6 @@ public class QuestionController {
 	@ResponseBody
 	public List<Answer> viewQuestionAnswerList(@RequestBody Map<String, Object> map) {
 		int qID = Integer.parseInt(map.get("qID").toString());
-		System.out.println(questionService.viewQuestionAnswerList(qID));
 		return questionService.viewQuestionAnswerList(qID);
 	}
 	
@@ -48,5 +47,14 @@ public class QuestionController {
 	public List<Answer> viewAnswerDetail(@RequestBody Map<String, Object> map) {
 		int aID = Integer.parseInt(map.get("aID").toString());
 		return questionService.viewAnswerDetail(aID);
+	}
+	
+	@RequestMapping("ChooseThisAnswerAsBestAnswer")
+	@ResponseBody
+	public int chooseThisAnswerAsBestAnswer(@RequestBody Map<String, Object> map) {
+		int qID = Integer.parseInt(map.get("qID").toString());
+		int aID = Integer.parseInt(map.get("aID").toString());
+		int answerPosterID = Integer.parseInt(map.get("answerPosterID").toString());
+		return questionService.chooseThisAnswerAsBestAnswer(qID, aID, answerPosterID);
 	}
 }

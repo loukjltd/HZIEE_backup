@@ -343,3 +343,11 @@ export const DoSearchDatabaseAnswer = (params) => {
 		data: params
 	})
 }
+
+export const DoChooseThisAnswerAsBestAnswer = (params) => {
+	return instance({
+		url: "http://127.0.0.1:8080/ChooseThisAnswerAsBestAnswer",
+		method: 'post',
+		data: params
+	})
+}
