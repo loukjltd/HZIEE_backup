@@ -1,8 +1,10 @@
 package com.example.crime1;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 public class CrimeListFragment extends Fragment {
 	private static final String SAVED_VISIBLE = "subtitle";
@@ -70,6 +73,7 @@ public class CrimeListFragment extends Fragment {
 		
 	}
 	
+	@SuppressLint("NonConstantResourceId")
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -81,7 +85,7 @@ public class CrimeListFragment extends Fragment {
 				return true;
 			case R.id.show_subtitle:
 				mSubtitleVisible = !mSubtitleVisible;
-				getActivity().invalidateOptionsMenu();
+				Objects.requireNonNull(getActivity()).invalidateOptionsMenu();
 				updateSubtitle();
 				return true;
 			default:
@@ -99,9 +103,11 @@ public class CrimeListFragment extends Fragment {
 		}
 		
 		AppCompatActivity activity = (AppCompatActivity) getActivity();
-		activity.getSupportActionBar().setSubtitle(subtitle);
+		assert activity != null;
+		Objects.requireNonNull(activity.getSupportActionBar()).setSubtitle(subtitle);
 	}
 	
+	@SuppressLint("NotifyDataSetChanged")
 	private void updateUI() {
 		CrimeLab crimeLab = CrimeLab.get(getActivity());
 		List<Crime> crimes = crimeLab.getCrimes();
@@ -117,16 +123,16 @@ public class CrimeListFragment extends Fragment {
 	}
 	
 	@Override
-	public void onSaveInstanceState(Bundle outState) {
+	public void onSaveInstanceState(@NonNull Bundle outState) {
 		super.onSaveInstanceState(outState);
 		outState.putBoolean(SAVED_VISIBLE, mSubtitleVisible);
 	}
 	
 	private class CrimeHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 		
-		private TextView mTitleTextView;
-		private TextView mDateTextView;
-		private ImageView mSolvedImageView;
+		private final TextView mTitleTextView;
+		private final TextView mDateTextView;
+		private final ImageView mSolvedImageView;
 		private Crime mCrime;
 		
 		
@@ -166,8 +172,9 @@ public class CrimeListFragment extends Fragment {
 			mCrimes = Crimes;
 		}
 		
+		@NonNull
 		@Override
-		public CrimeHolder onCreateViewHolder(ViewGroup parent, int i) {
+		public CrimeHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
 			LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
 			return new CrimeHolder(layoutInflater, parent);
 		}

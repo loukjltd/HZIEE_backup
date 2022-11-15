@@ -16,15 +16,13 @@ import java.util.UUID;
 public class CrimeLab {
 	
 	private static CrimeLab sCrimeLab;
-	//	private List<Crime> mCrimes;
-	private Context mContext;
-	private SQLiteDatabase mDatabase;
+	private final SQLiteDatabase mDatabase;
 	
 	
 	private CrimeLab(Context context) {
-		mContext = context.getApplicationContext();
+		//	private List<Crime> mCrimes;
+		Context mContext = context.getApplicationContext();
 		mDatabase = new CrimeBaseHelper(mContext).getWritableDatabase();
-//		mCrimes = new ArrayList<>();
 	}
 	
 	public static CrimeLab get(Context context) {
@@ -40,11 +38,11 @@ public class CrimeLab {
 		values.put(CrimeDbSchema.CrimeTable.Cols.TITLE, crime.getTitle());
 		values.put(CrimeDbSchema.CrimeTable.Cols.DATE, crime.getDate().getTime());
 		values.put(CrimeDbSchema.CrimeTable.Cols.SOLVED, crime.isSolved() ? 1 : 0);
+		values.put(CrimeDbSchema.CrimeTable.Cols.SUSPECT, crime.getSuspect());
 		return values;
 	}
 	
 	public void addCrime(Crime crime) {
-//		mCrimes.add(crime);
 		ContentValues values = getContentValues(crime);
 		mDatabase.insert(CrimeDbSchema.CrimeTable.NAME, null, values);
 	}

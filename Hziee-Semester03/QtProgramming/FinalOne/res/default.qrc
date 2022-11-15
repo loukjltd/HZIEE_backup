@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>frame_3.png</file>
+        <file>frame_1.png</file>
+        <file>frame_2.png</file>
+        <file>logo_1.png</file>
+        <file>logo_2.png</file>
+        <file>metal.png</file>
+        <file>chinese.png</file>
+        <file>english.png</file>
+        <file>right.png</file>
+        <file>horizontal.png</file>
+        <file>lineGrey.gif</file>
+        <file>log.png</file>
+        <file>fun_exp.png</file>
+        <file>line_graphic_72p.png</file>
+        <file>Line_Chart_72px.png</file>
+        <file>temperature_72px.png</file>
+        <file>blur_on_72px.png</file>
+        <file>openImage.png</file>
+        <file>imageHistogram.png</file>
+        <file>cleanImage.png</file>
+        <file>resetImage.png</file>
+        <file>saveImage.png</file>
+        <file>aboutThis.png</file>
+        <file>adjustBrightness.png</file>
+        <file>myAvatar.jpg</file>
+        <file>rightRotate.png</file>
+        <file>leftRotate.png</file>
+        <file>exitApp.png</file>
+        <file>grayScale.png</file>
+    </qresource>
+    <qresource prefix="/language">
+        <file>cn.qm</file>
+        <file>en.qm</file>
+    </qresource>
+</RCC>
