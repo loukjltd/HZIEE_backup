@@ -3,9 +3,16 @@ package com.example.crime1;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.FileProvider;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -14,8 +21,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
+import java.io.File;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -23,9 +34,15 @@ public class CrimeFragment extends Fragment {
 	private static final String ARG_CRIME_ID = "crime_id";
 	private static final String DIALOG_DATE = "DialogDate";
 	private static final int REQUEST_DATE = 0;
+	private static final int REQUEST_CODE = 1;
+	private static final int REQUEST_PHOTO = 2;
 	
 	private Crime mCrime;
 	private Button mDateButton;
+	private Button mSuspectButton;
+	private ImageButton mPhotoButton;
+	private ImageView mPhotoView;
+	private File mPhotoFile;
 	
 	public static CrimeFragment newInstance(UUID crimeId) {
 		Bundle args = new Bundle();
@@ -42,6 +59,7 @@ public class CrimeFragment extends Fragment {
 		assert getArguments() != null;
 		UUID crimeId = (UUID) getArguments().getSerializable(ARG_CRIME_ID);
 		mCrime = CrimeLab.get(getActivity()).getCrime(crimeId);
+		mPhotoFile = CrimeLab.get(getActivity()).getPhotoFile(mCrime);
 	}
 	
 	@Override
@@ -108,6 +126,40 @@ public class CrimeFragment extends Fragment {
 			startActivity(i);
 		});
 		
+		final Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.ContactsContract.Contacts.CONTENT_URI);
+		mSuspectButton = v.findViewById(R.id.crime_suspect);
+		mSuspectButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				startActivityForResult(pickIntent, REQUEST_CODE);
+			}
+		});
+		
+		if (mCrime.getSuspect() != null) {
+			mSuspectButton.setText(mCrime.getSuspect());
+		}
+		
+		mPhotoButton = v.findViewById(R.id.crime_camera);
+		final Intent captureImage = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+		
+		mPhotoButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Uri uri = FileProvider.getUriForFile(Objects.requireNonNull(getActivity()), "com.example.crime1.fileprovider", mPhotoFile);
+				captureImage.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+				
+				@SuppressLint("QueryPermissionsNeeded") List<ResolveInfo> cameraActivities = getActivity().getPackageManager().queryIntentActivities(captureImage, PackageManager.MATCH_DEFAULT_ONLY);
+				
+				for (ResolveInfo activity : cameraActivities) {
+					getActivity().grantUriPermission(activity.activityInfo.packageName, uri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+				}
+				
+				startActivityForResult(captureImage, REQUEST_PHOTO);
+			}
+		});
+		mPhotoView = v.findViewById(R.id.crime_photo);
+		
+		
 		return v;
 	}
 	
@@ -121,6 +173,21 @@ public class CrimeFragment extends Fragment {
 			Date date = (Date) data.getSerializableExtra(DatePickerFragment.EXTRA_DATE);
 			mCrime.setDate(date);
 			mDateButton.setText(mCrime.getDate().toString());
+		} else if (requestCode == REQUEST_CODE && data != null) {
+			Uri contactUri = data.getData();
+			String[] queryFields = new String[]{ContactsContract.Contacts.DISPLAY_NAME};
+			
+			try (Cursor c = Objects.requireNonNull(getActivity()).getContentResolver().query(
+					contactUri, queryFields, null, null, null)) {
+				if (c.getCount() == 0) {
+					return;
+				}
+				
+				c.moveToFirst();
+				String suspect = c.getString(0);
+				mCrime.setSuspect(suspect);
+				mSuspectButton.setText(suspect);
+			}
 		}
 	}
 	

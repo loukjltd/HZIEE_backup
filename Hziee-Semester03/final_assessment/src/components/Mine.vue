@@ -37,9 +37,10 @@
 				<li>
 					<div id="mineContent">
 						<p class="mineMainTitle">登陆</p>
+						<p style="text-align: center; color: #DAE9FC; margin-top: 15px">————————————————————————————————</p>
 						<div class="mineMainContent">
-							<p class="mineLogNote">如果需要重新登录，请先退出登录</p>
-							<form v-if="filterUser == true">
+							<!--							<p v-if="filterUser == true" class="mineLogNote">如果需要重新登录，请先退出登录</p>-->
+							<form>
 								<input v-model="enteredPhone" class="enterInfo" placeholder="请输入电话号码" type="text">
 								<br>
 								<input v-model="enteredPassword" class="enterInfo" placeholder="请输入密码" type="password">

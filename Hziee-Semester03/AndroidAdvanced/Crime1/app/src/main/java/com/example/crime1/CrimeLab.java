@@ -1,5 +1,6 @@
 package com.example.crime1;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -9,19 +10,22 @@ import com.example.crime1.databases.CrimeBaseHelper;
 import com.example.crime1.databases.CrimeCursorWrapper;
 import com.example.crime1.databases.CrimeDbSchema;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 public class CrimeLab {
 	
+	@SuppressLint("StaticFieldLeak")
 	private static CrimeLab sCrimeLab;
 	private final SQLiteDatabase mDatabase;
+	private final Context mContext;
 	
 	
 	private CrimeLab(Context context) {
 		//	private List<Crime> mCrimes;
-		Context mContext = context.getApplicationContext();
+		mContext = context.getApplicationContext();
 		mDatabase = new CrimeBaseHelper(mContext).getWritableDatabase();
 	}
 	
@@ -104,6 +108,11 @@ public class CrimeLab {
 			cursor.moveToFirst();
 			return cursor.getCrime();
 		}
+	}
+	
+	public File getPhotoFile(Crime crime) {
+		File fileDir = mContext.getFilesDir();
+		return new File(fileDir, crime.getPhotoFilename());
 	}
 	
 }

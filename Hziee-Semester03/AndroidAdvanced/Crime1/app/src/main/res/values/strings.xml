@@ -12,6 +12,7 @@
     <string name="subtitle_format">%1$d crimes</string>
     <string name="crime_suspect_text">Choose Suspect</string>
     <string name="crime_report_text">Send Crime Report</string>
+    <string name="delete_suspect">Delete Suspect</string>
 
     <string name="crime_report">%1$s!
     The Crime was discovered on %2$s, %3$s and %4$s</string>
@@ -21,5 +22,6 @@
     <string name="crime_report_suspect">The suspect is %s.</string>
     <string name="crime_report_subject">App Crime Report</string>
     <string name="send_report">Send Crime Report</string>
+
 
 </resources>
