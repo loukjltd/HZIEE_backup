@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -40,7 +41,6 @@ public class CrimeFragment extends Fragment {
 	private Crime mCrime;
 	private Button mDateButton;
 	private Button mSuspectButton;
-	private ImageButton mPhotoButton;
 	private ImageView mPhotoView;
 	private File mPhotoFile;
 	
@@ -139,7 +139,7 @@ public class CrimeFragment extends Fragment {
 			mSuspectButton.setText(mCrime.getSuspect());
 		}
 		
-		mPhotoButton = v.findViewById(R.id.crime_camera);
+		ImageButton mPhotoButton = v.findViewById(R.id.crime_camera);
 		final Intent captureImage = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		
 		mPhotoButton.setOnClickListener(new View.OnClickListener() {
@@ -158,7 +158,7 @@ public class CrimeFragment extends Fragment {
 			}
 		});
 		mPhotoView = v.findViewById(R.id.crime_photo);
-		
+		updatePhotoView();
 		
 		return v;
 	}
@@ -188,6 +188,10 @@ public class CrimeFragment extends Fragment {
 				mCrime.setSuspect(suspect);
 				mSuspectButton.setText(suspect);
 			}
+		} else if (requestCode == REQUEST_PHOTO) {
+			Uri uri = FileProvider.getUriForFile(Objects.requireNonNull(getActivity()), "com.example.crime1.fileprovider", mPhotoFile);
+			getActivity().revokeUriPermission(uri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+			updatePhotoView();
 		}
 	}
 	
@@ -210,5 +214,14 @@ public class CrimeFragment extends Fragment {
 		}
 		
 		return getString(R.string.crime_report, mCrime.getTitle(), dateString, solvedString, suspect);
+	}
+	
+	private void updatePhotoView() {
+		if (mPhotoFile == null || !mPhotoFile.exists()) {
+			mPhotoView.setImageDrawable(null);
+		} else {
+			Bitmap bitmap = PictureUtils.getScaleBitmap(mPhotoFile.getPath(), Objects.requireNonNull(getActivity()));
+			mPhotoView.setImageBitmap(bitmap);
+		}
 	}
 }

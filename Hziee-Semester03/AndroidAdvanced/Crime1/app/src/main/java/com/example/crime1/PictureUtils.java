@@ -1,7 +1,9 @@
 package com.example.crime1;
 
+import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
 
 public class PictureUtils {
 	public static Bitmap getScale(String path, int destWidth, int destHeight) {
@@ -20,5 +22,16 @@ public class PictureUtils {
 			
 			inSampleSize = Math.round(heightScale > widthScale ? heightScale : widthScale);
 		}
+		options = new BitmapFactory.Options();
+		options.inSampleSize = inSampleSize;
+		
+		return BitmapFactory.decodeFile(path, options);
+	}
+	
+	public static Bitmap getScaleBitmap(String path, Activity activity) {
+		Point size = new Point();
+		activity.getWindowManager().getDefaultDisplay().getSize(size);
+		
+		return getScale(path, size.x, size.y);
 	}
 }

@@ -45,7 +45,7 @@
                 android:layout_gravity="bottom|right"
                 android:layout_marginRight="100dp"
                 android:layout_marginBottom="5dp"
-                android:text="楼可嘉"
+                android:text="杰哥"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
@@ -65,7 +65,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_margin="10dp"
-        android:background="@drawable/mello"
+        android:background="@drawable/jie"
         app:layout_anchor="@id/ablBackgroundImage"
         app:layout_anchorGravity="bottom|end" />
 

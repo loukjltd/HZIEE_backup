@@ -15,7 +15,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/mello"
+        android:background="@drawable/jie"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="24dp"
-        android:text="楼可嘉"
+        android:text="杰哥"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="24dp"
-        android:text="学号：219350623"
+        android:text="学号：219350630"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"

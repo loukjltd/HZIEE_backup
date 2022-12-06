@@ -104,7 +104,7 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener {
 
         nickname = new ArrayList<>();
         if (flag)
-            nickname.add("楼可嘉");
+            nickname.add("杰哥");
         nickname.add("Farewell");
         nickname.add("阿芙乐尔");
         nickname.add("月亮是指路牌");
@@ -116,7 +116,7 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener {
 
         profiles = new ArrayList<>();
         if (flag)
-            profiles.add(R.drawable.mello);
+            profiles.add(R.drawable.jie);
         profiles.add(R.drawable.afterclap_2);
         profiles.add(R.drawable.afterclap_3);
         profiles.add(R.drawable.afterclap_8);
@@ -181,7 +181,7 @@ public class DiscoverFragment extends Fragment implements View.OnClickListener {
 
         copyWriting = new ArrayList<>();
         if (flag)
-            copyWriting.add("hello");
+            copyWriting.add("233333");
         copyWriting.add("如果你有一段时间非常开心 最好在那段时间反复听几首歌曲 这样以后听这几首歌曲的时候就会想起那段开心时间");
         copyWriting.add("祝愿冬季的各种所爱都漫长且愉快。");
         copyWriting.add("生活需要一点童话，在这里你不用长大。");
