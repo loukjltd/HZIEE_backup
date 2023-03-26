@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .span{
+            background-color: yellow;
+        }
+        rt{
+            line-height: 1px;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <p>我是一个小红帽，我非常<mark>可爱</mark></p>
+    <p>我是一只大灰狼，我非常<strong>残暴</strong></p>
+    <p>我是一只大灰狼，我非常<i>残暴</i></p>
+    <p>我是一只大灰狼，我非常<s>残暴</s></p>
+    <p>我是一只大灰狼，我非常<span class="span">残暴</span></p>
+
+
+    <hr>
+    <meter value="3" max="10" min="0">十分之三</meter>
+    <meter value=".6">60%</meter>
+    <div>
+        <meter value="29" max="100" min="0" high="60" low="30"></meter>
+        <meter value="80" max="100" min="0" high="60" low="30"></meter>
+        <meter value="40" max="100" min="0" high="60" low="30"></meter>
+    </div>
+
+    <hr>
+    <ruby>汉
+        <!-- 注音、注解 如生僻字 -->
+        <rt>hàn</rt>
+        <rp>han</rp>
+    </ruby>
+    <p>中文字：又称<ruby>汉<rt>hàn</rt><rp>han</rp></ruby>字</p>
+
+
+    <hr>
+    <h4>output标签演示：</h4>
+    <h5>加法计算器</h5>
+    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+        <input type="number" id="a" value="0"> +
+        <input type="number" id="b" value="0"> =
+        <output name="x" for="a b">0</output>
+    </form>
+
+    <hr>
+    <div>
+        <select name="city" id="">
+            <option value="1">北京</option>
+            <option value="2">上海</option>
+            <option value="2">杭州</option>
+        </select>
+    </div>
+    <span>这是一个下拉框</span>
+
+    <!-- 
+        search输入框筛选输入
+
+        异步服务端列表查询
+
+        下拉列表分页
+     -->
+    <input type="text" list="url_list" name="link">
+    <datalist id="url_list">
+        <option value="http://www.baidu.com">Baidu</option>
+        <option label="Google" value="http://www.google.com">
+        <option label="Microsoft" value="http://www.microsoft.com">
+    </datalist>
+    
+   
+    <hr>
+    <progress value="22" max="100"></progress>
+    <br>
+    <input id="range" type="range" max="100" min="0" value="10">
+    
+    <script>
+        let range = document.querySelector('#range');
+        let progress = document.querySelector('progress');
+
+        range.onchange = function(e){
+            console.log(this.value);
+            progress.value = this.value;
+        }
+    </script>
+
+
+</body>
+</html>

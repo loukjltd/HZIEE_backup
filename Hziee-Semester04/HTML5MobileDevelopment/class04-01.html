@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta content="widtd=device-widtd, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>信息注册</title>
+    <meta content="这里填写关键字" name="keywords">
+    <meta content="这里填写页面描述" name="description">
+</head>
+<body>
+    <div style="margin-left: 300px; margin-right: 300px; margin-top: 100px">
+        <form action method="post">
+            <label for="email">Enter your 163.com email:</label>
+            <input type="email" name="email" id="email" pattern=".+@163\.com" autocomplete="off">
+            <br>
+            <hr>
+            <label for="url">Enter an https:// URL:</label>
+            <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*">
+            <br>
+            <hr>
+            <label for="range">Scroll the range:</label>
+            <progress value="20" max="100"></progress>
+            <input type="range" name="range" id="range" value="20" min="0" max="100">
+            <script>
+                let range = document.querySelector('#range');
+                let progress = document.querySelector('progress');
+                range.onchange = function (e) {
+                    progress.value = this.value;
+                }
+            </script>
+            <br>
+            <hr>
+            <label for="tentacles">Select a number:</label>
+            <input type="number" id="tentacles" name="tentacles" min="10" max="100" step="2">
+            <br>
+            <hr>
+            <label for="phone">Enter your phone number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">
+            <br>
+            <hr>
+            <label for="site-search">Search the site:</label>
+            <input type="search" id="site-search" name="site-search">
+            <button>Search</button>
+            <br>
+            <hr>
+            <label for="head-color">Head Color</label>
+            <input type="color" id="head-color" name="head-color" value="#FF0000">
+            <br>
+            <hr>
+            <label for="start-date">Start date:</label>
+            <input type="date" id="start-date" name="start-date" value="2018-07-10" min="2018-01-01" max="2018-12-31">
+            <br>
+            <hr>
+            <label for="meeting-date">Choose a time for your meeting:</label>
+            <input type="time" id="meeting-date" name="meeting-date" min="09:00" max="18:00">
+            <br>
+            <hr>
+            <label for="app-time">Choose a time for your appointment:</label>
+            <input type="datetime-local" id="app-time" name="app-time" value="2018-07-10T19:00" min="2018-07-01T12:00" max="2018-07-14T12:00">
+            <br>
+            <hr>
+            <label for="start-month">Start month:</label>
+            <input type="month" id="start-month" name="start-time" value="2018-07" min="2018-06" max="2018-08">
+            <br>
+            <hr>
+            <label for="start-week">Start week:</label>
+            <input type="week" id="start-week" name="start-week" value="2018-W20" min="2018-w14" max="2018-w24">
+            <br>
+            <hr>
+            <input type="submit" value="提交">
+        </form>
+    </div>
+
+</body>
+</html>

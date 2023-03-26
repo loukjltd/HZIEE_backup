@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .w900 {
+            width: 920px;
+            margin: 0 auto;
+        }
+
+        newTag {
+            background-color: rgb(104, 212, 151);
+            line-height: 90px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <script>
+        var newTag = document.createElement('newTag');
+        newTag.innerText = 'hi';
+        newTag.className = 'newTag w900';
+        document.body.appendChild(newTag);
+        console.log(newTag);
+    </script>
+
+
+</body>
+
+</html>

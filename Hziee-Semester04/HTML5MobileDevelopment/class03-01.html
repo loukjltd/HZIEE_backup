@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta content="widtd=device-widtd, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>成员注册</title>
+    <meta content="这里填写关键字" name="keywords">
+    <meta content="这里填写页面描述" name="description">
+    <style>
+        body {
+            padding: 0;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        .tableElement {
+            text-align: right;
+            padding-right: 20px;
+            line-height: 28px;
+        }
+
+        .tableValue {
+            text-align: left;
+        }
+
+        .tableTile {
+            text-align: center;
+            color: red;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 64px;
+        }
+
+        .textWidth {
+            width: 200px;
+        }
+
+        .tableButton {
+            text-align: center;
+        }
+
+        .specificButton {
+            padding: 5px 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        input {
+            line-height: 24px;
+        }
+
+        .star {
+            color: red;
+        }
+
+        textarea {
+            border: 1px grey solid;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        .imageSize {
+            width: 70px;
+            height: 100px;
+        }
+        .contract {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: fixed;
+            z-index: 99999;
+            border-radius: 20px;
+            display: none;
+            margin: 0 auto;
+            background-color: rgba(128, 128, 128, 0.9);
+        }
+        .contractInfo {
+            text-align: left;
+            font-size: 15px;
+        }
+        .content {
+            position: fixed;
+            background-color: white;
+            width: 60%;
+            max-width: 500px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding-left: 25px;
+            padding-right: 25px;
+            text-align: center;
+            border-radius: 25px;
+        }
+    </style>
+    <script>
+        function displayUploadImage() {
+            const getUserPhoto = document.getElementById("idIdentify");
+            const file = getUserPhoto.files;
+            const reader = new FileReader();
+            reader.readAsDataURL(file[0]);
+            reader.onload = function () {
+                const image = document.getElementById("idImage");
+                image.src = reader.result;
+            };
+        }
+
+        function verifyPassword() {
+            const firstPassword = document.getElementById("firstPassword");
+            const repeatPassword = document.getElementById("repeatPassword");
+            if (firstPassword.value !== repeatPassword.value) {
+                alert("两次输入的密码不一样！")
+            }
+        }
+
+        function verifyTelephone() {
+            const telephone = document.getElementById("telephone");
+            if (telephone.value.length !== 11) {
+                alert("输入的电话号码无效！")
+            }
+        }
+
+        function verifyQQ() {
+            const qq = document.getElementById("qq");
+            if (qq.value.length < 6 || qq.value.length > 13) {
+                alert("输入的QQ号无效！")
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <form action="rule.html" method="post">
+        <table>
+            <tr>
+                <td class="tableTile" colspan="2">成员注册</td>
+            </tr>
+            <tr>
+                <td class="tableElement"><span class="star">*</span>用户名</td>
+                <td class="tableValue">
+                    <label>
+                        <input class="textWidth" name="userName" required type="text" value="默认用户名">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableElement">主页地址</td>
+                <td class="tableValue">
+                    <label>
+                        <input class="textWidth" name="homePage" pattern="https://.*" placeholder="https://example.com"
+                               type="url">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableElement">性别</td>
+                <td class="tableValue">
+                    <label>
+                        <input checked name="sex" type="radio" value="male">
+                        男
+                        <input name="sex" type="radio" value="female">
+                        女
+                        <input name="sex" type="radio" value="other">
+                        其它
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableElement">年龄</td>
+                <td class="tableValue">
+                    <label>
+                        <input class="textWidth" max="100" min="1" name="age" step="1" type="number" value=20>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableElement">出生时间</td>
+                <td class="tableValue">
+                    <label>
+                        <input class="textWidth" id="birthday" max="2010-01-01" min="1990-01-01" type="date"
+                               value="2000-01-01">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableElement"><span class="star">*</span>密码</td>
+                <td class="tableValue">
+                    <label>
+                        <input class="textWidth" id="firstPassword" name="password" required type="password">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableElement"><span class="star">*</span>确认密码</td>
+                <td class="tableValue">
+                    <label>
+                        <input class="textWidth" id="repeatPassword" name="repeatPassword" onblur="verifyPassword()"
+                               required
+                               type="password">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableElement"><span class="star">*</span>163 E-mail</td>
+                <td class="tableValue">
+                    <label>
+                        <input autocomplete="off" class="textWidth" name="email" pattern=".+@163\.com" required
+                               type="email">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableElement">电话</td>
+                <td class="tableValue">
+                    <label>
+                        <input class="textWidth" id="telephone" name="telephone" onblur="verifyTelephone()"
+                               pattern="[0-9]{3}[0-9]{4}[0-9]{4}"
+                               type="tel">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableElement">QQ</td>
+                <td class="tableValue">
+                    <label>
+                        <input autocomplete="off" class="textWidth" id="qq" name="QQ" onblur="verifyQQ()" type="number">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="tableElement">证件证明</td>
+                <td class="tableValue"><input class="textWidth" id="idIdentify" name="idIdentify"
+                                              onchange="displayUploadImage()"
+                                              type="file"></td>
+            </tr>
+            <tr>
+                <td class="tableElement">证件照</td>
+                <td class="tableValue"><input alt="" class="imageSize" id="idImage" name="idImage" src="" type="image">
+                </td>
+            </tr>
+            <tr>
+                <td class="tableElement">个人简介</td>
+                <td class="tableValue">
+                    <label>
+                        <textarea class="textWidth" name="resume" rows="4"></textarea>
+                    </label>
+            </tr>
+            <tr>
+                <td class="tableTile" colspan="2" id="contractCheck"><a href="#">查看许可协议</a></td>
+            </tr>
+            <tr>
+                <td class="tableButton" colspan="2">
+                    <input class="specificButton" name="submitButton" type="submit" value="提交">
+                    <input class="specificButton" name="resetButton" type="reset" value="重置">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div class="contract" id="contractWindow">
+    <div class="content">
+        <h1 style="text-align: center; padding-top: 30px">声明</h1>
+        <p class="contractInfo">第一条 许可的授予</p>
+        <p class="contractInfo">1.1 根据以下所规定的条款和条件，许可方在此授予被许可方在区域内，且被许可方在此接受，一项非独家、不可转让且免收特许权使用费的使用附件a所列许可商标和商号的许可。</p>
+        <p class="contractInfo">1.2 许可方在此承诺其为许可商标的合法所有权人并拥有全权授予被许可方许可商标的使用权。</p>
+        <p class="contractInfo">1.3 本许可仅授予给以合营公司名义进行的合营公司业务。</p>
+        <p class="contractInfo">1.4 上述第1.1条的许可的授予，不包括合营公司的分许可授予权。</p>
+        <p class="contractInfo">第二条 区域</p>
+        <p class="contractInfo">本协议的唯一区域应为中华人民共和国国的大陆领域(不包括香港、澳门和台湾)。</p>
+        <hr>
+        <button id="contractBack"
+                style="border: 0; background-color: skyblue; width: 120px; border-radius: 20px; height: 30px; margin-top: 16px; margin-bottom: 16px">返回
+        </button>
+    </div>
+    <script>
+        let btn = document.getElementById("contractCheck");
+        let wid = document.getElementById("contractWindow");
+        btn.onclick = function () {
+            wid.style.display = "block";
+        };
+        document.getElementById("contractBack").onclick = function () {
+            wid.style.display = "none";
+        }
+    </script>
+</div>
+</body>
+</html>

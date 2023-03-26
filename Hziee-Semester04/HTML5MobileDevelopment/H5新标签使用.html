@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="这里填写关键字">
+    <meta name="description" content="这里填写页面描述">
+    <title>新增标签</title>
+    <script src="js/html5shiv.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-size: 45px;
+            background-color: #fff;
+            /* font-weight: 900; */
+            text-align: center;
+        }
+
+        h3,p{
+            font-size: 20px;
+            line-height: 1.5em; 
+            /* "1.5*20px=30px" 如果元素没有设置font-size，则继承了父元素的font-size*/
+        }
+
+        .w900{
+            width: 920px;
+            margin: 0 auto;
+        }
+
+        .flex{
+            display: flex;
+        }
+        .flex-column{
+            flex-direction: column;
+        }
+
+
+        .header{
+            height: 90px;
+            background-color: skyblue;
+            line-height: 90px;
+        }
+
+        .nav{
+            height: 90px;
+            background-color: beige;
+            line-height: 90px;
+        }
+
+        .container{
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container .slider-bar{
+            flex: 1;
+            height: 631px;
+            width: 560px;
+            line-height: 600px;
+            background-color: pink;
+        }
+
+        .container .content{
+            width: 100%;
+            /* height: 600px; */
+            background-color: rgb(224, 220, 164);
+            /* line-height: 600px; */
+        }
+
+        .content .product{
+            padding: 10px 10px;
+        }
+
+        .footer{
+            height: 180px;
+            background-color: rgb(104, 212, 151);
+            line-height: 90px;
+        }
+
+        ul li{
+            width: 200px;
+            height: 30px;
+            float: left;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header w900"> header </header>
+    <nav class="nav w900">
+        <ul>
+            <li>首页</li>
+            <li>新品</li>
+            <li>积分</li>
+            <li>购物车</li>
+        </ul>
+    </nav>
+    <main class="container flex w900">
+            <aside class="slider-bar"> slider </aside>
+            <article class="content"> 
+                <figure class="product">
+                    <img src="images/phone.png" width="786" height="536" 
+                        alt="phone">
+                    <h3>这是一部手机</h3>
+                    <p>这是一部小米生产的手机</p>
+                </figure>
+            </article>
+    </main>
+    <footer class="footer w900"> footer </footer>
+</body>
+</html>
