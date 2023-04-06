@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas height="600" id="myCanvas" style="background-color: antiquewhite" width="600"></canvas>
+<script>
+  const canvas = document.getElementById('myCanvas');
+  if (canvas.getContext) {
+    const context = canvas.getContext('2d');
+    // 绘制正方形
+    context.strokeStyle = 'black'; // 描边颜色
+    context.lineWidth = 4; // 描边宽度
+    context.strokeRect(50, 50, 50, 50); // 绘制正方形，(50,50)为左上角坐标，100为边长
+
+    // 绘制三角形
+    context.beginPath();
+    context.moveTo(150, 50); // 起始点坐标
+    context.lineTo(200, 50); // 第一条线的终点坐标
+    context.lineTo(175, 100); // 第二条线的终点坐标
+    context.closePath(); // 将终点和起点连接起来，形成三角形
+    context.stroke(); // 描边
+  }
+</script>
+</body>
+</html>

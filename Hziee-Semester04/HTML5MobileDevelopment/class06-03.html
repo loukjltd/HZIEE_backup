@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas height="600" id="myCanvas" style="background-color: antiquewhite" width="600"></canvas>
+<script>
+    const canvas = document.getElementById('myCanvas');
+    if (canvas.getContext) {
+        const context = canvas.getContext('2d');
+        const penWidth = 4;
+
+        const x_test = 100;
+        const y_test = 100;
+        const radius_test = 60;
+        const startAngle_test = 100;
+        const endAngle_test = 2 * Math.PI;
+        const antiClockwise_test = true;
+
+        context.beginPath();
+        context.lineWidth = penWidth;
+        context.arc(x_test, y_test, radius_test, startAngle_test, endAngle_test, antiClockwise_test);
+        context.stroke();
+
+
+        context.beginPath();
+        context.lineWidth = penWidth;
+        context.arc(100, 300, 60, 0.5 * Math.PI, 2 * Math.PI, false);
+        context.fillStyle = "red";
+        context.fill();
+        context.stroke();
+
+
+        const x = 300;
+        const y = 100;
+        const radius = 60;
+        const startAngle = 1.5 * Math.PI;
+        const endAngle = 2 * Math.PI;
+        const antiClockwise = true;
+
+        context.beginPath();
+        context.arc(x, y, radius, startAngle, endAngle, antiClockwise);
+        context.stroke();
+
+
+        context.beginPath();
+        context.lineWidth = penWidth;
+        context.arc(300, 300, 60, 0.5 * Math.PI, Math.PI, true);
+        context.fillStyle = "blue";
+        context.fill();
+        context.stroke();
+    }
+</script>
+</body>
+</html>

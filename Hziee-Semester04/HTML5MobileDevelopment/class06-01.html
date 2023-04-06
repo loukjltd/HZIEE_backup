@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas height="600" id="myCanvas" style="background-color: antiquewhite" width="600"></canvas>
+<script>
+    const canvas = document.getElementById('myCanvas');
+    if (canvas.getContext) {
+        const context = canvas.getContext('2d');
+        // 绘制红色矩形
+        context.fillStyle = 'red';
+        context.fillRect(50, 50, 100, 100);
+
+        // 绘制半透明的红色边框蓝色矩形
+        context.fillStyle = "rgba(0, 0, 255, 0.5)";
+        context.fillRect(100, 100, 100, 100);
+        context.strokeStyle = "red";
+        context.lineWidth = 5;
+        context.strokeRect(100, 100, 100, 100);
+
+        // 绘制一个红色边框的白色矩形
+        context.fillStyle = "white";
+        context.fillRect(115, 115, 25, 25);
+        context.strokeStyle = "red";
+        context.lineWidth = 3;
+        context.strokeStyle(115, 115, 25, 25);
+    }
+</script>
+
+
+</body>
+</html>
